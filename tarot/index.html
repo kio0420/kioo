@@ -4,21 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>星語塔羅</title>
+  <script>
+    // 在樣式載入前套用主題，避免閃爍
+    try {
+      var t = JSON.parse(localStorage.getItem("tarot.theme"));
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body>
   <header class="site-header">
     <h1 class="logo">✦ 星語塔羅</h1>
     <nav class="tabs" role="tablist">
       <button class="tab active" data-view="reading" role="tab">塔羅占卜</button>
-      <button class="tab" data-view="daily" role="tab">每日一牌</button>
       <button class="tab" data-view="library" role="tab">牌義圖鑑</button>
+      <button class="tab" data-view="quiz" role="tab">學習測驗</button>
+      <button class="tab" data-view="journal" role="tab">我的紀錄</button>
     </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切換深色／淺色主題"></button>
   </header>
 
   <main>
     <!-- 占卜 -->
     <section id="view-reading" class="view active">
+      <div class="panel daily">
+        <div id="daily-card" class="daily-card" role="button" tabindex="0" aria-label="翻開今日的牌"></div>
+        <div class="daily-info">
+          <h2>每日一牌</h2>
+          <p id="daily-date" class="date"></p>
+          <div id="daily-text"><p class="muted">點擊牌面，翻開今天給你的提醒。</p></div>
+        </div>
+      </div>
+
       <div class="panel setup">
         <h2>選擇牌陣</h2>
         <div id="spread-list" class="spread-list"></div>
@@ -52,17 +71,6 @@
       <div id="result" class="result"></div>
     </section>
 
-    <!-- 每日一牌 -->
-    <section id="view-daily" class="view">
-      <div class="panel center">
-        <h2>每日一牌</h2>
-        <p class="muted">每天會抽到一張固定的牌，作為今天的提醒。</p>
-        <p id="daily-date" class="date"></p>
-        <div id="daily-card" class="daily-card"></div>
-        <div id="daily-text" class="result"></div>
-      </div>
-    </section>
-
     <!-- 牌義圖鑑 -->
     <section id="view-library" class="view">
       <div class="panel">
@@ -81,6 +89,27 @@
         <div id="library-grid" class="library-grid"></div>
       </div>
     </section>
+
+    <!-- 學習測驗（js/quiz.js 會渲染這個容器） -->
+    <section id="view-quiz" class="view">
+      <div id="quiz-root"></div>
+    </section>
+
+    <!-- 我的紀錄 -->
+    <section id="view-journal" class="view">
+      <div class="panel">
+        <div class="journal-head">
+          <h2>我的紀錄</h2>
+          <div class="actions">
+            <button id="btn-export" class="btn small">匯出 JSON</button>
+            <label class="btn small">匯入 JSON<input id="import-file" type="file" accept="application/json,.json" hidden></label>
+          </div>
+        </div>
+        <p id="storage-warning" class="warning" hidden>你的瀏覽器目前無法長期儲存資料（例如無痕模式），紀錄會在關閉頁面後消失，請記得匯出備份。</p>
+        <div id="journal-list" class="journal-list"></div>
+      </div>
+      <div id="journal-detail"></div>
+    </section>
   </main>
 
   <dialog id="card-dialog" class="card-dialog">
@@ -90,10 +119,14 @@
 
   <footer class="site-footer">塔羅僅供參考與自我探索，重要決定請以自身判斷為主。</footer>
 
+  <script src="js/store.js"></script>
   <script src="js/data/major.js"></script>
   <script src="js/data/minor-wands-cups.js"></script>
   <script src="js/data/minor-swords-pentacles.js"></script>
   <script src="js/spreads.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/quiz.js"></script>
 </body>
 </html>

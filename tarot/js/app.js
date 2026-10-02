@@ -38,20 +38,35 @@
     return a;
   }
 
-  // 以日期為種子的亂數，讓每日一牌當天固定
-  function seededRand(seedStr) {
-    let h = 1779033703 ^ seedStr.length;
-    for (let i = 0; i < seedStr.length; i++) {
-      h = Math.imul(h ^ seedStr.charCodeAt(i), 3432918353);
-      h = (h << 13) | (h >>> 19);
+  // 每日一牌：「YYYY-MM-DD + 站台鹽值」雜湊成種子，再用 mulberry32 產生穩定的亂數
+  const DAILY_SALT = "xingyu-tarot-v1";
+
+  function hashSeed(str) {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h = Math.imul(h ^ str.charCodeAt(i), 16777619);
     }
-    let t = h >>> 0;
+    return h >>> 0;
+  }
+
+  function mulberry32(seed) {
+    let t = seed >>> 0;
     return function (max) {
-      t += 0x6d2b79f5;
+      t = (t + 0x6d2b79f5) >>> 0;
       let r = Math.imul(t ^ (t >>> 15), t | 1);
       r ^= r + Math.imul(r ^ (r >>> 7), r | 61);
-      return (((r ^ (r >>> 14)) >>> 0) % max);
+      return Math.floor((((r ^ (r >>> 14)) >>> 0) / 4294967296) * max);
     };
+  }
+
+  function todayKey(d = new Date()) {
+    const pad = (n) => String(n).padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
+  function dailyDraw(dateKey) {
+    const rand = mulberry32(hashSeed(dateKey + DAILY_SALT));
+    return { cardId: CARDS[rand(CARDS.length)].id, reversed: rand(2) === 1 };
   }
 
   // ---------- 牌面 ----------
@@ -94,18 +109,28 @@
   }
 
   // ---------- 分頁 ----------
+  function showView(name) {
+    $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === name));
+    $$(".view").forEach((v) => v.classList.toggle("active", v.id === "view-" + name));
+    document.dispatchEvent(new CustomEvent("tarot:view", { detail: name }));
+  }
+
   function initTabs() {
     $$(".tab").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        $$(".tab").forEach((t) => t.classList.toggle("active", t === tab));
-        $$(".view").forEach((v) => v.classList.toggle("active", v.id === "view-" + tab.dataset.view));
-      });
+      tab.addEventListener("click", () => showView(tab.dataset.view));
     });
+  }
+
+  // 牌義詳細頁網址：#card/<id>，可直接分享或加入書籤
+  function routeFromHash() {
+    const m = location.hash.match(/^#card\/([\w-]+)$/);
+    if (m && getCard(m[1])) openCard(m[1]);
   }
 
   // ---------- 占卜 ----------
   let currentSpread = SPREADS[0];
   let currentDraw = [];
+  let currentMeta = {};
 
   function initReading() {
     const list = $("#spread-list");
@@ -167,6 +192,7 @@
       reversed: allowReversed && randomInt(2) === 1,
       revealed: false
     }));
+    currentMeta = { question: $("#question").value.trim(), topic: $("#topic").value, recordId: null };
     renderBoard(true);
     renderResultSkeleton();
     $("#btn-reveal").hidden = false;
@@ -185,12 +211,37 @@
     if (currentDraw.every((x) => x.revealed)) {
       $("#btn-reveal").hidden = true;
       $("#board-hint").hidden = true;
-      $("#result-summary").innerHTML = summaryHtml();
+      const record = buildRecord();
+      const saved = window.TarotJournal ? window.TarotJournal.add(record) : false;
+      currentMeta.recordId = record.id;
+      $("#result-summary").innerHTML = summaryHtml() + `
+        <div class="result-actions">
+          ${window.TarotShare ? `<button class="btn primary" data-share-record="${record.id}">分享結果圖片</button>` : ""}
+          <button class="btn" data-goto-record="${record.id}">在紀錄中寫筆記</button>
+          <span class="muted">${saved ? "已自動存入「我的紀錄」" : "無法儲存紀錄"}</span>
+        </div>`;
     }
   }
 
+  function buildRecord() {
+    return {
+      id: "r" + Date.now().toString(36) + randomInt(1e6).toString(36),
+      time: new Date().toISOString(),
+      spreadId: currentSpread.id,
+      spreadName: currentSpread.name,
+      question: currentMeta.question,
+      topic: currentMeta.topic,
+      cards: currentDraw.map((d, i) => ({
+        position: currentSpread.positions[i].name,
+        cardId: d.card.id,
+        reversed: d.reversed
+      })),
+      note: ""
+    };
+  }
+
   function renderResultSkeleton() {
-    const q = $("#question").value.trim();
+    const q = currentMeta.question;
     $("#result").innerHTML = `
       <div class="panel">
         <h2>解讀</h2>
@@ -210,7 +261,7 @@
     const p = currentSpread.positions[i];
     const { card, reversed } = currentDraw[i];
     const key = reversed ? "reversed" : "upright";
-    const topic = $("#topic").value;
+    const topic = currentMeta.topic;
     let extra = "";
     if (TOPIC_LABEL[topic]) {
       extra = `<p class="topic"><b>${TOPIC_LABEL[topic]}：</b>${card[topic][key]}</p>`;
@@ -264,23 +315,47 @@
 
   // ---------- 每日一牌 ----------
   function initDaily() {
-    const now = new Date();
-    const key = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-    const rand = seededRand("daily-" + key);
-    const card = CARDS[rand(CARDS.length)];
-    const reversed = rand(2) === 1;
-    const k = reversed ? "reversed" : "upright";
-    $("#daily-date").textContent = `${now.getFullYear()} 年 ${now.getMonth() + 1} 月 ${now.getDate()} 日`;
-    $("#daily-card").innerHTML = cardHtml(card, { reversed });
-    $("#daily-card").addEventListener("click", function once() {
-      $(".tcard", this).classList.add("flipped");
+    const key = todayKey();
+    const log = window.TarotStore.get("daily", {});
+    const today = log[key] || dailyDraw(key);
+    const card = getCard(today.cardId);
+    const k = today.reversed ? "reversed" : "upright";
+    const [y, m, d] = key.split("-").map(Number);
+    $("#daily-date").textContent = `${y} 年 ${m} 月 ${d} 日`;
+    const box = $("#daily-card");
+    box.innerHTML = cardHtml(card, { reversed: today.reversed });
+
+    function reveal(save) {
+      $(".tcard", box).classList.add("flipped");
+      box.removeAttribute("role");
+      box.tabIndex = -1;
       $("#daily-text").innerHTML = `
-        <p class="card-title">${card.name}　<span class="orient ${k}">${orientationText(reversed)}</span></p>
+        <p class="card-title">${card.name}　<span class="orient ${k}">${orientationText(today.reversed)}</span></p>
         ${keywordChips(card.keywords[k])}
         <p>${card[k]}</p>
         <button class="link" data-card="${card.id}">查看完整牌義 →</button>`;
-      this.removeEventListener("click", once);
-    });
+      if (save) {
+        // 寫入每日紀錄，供「我的紀錄」共用
+        const latest = window.TarotStore.get("daily", {});
+        latest[key] = { cardId: card.id, reversed: today.reversed, revealedAt: new Date().toISOString() };
+        window.TarotStore.set("daily", latest);
+        document.dispatchEvent(new CustomEvent("tarot:daily", { detail: key }));
+      }
+    }
+
+    if (log[key] && log[key].revealedAt) {
+      reveal(false);
+      return;
+    }
+    const onReveal = (e) => {
+      if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      box.removeEventListener("click", onReveal);
+      box.removeEventListener("keydown", onReveal);
+      reveal(true);
+    };
+    box.addEventListener("click", onReveal);
+    box.addEventListener("keydown", onReveal);
   }
 
   // ---------- 圖鑑 ----------
@@ -319,8 +394,14 @@
       : `<p class="muted">找不到符合的牌。</p>`;
   }
 
+  function getCard(id) {
+    return CARDS.find((x) => x.id === id);
+  }
+
   function openCard(id) {
-    const c = CARDS.find((x) => x.id === id);
+    const c = getCard(id);
+    if (!c) return;
+    if (location.hash !== "#card/" + id) history.replaceState(null, "", "#card/" + id);
     const meta = c.arcana === "major" ? `大阿爾克那 ${ROMAN[c.number]}` : `小阿爾克那・${SUITS[c.suit].name}`;
     const side = (key) => `
       <section class="side ${key}">
@@ -340,23 +421,70 @@
         </div>
       </div>
       <div class="sides">${side("upright")}${side("reversed")}</div>`;
-    $("#card-dialog").showModal();
+    const dlg = $("#card-dialog");
+    if (!dlg.open) dlg.showModal();
+    dlg.scrollTop = 0;
   }
 
   function initDialog() {
     const dlg = $("#card-dialog");
     $(".close", dlg).addEventListener("click", () => dlg.close());
     dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", () => {
+      if (location.hash.startsWith("#card/")) history.replaceState(null, "", location.pathname + location.search);
+    });
+    window.addEventListener("hashchange", routeFromHash);
     // 解讀區與每日一牌中的「查看完整牌義」
     document.addEventListener("click", (e) => {
       const link = e.target.closest("button.link[data-card]");
       if (link) openCard(link.dataset.card);
+      const share = e.target.closest("[data-share-record]");
+      if (share && window.TarotShare && window.TarotJournal) {
+        const rec = window.TarotJournal.get(share.dataset.shareRecord);
+        if (rec) {
+          share.disabled = true;
+          window.TarotShare.shareReading(rec).finally(() => { share.disabled = false; });
+        }
+      }
+      const goto = e.target.closest("[data-goto-record]");
+      if (goto && window.TarotJournal) {
+        showView("journal");
+        window.TarotJournal.show(goto.dataset.gotoRecord);
+      }
     });
   }
 
+  // ---------- 主題 ----------
+  const THEMES = { system: "◐ 跟隨系統", light: "☀ 淺色", dark: "☾ 深色" };
+
+  function applyTheme(t) {
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    else document.documentElement.removeAttribute("data-theme");
+    const btn = $("#theme-toggle");
+    btn.textContent = THEMES[t];
+    btn.title = "主題：" + THEMES[t].slice(2) + "（點擊切換）";
+  }
+
+  function initTheme() {
+    let t = window.TarotStore.get("theme", "system");
+    if (!THEMES[t]) t = "system";
+    applyTheme(t);
+    $("#theme-toggle").addEventListener("click", () => {
+      const order = Object.keys(THEMES);
+      t = order[(order.indexOf(t) + 1) % order.length];
+      if (t === "system") window.TarotStore.remove("theme");
+      else window.TarotStore.set("theme", t);
+      applyTheme(t);
+    });
+  }
+
+  window.TarotUI = { cardHtml, openCard, getCard, escapeHtml, keywordChips, orientationText, showView, SUITS, ROMAN };
+
+  initTheme();
   initTabs();
   initReading();
   initDaily();
   initLibrary();
   initDialog();
+  routeFromHash();
 })();

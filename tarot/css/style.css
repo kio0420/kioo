@@ -16,8 +16,26 @@
   --pentacles: #8fc76a;
   --major: #c49bea;
   --cw: 110px;
+  --header-bg: rgba(18, 15, 31, 0.8);
+  --page-glow: #2a2148;
   --radius: 12px;
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+/* 淺色主題：手動選擇，或未手動選擇且系統為淺色 */
+:root[data-theme="light"] {
+  --bg: #f6f2fb; --bg-2: #ffffff; --panel: rgba(255, 255, 255, 0.7); --border: rgba(140, 108, 50, 0.28);
+  --text: #2a2238; --muted: #6e6680; --gold: #9a7428; --gold-2: #7a5a1c;
+  --up: #2f8f62; --down: #c24d4d; --maybe: #a77c12; --header-bg: rgba(246, 242, 251, 0.85);
+  --page-glow: #e6dcf5;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f6f2fb; --bg-2: #ffffff; --panel: rgba(255, 255, 255, 0.7); --border: rgba(140, 108, 50, 0.28);
+    --text: #2a2238; --muted: #6e6680; --gold: #9a7428; --gold-2: #7a5a1c;
+    --up: #2f8f62; --down: #c24d4d; --maybe: #a77c12; --header-bg: rgba(246, 242, 251, 0.85);
+    --page-glow: #e6dcf5;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -26,7 +44,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--text);
-  background: radial-gradient(ellipse at top, #2a2148 0%, var(--bg) 60%) fixed, var(--bg);
+  background: radial-gradient(ellipse at top, var(--page-glow) 0%, var(--bg) 60%) fixed, var(--bg);
   line-height: 1.7;
 }
 
@@ -43,7 +61,7 @@ p { margin: 0 0 .8em; }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
   padding: 16px 24px;
   border-bottom: 1px solid var(--border);
-  background: rgba(18, 15, 31, 0.8);
+  background: var(--header-bg);
   position: sticky; top: 0; z-index: 10;
   backdrop-filter: blur(8px);
 }
@@ -55,6 +73,11 @@ p { margin: 0 0 .8em; }
 }
 .tab:hover { color: var(--text); }
 .tab.active { color: var(--bg); background: var(--gold); }
+.theme-toggle {
+  font: inherit; font-size: .85rem; cursor: pointer; padding: 6px 12px; border-radius: 999px;
+  background: transparent; color: var(--muted); border: 1px solid var(--border);
+}
+.theme-toggle:hover { color: var(--text); }
 
 main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
 .view { display: none; }
@@ -254,4 +277,43 @@ input:focus, select:focus, button:focus-visible { outline: 2px solid var(--gold)
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---------- 首頁每日一牌 ---------- */
+.panel.daily { display: flex; gap: 24px; align-items: center; }
+.panel.daily .daily-card { margin: 0; }
+.panel.daily .daily-card .tcard { --cw: 120px; }
+.daily-info { flex: 1; min-width: 0; }
+.daily-info .date { margin-bottom: .4em; }
+
+/* ---------- 結果操作 ---------- */
+.result-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; }
+.btn.small { padding: 6px 14px; font-size: .9rem; }
+.btn.danger { border-color: var(--down); color: var(--down); }
+label.btn { display: inline-flex; align-items: center; }
+textarea {
+  font: inherit; color: var(--text); background: var(--bg-2); resize: vertical;
+  border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; width: 100%;
+}
+.warning { color: var(--maybe); border: 1px solid var(--maybe); border-radius: 8px; padding: 8px 12px; }
+
+/* ---------- 我的紀錄 ---------- */
+.journal-head { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.journal-subhead { color: var(--gold-2); margin-top: 8px; }
+.journal-list { display: grid; gap: 8px; }
+.journal-item {
+  display: flex; flex-direction: column; gap: 2px; text-align: left; font: inherit; color: var(--text);
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; cursor: pointer;
+}
+.journal-item:hover, .journal-item.active { border-color: var(--gold); }
+.journal-meta, .journal-cards { font-size: .85rem; color: var(--muted); }
+.journal-note-flag { font-size: .8rem; color: var(--gold); }
+.daily-log { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
+.daily-log-item { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; font: inherit; }
+.daily-log-item .tcard { --cw: 60px; }
+
+@media (max-width: 640px) {
+  .site-header { justify-content: center; }
+  .panel.daily { flex-direction: column; text-align: center; }
+  .panel.daily .keywords { justify-content: center; }
 }
