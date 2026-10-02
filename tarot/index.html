@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>星語塔羅</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">✦ 星語塔羅</h1>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-view="reading" role="tab">塔羅占卜</button>
+      <button class="tab" data-view="daily" role="tab">每日一牌</button>
+      <button class="tab" data-view="library" role="tab">牌義圖鑑</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 占卜 -->
+    <section id="view-reading" class="view active">
+      <div class="panel setup">
+        <h2>選擇牌陣</h2>
+        <div id="spread-list" class="spread-list"></div>
+        <p id="spread-desc" class="muted"></p>
+
+        <label class="field">
+          <span>你的問題（可留白）</span>
+          <input id="question" type="text" maxlength="100" placeholder="例如：這份工作適合我嗎？">
+        </label>
+
+        <div class="options">
+          <label class="field inline">
+            <span>問題類型</span>
+            <select id="topic">
+              <option value="general">綜合</option>
+              <option value="love">感情</option>
+              <option value="career">事業</option>
+            </select>
+          </label>
+          <label class="check"><input id="allow-reversed" type="checkbox" checked> 包含逆位</label>
+        </div>
+
+        <div class="actions">
+          <button id="btn-draw" class="btn primary">洗牌並抽牌</button>
+          <button id="btn-reveal" class="btn" hidden>全部翻開</button>
+        </div>
+      </div>
+
+      <div id="board" class="board" aria-live="polite"></div>
+      <p id="board-hint" class="muted center" hidden>點擊牌面即可翻牌</p>
+      <div id="result" class="result"></div>
+    </section>
+
+    <!-- 每日一牌 -->
+    <section id="view-daily" class="view">
+      <div class="panel center">
+        <h2>每日一牌</h2>
+        <p class="muted">每天會抽到一張固定的牌，作為今天的提醒。</p>
+        <p id="daily-date" class="date"></p>
+        <div id="daily-card" class="daily-card"></div>
+        <div id="daily-text" class="result"></div>
+      </div>
+    </section>
+
+    <!-- 牌義圖鑑 -->
+    <section id="view-library" class="view">
+      <div class="panel">
+        <h2>牌義圖鑑</h2>
+        <div class="filters">
+          <input id="search" type="search" placeholder="搜尋牌名或關鍵字">
+          <div id="suit-filter" class="chips">
+            <button class="chip active" data-suit="all">全部</button>
+            <button class="chip" data-suit="major">大阿爾克那</button>
+            <button class="chip" data-suit="wands">權杖</button>
+            <button class="chip" data-suit="cups">聖杯</button>
+            <button class="chip" data-suit="swords">寶劍</button>
+            <button class="chip" data-suit="pentacles">錢幣</button>
+          </div>
+        </div>
+        <div id="library-grid" class="library-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="card-dialog" class="card-dialog">
+    <button class="close" aria-label="關閉">×</button>
+    <div id="dialog-body"></div>
+  </dialog>
+
+  <footer class="site-footer">塔羅僅供參考與自我探索，重要決定請以自身判斷為主。</footer>
+
+  <script src="js/data/major.js"></script>
+  <script src="js/data/minor-wands-cups.js"></script>
+  <script src="js/data/minor-swords-pentacles.js"></script>
+  <script src="js/spreads.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
