@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>AI 畫作 TikTok 投影片</title>
+<style>
+:root{
+  --ink:#1c2430; --ink2:#4a5566; --muted:#7a8494; --line:#d9dee6;
+  --bg:#fbfaf7; --card:#ffffff;
+  --ai:#D9622B; --hp:#2B6CB0;
+  --fact:#0f6e63; --interp:#b7791f; --note:#6b7280;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;font-family:"WenQuanYi Zen Hei","Noto Sans CJK TC",sans-serif;color:var(--ink)}
+.slide{width:1920px;height:1080px;background:var(--bg);position:relative;overflow:hidden;
+  padding:64px 88px 0 88px;margin:0 auto 40px auto;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:20px;margin-bottom:10px}
+.num{font-size:26px;color:#fff;background:var(--ink);border-radius:8px;padding:4px 14px}
+.kicker{font-size:26px;color:var(--ink2);letter-spacing:2px}
+h1{font-size:62px;line-height:1.2;font-weight:normal;margin-bottom:14px}
+h1 b{font-weight:normal;color:var(--ai)}
+h1 i{font-style:normal;color:var(--hp)}
+.sub{font-size:30px;color:var(--ink2);margin-bottom:30px}
+.foot{position:absolute;left:88px;right:88px;bottom:26px;font-size:22px;color:var(--muted);
+  border-top:2px solid var(--line);padding-top:12px;display:flex;justify-content:space-between}
+.tag{display:inline-block;font-size:21px;padding:3px 12px;border-radius:6px;vertical-align:middle;margin-right:10px;white-space:nowrap}
+.t-fact{background:var(--fact);color:#fff}
+.t-interp{background:#fff;color:var(--interp);border:2px solid var(--interp)}
+.t-note{background:#fff;color:var(--note);border:2px dashed var(--note)}
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:26px 30px}
+.ai{color:var(--ai)} .hp{color:var(--hp)}
+.grid{display:grid;gap:32px;flex:1;margin-bottom:96px}
+.big{font-size:34px;line-height:1.5}
+.mid{font-size:28px;line-height:1.5}
+.small{font-size:23px;line-height:1.45;color:var(--ink2)}
+.legend{display:flex;gap:28px;font-size:24px;color:var(--ink2)}
+.sw{display:inline-block;width:22px;height:22px;border-radius:4px;vertical-align:-3px;margin-right:8px}
+table{border-collapse:collapse;width:100%}
+td,th{font-size:26px;padding:9px 10px;border-bottom:2px solid var(--line);text-align:right;font-weight:normal}
+th{color:var(--ink2);font-size:23px}
+td:first-child,th:first-child{text-align:left}
+#s3 .mid{font-size:32px;line-height:1.55}
+#s3 .big{font-size:38px}
+#s6 .grid{margin-bottom:200px}
+#s6 .mid{font-size:32px;line-height:1.75}
+#s4 .mid{font-size:30px}
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1 ============ -->
+<section class="slide" id="s1">
+  <div class="top"><span class="num">1 / 6</span><span class="kicker">研究問題</span></div>
+  <h1>AI 畫作在 TikTok 爆紅，<br>大眾是更愛互動，還是更反感？</h1>
+  <div class="grid" style="grid-template-columns:0.95fr 1.25fr">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div class="card">
+        <div style="margin-bottom:12px"><span class="tag t-fact">論文背景</span></div>
+        <div class="mid">2022 年 12 月，許多畫家上傳「<b style="font-weight:normal" class="ai">NO TO AI-GENERATED IMAGES</b>」圖片，發起全球抵制 AI 畫作，起因是擔心作品被拿去訓練、版權受侵害。</div>
+      </div>
+      <div class="card">
+        <div style="margin-bottom:12px"><span class="tag t-fact">研究缺口</span></div>
+        <div class="mid">過去研究多用問卷或實驗室實驗：<br>① 很少看<b style="font-weight:normal">社群平台上的真實反應</b><br>② 很少控制<b style="font-weight:normal">畫作本身的美感品質</b></div>
+      </div>
+      <!-- 示意插圖 -->
+      <div style="display:flex;align-items:center;gap:22px">
+        <svg width="330" height="150" viewBox="0 0 330 150" aria-label="示意：AI 畫作與人類畫作對照">
+          <rect x="10" y="10" width="120" height="130" rx="14" fill="#fff" stroke="#D9622B" stroke-width="4"/>
+          <text x="70" y="88" font-size="44" text-anchor="middle" fill="#D9622B" font-family="WenQuanYi Zen Hei">AI</text>
+          <text x="165" y="88" font-size="30" text-anchor="middle" fill="#4a5566" font-family="WenQuanYi Zen Hei">vs</text>
+          <rect x="200" y="10" width="120" height="130" rx="14" fill="#fff" stroke="#2B6CB0" stroke-width="4"/>
+          <text x="260" y="88" font-size="44" text-anchor="middle" fill="#2B6CB0" font-family="WenQuanYi Zen Hei">人</text>
+        </svg>
+        <div class="small"><span class="tag t-note">示意</span><br>以<span class="hp">人類畫作</span>為基準，<br>比較大眾對 <span class="ai">AI 畫作</span>的反應</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div><span class="tag t-fact">論文原文</span><span class="small">3 個研究問題 → 3 個假設</span></div>
+      <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;align-items:center">
+        <div class="big"><b style="font-weight:normal">RQ1</b> 大家和 AI 畫作的<br>互動程度如何？</div>
+        <div class="mid" style="border-left:5px solid var(--line);padding-left:20px"><b style="font-weight:normal">H1</b>　大家更願意與<span class="hp">人類畫作</span>互動</div>
+      </div>
+      <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;align-items:center">
+        <div class="big"><b style="font-weight:normal">RQ2</b> 畫作的美感品質<br>（IAQ）會改變互動嗎？</div>
+        <div class="mid" style="border-left:5px solid var(--line);padding-left:20px"><b style="font-weight:normal">H2</b>　IAQ 會<b style="font-weight:normal">負向調節</b>「創作來源 → 互動」的關係</div>
+      </div>
+      <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;align-items:center">
+        <div class="big"><b style="font-weight:normal">RQ3</b> 大家對 AI 畫作的情緒？<br>負面態度從何而來？</div>
+        <div class="mid" style="border-left:5px solid var(--line);padding-left:20px"><b style="font-weight:normal">H3</b>　<span class="ai">AI 畫作</span>的留言情緒比<span class="hp">人類畫作</span>更負面</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>依據：p.1（摘要、引言）、p.2（RQ1–RQ3）、p.3（研究缺口）、p.4（H1–H3）</span><span>Wang, Yuan, Hu &amp; Lu（arXiv:2409.11911v2）</span></div>
+</section>
+
+<!-- ============ SLIDE 2 ============ -->
+<section class="slide" id="s2">
+  <div class="top"><span class="num">2 / 6</span><span class="kicker">研究設計與資料來源</span></div>
+  <h1>層層篩選後：<b>207 支 AI 畫作</b> vs <i>210 支人類畫作</i>圖文影片</h1>
+  <div class="grid" style="grid-template-columns:1.55fr 1fr">
+    <div class="card" style="padding:22px 30px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span><span class="tag t-fact">論文數據</span><span class="small">資料篩選流程（框的寬度不代表數量）</span></span>
+        <span class="legend"><span><span class="sw" style="background:var(--ai)"></span>AI 畫作</span><span><span class="sw" style="background:var(--hp)"></span>人類畫作</span></span>
+      </div>
+      <div id="funnel"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div class="card">
+        <div style="margin-bottom:10px"><span class="tag t-interp">作者的理由</span></div>
+        <div class="mid">為何只用「<b style="font-weight:normal">圖文影片</b>」？<br>只有圖片和文字、左右滑動切換，可排除創作者口條、影片長度等干擾，讓反應主要針對畫作本身。</div>
+      </div>
+      <div class="card">
+        <div style="margin-bottom:10px"><span class="tag t-interp">作者的理由</span></div>
+        <div class="mid">為何選 <b style="font-weight:normal">TikTok</b>？<br>「For You」推薦頁讓使用者無法預期下一支影片；平台規定 AI 內容必須標示。</div>
+      </div>
+      <div class="small"><span class="tag t-note">製作者註記</span>人類影片數：正文 p.5 為 1,729，Fig.2 標示 1,720。</div>
+    </div>
+  </div>
+  <div class="foot"><span>依據：p.5–6「Data Collection and Pre-processing」、Fig.2、p.7（IAQ 4.5–6.5 篩選）</span><span>資料截至 2023 年 11 月 15 日</span></div>
+</section>
+
+<!-- ============ SLIDE 3 ============ -->
+<section class="slide" id="s3" style="--s3:1">
+  <div class="top"><span class="num">3 / 6</span><span class="kicker">核心方法</span></div>
+  <h1>三條分析路線，各自回答一個研究問題</h1>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr">
+    <div class="card" style="border-top:10px solid var(--ink)">
+      <div class="big" style="margin-bottom:6px">RQ1　互動度</div>
+      <div class="small" style="margin-bottom:16px"><span class="tag t-fact">論文方法</span></div>
+      <div class="mid" style="background:#f2f4f7;border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:center">互動率 =<br>（按讚＋留言＋分享）<br>÷ 觀看 × 100%</div>
+      <div class="mid">・公式來自 HypeAuditor 平台<br>・RobustScaler＋Min-Max 標準化<br>・<b style="font-weight:normal">獨立樣本 t 檢定</b><br>　比較 207 vs 210 支影片</div>
+    </div>
+    <div class="card" style="border-top:10px solid var(--ink)">
+      <div class="big" style="margin-bottom:6px">RQ2　美感是否調節</div>
+      <div class="small" style="margin-bottom:16px"><span class="tag t-fact">論文方法</span></div>
+      <div class="mid">・美感模型 <b style="font-weight:normal">LAION-Aesthetics V2</b>：CLIP 嵌入＋MLP，為每張畫打<span style="white-space:nowrap">1 至 10 分</span></div>
+      <div class="mid" style="background:#f2f4f7;border-radius:10px;padding:14px 16px;margin:16px 0;text-align:center;font-size:26px">Ue = β₀ + β₁·Hum + β₂·Aes<br>+ β₃·Hum×Aes + ε</div>
+      <div class="mid">・Hum：AI＝0，人類＝1<br>・Aes 已平均中心化<br>・<b style="font-weight:normal">OLS 迴歸</b>（Stata）</div>
+    </div>
+    <div class="card" style="border-top:10px solid var(--ink)">
+      <div class="big" style="margin-bottom:6px">RQ3　情緒與理由</div>
+      <div class="small" style="margin-bottom:16px"><span class="tag t-fact">論文方法</span></div>
+      <div class="mid">・剔除機器人留言、只有「@」及 0 讚留言<br>　→ <span class="ai">AI 42,199</span>／<span class="hp">人類 29,763</span> 則</div>
+      <div class="mid" style="margin-top:10px">・多語 DistilBERT 情緒模型：<br>　正面 +1｜中立 0｜負面 −1<br>・<b style="font-weight:normal">Wilcoxon 檢定</b>（非常態）</div>
+      <div class="mid" style="margin-top:10px">・19,071 則 AI 畫作負面留言<br>　→ <b style="font-weight:normal">NMF 主題模型</b>，依一致性選 14 個主題，報告前 7 個</div>
+    </div>
+  </div>
+  <div class="foot"><span>依據：p.6–8、Fig.3、Fig.5、Fig.6、Table 1、式 (1)(2)</span><span>非支援語言的留言先以 ChatGPT 4.0 譯成英文（p.7）</span></div>
+</section>
+
+<!-- ============ SLIDE 4 ============ -->
+<section class="slide" id="s4">
+  <div class="top"><span class="num">4 / 6</span><span class="kicker">發現一：互動度（RQ1、RQ2）</span></div>
+  <h1><i>人類畫作</i>的互動明顯較高，而且與畫作美感分數無關</h1>
+  <div class="grid" style="grid-template-columns:1fr 1.05fr 1.05fr">
+    <div class="card">
+      <div style="margin-bottom:6px"><span class="tag t-fact">論文數據</span><span class="small">平均互動分數（Table 2）</span></div>
+      <svg id="eng" width="470" height="520" viewBox="0 0 470 520"></svg>
+      <div class="mid" style="text-align:center">t(415) = −15.064，p &lt; .001<br><b style="font-weight:normal">H1 獲支持</b></div>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:12px"><span class="tag t-fact">論文數據</span><span class="small">迴歸結果（Table 4）</span></div>
+      <table>
+        <tr><th>變項</th><th>係數 β</th><th>p 值</th></tr>
+        <tr><td>Hum（人類創作）</td><td class="hp">0.094***</td><td>&lt; .001</td></tr>
+        <tr><td>Aes（美感分數）</td><td>0.008</td><td>.387</td></tr>
+        <tr><td>Hum × Aes（調節）</td><td>−0.007</td><td>.620</td></tr>
+        <tr><td>R²／調整後 R²</td><td colspan="2">0.355／0.350</td></tr>
+      </table>
+      <div class="mid" style="margin-top:20px">「是不是人畫的」顯著影響互動；美感分數與交互作用都<b style="font-weight:normal">不顯著</b><br>→ <b style="font-weight:normal">H2 不獲支持</b></div>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:12px"><span class="tag t-fact">論文數據</span><span class="small">各指標 ÷ 觀看數（Table 5）</span></div>
+      <table>
+        <tr><th>比率</th><th class="ai">AI 畫作</th><th class="hp">人類畫作</th></tr>
+        <tr><td>按讚</td><td>0.10107</td><td>0.19388</td></tr>
+        <tr><td>留言</td><td>0.00101</td><td>0.0029</td></tr>
+        <tr><td>收藏</td><td>0.02057</td><td>0.02779</td></tr>
+        <tr><td><b style="font-weight:normal" class="ai">分享</b></td><td class="ai">0.00224</td><td>0.00081</td></tr>
+      </table>
+      <div class="mid" style="margin-top:16px">唯一例外：<span class="ai">AI 畫作的分享率較高</span></div>
+      <div class="small" style="margin-top:12px"><span class="tag t-interp">作者推測</span>可能因 AI 繪畫能力令人震驚而想分享討論；作者也表示分享動機可能是正面，也可能是負面，無法確定。</div>
+    </div>
+  </div>
+  <div class="foot"><span>依據：p.8 Table 2、p.9 Table 4 與正文、p.10 Table 5；*** p &lt; .001</span><span>樣本：AI 畫作 N=207、人類畫作 N=210</span></div>
+</section>
+
+<!-- ============ SLIDE 5 ============ -->
+<section class="slide" id="s5">
+  <div class="top"><span class="num">5 / 6</span><span class="kicker">發現二：留言情緒與負面理由（RQ3）</span></div>
+  <h1><b>AI 畫作</b>的留言較不正面，負面留言可歸納出七種理由</h1>
+  <div class="grid" style="grid-template-columns:0.82fr 1.5fr">
+    <div class="card">
+      <div style="margin-bottom:6px"><span class="tag t-fact">論文數據</span><span class="small">平均情緒分數（Table 3）</span></div>
+      <svg id="sent" width="560" height="330" viewBox="0 0 560 330"></svg>
+      <div class="mid">Wilcoxon W = −36.725，p &lt; .001<br>兩者平均都 &gt; 0：多數留言仍偏正面，但 AI 畫作明顯較低。</div>
+      <div class="small" style="margin-top:14px"><span class="tag t-note">製作者註記</span>數據方向與 H3 一致，但論文 p.9 文字寫「H3 is rejected」，與數據及摘要不一致，引用時請留意。</div>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:6px"><span class="tag t-fact">論文數據</span><span class="small">19,071 則 AI 畫作負面留言的前 7 大主題（佔比，Table 6）</span></div>
+      <svg id="topics" width="1000" height="600" viewBox="0 0 1000 600"></svg>
+      <div class="small"><span class="tag t-note">製作者註記</span>右側短句是依 Table 6 描述所做的中文摘要；主題名稱為譯名。</div>
+    </div>
+  </div>
+  <div class="foot"><span>依據：p.8 Table 3、p.9–12 正文、p.11 Table 6</span><span>情緒分數：正面 +1、中立 0、負面 −1</span></div>
+</section>
+
+<!-- ============ SLIDE 6 ============ -->
+<section class="slide" id="s6">
+  <div class="top"><span class="num">6 / 6</span><span class="kicker">研究限制與實務啟示</span></div>
+  <h1>結論只代表 TikTok 上的一個切面，應用時要保留邊界</h1>
+  <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card" style="border-left:12px solid var(--muted)">
+      <div style="margin-bottom:14px"><span class="tag t-fact">作者自述的限制</span></div>
+      <div class="mid">
+        ① 只有<b style="font-weight:normal">單一平台</b>（TikTok），使用者偏年輕，<br>　　未必能推論到整體大眾<br>
+        ② <b style="font-weight:normal">推薦演算法非隨機</b>，可能使樣本過度代表<br>　　某些族群（選擇偏誤）<br>
+        ③ 未分析畫作的<b style="font-weight:normal">風格、複雜度、情境</b><br>
+        ④ 只用互動數據與留言；未來將加上問卷、<br>　　訪談，並擴及 Twitter、Facebook、Reddit
+      </div>
+    </div>
+    <div class="card" style="border-left:12px solid var(--interp)">
+      <div style="margin-bottom:14px"><span class="tag t-interp">作者提出的啟示</span></div>
+      <div class="mid">
+        ① 平台可<b style="font-weight:normal">適度減少推播 AI 畫作</b>，<br>　　鼓勵創作者上傳自己的作品<br>
+        ② 平台應<b style="font-weight:normal">留意 AI 畫作的留言區</b>，避免爭議事件<br>
+        ③ 人類創作者的「持續進步過程」能得到<br>　　情感支持，即使作品美感分數較低<br>
+        ④ 七大負面理由可作為 <b style="font-weight:normal">AI 生成工具改進</b>的參考
+      </div>
+    </div>
+  </div>
+  <div class="mid" style="position:absolute;left:88px;right:88px;bottom:90px;color:#4a5566;font-size:25px"><span class="tag t-note">製作者註記</span>本研究為觀察性資料，結果呈現的是關聯，不能直接推論「標示為 AI」導致互動下降。論文內數字不一致處：人類畫作留言數 29,763（p.7、Fig.5）與 39,763（p.3、Fig.5 末端）。</div>
+  <div class="foot"><span>依據：p.13「Implications for social media platform design」、p.14「Limitations and Future Work」「Conclusion」</span><span></span></div>
+</section>
+
+<script>
+// ---------- Slide 2 funnel ----------
+const steps=[
+  {label:"以 Stable Diffusion、Midjourney、AI paintings、Procreate、SAI 等標籤搜尋，只保留圖文影片",ai:"2,667",hp:"1,729"},
+  {label:"排除：觀看 < 10,000、留言 < 5、與繪畫無關",ai:"778",hp:"935"},
+  {label:"同一作者最多 5 支；排除同片重複畫作",ai:"219",hp:"232"},
+  {label:"平均美感分數限 4.5–6.5（排除極端值）",ai:"207",hp:"210",final:true},
+];
+let f='';
+steps.forEach((s,i)=>{
+  f+=`<div style="display:grid;grid-template-columns:1fr 170px 170px;gap:16px;align-items:center;margin:${i?14:4}px 0">
+   <div style="font-size:26px;line-height:1.4;color:#1c2430"><span style="display:inline-block;width:38px;height:38px;border-radius:50%;background:#1c2430;color:#fff;text-align:center;line-height:38px;font-size:22px;margin-right:10px">${i+1}</span>${s.label}</div>
+   <div style="text-align:center;font-size:${s.final?50:40}px;border-radius:12px;padding:10px 0;${s.final?'background:#D9622B;color:#fff':'border:3px solid #D9622B;color:#D9622B'}">${s.ai}</div>
+   <div style="text-align:center;font-size:${s.final?50:40}px;border-radius:12px;padding:10px 0;${s.final?'background:#2B6CB0;color:#fff':'border:3px solid #2B6CB0;color:#2B6CB0'}">${s.hp}</div>
+  </div>`;
+  if(i<steps.length-1) f+=`<div style="display:grid;grid-template-columns:1fr 170px 170px;gap:16px"><div></div><div style="text-align:center;color:#7a8494;font-size:26px">▼</div><div style="text-align:center;color:#7a8494;font-size:26px">▼</div></div>`;
+});
+f+=`<div style="display:grid;grid-template-columns:1fr 170px 170px;gap:16px;margin-top:14px;font-size:23px;color:#4a5566">
+  <div>平均美感分數（LAION-Aesthetics V2）<br>評分圖片數（去重複後）</div>
+  <div style="text-align:center">5.48<br>2,383 張</div><div style="text-align:center">5.41<br>1,153 張</div></div>`;
+document.getElementById('funnel').innerHTML=f;
+
+// ---------- Slide 4 engagement bars (scale from 0) ----------
+(function(){
+  const svg=document.getElementById('eng'), max=0.25, H=380, base=440, x0=70;
+  const data=[{n:"AI 畫作",v:0.104,sd:0.058,c:"#D9622B",N:207},{n:"人類畫作",v:0.198,sd:0.068,c:"#2B6CB0",N:210}];
+  let s='';
+  [0,0.05,0.10,0.15,0.20,0.25].forEach(t=>{const y=base-t/max*H;
+    s+=`<line x1="${x0}" x2="460" y1="${y}" y2="${y}" stroke="#e6e9ee" stroke-width="2"/><text x="${x0-10}" y="${y+7}" font-size="20" text-anchor="end" fill="#7a8494">${t.toFixed(2)}</text>`;});
+  data.forEach((d,i)=>{const w=120,x=x0+50+i*190,h=d.v/max*H,y=base-h;
+    s+=`<path d="M${x},${base} V${y+4} Q${x},${y} ${x+4},${y} H${x+w-4} Q${x+w},${y} ${x+w},${y+4} V${base} Z" fill="${d.c}"/>`;
+    s+=`<text x="${x+w/2}" y="${y-16}" font-size="34" text-anchor="middle" fill="#1c2430">${d.v.toFixed(3)}</text>`;
+    s+=`<text x="${x+w/2}" y="${base+36}" font-size="26" text-anchor="middle" fill="#1c2430">${d.n}</text>`;
+    s+=`<text x="${x+w/2}" y="${base+68}" font-size="20" text-anchor="middle" fill="#7a8494">SD ${d.sd.toFixed(3)}｜N=${d.N}</text>`;});
+  s+=`<line x1="${x0}" x2="460" y1="${base}" y2="${base}" stroke="#4a5566" stroke-width="2"/>`;
+  svg.innerHTML=s;
+})();
+
+// ---------- Slide 5 sentiment on -1..+1 axis ----------
+(function(){
+  const svg=document.getElementById('sent'), L=40,R=520, X=v=>L+(v+1)/2*(R-L);
+  let s=`<line x1="${L}" x2="${R}" y1="250" y2="250" stroke="#4a5566" stroke-width="2"/>`;
+  [-1,-0.5,0,0.5,1].forEach(t=>{s+=`<line x1="${X(t)}" x2="${X(t)}" y1="244" y2="256" stroke="#4a5566" stroke-width="2"/><text x="${X(t)}" y="286" font-size="20" text-anchor="middle" fill="#7a8494">${t>0?'+':''}${t}</text>`;});
+  s+=`<text x="${L}" y="316" font-size="20" fill="#7a8494">負面</text><text x="${X(0)}" y="316" font-size="20" text-anchor="middle" fill="#7a8494">中立</text><text x="${R}" y="316" font-size="20" text-anchor="end" fill="#7a8494">正面</text>`;
+  const d=[{n:"AI 畫作",v:0.30,sd:0.93,c:"#D9622B",y:70},{n:"人類畫作",v:0.53,sd:0.83,c:"#2B6CB0",y:170}];
+  d.forEach(o=>{
+    s+=`<rect x="${X(0)}" y="${o.y-22}" width="${X(o.v)-X(0)}" height="44" rx="4" fill="${o.c}"/>`;
+    s+=`<text x="${X(o.v)+12}" y="${o.y+11}" font-size="32" fill="#1c2430">${o.v.toFixed(2)}</text>`;
+    s+=`<text x="${X(0)-12}" y="${o.y+9}" font-size="24" text-anchor="end" fill="#1c2430">${o.n}</text>`;
+    s+=`<text x="${X(0)-12}" y="${o.y+36}" font-size="18" text-anchor="end" fill="#7a8494">SD ${o.sd.toFixed(2)}</text>`;});
+  s+=`<line x1="${X(0)}" x2="${X(0)}" y1="30" y2="250" stroke="#7a8494" stroke-width="2" stroke-dasharray="6 6"/>`;
+  svg.innerHTML=s;
+})();
+
+// ---------- Slide 5 topic bars (scale from 0 to 14%) ----------
+(function(){
+  const svg=document.getElementById('topics');
+  const t=[["超寫實品質","Hyperrealistic Quality",12.82,"太逼真，讚嘆之餘也覺得不安"],
+           ["矛盾反應","Ambivalent Reactions",12.72,"先被吸引，得知是 AI 後轉為負面"],
+           ["否定 AI 是藝術","Rejection of AI Art",11.43,"認為缺乏創造力與情感，不算藝術"],
+           ["不符期待","Failure to Meet Expectations",8.99,"手部、人物特徵、情感表達不到位"],
+           ["恐怖不安","Scary and Disturbing",8.53,"詭異、陰暗，類似恐怖谷效應"],
+           ["被視為竊取藝術","Perceived Theft of Art",7.65,"用人類作品訓練，等同抄襲"],
+           ["令人震驚的超越","Appalling Superiority",6.50,"擔心 AI 超越並取代人類畫家"]];
+  const x0=250, W=300, max=14, rh=76;
+  let s='';
+  t.forEach((d,i)=>{const y=20+i*rh, w=d[2]/max*W;
+    s+=`<text x="0" y="${y+26}" font-size="27" fill="#1c2430">${i+1}. ${d[0]}</text>`;
+    s+=`<text x="0" y="${y+52}" font-size="17" fill="#7a8494">${d[1]}</text>`;
+    s+=`<path d="M${x0},${y+6} H${x0+w-4} Q${x0+w},${y+6} ${x0+w},${y+10} V${y+46} Q${x0+w},${y+50} ${x0+w-4},${y+50} H${x0} Z" fill="#D9622B"/>`;
+    s+=`<text x="${x0+w+10}" y="${y+38}" font-size="26" fill="#1c2430">${d[2].toFixed(2)}%</text>`;
+    s+=`<text x="${x0+W+100}" y="${y+37}" font-size="23" fill="#4a5566">${d[3]}</text>`;});
+  s+=`<line x1="${x0}" x2="${x0}" y1="16" y2="${20+7*rh-16}" stroke="#4a5566" stroke-width="2"/>`;
+  s+=`<text x="${x0}" y="${20+7*rh+12}" font-size="19" fill="#7a8494">0%（長條由 0 起算，滿版 = 14%）</text>`;
+  svg.innerHTML=s;
+})();
+</script>
+</body>
+</html>
