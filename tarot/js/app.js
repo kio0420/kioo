@@ -85,6 +85,7 @@
     const front = card ? `
       <div class="face front ${suitClass}">
         <div class="face-content">
+          <img class="card-art" src="img/cards/${card.id}.jpg" alt="" loading="lazy" decoding="async">
           <span class="corner">${cardLabel(card)}</span>
           <span class="symbol">${cardSymbol(card)}</span>
           <span class="cname">${card.name}</span>
@@ -106,6 +107,18 @@
 
   function keywordChips(list) {
     return `<div class="keywords">${list.map((k) => `<span>${k}</span>`).join("")}</div>`;
+  }
+
+  // 牌圖載入成功才換掉 CSS 牌面；找不到圖時移除 <img>，保留原本的牌面
+  function initCardArt() {
+    document.addEventListener("load", (e) => {
+      const img = e.target;
+      if (img.classList && img.classList.contains("card-art")) img.closest(".front").classList.add("has-art");
+    }, true);
+    document.addEventListener("error", (e) => {
+      const img = e.target;
+      if (img.classList && img.classList.contains("card-art")) img.remove();
+    }, true);
   }
 
   // ---------- 分頁 ----------
@@ -480,6 +493,7 @@
 
   window.TarotUI = { cardHtml, openCard, getCard, escapeHtml, keywordChips, orientationText, showView, SUITS, ROMAN };
 
+  initCardArt();
   initTheme();
   initTabs();
   initReading();

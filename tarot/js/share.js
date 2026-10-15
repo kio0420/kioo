@@ -61,6 +61,34 @@
     ctx.closePath();
   }
 
+  // 牌圖（img/cards/<id>.jpg）：載入成功的才會畫，否則用向量牌面
+  var IMAGES = {};
+
+  function loadImage(id) {
+    return new Promise(function (resolve) {
+      var img = new Image();
+      var done = function (ok) { clearTimeout(t); resolve(ok ? img : null); };
+      var t = setTimeout(function () { done(false); }, 4000);
+      img.onload = function () { done(img.naturalWidth > 0); };
+      img.onerror = function () { done(false); };
+      img.src = "img/cards/" + id + ".jpg";
+    });
+  }
+
+  function preloadImages(record) {
+    var ids = (record.cards || []).map(function (c) { return c.cardId; });
+    return Promise.all(ids.map(loadImage)).then(function (imgs) {
+      var map = {};
+      imgs.forEach(function (img, i) { if (img) map[ids[i]] = img; });
+      return map;
+    });
+  }
+
+  // 用 file:// 開啟時，畫上本機圖片會讓 canvas 被視為跨來源而無法匯出
+  function isTainted(ctx) {
+    try { ctx.getImageData(0, 0, 1, 1); return false; } catch (e) { return true; }
+  }
+
   // 畫一張牌，中心為 (cx, cy)，width w，高 w*1.65；rot 為整張牌的旋轉（弧度）
   function drawCard(ctx, card, reversed, cx, cy, w, rot) {
     var h = Math.round(w * 1.65);
@@ -98,7 +126,18 @@
     if (reversed) ctx.rotate(Math.PI);
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    if (card) {
+    var img = card && IMAGES[card.id];
+    if (img) {
+      var iw = w * 0.92 - 4, ih = h - w * 0.08 - 4;
+      ctx.save();
+      roundRect(ctx, -iw / 2, -ih / 2, iw, ih, w * 0.04);
+      ctx.clip();
+      // 等比例填滿內框，多出的部分裁掉
+      var scale = Math.max(iw / img.naturalWidth, ih / img.naturalHeight);
+      var dw = img.naturalWidth * scale, dh = img.naturalHeight * scale;
+      ctx.drawImage(img, -dw / 2, -dh / 2, dw, dh);
+      ctx.restore();
+    } else if (card) {
       ctx.fillStyle = accent;
       ctx.font = font(Math.round(w * 0.13), 600);
       ctx.fillText(cardLabel(card), 0, -h / 2 + h * 0.1);
@@ -320,7 +359,8 @@
 
   function renderReading(record) {
     var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
-    return fontsReady.catch(function () {}).then(function () {
+    return Promise.all([fontsReady.catch(function () {}), preloadImages(record)]).then(function (res) {
+      IMAGES = res[1];
       var canvas = document.createElement("canvas");
       canvas.width = W; canvas.height = 400;
       var ctx = canvas.getContext("2d");
@@ -328,6 +368,15 @@
       canvas.height = h; // 重設尺寸會清空並重置 context 狀態
       ctx = canvas.getContext("2d");
       layoutAndDraw(ctx, canvas, record, true);
+      if (Object.keys(IMAGES).length && isTainted(ctx)) {
+        // 換一張新的 canvas，改用向量牌面重畫
+        IMAGES = {};
+        canvas = document.createElement("canvas");
+        canvas.width = W; canvas.height = h;
+        ctx = canvas.getContext("2d");
+        layoutAndDraw(ctx, canvas, record, true);
+      }
+      IMAGES = {};
       return new Promise(function (resolve, reject) {
         canvas.toBlob(function (blob) {
           if (blob) resolve(blob); else reject(new Error("無法產生圖片"));

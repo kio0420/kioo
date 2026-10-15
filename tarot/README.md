@@ -9,6 +9,7 @@
 - **我的紀錄**：每次占卜翻完牌後會自動存檔，可以寫筆記、刪除、匯出或匯入 JSON。無痕模式下沒辦法長期保存，會改存在記憶體並提醒使用者。
 - **學習測驗**：有「看牌選關鍵字」、「看關鍵字猜牌」、混合和閃卡四種模式，用簡化的間隔重複安排出題，答錯的牌會比較常出現，並顯示正確率和學習進度。
 - **分享結果圖片**：用 canvas 畫出牌陣和牌義。裝置支援 Web Share API 就直接分享，不支援就下載 PNG。
+- **牌面圖片**：使用 1909 年 Pamela Colman Smith 繪製的萊德偉特原版（公有領域），來源與授權寫在 `img/cards/CREDITS.md`。找不到某張圖時，會自動改用 CSS 繪製的牌面。分享圖片時，如果網頁是用 `file://` 開啟，瀏覽器不允許把本機圖片畫進 canvas 後再匯出，所以會自動改用向量牌面；用網頁伺服器開啟時，分享圖才會帶有牌圖。
 - **主題**：可以切換跟隨系統、淺色、深色，設定會記住，載入頁面時不會先閃一下其他主題。
 
 ## localStorage 鍵值
@@ -24,6 +25,9 @@
 index.html
 css/style.css
 css/quiz.css
+css/cards.css                       牌圖樣式
+img/cards/                          78 張牌圖與 CREDITS.md
+img/deco/                           裝飾圖與 CREDITS.md
 js/data/major.js                    大阿爾克那
 js/data/minor-wands-cups.js         權杖、聖杯
 js/data/minor-swords-pentacles.js   寶劍、錢幣

@@ -1,0 +1,19 @@
+/* 牌圖：img/cards/<id>.jpg 載入成功時取代 CSS 牌面（逆位跟著 .face-content 一起旋轉） */
+.card-art {
+  position: absolute; inset: 4px;
+  width: calc(100% - 8px); height: calc(100% - 8px);
+  object-fit: cover; border-radius: 6px;
+  opacity: 0; transition: opacity .4s ease;
+}
+.front.has-art .card-art { opacity: 1; }
+/* 有圖時把文字改成只給螢幕閱讀器讀，不用 display:none 以保留牌名 */
+.front.has-art .corner,
+.front.has-art .symbol,
+.front.has-art .cname,
+.front.has-art .ename {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+.front.has-art .face-content { padding: 0; }
+.front.has-art .face-content::before,
+.front.has-art .face-content::after { display: none; }
