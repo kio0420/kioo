@@ -52,7 +52,7 @@ h1 small { font-family: var(--font-num); font-weight: 600; color: var(--muted); 
 .tally { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; }
 .party { appearance: none; border: 2px solid transparent; background: transparent; color: var(--fg); font: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 12px; transition: background .15s, border-color .15s; }
 .party:hover { background: color-mix(in srgb, var(--fg) 6%, transparent); }
-.party:focus-visible, .tab:focus-visible, .state:focus-visible, .row:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.party:focus-visible, .tab:focus-visible, .state:focus-visible, .district:focus-visible, .row:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .party[aria-pressed="true"].d { border-color: var(--dem); background: color-mix(in srgb, var(--dem) 10%, transparent); }
 .party[aria-pressed="true"].r { border-color: var(--rep); background: color-mix(in srgb, var(--rep) 10%, transparent); }
 .party.r { flex-direction: row-reverse; text-align: right; }
@@ -82,6 +82,18 @@ h1 small { font-family: var(--font-num); font-weight: 600; color: var(--muted); 
 .state.sel { stroke: var(--fg); stroke-width: 2.5; }
 .state.dim { opacity: .16; }
 .state.tilt { opacity: .6; }
+.zoombar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 2px 4px 10px; }
+.zoombar b { font-size: 1.05rem; }
+.zoombar .sub { color: var(--muted); font-size: .8rem; }
+#dmap { max-height: 70vh; }
+.district { stroke: var(--surface); stroke-width: .8; cursor: pointer; transition: opacity .2s; }
+.district:hover { stroke: var(--fg); stroke-width: 1.4; }
+.district.sel { stroke: var(--fg); stroke-width: 2.4; }
+.district.dim { opacity: .16; }
+.dnum { font-family: var(--font-num); font-size: 12px; font-weight: 700; fill: var(--fg); pointer-events: none; }
+.dnum.on-dark { fill: #fff; }
+.dcard { border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; }
+.dcard h3 { margin: 0; font-size: 1rem; }
 .abbr { font-family: var(--font-num); font-size: 10px; font-weight: 600; fill: var(--fg); pointer-events: none; opacity: .75; }
 .abbr.on-dark { fill: #fff; opacity: .9; }
 .keyrow { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 4px 0; font-size: .75rem; color: var(--muted); }
@@ -158,7 +170,9 @@ footer a { color: inherit; }
 
   <section class="main">
     <div class="mapbox" id="mapbox">
+      <div class="zoombar" id="zoombar" hidden><button class="tab" id="zoom-back">← 全國地圖</button><b id="zoom-title"></b><span class="sub" id="zoom-sub"></span></div>
       <svg id="map" viewBox="-60 0 1035 615" role="group" aria-label="美國各州地圖"></svg>
+      <svg id="dmap" role="group" hidden></svg>
       <div class="keyrow" id="key"></div>
       <div class="tip" id="tip" hidden></div>
     </div>
@@ -173,10 +187,12 @@ footer a { color: inherit; }
 
 <script type="application/json" id="geo">__GEO__</script>
 <script type="application/json" id="snapshot">__SNAPSHOT__</script>
+<script type="application/json" id="dgeo">__DGEO__</script>
 <script>
 (function () {
   const GEO = JSON.parse(document.getElementById("geo").textContent);
   const SNAP = JSON.parse(document.getElementById("snapshot").textContent);
+  const DGEO = JSON.parse(document.getElementById("dgeo").textContent);
   const NS = "http://www.w3.org/2000/svg";
   const RATINGS = ["Safe D", "Likely D", "Lean D", "Toss-up", "Lean R", "Likely R", "Safe R"];
   const RATING_ZH = { "Safe D": "穩固 民主", "Likely D": "傾向 民主", "Lean D": "微傾 民主", "Toss-up": "拉鋸", "Lean R": "微傾 共和", "Likely R": "傾向 共和", "Safe R": "穩固 共和" };
@@ -192,7 +208,7 @@ footer a { color: inherit; }
   const races = Object.assign({}, SNAP.races);
   let meta = Object.assign({}, SNAP.meta);
   let live = false;
-  let chamber = "senate", party = null, selected = null;
+  let chamber = "senate", party = null, selected = null, dsel = null;
   try { const h = location.hash.slice(1); if (CH[h]) chamber = h; } catch (e) {}
 
   const $ = (id) => document.getElementById(id);
@@ -311,7 +327,77 @@ footer a { color: inherit; }
     }
   })();
 
+  // ---------- district view (House districts of one state) ----------
+  function districtsOf(ab) {
+    const h = races["house-" + ab];
+    const m = {};
+    for (const d of (h && h.districts) || []) m[String(d.district)] = d;
+    return m;
+  }
+  function dAdvantage(d, p) {
+    const s = d && SCORE[d.rating];
+    return !!s && ((p === "D" && s > 0) || (p === "R" && s < 0));
+  }
+  const dName = (ab, n) => (Object.keys(DGEO[ab].d).length === 1 ? ab + " 全州" : ab + "-" + n);
+  let builtFor = null;
+  function renderDistricts() {
+    const ab = selected, g = DGEO[ab], ds = districtsOf(ab), svg = $("dmap");
+    if (builtFor !== ab) {
+      svg.innerHTML = ""; svg.setAttribute("viewBox", `0 0 ${g.w} ${g.h}`);
+      svg.setAttribute("aria-label", GEO[ab].name + " 眾議院選區地圖");
+      for (const [n, d] of Object.entries(g.d)) {
+        const p = document.createElementNS(NS, "path");
+        p.setAttribute("d", d); p.setAttribute("class", "district"); p.setAttribute("tabindex", "0"); p.setAttribute("role", "button");
+        p.dataset.n = n;
+        p.addEventListener("click", () => { dsel = dsel === n ? null : n; render(); });
+        p.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); dsel = dsel === n ? null : n; render(); } });
+        p.addEventListener("mousemove", (e) => showDTip(e, ab, n));
+        p.addEventListener("mouseleave", () => { $("tip").hidden = true; });
+        svg.appendChild(p);
+      }
+      for (const [n, c] of Object.entries(g.c)) {
+        const t = document.createElementNS(NS, "text");
+        t.setAttribute("x", c[0]); t.setAttribute("y", c[1]); t.setAttribute("text-anchor", "middle"); t.setAttribute("dominant-baseline", "middle");
+        t.setAttribute("class", "dnum"); t.dataset.n = n; t.textContent = Object.keys(g.d).length === 1 ? "" : n;
+        svg.appendChild(t);
+      }
+      // Hide numbers on districts too small to hold them (dense metro areas).
+      svg.querySelectorAll("path.district").forEach((p) => {
+        const b = p.getBBox(), t = svg.querySelector(`text.dnum[data-n="${p.dataset.n}"]`);
+        if (t && (b.width < 16 || b.height < 12)) t.style.display = "none";
+      });
+      builtFor = ab;
+    }
+    svg.querySelectorAll("path.district").forEach((p) => {
+      const d = ds[p.dataset.n], rt = d && RATINGS.includes(d.rating) ? d.rating : null;
+      p.style.fill = rt ? "var(" + RATING_VAR[rt] + ")" : "var(--empty)";
+      p.classList.toggle("dim", !!party && !dAdvantage(d, party));
+      p.classList.toggle("sel", dsel === p.dataset.n);
+      p.setAttribute("aria-label", dName(ab, p.dataset.n) + "：" + (rt ? RATING_ZH[rt] : "評級未知"));
+      const t = svg.querySelector(`text.dnum[data-n="${p.dataset.n}"]`);
+      if (t) t.classList.toggle("on-dark", !!rt && /^(Safe|Likely)/.test(rt) && !p.classList.contains("dim"));
+    });
+    const list = Object.values(ds);
+    const cnt = (f) => list.filter(f).length;
+    $("zoom-title").textContent = GEO[ab].name + " · 眾議院選區";
+    $("zoom-sub").textContent = list.length
+      ? `${Object.keys(g.d).length} 席：民主看好 ${cnt((d) => SCORE[d.rating] > 0)} · 拉鋸 ${cnt((d) => d.rating === "Toss-up")} · 共和看好 ${cnt((d) => SCORE[d.rating] < 0)}`
+      : `${Object.keys(g.d).length} 席`;
+  }
+  function showDTip(e, ab, n) {
+    const d = districtsOf(ab)[n], tip = $("tip"), box = $("mapbox").getBoundingClientRect();
+    const who = d && (d.incumbent && d.incumbent !== "open" ? `現任 ${d.incumbent}（${d.incumbentParty || "?"}）` : "開放席次");
+    tip.innerHTML = `<b>${esc(dName(ab, n))}</b><br>${esc(d && RATING_ZH[d.rating] ? RATING_ZH[d.rating] : "評級未知")}${d && d.pvi ? " · " + esc(d.pvi) : ""}${who ? "<br>" + esc(who) : ""}`;
+    tip.hidden = false;
+    let x = e.clientX - box.left + 14, y = e.clientY - box.top + 14;
+    if (x > box.width - 250) x = e.clientX - box.left - 250;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+
   function renderMap() {
+    const zoom = !!(selected && DGEO[selected]);
+    $("map").hidden = zoom; $("dmap").hidden = !zoom; $("zoombar").hidden = !zoom;
+    if (zoom) renderDistricts();
     for (const [ab, p] of Object.entries(paths)) {
       const r = rec(ab), rt = ratingOf(r);
       p.style.fill = rt ? "var(" + RATING_VAR[rt] + ")" : "var(--empty)";
@@ -324,8 +410,8 @@ footer a { color: inherit; }
       lb.el.classList.toggle("on-dark", !lb.small && rt && /^(Safe|Likely)/.test(rt) && !p.classList.contains("dim"));
     }
     const key = $("key");
-    key.innerHTML = RATINGS.map((k) => `<span><i style="background:var(${RATING_VAR[k]})"></i>${RATING_ZH[k]}</span>`).join("") +
-      (chamber !== "house" ? `<span><i style="background:var(--empty)"></i>本次不改選</span>` : "");
+    key.innerHTML = (zoom ? `<span><b>選區評級</b></span>` : "") + RATINGS.map((k) => `<span><i style="background:var(${RATING_VAR[k]})"></i>${RATING_ZH[k]}</span>`).join("") +
+      (chamber !== "house" && !zoom ? `<span><i style="background:var(--empty)"></i>本次不改選</span>` : "");
   }
 
   function headline(r) {
@@ -385,6 +471,24 @@ footer a { color: inherit; }
       <button class="tab" id="back">返回總覽</button>`;
   }
 
+  function districtCard(ab, n) {
+    const d = districtsOf(ab)[n];
+    if (!d) return `<div class="dcard"><h3>${esc(dName(ab, n))}</h3><p class="sub">尚無此選區資料</p></div>`;
+    const rt = RATINGS.includes(d.rating) ? d.rating : null;
+    const inc = d.incumbent && d.incumbent !== "open" ? `${esc(d.incumbent)}（${esc(d.incumbentParty || "?")}）` : "開放席次";
+    return `<div class="dcard"><h3>${esc(dName(ab, n))} ${rt ? chipFor(rt) : ""}</h3>
+      <div class="grid2"><span>現任：${inc}</span>${d.pvi ? `<span>選區傾向 <b>${esc(d.pvi)}</b></span>` : ""}</div>
+      ${d.dem || d.rep ? `<div class="grid2"><span style="color:var(--dem)">民主：${esc(d.dem || "–")}</span><span style="color:var(--rep)">共和：${esc(d.rep || "–")}</span></div>` : ""}
+      ${d.note ? `<p class="note">${esc(d.note)}</p>` : ""}
+      <p class="src">${d.basis === "lean" ? "依選區政黨傾向判定為穩固席次" : "評級：Cook Political Report"}</p></div>`;
+  }
+  function districtList(ab) {
+    const ds = Object.values(districtsOf(ab)).sort((a, b) => Math.abs(SCORE[a.rating] ?? 9) - Math.abs(SCORE[b.rating] ?? 9) || a.district - b.district);
+    if (!ds.length || ds.length === 1) return "";
+    return `<div><p class="sub"><b>眾議院選區</b>（由最競爭的排起，點擊查看）</p><div class="list">${ds.map((d) =>
+      `<button class="row drow" data-n="${esc(d.district)}"><span class="ab">${esc(d.district)}</span><span>${esc(d.incumbent && d.incumbent !== "open" ? d.incumbent : "開放席次")}<br>${RATINGS.includes(d.rating) ? chipFor(d.rating) : ""}</span><span class="mg">${esc(d.pvi || "")}</span></button>`).join("")}</div></div>`;
+  }
+
   function partyList(p) {
     const name = p === "D" ? "民主黨" : "共和黨";
     const rows = Object.keys(GEO).map((ab) => ({ ab, r: rec(ab) })).filter((x) => x.r && advantage(x.r, p))
@@ -418,10 +522,15 @@ footer a { color: inherit; }
 
   function renderPanel() {
     const panel = $("panel");
-    panel.innerHTML = selected ? stateDetail(selected) : party ? partyList(party) : overview();
-    panel.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => selectState(b.dataset.st)));
+    if (selected) {
+      const hasD = !!DGEO[selected];
+      const card = hasD && (dsel || Object.keys(DGEO[selected].d).length === 1) ? districtCard(selected, dsel || Object.keys(DGEO[selected].d)[0]) : "";
+      panel.innerHTML = card + stateDetail(selected) + (hasD ? districtList(selected) : "");
+    } else panel.innerHTML = party ? partyList(party) : overview();
+    panel.querySelectorAll(".row:not(.drow)").forEach((b) => b.addEventListener("click", () => selectState(b.dataset.st)));
+    panel.querySelectorAll(".drow").forEach((b) => b.addEventListener("click", () => { dsel = dsel === b.dataset.n ? null : b.dataset.n; render(); }));
     const back = panel.querySelector("#back");
-    if (back) back.addEventListener("click", () => { selected = null; render(); });
+    if (back) back.addEventListener("click", () => { selected = null; dsel = null; render(); });
   }
 
   function renderStatus() {
@@ -438,12 +547,13 @@ footer a { color: inherit; }
     renderTally(); renderMap(); renderPanel(); renderStatus();
   }
 
-  function selectState(ab) { selected = selected === ab ? null : ab; render(); }
-  function setParty(p) { party = party === p ? null : p; selected = null; render(); }
+  function selectState(ab) { selected = selected === ab ? null : ab; dsel = null; render(); }
+  function setParty(p) { party = party === p ? null : p; if (!selected) dsel = null; render(); }
+  $("zoom-back").addEventListener("click", () => { selected = null; dsel = null; render(); });
   $("btn-D").addEventListener("click", () => setParty("D"));
   $("btn-R").addEventListener("click", () => setParty("R"));
   document.querySelectorAll(".tab[role=tab]").forEach((t) => t.addEventListener("click", () => {
-    chamber = t.dataset.ch; selected = null; render();
+    chamber = t.dataset.ch; render();
     try { history.replaceState(null, "", "#" + chamber); } catch (e) {}
   }));
 

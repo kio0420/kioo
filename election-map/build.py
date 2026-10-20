@@ -1,7 +1,8 @@
 """Build index.html from template.html + map geometry + poll data.
 
 Usage: python3 build.py
-Reads data/senate.json, data/governor.json, data/house.json and geo/states-paths.json,
+Reads data/senate.json, data/governor.json, data/house.json, data/districts.json (optional)
+and geo/states-paths.json + geo/districts-paths.json (optional),
 writes index.html (self-contained) and seed/ (documents and write batches for the artifact db).
 """
 import json
@@ -26,8 +27,25 @@ def snapshot():
         races[key] = {**r, "chamber": "senate", "updated": senate["updated"]}
     for r in gov["races"]:
         races["gov-" + r["state"]] = {**r, "chamber": "gov", "updated": gov["updated"]}
+    districts = load("districts.json")["districts"] if (DATA / "districts.json").exists() else []
+    by_state = {}
+    for d in districts:
+        by_state.setdefault(d["state"], []).append(d)
+    cats = {"Safe D": "safeD", "Likely D": "likelyD", "Lean D": "leanD", "Toss-up": "tossup",
+            "Lean R": "leanR", "Likely R": "likelyR", "Safe R": "safeR"}
     for s in house["states"]:
-        races["house-" + s["state"]] = {**s, "chamber": "house", "updated": house["updated"]}
+        rec = {**s, "chamber": "house", "updated": house["updated"]}
+        ds = sorted(by_state.get(s["state"], []), key=lambda d: d["district"])
+        if ds:
+            rec["districts"] = ds
+        # A complete district list is the source of truth for the state's category counts.
+        if len(ds) == s["seats"] and all(d.get("rating") in cats for d in ds):
+            for key in cats.values():
+                rec[key] = 0
+            for d in ds:
+                rec[cats[d["rating"]]] += 1
+            rec["tossupDistricts"] = [d["id"] for d in ds if d["rating"] == "Toss-up"]
+        races["house-" + s["state"]] = rec
     meta = {
         "updated": max(senate["updated"], gov["updated"], house["updated"]),
         "senate": {"currentSeats": senate.get("currentSeats"), "notUp": senate.get("notUp")},
@@ -41,10 +59,12 @@ def snapshot():
 def main():
     snap = snapshot()
     geo = (ROOT / "geo" / "states-paths.json").read_text(encoding="utf-8")
+    dgeo_file = ROOT / "geo" / "districts-paths.json"
+    dgeo = dgeo_file.read_text(encoding="utf-8") if dgeo_file.exists() else "{}"
     page = (ROOT / "template.html").read_text(encoding="utf-8")
     # Escape "</" so JSON can never close the <script> element early.
     as_script = lambda s: s.replace("</", "<\\/")
-    page = page.replace("__GEO__", as_script(geo)).replace(
+    page = page.replace("__GEO__", as_script(geo)).replace("__DGEO__", as_script(dgeo)).replace(
         "__SNAPSHOT__", as_script(json.dumps(snap, ensure_ascii=False, separators=(",", ":")))
     )
     (ROOT / "index.html").write_text(page, encoding="utf-8")
