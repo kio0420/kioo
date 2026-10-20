@@ -37,6 +37,7 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
 .wrap { max-width: 1240px; margin: 0 auto; padding-block: 20px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 18px; }
 header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
@@ -396,7 +397,8 @@ footer a { color: inherit; }
 
   function renderMap() {
     const zoom = !!(selected && DGEO[selected]);
-    $("map").hidden = zoom; $("dmap").hidden = !zoom; $("zoombar").hidden = !zoom;
+    // SVG elements have no .hidden property; toggle the attribute instead.
+    $("map").toggleAttribute("hidden", zoom); $("dmap").toggleAttribute("hidden", !zoom); $("zoombar").hidden = !zoom;
     if (zoom) renderDistricts();
     for (const [ab, p] of Object.entries(paths)) {
       const r = rec(ab), rt = ratingOf(r);
