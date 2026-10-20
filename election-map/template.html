@@ -1,0 +1,471 @@
+<title>2026 期中選舉地圖</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: election-night board. Party tally band on top, chamber tabs, map left + detail panel right; stacks on phones. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --fg: #16202e;
+  --muted: #5d6878;
+  --line: #d9dfe7;
+  --empty: #e3e7ed;
+  --dem: #1f57b5;
+  --rep: #c8312f;
+  --toss: #c4b27a;
+  --safe-d: #1d4f9e; --likely-d: #4f81cc; --lean-d: #9bbbe8;
+  --safe-r: #a5221d; --likely-r: #d8625a; --lean-r: #f0aaa3;
+  --focus: #e0a100;
+  --font-num: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e131a; --surface: #161d27; --fg: #e8edf4; --muted: #9aa6b6; --line: #2a3442; --empty: #252e3b;
+    --dem: #5b8fe6; --rep: #ec5d58; --toss: #b3a26b;
+    --safe-d: #2c63bd; --likely-d: #5a8ad3; --lean-d: #8fb0e3;
+    --safe-r: #c23a33; --likely-r: #dc6d65; --lean-r: #eda39c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e131a; --surface: #161d27; --fg: #e8edf4; --muted: #9aa6b6; --line: #2a3442; --empty: #252e3b;
+  --dem: #5b8fe6; --rep: #ec5d58; --toss: #b3a26b;
+  --safe-d: #2c63bd; --likely-d: #5a8ad3; --lean-d: #8fb0e3;
+  --safe-r: #c23a33; --likely-r: #dc6d65; --lean-r: #eda39c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 20px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 18px; }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+h1 { margin: 0; font-size: 1.6rem; font-weight: 700; letter-spacing: .01em; text-wrap: balance; }
+h1 small { font-family: var(--font-num); font-weight: 600; color: var(--muted); font-size: 1rem; letter-spacing: .08em; margin-left: 8px; }
+.status { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .85rem; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.dot.live { background: #2fa36b; box-shadow: 0 0 0 0 rgba(47,163,107,.6); animation: pulse 2s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(47,163,107,0); } 100% { box-shadow: 0 0 0 0 rgba(47,163,107,0); } }
+@media (prefers-reduced-motion: reduce) { .dot.live { animation: none; } * { transition: none !important; } }
+
+/* Tally band */
+.tally { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; }
+.party { appearance: none; border: 2px solid transparent; background: transparent; color: var(--fg); font: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 12px; transition: background .15s, border-color .15s; }
+.party:hover { background: color-mix(in srgb, var(--fg) 6%, transparent); }
+.party:focus-visible, .tab:focus-visible, .state:focus-visible, .row:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.party[aria-pressed="true"].d { border-color: var(--dem); background: color-mix(in srgb, var(--dem) 10%, transparent); }
+.party[aria-pressed="true"].r { border-color: var(--rep); background: color-mix(in srgb, var(--rep) 10%, transparent); }
+.party.r { flex-direction: row-reverse; text-align: right; }
+.party svg { width: 58px; height: 46px; flex: none; }
+.party .num { font-family: var(--font-num); font-weight: 700; font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.party.d .num { color: var(--dem); } .party.r .num { color: var(--rep); }
+.party .lbl { font-size: .8rem; color: var(--muted); white-space: nowrap; }
+.party .hint { font-size: .72rem; color: var(--muted); }
+.meter { display: grid; gap: 6px; min-width: 0; }
+.bar { position: relative; height: 22px; border-radius: 6px; overflow: hidden; display: flex; background: var(--empty); }
+.bar span { height: 100%; transition: width .4s; }
+.bar .maj { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--fg); }
+.meter .legend { display: flex; justify-content: space-between; gap: 8px; font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.meter .legend b { color: var(--fg); font-family: var(--font-num); font-size: .95rem; }
+
+/* Tabs */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab { appearance: none; font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 7px 16px; border-radius: 999px; font-weight: 500; }
+.tab[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* Main */
+.main { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.mapbox { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; position: relative; min-width: 0; }
+.mapbox svg { width: 100%; height: auto; display: block; }
+.state { stroke: var(--surface); stroke-width: 1; cursor: pointer; transition: opacity .2s, fill .3s; }
+.state:hover { stroke: var(--fg); stroke-width: 1.5; }
+.state.sel { stroke: var(--fg); stroke-width: 2.5; }
+.state.dim { opacity: .16; }
+.state.tilt { opacity: .6; }
+.abbr { font-family: var(--font-num); font-size: 10px; font-weight: 600; fill: var(--fg); pointer-events: none; opacity: .75; }
+.abbr.on-dark { fill: #fff; opacity: .9; }
+.keyrow { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 4px 0; font-size: .75rem; color: var(--muted); }
+.keyrow i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 5px; }
+.tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); padding: 6px 10px; border-radius: 8px; font-size: .8rem; max-width: 240px; z-index: 5; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; min-width: 0; display: grid; gap: 12px; }
+.panel h2 { margin: 0; font-size: 1.15rem; text-wrap: balance; }
+.panel .sub { color: var(--muted); font-size: .82rem; margin: 0; }
+.chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .75rem; font-weight: 700; color: #fff; }
+.cands { display: grid; gap: 10px; }
+.cand { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; align-items: baseline; }
+.cand .who { font-weight: 500; }
+.cand .pct { font-family: var(--font-num); font-weight: 700; font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.cand .pbar { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: var(--empty); overflow: hidden; }
+.cand .pbar span { display: block; height: 100%; }
+.note { margin: 0; font-size: .9rem; }
+.src { font-size: .78rem; color: var(--muted); overflow-wrap: anywhere; }
+.src a { color: inherit; }
+.list { display: grid; gap: 4px; max-height: 460px; overflow-y: auto; }
+.row { appearance: none; font: inherit; color: inherit; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 7px 4px; display: grid; grid-template-columns: 44px 1fr auto; gap: 8px; align-items: center; cursor: pointer; }
+.row:hover { background: color-mix(in srgb, var(--fg) 5%, transparent); }
+.row .ab { font-family: var(--font-num); font-weight: 700; font-size: 1.05rem; }
+.row .mg { font-family: var(--font-num); font-weight: 600; font-variant-numeric: tabular-nums; }
+.delegation { display: flex; height: 18px; border-radius: 5px; overflow: hidden; }
+.delegation span { height: 100%; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 6px 12px; font-size: .82rem; }
+.grid2 b { font-family: var(--font-num); font-size: 1rem; }
+footer { color: var(--muted); font-size: .78rem; display: grid; gap: 4px; }
+footer a { color: inherit; }
+
+@media (max-width: 860px) {
+  .main { grid-template-columns: 1fr; }
+  .tally { grid-template-columns: 1fr 1fr; }
+  .meter { grid-column: 1 / -1; grid-row: 2; }
+  .party .num { font-size: 2.1rem; }
+  .party svg { width: 40px; height: 32px; }
+  .party { padding: 6px; gap: 8px; }
+  .party .hint { display: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>2026 期中選舉地圖 <small>NOV 3, 2026</small></h1>
+    <div class="status"><span class="dot" id="dot"></span><span id="status">載入中…</span></div>
+  </header>
+
+  <section class="tally" aria-label="兩黨席次">
+    <button class="party d" id="btn-D" aria-pressed="false" title="點擊顯示民主黨優勢選區">
+      <svg viewBox="0 0 64 50" aria-hidden="true"><g fill="var(--dem)">
+        <path d="M14 4 L18 15 L21 15 L22 3 L25 16 C30 18 31 22 30 26 L46 24 C52 24 56 27 57 31 L61 28 L60 33 C59 35 58 36 57 36 L57 47 L53 47 L52 38 L42 38 L40 47 L36 47 L36 37 C32 36 29 34 27 31 L22 31 L22 47 L18 47 L18 30 C14 29 11 27 9 24 L5 24 C3 24 2 22 3 20 L8 14 Z"/>
+        <circle cx="12" cy="18" r="1.3" fill="var(--surface)"/></g></svg>
+      <span><span class="num" id="num-D">–</span><br><span class="lbl">民主黨 驢子</span><br><span class="hint">點擊看優勢選區</span></span>
+    </button>
+    <div class="meter">
+      <div class="bar" id="bar" role="img" aria-label="席次分布"></div>
+      <div class="legend"><span id="leg-left"></span><span id="leg-mid"></span><span id="leg-right"></span></div>
+    </div>
+    <button class="party r" id="btn-R" aria-pressed="false" title="點擊顯示共和黨優勢選區">
+      <svg viewBox="0 0 64 50" aria-hidden="true"><g fill="var(--rep)">
+        <path d="M20 10 C24 6 32 5 40 7 C50 9 56 15 57 24 L60 30 L56 29 L56 46 L50 46 L49 37 L42 37 L41 46 L35 46 L35 37 L27 37 L26 46 L20 46 L20 34 C17 34 15 35 13 38 C11 42 9 45 5 45 C3 45 2 43 3 41 C6 41 8 39 9 35 C11 29 13 25 13 21 C13 16 16 12 20 10 Z"/>
+        <path d="M26 12 C30 12 33 16 33 21 C33 26 29 29 25 28 Z" fill="var(--surface)" opacity=".35"/>
+        <circle cx="19" cy="18" r="1.3" fill="var(--surface)"/></g></svg>
+      <span><span class="num" id="num-R">–</span><br><span class="lbl">共和黨 大象</span><br><span class="hint">點擊看優勢選區</span></span>
+    </button>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="選舉類別">
+    <button class="tab" role="tab" id="tab-senate" data-ch="senate" aria-selected="true">參議院</button>
+    <button class="tab" role="tab" id="tab-house" data-ch="house" aria-selected="false">眾議院</button>
+    <button class="tab" role="tab" id="tab-gov" data-ch="gov" aria-selected="false">州長</button>
+  </nav>
+
+  <section class="main">
+    <div class="mapbox" id="mapbox">
+      <svg id="map" viewBox="-60 0 1035 615" role="group" aria-label="美國各州地圖"></svg>
+      <div class="keyrow" id="key"></div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </section>
+
+  <footer>
+    <span id="foot-src"></span>
+    <span>評級分「穩固 / 傾向 / 微傾 / 拉鋸」。拉鋸州以最新民調領先者標示為「些微領先」。民調與預測不是選舉結果。</span>
+  </footer>
+</div>
+
+<script type="application/json" id="geo">__GEO__</script>
+<script type="application/json" id="snapshot">__SNAPSHOT__</script>
+<script>
+(function () {
+  const GEO = JSON.parse(document.getElementById("geo").textContent);
+  const SNAP = JSON.parse(document.getElementById("snapshot").textContent);
+  const NS = "http://www.w3.org/2000/svg";
+  const RATINGS = ["Safe D", "Likely D", "Lean D", "Toss-up", "Lean R", "Likely R", "Safe R"];
+  const RATING_ZH = { "Safe D": "穩固 民主", "Likely D": "傾向 民主", "Lean D": "微傾 民主", "Toss-up": "拉鋸", "Lean R": "微傾 共和", "Likely R": "傾向 共和", "Safe R": "穩固 共和" };
+  const RATING_VAR = { "Safe D": "--safe-d", "Likely D": "--likely-d", "Lean D": "--lean-d", "Toss-up": "--toss", "Lean R": "--lean-r", "Likely R": "--likely-r", "Safe R": "--safe-r" };
+  const SCORE = { "Safe D": 3, "Likely D": 2, "Lean D": 1, "Toss-up": 0, "Lean R": -1, "Likely R": -2, "Safe R": -3 };
+  const CH = {
+    senate: { name: "參議院", majority: 51, unit: "席", note: "副總統為共和黨，50:50 時由共和黨掌控" },
+    house: { name: "眾議院", majority: 218, unit: "席", note: "435 席，過半 218 席" },
+    gov: { name: "州長", majority: 26, unit: "州", note: "50 州州長" },
+  };
+
+  // State: snapshot is the baseline; live db docs override records with the same id.
+  const races = Object.assign({}, SNAP.races);
+  let meta = Object.assign({}, SNAP.meta);
+  let live = false;
+  let chamber = "senate", party = null, selected = null;
+  try { const h = location.hash.slice(1); if (CH[h]) chamber = h; } catch (e) {}
+
+  const $ = (id) => document.getElementById(id);
+  const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : null);
+  const fmtM = (m) => (m > 0 ? "D+" : m < 0 ? "R+" : "平") + (m ? Math.round(Math.abs(m) * 10) / 10 : "");
+
+  function rec(st) { return races[(chamber === "gov" ? "gov" : chamber) + "-" + st]; }
+
+  // House rating for a whole state, derived from its seat counts.
+  function houseRating(h) {
+    const dF = (h.safeD || 0) + (h.likelyD || 0) + (h.leanD || 0);
+    const rF = (h.safeR || 0) + (h.likelyR || 0) + (h.leanR || 0);
+    const m = (dF - rF) / (h.seats || 1);
+    const a = Math.abs(m);
+    if (m === 0) return "Toss-up";
+    const side = m > 0 ? "D" : "R";
+    return (a >= 0.6 ? "Safe " : a >= 0.25 ? "Likely " : "Lean ") + side;
+  }
+  function ratingOf(r) {
+    if (!r) return null;
+    return chamber === "house" ? houseRating(r) : (RATINGS.includes(r.rating) ? r.rating : "Toss-up");
+  }
+  function pollMargin(r) {
+    return r && typeof r.demPct === "number" && typeof r.repPct === "number" ? r.demPct - r.repPct : null;
+  }
+  // "strong" = rated toward party; "tilt" = toss-up with that party ahead in the latest poll.
+  function advantage(r, p) {
+    const rt = ratingOf(r); if (!rt) return null;
+    const s = SCORE[rt];
+    if ((p === "D" && s > 0) || (p === "R" && s < 0)) return "strong";
+    if (s === 0 && chamber !== "house") {
+      const m = pollMargin(r);
+      if (m && ((p === "D" && m > 0) || (p === "R" && m < 0))) return "tilt";
+    }
+    return null;
+  }
+
+  // ---------- tally ----------
+  function tally() {
+    const t = { D: 0, R: 0, toss: 0, seg: { "Safe D": 0, "Likely D": 0, "Lean D": 0, "Toss-up": 0, "Lean R": 0, "Likely R": 0, "Safe R": 0 }, baseD: 0, baseR: 0, total: 0 };
+    const list = Object.entries(races).filter(([k]) => k.startsWith((chamber === "gov" ? "gov" : chamber) + "-")).map(([, v]) => v);
+    if (chamber === "house") {
+      for (const h of list) {
+        t.seg["Safe D"] += h.safeD || 0; t.seg["Likely D"] += h.likelyD || 0; t.seg["Lean D"] += h.leanD || 0;
+        t.seg["Toss-up"] += h.tossup || 0;
+        t.seg["Lean R"] += h.leanR || 0; t.seg["Likely R"] += h.likelyR || 0; t.seg["Safe R"] += h.safeR || 0;
+      }
+      t.total = 435;
+    } else {
+      for (const r of list) t.seg[ratingOf(r)]++;
+      if (chamber === "senate") {
+        const nu = (meta.senate && meta.senate.notUp) || {};
+        t.baseD = (nu.D || 0) + (nu.I || 0); t.baseR = nu.R || 0; t.total = 100;
+      } else {
+        const cur = (meta.gov && meta.gov.currentGovernors) || {};
+        let upD = 0, upR = 0; for (const r of list) { if (r.incumbentParty === "D") upD++; else if (r.incumbentParty === "R") upR++; }
+        t.baseD = Math.max(0, (cur.D || 0) - upD); t.baseR = Math.max(0, (cur.R || 0) - upR); t.total = 50;
+      }
+    }
+    t.D = t.baseD + t.seg["Safe D"] + t.seg["Likely D"] + t.seg["Lean D"];
+    t.R = t.baseR + t.seg["Safe R"] + t.seg["Likely R"] + t.seg["Lean R"];
+    t.toss = t.seg["Toss-up"];
+    return t;
+  }
+
+  function renderTally() {
+    const t = tally(), c = CH[chamber];
+    $("num-D").textContent = t.D; $("num-R").textContent = t.R;
+    const bar = $("bar"); bar.innerHTML = "";
+    const total = t.total || 1;
+    const parts = [["--safe-d", t.baseD, "未改選（民主）"], ...["Safe D", "Likely D", "Lean D", "Toss-up", "Lean R", "Likely R", "Safe R"].map((k) => [RATING_VAR[k], t.seg[k], RATING_ZH[k]]), ["--safe-r", t.baseR, "未改選（共和）"]];
+    for (const [v, n, label] of parts) {
+      if (!n) continue;
+      const s = document.createElement("span");
+      s.style.width = (n / total) * 100 + "%"; s.style.background = "var(" + v + ")";
+      if (label.startsWith("未改選")) s.style.opacity = ".55";
+      s.title = label + " " + n; bar.appendChild(s);
+    }
+    const maj = document.createElement("i"); maj.className = "maj";
+    maj.style.left = "calc(" + (c.majority / total) * 100 + "% - 1px)"; bar.appendChild(maj);
+    bar.setAttribute("aria-label", `民主黨 ${t.D}，拉鋸 ${t.toss}，共和黨 ${t.R}，過半需 ${c.majority}`);
+    $("leg-left").innerHTML = `民主 <b>${t.D}</b>${t.baseD ? `（含未改選 ${t.baseD}）` : ""}`;
+    $("leg-mid").innerHTML = `拉鋸 <b>${t.toss}</b> · 過半 <b>${c.majority}</b>`;
+    $("leg-right").innerHTML = `${t.baseR ? `（含未改選 ${t.baseR}）` : ""}共和 <b>${t.R}</b>`;
+  }
+
+  // ---------- map ----------
+  const paths = {}, labels = {};
+  (function buildMap() {
+    const svg = $("map");
+    const SMALL = { VT: [910, 95], NH: [925, 120], MA: [935, 150], RI: [935, 172], CT: [925, 192], NJ: [912, 215], DE: [905, 240], MD: [900, 262], DC: [890, 284] };
+    for (const [ab, g] of Object.entries(GEO)) {
+      const p = document.createElementNS(NS, "path");
+      p.setAttribute("d", g.d); p.setAttribute("class", "state"); p.setAttribute("tabindex", "0");
+      p.setAttribute("role", "button"); p.dataset.st = ab;
+      p.addEventListener("click", () => selectState(ab));
+      p.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectState(ab); } });
+      p.addEventListener("mousemove", (e) => showTip(e, ab));
+      p.addEventListener("mouseleave", () => { $("tip").hidden = true; });
+      svg.appendChild(p); paths[ab] = p;
+    }
+    for (const [ab, g] of Object.entries(GEO)) {
+      const pos = SMALL[ab] || [g.cx, g.cy];
+      if (SMALL[ab]) {
+        const ln = document.createElementNS(NS, "line");
+        ln.setAttribute("x1", g.cx); ln.setAttribute("y1", g.cy); ln.setAttribute("x2", pos[0] - 12); ln.setAttribute("y2", pos[1] - 3);
+        ln.setAttribute("stroke", "var(--muted)"); ln.setAttribute("stroke-width", ".6"); svg.appendChild(ln);
+      }
+      const tx = document.createElementNS(NS, "text");
+      tx.setAttribute("x", pos[0]); tx.setAttribute("y", pos[1]); tx.setAttribute("text-anchor", SMALL[ab] ? "start" : "middle");
+      tx.setAttribute("dominant-baseline", "middle"); tx.setAttribute("class", "abbr"); tx.textContent = ab;
+      if (SMALL[ab]) tx.setAttribute("x", pos[0] - 10);
+      svg.appendChild(tx); labels[ab] = { el: tx, small: !!SMALL[ab] };
+    }
+  })();
+
+  function renderMap() {
+    for (const [ab, p] of Object.entries(paths)) {
+      const r = rec(ab), rt = ratingOf(r);
+      p.style.fill = rt ? "var(" + RATING_VAR[rt] + ")" : "var(--empty)";
+      const adv = party && r ? advantage(r, party) : null;
+      p.classList.toggle("dim", !!party && !adv);
+      p.classList.toggle("tilt", adv === "tilt");
+      p.classList.toggle("sel", selected === ab);
+      p.setAttribute("aria-label", GEO[ab].name + "：" + (rt ? RATING_ZH[rt] : "本次無此選舉"));
+      const lb = labels[ab];
+      lb.el.classList.toggle("on-dark", !lb.small && rt && /^(Safe|Likely)/.test(rt) && !p.classList.contains("dim"));
+    }
+    const key = $("key");
+    key.innerHTML = RATINGS.map((k) => `<span><i style="background:var(${RATING_VAR[k]})"></i>${RATING_ZH[k]}</span>`).join("") +
+      (chamber !== "house" ? `<span><i style="background:var(--empty)"></i>本次不改選</span>` : "");
+  }
+
+  function headline(r) {
+    if (!r) return "本次無此選舉";
+    if (chamber === "house") {
+      const dF = (r.safeD || 0) + (r.likelyD || 0) + (r.leanD || 0), rF = (r.safeR || 0) + (r.likelyR || 0) + (r.leanR || 0);
+      return `${r.seats} 席：民主看好 ${dF} · 拉鋸 ${r.tossup || 0} · 共和看好 ${rF}`;
+    }
+    const m = pollMargin(r);
+    const poll = m === null ? "" : ` · 民調 ${r.demPct}–${r.repPct}`;
+    return `${RATING_ZH[ratingOf(r)]}${poll}`;
+  }
+
+  function showTip(e, ab) {
+    const tip = $("tip"), box = $("mapbox").getBoundingClientRect();
+    tip.innerHTML = `<b>${esc(GEO[ab].name)}</b><br>${esc(headline(rec(ab)))}`;
+    tip.hidden = false;
+    let x = e.clientX - box.left + 14, y = e.clientY - box.top + 14;
+    if (x > box.width - 250) x = e.clientX - box.left - 250;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+
+  // ---------- side panel ----------
+  function chipFor(rt) {
+    const dark = /^(Safe|Likely)/.test(rt);
+    return `<span class="chip" style="background:var(${RATING_VAR[rt]});color:${dark ? "#fff" : "var(--fg)"}">${RATING_ZH[rt]}</span>`;
+  }
+  function sourceLine(parts, url) {
+    const u = safeUrl(url);
+    return `<p class="src">${parts.filter(Boolean).map(esc).join(" · ")}${u ? ` · <a href="${esc(u)}" target="_blank" rel="noopener">來源</a>` : ""}</p>`;
+  }
+
+  function stateDetail(ab) {
+    const r = rec(ab), name = GEO[ab].name;
+    if (!r) return `<h2>${esc(name)}</h2><p class="sub">${CH[chamber].name}：本次無此選舉</p><button class="tab" id="back">返回總覽</button>`;
+    const rt = ratingOf(r);
+    if (chamber === "house") {
+      const segs = [["safeD", "Safe D"], ["likelyD", "Likely D"], ["leanD", "Lean D"], ["tossup", "Toss-up"], ["leanR", "Lean R"], ["likelyR", "Likely R"], ["safeR", "Safe R"]];
+      const cur = r.current || {};
+      return `<h2>${esc(name)} · 眾議院</h2>
+        <p class="sub">${r.seats} 個選區 · 現任 民主 ${cur.D ?? "–"} / 共和 ${cur.R ?? "–"}${cur.I ? ` / 無黨籍 ${cur.I}` : ""}</p>
+        <div class="delegation" role="img" aria-label="各選區評級">${segs.map(([k, rk]) => r[k] ? `<span style="width:${(r[k] / r.seats) * 100}%;background:var(${RATING_VAR[rk]})" title="${RATING_ZH[rk]} ${r[k]}"></span>` : "").join("")}</div>
+        <div class="grid2">${segs.map(([k, rk]) => `<span>${RATING_ZH[rk]} <b>${r[k] || 0}</b></span>`).join("")}</div>
+        ${r.tossupDistricts && r.tossupDistricts.length ? `<p class="note">拉鋸選區：${r.tossupDistricts.map(esc).join("、")}</p>` : ""}
+        ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}
+        ${sourceLine([meta.house && meta.house.ratingSource, "更新 " + (r.updated || meta.updated || "")], meta.house && meta.house.ratingUrl)}
+        <button class="tab" id="back">返回總覽</button>`;
+    }
+    const m = pollMargin(r);
+    const cand = (who, pct, col, inc) => `<div class="cand"><span class="who">${esc(who || "未定")}${inc ? ` <span class="sub">（現任黨）</span>` : ""}</span><span class="pct" style="color:var(${col})">${typeof pct === "number" ? pct + "%" : "–"}</span><div class="pbar"><span style="width:${typeof pct === "number" ? pct : 0}%;background:var(${col})"></span></div></div>`;
+    return `<h2>${esc(name)} · ${CH[chamber].name}${r.special ? "（補選）" : ""}</h2>
+      <div>${chipFor(rt)}</div>
+      <div class="cands">${cand(r.dem, r.demPct, "--dem", r.incumbentParty === "D")}${cand(r.rep, r.repPct, "--rep", r.incumbentParty === "R")}</div>
+      ${m !== null ? `<p class="sub">民調差距：${m === 0 ? "平手" : (m > 0 ? "民主 +" : "共和 +") + Math.round(Math.abs(m) * 10) / 10}${r.pollSource ? " · " + esc(r.pollSource) : ""}</p>` : `<p class="sub">尚無公開民調，依評級判斷</p>`}
+      ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}
+      ${sourceLine(["評級：" + (r.ratingSource || "—"), "更新 " + (r.updated || meta.updated || "")], r.url)}
+      <button class="tab" id="back">返回總覽</button>`;
+  }
+
+  function partyList(p) {
+    const name = p === "D" ? "民主黨" : "共和黨";
+    const rows = Object.keys(GEO).map((ab) => ({ ab, r: rec(ab) })).filter((x) => x.r && advantage(x.r, p))
+      .map((x) => ({ ...x, adv: advantage(x.r, p), s: SCORE[ratingOf(x.r)] * (p === "D" ? 1 : -1), m: pollMargin(x.r) }))
+      .sort((a, b) => a.s - b.s || (Math.abs(a.m ?? 99) - Math.abs(b.m ?? 99)));
+    const t = tally();
+    return `<h2 style="color:var(${p === "D" ? "--dem" : "--rep"})">${name}優勢選區</h2>
+      <p class="sub">${CH[chamber].name}：${rows.length} 州具優勢 · 預估 ${p === "D" ? t.D : t.R}${CH[chamber].unit}（過半 ${CH[chamber].majority}）。由最競爭的排起。</p>
+      <div class="list">${rows.map((x) => {
+        const rt = ratingOf(x.r);
+        const right = chamber === "house"
+          ? `${p === "D" ? (x.r.safeD + x.r.likelyD + x.r.leanD) : (x.r.safeR + x.r.likelyR + x.r.leanR)}/${x.r.seats} 席`
+          : (x.m !== null ? fmtM(x.m) : "");
+        return `<button class="row" data-st="${x.ab}"><span class="ab">${x.ab}</span><span>${esc(GEO[x.ab].name)}<br>${x.adv === "tilt" ? `<span class="sub">拉鋸 · 民調些微領先</span>` : chipFor(rt)}</span><span class="mg">${right}</span></button>`;
+      }).join("") || `<p class="sub">目前沒有${name}優勢州。</p>`}</div>`;
+  }
+
+  function overview() {
+    const t = tally(), c = CH[chamber];
+    const keyRaces = Object.keys(GEO).map((ab) => ({ ab, r: rec(ab) })).filter((x) => x.r && ratingOf(x.r) === "Toss-up");
+    const nat = meta.national || {};
+    const fc = (nat.forecasts || []).filter((f) => !f.chamber || f.chamber.toLowerCase().startsWith(chamber === "house" ? "house" : chamber === "senate" ? "senate" : "gov"));
+    const gb = nat.genericBallot || [];
+    return `<h2>${c.name}總覽</h2>
+      <p class="sub">${c.note}。點擊驢子或大象查看優勢州，點擊地圖查看各州詳情。</p>
+      <div class="grid2"><span>民主看好 <b>${t.D}</b></span><span>共和看好 <b>${t.R}</b></span><span>拉鋸 <b>${t.toss}</b></span></div>
+      ${fc.length ? `<div><p class="sub"><b>預測</b></p>${fc.map((f) => `<p class="note">${esc(f.source)}：民主黨勝率 <b>${esc(f.demChance)}%</b>${f.note ? "（" + esc(f.note) + "）" : ""} <span class="src">${esc(f.date || "")}</span></p>`).join("")}</div>` : ""}
+      ${chamber !== "gov" && gb.length ? `<div><p class="sub"><b>全國政黨支持度</b></p>${gb.map((g) => `<p class="note">${esc(g.source)}：${typeof g.dem === "number" ? `民主 ${esc(g.dem)}% · 共和 ${esc(g.rep)}%` : `<b>${esc(g.margin || "–")}</b>`} <span class="src">${esc(g.date || "")}</span></p>`).join("")}</div>` : ""}
+      ${keyRaces.length ? `<div><p class="sub"><b>拉鋸${chamber === "house" ? "州" : "選戰"}</b></p><div class="list">${keyRaces.map((x) => `<button class="row" data-st="${x.ab}"><span class="ab">${x.ab}</span><span>${esc(GEO[x.ab].name)}</span><span class="mg">${esc(chamber === "house" || pollMargin(x.r) === null ? "" : fmtM(pollMargin(x.r)))}</span></button>`).join("")}</div></div>` : ""}`;
+  }
+
+  function renderPanel() {
+    const panel = $("panel");
+    panel.innerHTML = selected ? stateDetail(selected) : party ? partyList(party) : overview();
+    panel.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => selectState(b.dataset.st)));
+    const back = panel.querySelector("#back");
+    if (back) back.addEventListener("click", () => { selected = null; render(); });
+  }
+
+  function renderStatus() {
+    $("dot").classList.toggle("live", live);
+    $("status").textContent = (live ? "即時同步 · " : "資料快照 · ") + "更新於 " + (meta.updated || "—");
+    const h = meta.house || {};
+    $("foot-src").textContent = `資料來源：各州民調、${h.ratingSource || "Cook Political Report"} 等評級機構、Decision Desk HQ 與預測市場；由 Claude 定期彙整。`;
+  }
+
+  function render() {
+    document.querySelectorAll(".tab[role=tab]").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.ch === chamber)));
+    $("btn-D").setAttribute("aria-pressed", String(party === "D"));
+    $("btn-R").setAttribute("aria-pressed", String(party === "R"));
+    renderTally(); renderMap(); renderPanel(); renderStatus();
+  }
+
+  function selectState(ab) { selected = selected === ab ? null : ab; render(); }
+  function setParty(p) { party = party === p ? null : p; selected = null; render(); }
+  $("btn-D").addEventListener("click", () => setParty("D"));
+  $("btn-R").addEventListener("click", () => setParty("R"));
+  document.querySelectorAll(".tab[role=tab]").forEach((t) => t.addEventListener("click", () => {
+    chamber = t.dataset.ch; selected = null; render();
+    try { history.replaceState(null, "", "#" + chamber); } catch (e) {}
+  }));
+
+  render();
+
+  // ---------- live data (artifact db) ----------
+  // Claude's scheduled refresh writes races/<chamber>-<ST> and meta/summary; viewers only read.
+  (async function connect() {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    let db = null;
+    try { db = await window.claude.use("db"); } catch (e) { db = null; }
+    if (!db) return;
+    let pending = null;
+    const later = () => { if (!pending) pending = requestAnimationFrame(() => { pending = null; render(); }); };
+    db.collection("races").onSnapshot((snap) => {
+      for (const d of snap.docs) if (d.exists) races[d.id] = d.data();
+      live = true; later();
+    }, () => { live = false; later(); });
+    db.doc("meta/summary").onSnapshot((snap) => {
+      if (snap.exists) { meta = Object.assign({}, meta, snap.data()); }
+      later();
+    }, () => {});
+  })();
+})();
+</script>
