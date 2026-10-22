@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "ratingSource": "Cook Political Report",
   "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
   "ratingAsOf": "2026-10-16 (Cook ratings as mirrored by 270toWin, map updated 2026-10-19)",
@@ -943,9 +943,9 @@
       },
       {
         "chamber": "House",
-        "date": "2026-10-19",
-        "demChance": 90,
-        "note": "prediction market (R 11)",
+        "date": "2026-10-21",
+        "demChance": 91,
+        "note": "prediction market; 91% as of 3:22 p.m. ET Oct 21 per Prediction News (Forbes tracker same day: 90.1%)",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026"
       },

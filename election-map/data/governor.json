@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20",
+ "updated": "2026-10-22",
  "currentGovernors": {
   "D": 24,
   "R": 26
@@ -109,13 +109,13 @@
    "rep": "Byron Donalds",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 42,
-   "repPct": 50,
-   "pollSource": "Univision/YouGov, Oct 2026",
+   "demPct": 47,
+   "repPct": 49,
+   "pollSource": "UNF Public Opinion Research Lab, Oct 12-19 2026",
    "rating": "Lean R",
    "ratingSource": "Cook Political Report",
-   "note": "DeSantis任期屆滿，Donalds多數民調領先但差距不一。",
-   "url": "https://www.nbcmiami.com/elections/donalds-leads-jolly-in-2026-florida-governors-race-new-poll-finds/3869116/"
+   "note": "DeSantis任期屆滿，Donalds多數民調領先，最新UNF民調差距縮小至2點。",
+   "url": "https://floridapolitics.com/archives/825948-unf-poll-governors-race-too-close-to-call-in-final-days/"
   },
   {
    "state": "GA",
@@ -123,13 +123,13 @@
    "rep": "Rick Jackson",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 47,
-   "repPct": 49,
-   "pollSource": "InsiderAdvantage, Oct 2026",
+   "demPct": 45,
+   "repPct": 46,
+   "pollSource": "AJC/UGA SPIA, Oct 7-15 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "Kemp任期屆滿，Jackson在誤差範圍內小幅領先。",
-   "url": "https://www.atlantanewsfirst.com/2026/10/14/new-poll-shows-jackson-leading-bottoms-despite-skipping-gpb-governors-debate/"
+   "note": "Kemp任期屆滿，Jackson在誤差範圍內小幅領先，雙方幾乎打平。",
+   "url": "https://www.ajc.com/politics/2026/10/rick-jackson-has-outspent-keisha-lance-bottoms-but-democratic-enthusiasm-has-the-race-knotted/"
   },
   {
    "state": "HI",
@@ -235,13 +235,13 @@
    "rep": "Mike Minogue",
    "incumbentParty": "D",
    "incumbentRunning": true,
-   "demPct": null,
-   "repPct": null,
-   "pollSource": "No public general-election poll found",
+   "demPct": 57,
+   "repPct": 32,
+   "pollSource": "UMass Amherst/WCVB, Oct 5-12 2026 (independent Andrea James 6)",
    "rating": "Safe D",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Healey為大熱門，對手為自籌資金的Minogue。",
-   "url": "https://www.washingtonpost.com/elections/results/2026/09/01/massachusetts-governor-primary-election-2026-live-results/"
+   "note": "現任州長Healey領先自籌資金的Minogue約25點。",
+   "url": "https://www.umass.edu/news/article/gov-maura-healey-holds-25-percentage-point-lead-over-republican-challenger-mike"
   },
   {
    "state": "MI",
@@ -291,13 +291,13 @@
    "rep": "Joe Lombardo",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 40,
-   "repPct": 42,
-   "pollSource": "Noble Predictive Insights, Sep 2026",
+   "demPct": 37,
+   "repPct": 40,
+   "pollSource": "Noble Predictive Insights, Oct 7-13 2026 (RV, 23% undecided)",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Lombardo與州檢察長Ford勢均力敵。",
-   "url": "https://www.realclearpolling.com/polls/governor/general/2026/nevada/lombardo-vs-ford"
+   "note": "現任州長Lombardo與州檢察長Ford勢均力敵，最新民調Lombardo小幅領先3點。",
+   "url": "https://www.ktnv.com/news/new-poll-shows-lombardo-has-slight-lead-in-2026-governor-matchup"
   },
   {
    "state": "NH",
@@ -333,13 +333,13 @@
    "rep": "Bruce Blakeman",
    "incumbentParty": "D",
    "incumbentRunning": true,
-   "demPct": 52,
-   "repPct": 40,
-   "pollSource": "Emerson College/PIX11, Oct 2026",
+   "demPct": 55,
+   "repPct": 41,
+   "pollSource": "Quinnipiac, Oct 15-19 2026",
    "rating": "Safe D",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Hochul領先Blakeman約10點。",
-   "url": "https://emersoncollegepolling.com/new-york-2026-poll-governor-hochul-leads-blakeman-by-12/"
+   "note": "現任州長Hochul領先Blakeman約14點。",
+   "url": "https://poll.qu.edu/poll-release?releaseid=3972"
   },
   {
    "state": "OH",
@@ -347,13 +347,13 @@
    "rep": "Vivek Ramaswamy",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 48.2,
-   "repPct": 44.7,
-   "pollSource": "RealClearPolling average, Oct 2026",
+   "demPct": 50,
+   "repPct": 43,
+   "pollSource": "Marist, Oct 15-18 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "DeWine任期屆滿，Acton在多數民調中小幅領先Ramaswamy。",
-   "url": "https://www.realclearpolitics.com/epolls/2026/governor/oh/2026_ohio_governor_ramaswamy_vs_acton-8720.html"
+   "note": "DeWine任期屆滿，Acton在多數民調中領先Ramaswamy，最新Marist民調領先7點。",
+   "url": "https://www.newsmax.com/politics/marist-poll-ohio-governor/2026/10/20/id/1273399/"
   },
   {
    "state": "OK",

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20",
+ "updated": "2026-10-22",
  "currentSeats": {
   "D": 45,
   "I": 2,
@@ -243,13 +243,13 @@
    "rep": "Mike Rogers",
    "incumbentParty": "D",
    "incumbentRunning": false,
-   "demPct": 48.1,
-   "repPct": 45.5,
-   "pollSource": "RealClearPolling average, Sep 24-Oct 14 2026",
+   "demPct": 50,
+   "repPct": 48,
+   "pollSource": "Marist Poll (likely voters), Oct 15-18 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "彼得斯退休的空缺席位，埃爾賽義德在平均民調中小幅領先羅傑斯。",
-   "url": "https://www.realclearpolling.com/polls/senate/general/2026/michigan/rogers-vs-el-sayed"
+   "note": "彼得斯退休的空缺席位，最新馬里斯特民調埃爾賽義德以50%對48%小幅領先羅傑斯，選情膠著。",
+   "url": "https://maristpoll.marist.edu/polls/midterm-elections-in-michigan-october-2026/"
   },
   {
    "state": "MN",
@@ -261,9 +261,9 @@
    "demPct": 47,
    "repPct": 43,
    "pollSource": "Star Tribune/KARE 11 Minnesota Poll, Oct 5-7 2026",
-   "rating": "Likely D",
-   "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "史密斯退休，副州長弗拉納根領先塔佛亞約3至4點。",
+   "rating": "Lean D",
+   "ratingSource": "Cook Political Report (Oct 20, 2026)",
+   "note": "史密斯退休，副州長弗拉納根領先塔佛亞約3至4點，庫克10月20日將評級由可能民主黨下調為傾向民主黨。",
    "url": "https://www.startribune.com/minnesota-poll-flanagan-tafoya-senate/601887443"
   },
   {
@@ -276,9 +276,9 @@
    "demPct": 48,
    "repPct": 52,
    "pollSource": "Wedgewood, Oct 12-14 2026",
-   "rating": "Safe R",
-   "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "海德-史密斯仍占上風，但最新民調顯示科隆追近至4點內。",
+   "rating": "Likely R",
+   "ratingSource": "Cook Political Report (Oct 20, 2026)",
+   "note": "海德-史密斯仍占上風，但最新民調顯示科隆追近至4點內，庫克10月20日將其由穩固共和黨改評為可能共和黨。",
    "url": "https://magnoliatribune.com/2026/10/16/colom-says-u-s-senate-race-with-hyde-smith-is-tied-but-polling-history-tell-another-story-in-mississippi/"
   },
   {
@@ -303,13 +303,13 @@
    "rep": "Michael Whatley",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 50,
-   "repPct": 43,
-   "pollSource": "East Carolina University, Sep 30-Oct 3 2026",
+   "demPct": 54,
+   "repPct": 40,
+   "pollSource": "SurveyUSA for WRAL/WSOC (likely voters), Oct 7-11 2026",
    "rating": "Likely D",
    "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "提利斯退休，前州長庫珀穩定領先沃特利約7點以上，民主黨有望翻盤。",
-   "url": "https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-s-lead-holds-at-7-points"
+   "note": "提利斯退休，前州長庫珀最新民調領先沃特利14點，多數民調領先7點以上，民主黨有望翻盤。",
+   "url": "https://www.wsoctv.com/news/local/roy-cooper-leads-michael-whatley-wsocwral-poll/2X632IFVOFC3XCC2KKQSVURQGE/"
   },
   {
    "state": "NE",
@@ -379,12 +379,12 @@
    "incumbentParty": "R",
    "incumbentRunning": true,
    "demPct": 48,
-   "repPct": 42,
-   "pollSource": "Bowling Green State Univ./YouGov, Sep 29-Oct 9 2026",
+   "repPct": 44,
+   "pollSource": "Marist Poll (likely voters), Oct 15-18 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "補選中前參議員布朗多數民調領先獲委任的赫斯特德，但最新拉斯穆森民調赫斯特德小幅領先。",
-   "url": "https://www.nbc4i.com/news/your-local-election-hq/two-ohio-polls-show-sherrod-brown-leading-jon-husted-in-u-s-senate-race/"
+   "note": "補選中前參議員布朗在最新馬里斯特民調以48%對44%領先獲委任的赫斯特德，但拉斯穆森等少數民調赫斯特德小幅領先。",
+   "url": "https://maristpoll.marist.edu/polls/midterm-elections-in-ohio-october-2026/"
   },
   {
    "state": "OK",
@@ -441,9 +441,9 @@
    "demPct": 45,
    "repPct": 49,
    "pollSource": "Rasmussen Reports, Oct 5-8 2026",
-   "rating": "Likely R",
-   "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "林賽·葛瑞姆7月猝逝，其妹妲琳獲委任並接替提名，與安德魯斯差距縮小。",
+   "rating": "Lean R",
+   "ratingSource": "Cook Political Report (Oct 20, 2026)",
+   "note": "林賽·葛瑞姆7月猝逝，其妹妲琳獲委任並接替提名，與安德魯斯差距縮小，庫克10月20日改評為傾向共和黨。",
    "url": "https://www.thecentersquare.com/south_carolina/article_f9b93db8-6f19-4c82-aa15-776dc108976b.html"
   },
   {
