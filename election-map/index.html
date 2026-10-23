@@ -50,6 +50,23 @@ h1 small { font-family: var(--font-num); font-weight: 600; color: var(--muted); 
 @media (prefers-reduced-motion: reduce) { .dot.live { animation: none; } * { transition: none !important; } }
 
 /* Tally band */
+.proj { display: grid; gap: 10px; }
+.proj-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.proj-head b { font-size: 1.05rem; }
+.proj-head .sub { color: var(--muted); font-size: .8rem; }
+.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.pcard { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; display: grid; gap: 8px; min-width: 0; }
+.pcard .row1 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.pcard .ch { font-weight: 700; }
+.pcard .ctl { font-size: .78rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; color: #fff; }
+.pcard .score { display: flex; align-items: baseline; justify-content: space-between; font-family: var(--font-num); font-weight: 700; font-variant-numeric: tabular-nums; }
+.pcard .score .d { color: var(--dem); font-size: 2.2rem; line-height: 1; }
+.pcard .score .r { color: var(--rep); font-size: 2.2rem; line-height: 1; }
+.pcard .score small { font-family: var(--font-body); font-weight: 400; font-size: .75rem; color: var(--muted); margin: 0 6px; }
+.pcard .pbar2 { position: relative; display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--empty); }
+.pcard .pbar2 span { height: 100%; }
+.pcard .pbar2 i { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--fg); }
+.pcard .delta { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .tally { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; }
 .party { appearance: none; border: 2px solid transparent; background: transparent; color: var(--fg); font: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 12px; transition: background .15s, border-color .15s; }
 .party:hover { background: color-mix(in srgb, var(--fg) 6%, transparent); }
@@ -142,6 +159,11 @@ footer a { color: inherit; }
     <h1>2026 期中選舉地圖 <small>NOV 3, 2026</small></h1>
     <div class="status"><span class="dot" id="dot"></span><span id="status">載入中…</span></div>
   </header>
+
+  <section class="proj" aria-label="如果今天投票">
+    <div class="proj-head"><b>如果今天投票</b><span class="sub" id="proj-note">依目前評級推估：看好的席次歸該黨；拉鋸的參議院選戰歸最新民調領先者，眾議院拉鋸選區依選區傾向，沒有傾向資料時歸全國政黨支持度領先的一方。</span></div>
+    <div class="proj-grid" id="proj"></div>
+  </section>
 
   <section class="tally" aria-label="兩黨席次">
     <button class="party d" id="btn-D" aria-pressed="false" title="點擊顯示民主黨優勢選區">
@@ -275,6 +297,66 @@ footer a { color: inherit; }
     t.R = t.baseR + t.seg["Safe R"] + t.seg["Likely R"] + t.seg["Lean R"];
     t.toss = t.seg["Toss-up"];
     return t;
+  }
+
+  // ---------- "if the vote were today" projection ----------
+  // Leader of the national generic ballot ("D" | "R" | null), from the first average with numbers.
+  function genericLead() {
+    for (const g of (meta.national && meta.national.genericBallot) || []) {
+      if (typeof g.dem === "number" && typeof g.rep === "number" && g.dem !== g.rep) return g.dem > g.rep ? "D" : "R";
+      const m = /^([DR])\+/.exec(g.margin || "");
+      if (m) return m[1];
+    }
+    return null;
+  }
+  const pviLead = (pvi) => { const m = /^([DR])\+/.exec(pvi || ""); return m ? m[1] : null; };
+  function project(ch) {
+    let D = 0, R = 0;
+    const list = Object.entries(races).filter(([k]) => k.startsWith(ch + "-")).map(([, v]) => v);
+    const gb = genericLead();
+    if (ch === "senate") {
+      const nu = (meta.senate && meta.senate.notUp) || {};
+      D = (nu.D || 0) + (nu.I || 0); R = nu.R || 0; // independents caucus with Democrats
+      for (const r of list) {
+        const s = SCORE[r.rating] ?? 0, m = pollMargin(r);
+        const w = s > 0 ? "D" : s < 0 ? "R" : m > 0 ? "D" : m < 0 ? "R" : r.incumbentParty === "R" ? "R" : "D";
+        if (w === "D") D++; else R++;
+      }
+    } else {
+      for (const h of list) {
+        const ds = h.districts || [];
+        if (ds.length === h.seats) {
+          for (const d of ds) {
+            const s = SCORE[d.rating] ?? 0;
+            const w = s > 0 ? "D" : s < 0 ? "R" : pviLead(d.pvi) || gb || d.incumbentParty || "R";
+            if (w === "D") D++; else R++;
+          }
+        } else {
+          D += (h.safeD || 0) + (h.likelyD || 0) + (h.leanD || 0);
+          R += (h.safeR || 0) + (h.likelyR || 0) + (h.leanR || 0);
+          if (gb === "D") D += h.tossup || 0; else R += h.tossup || 0;
+        }
+      }
+    }
+    return { D, R };
+  }
+  function renderProjection() {
+    const cards = [
+      { ch: "senate", name: "參議院", total: 100, maj: 51, cur: (() => { const c = (meta.senate && meta.senate.currentSeats) || {}; return { D: (c.D || 0) + (c.I || 0), R: c.R || 0 }; })(), tieR: true },
+      { ch: "house", name: "眾議院", total: 435, maj: 218, cur: (meta.house && meta.house.current) || {} },
+    ];
+    $("proj").innerHTML = cards.map((c) => {
+      const p = project(c.ch);
+      // Senate: a 50-50 split goes to the Republicans through the Vice President's tie-breaking vote.
+      const dCtl = p.D >= c.maj, rCtl = p.R >= c.maj || (c.tieR && p.D < c.maj);
+      const ctl = dCtl ? `<span class="ctl" style="background:var(--dem)">民主黨過半</span>` : rCtl ? `<span class="ctl" style="background:var(--rep)">共和黨過半</span>` : `<span class="ctl" style="background:var(--toss)">無人過半</span>`;
+      const dd = p.D - (c.cur.D || 0);
+      const delta = c.cur.D != null ? `目前 民主 ${c.cur.D} · 共和 ${c.cur.R}　→　民主 ${dd > 0 ? "+" + dd : dd < 0 ? dd : "±0"} 席` : "";
+      return `<div class="pcard"><div class="row1"><span class="ch">${c.name}</span>${ctl}</div>
+        <div class="score"><span class="d">${p.D}<small>民主</small></span><span class="r"><small>共和</small>${p.R}</span></div>
+        <div class="pbar2" role="img" aria-label="${c.name}推估：民主 ${p.D}、共和 ${p.R}，過半 ${c.maj}"><span style="width:${(p.D / c.total) * 100}%;background:var(--dem)"></span><span style="width:${(p.R / c.total) * 100}%;background:var(--rep);margin-left:auto"></span><i style="left:calc(${(c.maj / c.total) * 100}% - 1px)"></i></div>
+        <div class="delta">${delta}${c.ch === "senate" ? "（民主含 2 名無黨籍）" : ""} · 過半 ${c.maj}</div></div>`;
+    }).join("");
   }
 
   function renderTally() {
@@ -546,7 +628,7 @@ footer a { color: inherit; }
     document.querySelectorAll(".tab[role=tab]").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.ch === chamber)));
     $("btn-D").setAttribute("aria-pressed", String(party === "D"));
     $("btn-R").setAttribute("aria-pressed", String(party === "R"));
-    renderTally(); renderMap(); renderPanel(); renderStatus();
+    renderProjection(); renderTally(); renderMap(); renderPanel(); renderStatus();
   }
 
   function selectState(ab) { selected = selected === ab ? null : ab; dsel = null; render(); }
