@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-27",
   "ratingSource": "Cook Political Report",
   "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
   "ratingAsOf": "2026-10-16 (Cook ratings as mirrored by 270toWin, map updated 2026-10-19)",
@@ -964,6 +964,30 @@
         "note": "Oct 9: shifted 18 races toward Democrats; projects D net gain of 9-19 seats (224-234 D)",
         "source": "Cook Political Report",
         "url": "https://political.org/2026/10/09/cook-political-report-shifts-18-house-races-toward-democrats-as-gop-midterm-outlook-darkens/"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-26",
+        "demChance": 95,
+        "note": "Silver Bulletin 預測模型，10/19 為 94%（The Conversation 10/26 報導；Silver 10/25 CNN 亦稱 95%）",
+        "source": "Silver Bulletin",
+        "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-10-26",
+        "demChance": 75,
+        "note": "Silver Bulletin 預測模型（The Conversation 10/26 報導）",
+        "source": "Silver Bulletin",
+        "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-27",
+        "demChance": 90.7,
+        "note": "prediction market（Forbes 10/27 追蹤頁引述）",
+        "source": "Kalshi",
+        "url": "https://www.forbes.com/sites/saradorn/2026/10/27/latest-polls-in-2026-midterms-democrats-lead-in-michigan-texas-maine-updated-daily/"
       }
     ],
     "genericBallot": [
@@ -1008,6 +1032,15 @@
         "rep": 41.9,
         "source": "PollsMax",
         "url": "https://www.pollsmax.com/approval/generic-ballot/"
+      },
+      {
+        "date": "2026-10-26",
+        "dem": 51.6,
+        "margin": "D+9.5",
+        "rep": 42.1,
+        "note": "The Conversation 10/26 引述 Silver Bulletin 模型",
+        "source": "Silver Bulletin",
+        "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
       }
     ],
     "senateCurrent": {
