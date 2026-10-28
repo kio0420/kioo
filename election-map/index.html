@@ -299,10 +299,20 @@ footer a { color: inherit; }
     return t;
   }
 
+  // Keep only the newest entry per source (and chamber); refreshes append rather than replace.
+  function latestBySource(list) {
+    const best = {};
+    for (const x of list || []) {
+      const k = x.source + "|" + (x.chamber || "");
+      if (!best[k] || (x.date || "") > (best[k].date || "")) best[k] = x;
+    }
+    return Object.values(best).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  }
+
   // ---------- "if the vote were today" projection ----------
   // Leader of the national generic ballot ("D" | "R" | null), from the first average with numbers.
   function genericLead() {
-    for (const g of (meta.national && meta.national.genericBallot) || []) {
+    for (const g of latestBySource(meta.national && meta.national.genericBallot)) {
       if (typeof g.dem === "number" && typeof g.rep === "number" && g.dem !== g.rep) return g.dem > g.rep ? "D" : "R";
       const m = /^([DR])\+/.exec(g.margin || "");
       if (m) return m[1];
@@ -594,8 +604,8 @@ footer a { color: inherit; }
     const t = tally(), c = CH[chamber];
     const keyRaces = Object.keys(GEO).map((ab) => ({ ab, r: rec(ab) })).filter((x) => x.r && ratingOf(x.r) === "Toss-up");
     const nat = meta.national || {};
-    const fc = (nat.forecasts || []).filter((f) => !f.chamber || f.chamber.toLowerCase().startsWith(chamber === "house" ? "house" : chamber === "senate" ? "senate" : "gov"));
-    const gb = nat.genericBallot || [];
+    const fc = latestBySource(nat.forecasts).filter((f) => typeof f.demChance === "number").filter((f) => !f.chamber || f.chamber.toLowerCase().startsWith(chamber === "house" ? "house" : chamber === "senate" ? "senate" : "gov"));
+    const gb = latestBySource(nat.genericBallot);
     return `<h2>${c.name}總覽</h2>
       <p class="sub">${c.note}。點擊驢子或大象查看優勢州，點擊地圖查看各州詳情。</p>
       <div class="grid2"><span>民主看好 <b>${t.D}</b></span><span>共和看好 <b>${t.R}</b></span><span>拉鋸 <b>${t.toss}</b></span></div>
