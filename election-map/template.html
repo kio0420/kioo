@@ -90,11 +90,9 @@ h1 small { font-family: var(--font-num); font-weight: 600; color: var(--muted); 
 /* Tabs */
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
 .navrow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
-.years { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
-.years button { appearance: none; font: inherit; font-family: var(--font-num); font-weight: 600; font-size: .95rem; letter-spacing: .02em; cursor: pointer; border: 0; background: transparent; color: var(--fg); padding: 6px 14px; }
-.years button + button { border-left: 1px solid var(--line); }
-.years button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
-.years button:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.years { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .85rem; }
+.years select { font: inherit; font-family: var(--font-num); font-weight: 600; font-size: 1rem; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.years select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .flip { display: inline-block; font-size: .7rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; margin-left: 4px; vertical-align: 1px; }
 .tab { appearance: none; font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 7px 16px; border-radius: 999px; font-weight: 500; }
 .tab[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
@@ -200,12 +198,16 @@ footer a { color: inherit; }
     <button class="tab" role="tab" id="tab-house" data-ch="house" aria-selected="false">眾議院</button>
     <button class="tab" role="tab" id="tab-gov" data-ch="gov" aria-selected="false">州長</button>
   </nav>
-  <div class="years" role="group" aria-label="選舉年份">
-    <button data-year="2020" aria-pressed="false">2020</button>
-    <button data-year="2022" aria-pressed="false">2022</button>
-    <button data-year="2024" aria-pressed="false">2024</button>
-    <button data-year="2026" aria-pressed="true">2026 預測</button>
-  </div>
+  <label class="years"><span>選舉年份</span>
+    <select id="year-select" aria-label="選舉年份">
+      <option value="2026" selected>2026 預測</option>
+      <option value="2024">2024 大選</option><option value="2022">2022 期中</option><option value="2020">2020 大選</option>
+      <option value="2018">2018 期中</option><option value="2016">2016 大選</option><option value="2014">2014 期中</option>
+      <option value="2012">2012 大選</option><option value="2010">2010 期中</option><option value="2008">2008 大選</option>
+      <option value="2006">2006 期中</option><option value="2004">2004 大選</option><option value="2002">2002 期中</option>
+      <option value="2000">2000 大選</option>
+    </select>
+  </label>
   </div>
 
   <section class="main">
@@ -248,8 +250,10 @@ footer a { color: inherit; }
     gov: { name: "州長", majority: 26, unit: "州", note: "50 州州長" },
     pres: { name: "總統", majority: 270, unit: "票", note: "538 張選舉人票，過半 270" },
   };
-  const PRES_YEARS = ["2020", "2024"];
-  const YEAR_LABEL = { "2020": ["2020 大選結果", "NOV 3, 2020"], "2022": ["2022 期中選舉結果", "NOV 8, 2022"], "2024": ["2024 大選結果", "NOV 5, 2024"], "2026": ["2026 期中選舉地圖", "NOV 3, 2026"] };
+  // Election day of each cycle; presidential years are the multiples of four.
+  const ELECTION_DAY = { 2000: "NOV 7", 2002: "NOV 5", 2004: "NOV 2", 2006: "NOV 7", 2008: "NOV 4", 2010: "NOV 2", 2012: "NOV 6", 2014: "NOV 4", 2016: "NOV 8", 2018: "NOV 6", 2020: "NOV 3", 2022: "NOV 8", 2024: "NOV 5", 2026: "NOV 3" };
+  const PRES_YEARS = Object.keys(ELECTION_DAY).filter((y) => y % 4 === 0 && y !== "2026");
+  const yearLabel = (y) => [y === "2026" ? "2026 期中選舉地圖" : y + (y % 4 === 0 ? " 大選結果" : " 期中選舉結果"), ELECTION_DAY[y] + ", " + y];
 
   // State: snapshot is the baseline; live db docs override records with the same id.
   const LIVE_RACES = Object.assign({}, SNAP.races);
@@ -512,7 +516,7 @@ footer a { color: inherit; }
     const s = d && SCORE[d.rating];
     return !!s && ((p === "D" && s > 0) || (p === "R" && s < 0));
   }
-  const dName = (ab, n) => (Object.keys(DGEO[ab].d).length === 1 ? ab + " 全州" : ab + "-" + n);
+  const dName = (ab, n) => (Object.keys(DGEO[ab] ? DGEO[ab].d : districtsOf(ab)).length === 1 ? ab + " 全州" : ab + "-" + n);
   let builtFor = null;
   function renderDistricts() {
     const ab = selected, g = DGEO[ab], ds = districtsOf(ab), svg = $("dmap");
@@ -640,8 +644,9 @@ footer a { color: inherit; }
       const ds = r.districts || [];
       const dW = ds.filter((d) => d.incumbentParty === "D").length;
       const flips = ds.filter((d) => d.flip);
+      const dI = ds.filter((d) => d.incumbentParty === "I").length;
       return `<h2>${esc(name)} · ${year} 眾議院</h2>
-        <p class="sub">${r.seats} 席：民主 ${dW} · 共和 ${r.seats - dW}</p>
+        <p class="sub">${r.seats} 席：民主 ${dW} · 共和 ${r.seats - dW - dI}${dI ? ` · 無黨籍 ${dI}` : ""}${DGEO[ab] ? "" : "（此年份暫無選區地圖）"}</p>
         ${flips.length ? `<p class="note">翻盤選區：${flips.map((d) => esc(d.id)).join("、")}</p>` : ""}
         <button class="tab" id="back">返回總覽</button>`;
     }
@@ -762,8 +767,10 @@ footer a { color: inherit; }
   function renderPanel() {
     const panel = $("panel");
     if (selected) {
-      const hasD = !!DGEO[selected];
-      const card = hasD && (dsel || Object.keys(DGEO[selected].d).length === 1) ? districtCard(selected, dsel || Object.keys(DGEO[selected].d)[0]) : "";
+      // Years before 2020 have district results but no district maps: list them in the panel only.
+      const nums = DGEO[selected] ? Object.keys(DGEO[selected].d) : Object.keys(districtsOf(selected));
+      const hasD = nums.length > 0 && (!!DGEO[selected] || chamber === "house");
+      const card = hasD && (dsel || nums.length === 1) ? districtCard(selected, dsel || nums[0]) : "";
       panel.innerHTML = card + stateDetail(selected) + (hasD ? districtList(selected) : "");
     } else panel.innerHTML = party ? partyList(party) : overview();
     panel.querySelectorAll(".row:not(.drow)").forEach((b) => b.addEventListener("click", () => selectState(b.dataset.st)));
@@ -786,9 +793,9 @@ footer a { color: inherit; }
   function render() {
     document.querySelectorAll(".tab[role=tab]").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.ch === chamber)));
     $("tab-pres").hidden = !PRES_YEARS.includes(year);
-    $("h1-text").textContent = YEAR_LABEL[year][0]; $("h1-date").textContent = YEAR_LABEL[year][1];
+    $("h1-text").textContent = yearLabel(year)[0]; $("h1-date").textContent = yearLabel(year)[1];
     document.querySelectorAll(".party .hint").forEach((h) => { h.textContent = isResult() ? "點擊看勝選州" : "點擊看優勢選區"; });
-    document.querySelectorAll(".years button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.year === year)));
+    $("year-select").value = year;
     $("btn-D").setAttribute("aria-pressed", String(party === "D"));
     $("btn-R").setAttribute("aria-pressed", String(party === "R"));
     renderProjection(); renderTally(); renderMap(); renderPanel(); renderStatus();
@@ -810,6 +817,7 @@ footer a { color: inherit; }
         HIST[y] = await res.json();
       } catch (e) {
         $("status").textContent = y + " 年資料無法載入（本機開啟時請用 python3 -m http.server）";
+        $("year-select").value = year;
         return;
       }
     }
@@ -822,7 +830,7 @@ footer a { color: inherit; }
     if (selected && !DGEO[selected]) selected = null;
     render();
   }
-  document.querySelectorAll(".years button").forEach((b) => b.addEventListener("click", () => setYear(b.dataset.year)));
+  $("year-select").addEventListener("change", (e) => setYear(e.target.value));
   document.querySelectorAll(".tab[role=tab]").forEach((t) => t.addEventListener("click", () => {
     chamber = t.dataset.ch; render();
     try { history.replaceState(null, "", "#" + chamber); } catch (e) {}

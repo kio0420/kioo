@@ -18,6 +18,8 @@
 | `build.py` | 把模板、地圖與資料組成 `index.html`，並在 `seed/` 產生資料庫寫入批次 |
 | `data/history/` | 2020–2024 選後結果：總統、參議院、州長（含奇數年州長選舉）、眾議院各選區 |
 | `build_history.py` | 把歷史結果與當年選區圖組成 `history/<年>.json`，頁面切換年份時才載入 |
+| `build_history_538.py` | 從 FiveThirtyEight election-results 的四個 CSV 產生 2000–2018 的 `history/<年>.json`（執行：`python3 build_history_538.py <CSV 資料夾>`；CSV 下載自 raw.githubusercontent.com/fivethirtyeight/election-results/main/） |
+| `geo/districts-<年>.json` | 2020、2022、2024 當年實際使用的眾議院選區圖 |
 
 ## 資料更新方式
 
