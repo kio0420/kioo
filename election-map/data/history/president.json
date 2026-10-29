@@ -1,0 +1,662 @@
+{
+ "2020": {
+  "national": {
+   "D": {
+    "name": "Joe Biden",
+    "ev": 306,
+    "pct": 51.3
+   },
+   "R": {
+    "name": "Donald Trump",
+    "ev": 232,
+    "pct": 46.9
+   }
+  },
+  "states": {
+   "AK": {
+    "winner": "R",
+    "dPct": 42.8,
+    "rPct": 52.8,
+    "ev": 3
+   },
+   "AL": {
+    "winner": "R",
+    "dPct": 36.6,
+    "rPct": 62.0,
+    "ev": 9
+   },
+   "AR": {
+    "winner": "R",
+    "dPct": 34.8,
+    "rPct": 62.4,
+    "ev": 6
+   },
+   "AZ": {
+    "winner": "D",
+    "dPct": 49.4,
+    "rPct": 49.1,
+    "ev": 11
+   },
+   "CA": {
+    "winner": "D",
+    "dPct": 63.5,
+    "rPct": 34.3,
+    "ev": 55
+   },
+   "CO": {
+    "winner": "D",
+    "dPct": 55.4,
+    "rPct": 41.9,
+    "ev": 9
+   },
+   "CT": {
+    "winner": "D",
+    "dPct": 59.3,
+    "rPct": 39.2,
+    "ev": 7
+   },
+   "DC": {
+    "winner": "D",
+    "dPct": 92.1,
+    "rPct": 5.4,
+    "ev": 3
+   },
+   "DE": {
+    "winner": "D",
+    "dPct": 58.7,
+    "rPct": 39.8,
+    "ev": 3
+   },
+   "FL": {
+    "winner": "R",
+    "dPct": 47.9,
+    "rPct": 51.2,
+    "ev": 29
+   },
+   "GA": {
+    "winner": "D",
+    "dPct": 49.5,
+    "rPct": 49.2,
+    "ev": 16
+   },
+   "HI": {
+    "winner": "D",
+    "dPct": 63.7,
+    "rPct": 34.3,
+    "ev": 4
+   },
+   "IA": {
+    "winner": "R",
+    "dPct": 44.9,
+    "rPct": 53.1,
+    "ev": 6
+   },
+   "ID": {
+    "winner": "R",
+    "dPct": 33.1,
+    "rPct": 63.8,
+    "ev": 4
+   },
+   "IL": {
+    "winner": "D",
+    "dPct": 57.5,
+    "rPct": 40.6,
+    "ev": 20
+   },
+   "IN": {
+    "winner": "R",
+    "dPct": 41.0,
+    "rPct": 57.0,
+    "ev": 11
+   },
+   "KS": {
+    "winner": "R",
+    "dPct": 41.6,
+    "rPct": 56.2,
+    "ev": 6
+   },
+   "KY": {
+    "winner": "R",
+    "dPct": 36.2,
+    "rPct": 62.1,
+    "ev": 8
+   },
+   "LA": {
+    "winner": "R",
+    "dPct": 39.9,
+    "rPct": 58.5,
+    "ev": 8
+   },
+   "MA": {
+    "winner": "D",
+    "dPct": 65.6,
+    "rPct": 32.1,
+    "ev": 11
+   },
+   "MD": {
+    "winner": "D",
+    "dPct": 65.4,
+    "rPct": 32.2,
+    "ev": 10
+   },
+   "ME": {
+    "winner": "D",
+    "dPct": 53.1,
+    "rPct": 44.0,
+    "ev": 4,
+    "evSplit": {
+     "D": 3,
+     "R": 1
+    }
+   },
+   "MI": {
+    "winner": "D",
+    "dPct": 50.6,
+    "rPct": 47.8,
+    "ev": 16
+   },
+   "MN": {
+    "winner": "D",
+    "dPct": 52.4,
+    "rPct": 45.3,
+    "ev": 10
+   },
+   "MO": {
+    "winner": "R",
+    "dPct": 41.4,
+    "rPct": 56.8,
+    "ev": 10
+   },
+   "MS": {
+    "winner": "R",
+    "dPct": 41.1,
+    "rPct": 57.6,
+    "ev": 6
+   },
+   "MT": {
+    "winner": "R",
+    "dPct": 40.5,
+    "rPct": 56.9,
+    "ev": 3
+   },
+   "NC": {
+    "winner": "R",
+    "dPct": 48.6,
+    "rPct": 49.9,
+    "ev": 15
+   },
+   "ND": {
+    "winner": "R",
+    "dPct": 31.8,
+    "rPct": 65.1,
+    "ev": 3
+   },
+   "NE": {
+    "winner": "R",
+    "dPct": 39.2,
+    "rPct": 58.2,
+    "ev": 5,
+    "evSplit": {
+     "D": 1,
+     "R": 4
+    }
+   },
+   "NH": {
+    "winner": "D",
+    "dPct": 52.7,
+    "rPct": 45.4,
+    "ev": 4
+   },
+   "NJ": {
+    "winner": "D",
+    "dPct": 57.3,
+    "rPct": 41.4,
+    "ev": 14
+   },
+   "NM": {
+    "winner": "D",
+    "dPct": 54.3,
+    "rPct": 43.5,
+    "ev": 5
+   },
+   "NV": {
+    "winner": "D",
+    "dPct": 50.1,
+    "rPct": 47.7,
+    "ev": 6
+   },
+   "NY": {
+    "winner": "D",
+    "dPct": 60.9,
+    "rPct": 37.8,
+    "ev": 29
+   },
+   "OH": {
+    "winner": "R",
+    "dPct": 45.2,
+    "rPct": 53.3,
+    "ev": 18
+   },
+   "OK": {
+    "winner": "R",
+    "dPct": 32.3,
+    "rPct": 65.4,
+    "ev": 7
+   },
+   "OR": {
+    "winner": "D",
+    "dPct": 56.5,
+    "rPct": 40.4,
+    "ev": 7
+   },
+   "PA": {
+    "winner": "D",
+    "dPct": 50.0,
+    "rPct": 48.8,
+    "ev": 20
+   },
+   "RI": {
+    "winner": "D",
+    "dPct": 59.4,
+    "rPct": 38.6,
+    "ev": 4
+   },
+   "SC": {
+    "winner": "R",
+    "dPct": 43.4,
+    "rPct": 55.1,
+    "ev": 9
+   },
+   "SD": {
+    "winner": "R",
+    "dPct": 35.6,
+    "rPct": 61.8,
+    "ev": 3
+   },
+   "TN": {
+    "winner": "R",
+    "dPct": 37.5,
+    "rPct": 60.7,
+    "ev": 11
+   },
+   "TX": {
+    "winner": "R",
+    "dPct": 46.5,
+    "rPct": 52.1,
+    "ev": 38
+   },
+   "UT": {
+    "winner": "R",
+    "dPct": 37.6,
+    "rPct": 58.1,
+    "ev": 6
+   },
+   "VA": {
+    "winner": "D",
+    "dPct": 54.1,
+    "rPct": 44.0,
+    "ev": 13
+   },
+   "VT": {
+    "winner": "D",
+    "dPct": 66.1,
+    "rPct": 30.7,
+    "ev": 3
+   },
+   "WA": {
+    "winner": "D",
+    "dPct": 58.0,
+    "rPct": 38.8,
+    "ev": 12
+   },
+   "WI": {
+    "winner": "D",
+    "dPct": 49.4,
+    "rPct": 48.8,
+    "ev": 10
+   },
+   "WV": {
+    "winner": "R",
+    "dPct": 29.7,
+    "rPct": 68.6,
+    "ev": 5
+   },
+   "WY": {
+    "winner": "R",
+    "dPct": 26.6,
+    "rPct": 69.9,
+    "ev": 3
+   }
+  }
+ },
+ "2024": {
+  "national": {
+   "D": {
+    "name": "Kamala Harris",
+    "ev": 226,
+    "pct": 48.3
+   },
+   "R": {
+    "name": "Donald Trump",
+    "ev": 312,
+    "pct": 49.8
+   }
+  },
+  "states": {
+   "AK": {
+    "winner": "R",
+    "dPct": 41.4,
+    "rPct": 54.5,
+    "ev": 3
+   },
+   "AL": {
+    "winner": "R",
+    "dPct": 34.1,
+    "rPct": 64.6,
+    "ev": 9
+   },
+   "AR": {
+    "winner": "R",
+    "dPct": 33.6,
+    "rPct": 64.2,
+    "ev": 6
+   },
+   "AZ": {
+    "winner": "R",
+    "dPct": 46.7,
+    "rPct": 52.2,
+    "ev": 11
+   },
+   "CA": {
+    "winner": "D",
+    "dPct": 58.5,
+    "rPct": 38.3,
+    "ev": 54
+   },
+   "CO": {
+    "winner": "D",
+    "dPct": 54.1,
+    "rPct": 43.1,
+    "ev": 10
+   },
+   "CT": {
+    "winner": "D",
+    "dPct": 56.4,
+    "rPct": 41.9,
+    "ev": 7
+   },
+   "DC": {
+    "winner": "D",
+    "dPct": 90.3,
+    "rPct": 6.5,
+    "ev": 3
+   },
+   "DE": {
+    "winner": "D",
+    "dPct": 56.5,
+    "rPct": 41.8,
+    "ev": 3
+   },
+   "FL": {
+    "winner": "R",
+    "dPct": 43.0,
+    "rPct": 56.1,
+    "ev": 30
+   },
+   "GA": {
+    "winner": "R",
+    "dPct": 48.5,
+    "rPct": 50.7,
+    "ev": 16
+   },
+   "HI": {
+    "winner": "D",
+    "dPct": 60.6,
+    "rPct": 37.5,
+    "ev": 4
+   },
+   "IA": {
+    "winner": "R",
+    "dPct": 42.5,
+    "rPct": 55.7,
+    "ev": 6
+   },
+   "ID": {
+    "winner": "R",
+    "dPct": 30.4,
+    "rPct": 66.9,
+    "ev": 4
+   },
+   "IL": {
+    "winner": "D",
+    "dPct": 54.4,
+    "rPct": 43.5,
+    "ev": 19
+   },
+   "IN": {
+    "winner": "R",
+    "dPct": 39.6,
+    "rPct": 58.6,
+    "ev": 11
+   },
+   "KS": {
+    "winner": "R",
+    "dPct": 41.0,
+    "rPct": 57.2,
+    "ev": 6
+   },
+   "KY": {
+    "winner": "R",
+    "dPct": 33.9,
+    "rPct": 64.5,
+    "ev": 8
+   },
+   "LA": {
+    "winner": "R",
+    "dPct": 38.2,
+    "rPct": 60.2,
+    "ev": 8
+   },
+   "MA": {
+    "winner": "D",
+    "dPct": 61.2,
+    "rPct": 36.0,
+    "ev": 11
+   },
+   "MD": {
+    "winner": "D",
+    "dPct": 62.6,
+    "rPct": 34.1,
+    "ev": 10
+   },
+   "ME": {
+    "winner": "D",
+    "dPct": 52.4,
+    "rPct": 45.5,
+    "ev": 4,
+    "evSplit": {
+     "D": 3,
+     "R": 1
+    }
+   },
+   "MI": {
+    "winner": "R",
+    "dPct": 48.3,
+    "rPct": 49.7,
+    "ev": 15
+   },
+   "MN": {
+    "winner": "D",
+    "dPct": 50.9,
+    "rPct": 46.7,
+    "ev": 10
+   },
+   "MO": {
+    "winner": "R",
+    "dPct": 40.1,
+    "rPct": 58.5,
+    "ev": 10
+   },
+   "MS": {
+    "winner": "R",
+    "dPct": 38.0,
+    "rPct": 60.9,
+    "ev": 6
+   },
+   "MT": {
+    "winner": "R",
+    "dPct": 38.5,
+    "rPct": 58.4,
+    "ev": 4
+   },
+   "NC": {
+    "winner": "R",
+    "dPct": 47.6,
+    "rPct": 50.9,
+    "ev": 16
+   },
+   "ND": {
+    "winner": "R",
+    "dPct": 30.5,
+    "rPct": 67.0,
+    "ev": 3
+   },
+   "NE": {
+    "winner": "R",
+    "dPct": 38.9,
+    "rPct": 59.3,
+    "ev": 5,
+    "evSplit": {
+     "D": 1,
+     "R": 4
+    }
+   },
+   "NH": {
+    "winner": "D",
+    "dPct": 50.7,
+    "rPct": 47.9,
+    "ev": 4
+   },
+   "NJ": {
+    "winner": "D",
+    "dPct": 52.0,
+    "rPct": 46.1,
+    "ev": 14
+   },
+   "NM": {
+    "winner": "D",
+    "dPct": 51.9,
+    "rPct": 45.9,
+    "ev": 5
+   },
+   "NV": {
+    "winner": "R",
+    "dPct": 47.5,
+    "rPct": 50.6,
+    "ev": 6
+   },
+   "NY": {
+    "winner": "D",
+    "dPct": 55.9,
+    "rPct": 43.3,
+    "ev": 28
+   },
+   "OH": {
+    "winner": "R",
+    "dPct": 43.9,
+    "rPct": 55.1,
+    "ev": 17
+   },
+   "OK": {
+    "winner": "R",
+    "dPct": 31.9,
+    "rPct": 66.2,
+    "ev": 7
+   },
+   "OR": {
+    "winner": "D",
+    "dPct": 55.3,
+    "rPct": 41.0,
+    "ev": 8
+   },
+   "PA": {
+    "winner": "R",
+    "dPct": 48.7,
+    "rPct": 50.4,
+    "ev": 19
+   },
+   "RI": {
+    "winner": "D",
+    "dPct": 55.5,
+    "rPct": 41.8,
+    "ev": 4
+   },
+   "SC": {
+    "winner": "R",
+    "dPct": 40.4,
+    "rPct": 58.2,
+    "ev": 9
+   },
+   "SD": {
+    "winner": "R",
+    "dPct": 34.2,
+    "rPct": 63.4,
+    "ev": 3
+   },
+   "TN": {
+    "winner": "R",
+    "dPct": 34.5,
+    "rPct": 64.2,
+    "ev": 11
+   },
+   "TX": {
+    "winner": "R",
+    "dPct": 42.5,
+    "rPct": 56.1,
+    "ev": 40
+   },
+   "UT": {
+    "winner": "R",
+    "dPct": 37.8,
+    "rPct": 59.4,
+    "ev": 6
+   },
+   "VA": {
+    "winner": "D",
+    "dPct": 51.8,
+    "rPct": 46.1,
+    "ev": 13
+   },
+   "VT": {
+    "winner": "D",
+    "dPct": 63.8,
+    "rPct": 32.3,
+    "ev": 3
+   },
+   "WA": {
+    "winner": "D",
+    "dPct": 57.2,
+    "rPct": 39.0,
+    "ev": 12
+   },
+   "WI": {
+    "winner": "R",
+    "dPct": 48.7,
+    "rPct": 49.6,
+    "ev": 10
+   },
+   "WV": {
+    "winner": "R",
+    "dPct": 28.1,
+    "rPct": 70.0,
+    "ev": 4
+   },
+   "WY": {
+    "winner": "R",
+    "dPct": 25.8,
+    "rPct": 71.6,
+    "ev": 3
+   }
+  }
+ }
+}

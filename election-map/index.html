@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>2026 期中選舉地圖</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,6 +89,13 @@ h1 small { font-family: var(--font-num); font-weight: 600; color: var(--muted); 
 
 /* Tabs */
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.navrow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.years { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.years button { appearance: none; font: inherit; font-family: var(--font-num); font-weight: 600; font-size: .95rem; letter-spacing: .02em; cursor: pointer; border: 0; background: transparent; color: var(--fg); padding: 6px 14px; }
+.years button + button { border-left: 1px solid var(--line); }
+.years button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.years button:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.flip { display: inline-block; font-size: .7rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; margin-left: 4px; vertical-align: 1px; }
 .tab { appearance: none; font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 7px 16px; border-radius: 999px; font-weight: 500; }
 .tab[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 
@@ -156,12 +164,12 @@ footer a { color: inherit; }
 
 <div class="wrap">
   <header class="top">
-    <h1>2026 期中選舉地圖 <small>NOV 3, 2026</small></h1>
+    <h1><span id="h1-text">2026 期中選舉地圖</span> <small id="h1-date">NOV 3, 2026</small></h1>
     <div class="status"><span class="dot" id="dot"></span><span id="status">載入中…</span></div>
   </header>
 
   <section class="proj" aria-label="如果今天投票">
-    <div class="proj-head"><b>如果今天投票</b><span class="sub" id="proj-note">依目前評級推估：看好的席次歸該黨；拉鋸的參議院選戰歸最新民調領先者，眾議院拉鋸選區依選區傾向，沒有傾向資料時歸全國政黨支持度領先的一方。</span></div>
+    <div class="proj-head"><b id="proj-title">如果今天投票</b><span class="sub" id="proj-note">依目前評級推估：看好的席次歸該黨；拉鋸的參議院選戰歸最新民調領先者，眾議院拉鋸選區依選區傾向，沒有傾向資料時歸全國政黨支持度領先的一方。</span></div>
     <div class="proj-grid" id="proj"></div>
   </section>
 
@@ -185,11 +193,20 @@ footer a { color: inherit; }
     </button>
   </section>
 
+  <div class="navrow">
   <nav class="tabs" role="tablist" aria-label="選舉類別">
+    <button class="tab" role="tab" id="tab-pres" data-ch="pres" aria-selected="false" hidden>總統</button>
     <button class="tab" role="tab" id="tab-senate" data-ch="senate" aria-selected="true">參議院</button>
     <button class="tab" role="tab" id="tab-house" data-ch="house" aria-selected="false">眾議院</button>
     <button class="tab" role="tab" id="tab-gov" data-ch="gov" aria-selected="false">州長</button>
   </nav>
+  <div class="years" role="group" aria-label="選舉年份">
+    <button data-year="2020" aria-pressed="false">2020</button>
+    <button data-year="2022" aria-pressed="false">2022</button>
+    <button data-year="2024" aria-pressed="false">2024</button>
+    <button data-year="2026" aria-pressed="true">2026 預測</button>
+  </div>
+  </div>
 
   <section class="main">
     <div class="mapbox" id="mapbox">
@@ -204,7 +221,7 @@ footer a { color: inherit; }
 
   <footer>
     <span id="foot-src"></span>
-    <span>評級分「穩固 / 傾向 / 微傾 / 拉鋸」。拉鋸州以最新民調領先者標示為「些微領先」。民調與預測不是選舉結果。</span>
+    <span id="foot-note">評級分「穩固 / 傾向 / 微傾 / 拉鋸」。拉鋸州以最新民調領先者標示為「些微領先」。民調與預測不是選舉結果。</span>
   </footer>
 </div>
 
@@ -215,24 +232,36 @@ footer a { color: inherit; }
 (function () {
   const GEO = JSON.parse(document.getElementById("geo").textContent);
   const SNAP = JSON.parse(document.getElementById("snapshot").textContent);
-  const DGEO = JSON.parse(document.getElementById("dgeo").textContent);
+  const DGEO_LIVE = JSON.parse(document.getElementById("dgeo").textContent);
+  let DGEO = DGEO_LIVE;
   const NS = "http://www.w3.org/2000/svg";
   const RATINGS = ["Safe D", "Likely D", "Lean D", "Toss-up", "Lean R", "Likely R", "Safe R"];
-  const RATING_ZH = { "Safe D": "穩固 民主", "Likely D": "傾向 民主", "Lean D": "微傾 民主", "Toss-up": "拉鋸", "Lean R": "微傾 共和", "Likely R": "傾向 共和", "Safe R": "穩固 共和" };
+  const RATING_ZH_FORECAST = { "Safe D": "穩固 民主", "Likely D": "傾向 民主", "Lean D": "微傾 民主", "Toss-up": "拉鋸", "Lean R": "微傾 共和", "Likely R": "傾向 共和", "Safe R": "穩固 共和" };
+  // Past years reuse the rating scale for the winning margin: ≥15 points, 5–15, under 5.
+  const RATING_ZH_RESULT = { "Safe D": "民主 大勝", "Likely D": "民主 勝", "Lean D": "民主 險勝", "Toss-up": "平手", "Lean R": "共和 險勝", "Likely R": "共和 勝", "Safe R": "共和 大勝" };
+  let RATING_ZH = RATING_ZH_FORECAST;
   const RATING_VAR = { "Safe D": "--safe-d", "Likely D": "--likely-d", "Lean D": "--lean-d", "Toss-up": "--toss", "Lean R": "--lean-r", "Likely R": "--likely-r", "Safe R": "--safe-r" };
   const SCORE = { "Safe D": 3, "Likely D": 2, "Lean D": 1, "Toss-up": 0, "Lean R": -1, "Likely R": -2, "Safe R": -3 };
   const CH = {
     senate: { name: "參議院", majority: 51, unit: "席", note: "副總統為共和黨，50:50 時由共和黨掌控" },
     house: { name: "眾議院", majority: 218, unit: "席", note: "435 席，過半 218 席" },
     gov: { name: "州長", majority: 26, unit: "州", note: "50 州州長" },
+    pres: { name: "總統", majority: 270, unit: "票", note: "538 張選舉人票，過半 270" },
   };
+  const PRES_YEARS = ["2020", "2024"];
+  const YEAR_LABEL = { "2020": ["2020 大選結果", "NOV 3, 2020"], "2022": ["2022 期中選舉結果", "NOV 8, 2022"], "2024": ["2024 大選結果", "NOV 5, 2024"], "2026": ["2026 期中選舉地圖", "NOV 3, 2026"] };
 
   // State: snapshot is the baseline; live db docs override records with the same id.
-  const races = Object.assign({}, SNAP.races);
+  const LIVE_RACES = Object.assign({}, SNAP.races);
+  let races = LIVE_RACES;
+  let year = "2026";
+  const HIST = {}; // year -> {races, comp, dgeo}, loaded on demand from history/<year>.json
+  const isResult = () => year !== "2026";
+  const hist = () => HIST[year] || {};
   let meta = Object.assign({}, SNAP.meta);
   let live = false;
   let chamber = "senate", party = null, selected = null, dsel = null;
-  try { const h = location.hash.slice(1); if (CH[h]) chamber = h; } catch (e) {}
+  try { const h = location.hash.slice(1); if (CH[h] && h !== "pres") chamber = h; } catch (e) {}
 
   const $ = (id) => document.getElementById(id);
   const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -264,7 +293,7 @@ footer a { color: inherit; }
     const rt = ratingOf(r); if (!rt) return null;
     const s = SCORE[rt];
     if ((p === "D" && s > 0) || (p === "R" && s < 0)) return "strong";
-    if (s === 0 && chamber !== "house") {
+    if (s === 0 && chamber !== "house" && !isResult()) {
       const m = pollMargin(r);
       if (m && ((p === "D" && m > 0) || (p === "R" && m < 0))) return "tilt";
     }
@@ -273,6 +302,7 @@ footer a { color: inherit; }
 
   // ---------- tally ----------
   function tally() {
+    if (isResult()) return resultTally();
     const t = { D: 0, R: 0, toss: 0, seg: { "Safe D": 0, "Likely D": 0, "Lean D": 0, "Toss-up": 0, "Lean R": 0, "Likely R": 0, "Safe R": 0 }, baseD: 0, baseR: 0, total: 0 };
     const list = Object.entries(races).filter(([k]) => k.startsWith((chamber === "gov" ? "gov" : chamber) + "-")).map(([, v]) => v);
     if (chamber === "house") {
@@ -292,6 +322,35 @@ footer a { color: inherit; }
         let upD = 0, upR = 0; for (const r of list) { if (r.incumbentParty === "D") upD++; else if (r.incumbentParty === "R") upR++; }
         t.baseD = Math.max(0, (cur.D || 0) - upD); t.baseR = Math.max(0, (cur.R || 0) - upR); t.total = 50;
       }
+    }
+    t.D = t.baseD + t.seg["Safe D"] + t.seg["Likely D"] + t.seg["Lean D"];
+    t.R = t.baseR + t.seg["Safe R"] + t.seg["Likely R"] + t.seg["Lean R"];
+    t.toss = t.seg["Toss-up"];
+    return t;
+  }
+
+  // Seat counts after a past election: the composition, with the races of that year split by margin.
+  function resultTally() {
+    const t = { D: 0, R: 0, toss: 0, seg: { "Safe D": 0, "Likely D": 0, "Lean D": 0, "Toss-up": 0, "Lean R": 0, "Likely R": 0, "Safe R": 0 }, baseD: 0, baseR: 0, total: 0 };
+    const comp = (hist().comp || {})[chamber] || {};
+    const list = Object.entries(races).filter(([k]) => k.startsWith(chamber + "-")).map(([, v]) => v);
+    if (chamber === "house") {
+      for (const h of list) for (const d of h.districts || []) t.seg[d.rating] = (t.seg[d.rating] || 0) + 1;
+      t.total = 435;
+    } else if (chamber === "pres") {
+      for (const r of list) {
+        const split = r.evSplit || { [r.winner]: r.ev };
+        for (const [side, n] of Object.entries(split)) {
+          const rt = side === r.winner ? r.rating : "Lean " + side;
+          t.seg[rt] = (t.seg[rt] || 0) + n;
+        }
+      }
+      t.total = 538;
+    } else {
+      for (const r of list) t.seg[r.rating]++;
+      t.total = chamber === "senate" ? 100 : 50;
+      const wonD = t.seg["Safe D"] + t.seg["Likely D"] + t.seg["Lean D"], wonR = t.seg["Safe R"] + t.seg["Likely R"] + t.seg["Lean R"];
+      t.baseD = Math.max(0, (comp.D || 0) + (comp.I || 0) - wonD); t.baseR = Math.max(0, (comp.R || 0) - wonR);
     }
     t.D = t.baseD + t.seg["Safe D"] + t.seg["Likely D"] + t.seg["Lean D"];
     t.R = t.baseR + t.seg["Safe R"] + t.seg["Likely R"] + t.seg["Lean R"];
@@ -351,6 +410,11 @@ footer a { color: inherit; }
     return { D, R };
   }
   function renderProjection() {
+    $("proj-title").textContent = isResult() ? year + " 選後結果" : "如果今天投票";
+    $("proj-note").textContent = isResult()
+      ? "選舉後的實際席次（參議院與州長含未改選席次；參議院民主黨含與其同一黨團的無黨籍）。"
+      : "依目前評級推估：看好的席次歸該黨；拉鋸的參議院選戰歸最新民調領先者，眾議院拉鋸選區依選區傾向，沒有傾向資料時歸全國政黨支持度領先的一方。";
+    if (isResult()) return renderResultCards();
     const cards = [
       { ch: "senate", name: "參議院", total: 100, maj: 51, cur: (() => { const c = (meta.senate && meta.senate.currentSeats) || {}; return { D: (c.D || 0) + (c.I || 0), R: c.R || 0 }; })(), tieR: true },
       { ch: "house", name: "眾議院", total: 435, maj: 218, cur: (meta.house && meta.house.current) || {} },
@@ -366,6 +430,23 @@ footer a { color: inherit; }
         <div class="score"><span class="d">${p.D}<small>民主</small></span><span class="r"><small>共和</small>${p.R}</span></div>
         <div class="pbar2" role="img" aria-label="${c.name}推估：民主 ${p.D}、共和 ${p.R}，過半 ${c.maj}"><span style="width:${(p.D / c.total) * 100}%;background:var(--dem)"></span><span style="width:${(p.R / c.total) * 100}%;background:var(--rep);margin-left:auto"></span><i style="left:calc(${(c.maj / c.total) * 100}% - 1px)"></i></div>
         <div class="delta">${delta}${c.ch === "senate" ? "（民主含 2 名無黨籍）" : ""} · 過半 ${c.maj}</div></div>`;
+    }).join("");
+  }
+
+  function renderResultCards() {
+    const comp = hist().comp || {};
+    const cards = [];
+    if (comp.pres) cards.push({ name: "總統（選舉人票）", D: comp.pres.D.ev, R: comp.pres.R.ev, total: 538, maj: 270, sub: `${comp.pres.D.name} ${comp.pres.D.pct}% · ${comp.pres.R.name} ${comp.pres.R.pct}%（普選票）` });
+    if (comp.senate) cards.push({ name: "參議院", D: (comp.senate.D || 0) + (comp.senate.I || 0), R: comp.senate.R || 0, total: 100, maj: 51, sub: comp.senate.I ? `民主含 ${comp.senate.I} 名無黨籍` : "", tieR: year !== "2020" });
+    if (comp.house) cards.push({ name: "眾議院", D: comp.house.D, R: comp.house.R, total: 435, maj: 218, sub: "" });
+    $("proj").innerHTML = cards.map((c) => {
+      // Senate ties go to the Vice President's party (Harris in 2021–25, Vance from 2025).
+      const dCtl = c.D >= c.maj || (c.D === 50 && !c.tieR), rCtl = c.R >= c.maj || (c.R === 50 && c.tieR);
+      const ctl = dCtl ? `<span class="ctl" style="background:var(--dem)">${c.total === 538 ? "民主黨勝選" : "民主黨過半"}</span>` : rCtl ? `<span class="ctl" style="background:var(--rep)">${c.total === 538 ? "共和黨勝選" : "共和黨過半"}</span>` : `<span class="ctl" style="background:var(--toss)">無人過半</span>`;
+      return `<div class="pcard"><div class="row1"><span class="ch">${c.name}</span>${ctl}</div>
+        <div class="score"><span class="d">${c.D}<small>民主</small></span><span class="r"><small>共和</small>${c.R}</span></div>
+        <div class="pbar2" role="img" aria-label="${c.name}：民主 ${c.D}、共和 ${c.R}，過半 ${c.maj}"><span style="width:${(c.D / c.total) * 100}%;background:var(--dem)"></span><span style="width:${(c.R / c.total) * 100}%;background:var(--rep);margin-left:auto"></span><i style="left:calc(${(c.maj / c.total) * 100}% - 1px)"></i></div>
+        <div class="delta">${esc(c.sub)}${c.sub ? " · " : ""}過半 ${c.maj}</div></div>`;
     }).join("");
   }
 
@@ -386,7 +467,7 @@ footer a { color: inherit; }
     maj.style.left = "calc(" + (c.majority / total) * 100 + "% - 1px)"; bar.appendChild(maj);
     bar.setAttribute("aria-label", `民主黨 ${t.D}，拉鋸 ${t.toss}，共和黨 ${t.R}，過半需 ${c.majority}`);
     $("leg-left").innerHTML = `民主 <b>${t.D}</b>${t.baseD ? `（含未改選 ${t.baseD}）` : ""}`;
-    $("leg-mid").innerHTML = `拉鋸 <b>${t.toss}</b> · 過半 <b>${c.majority}</b>`;
+    $("leg-mid").innerHTML = isResult() ? `過半 <b>${c.majority}</b>` : `拉鋸 <b>${t.toss}</b> · 過半 <b>${c.majority}</b>`;
     $("leg-right").innerHTML = `${t.baseR ? `（含未改選 ${t.baseR}）` : ""}共和 <b>${t.R}</b>`;
   }
 
@@ -472,14 +553,16 @@ footer a { color: inherit; }
     });
     const list = Object.values(ds);
     const cnt = (f) => list.filter(f).length;
-    $("zoom-title").textContent = GEO[ab].name + " · 眾議院選區";
-    $("zoom-sub").textContent = list.length
+    $("zoom-title").textContent = GEO[ab].name + " · " + (isResult() ? year + " 眾議院選舉結果" : "眾議院選區");
+    $("zoom-sub").textContent = isResult()
+      ? `${Object.keys(g.d).length} 席：民主 ${cnt((d) => SCORE[d.rating] > 0)} · 共和 ${cnt((d) => SCORE[d.rating] < 0)}`
+      : list.length
       ? `${Object.keys(g.d).length} 席：民主看好 ${cnt((d) => SCORE[d.rating] > 0)} · 拉鋸 ${cnt((d) => d.rating === "Toss-up")} · 共和看好 ${cnt((d) => SCORE[d.rating] < 0)}`
       : `${Object.keys(g.d).length} 席`;
   }
   function showDTip(e, ab, n) {
     const d = districtsOf(ab)[n], tip = $("tip"), box = $("mapbox").getBoundingClientRect();
-    const who = d && (d.incumbent && d.incumbent !== "open" ? `現任 ${d.incumbent}（${d.incumbentParty || "?"}）` : "開放席次");
+    const who = d && (isResult() ? `當選 ${d.incumbent || "?"}（${d.incumbentParty || "?"}）${resPct(d)}` : d.incumbent && d.incumbent !== "open" ? `現任 ${d.incumbent}（${d.incumbentParty || "?"}）` : "開放席次");
     tip.innerHTML = `<b>${esc(dName(ab, n))}</b><br>${esc(d && RATING_ZH[d.rating] ? RATING_ZH[d.rating] : "評級未知")}${d && d.pvi ? " · " + esc(d.pvi) : ""}${who ? "<br>" + esc(who) : ""}`;
     tip.hidden = false;
     let x = e.clientX - box.left + 14, y = e.clientY - box.top + 14;
@@ -504,12 +587,24 @@ footer a { color: inherit; }
       lb.el.classList.toggle("on-dark", !lb.small && rt && /^(Safe|Likely)/.test(rt) && !p.classList.contains("dim"));
     }
     const key = $("key");
-    key.innerHTML = (zoom ? `<span><b>選區評級</b></span>` : "") + RATINGS.map((k) => `<span><i style="background:var(${RATING_VAR[k]})"></i>${RATING_ZH[k]}</span>`).join("") +
+    key.innerHTML = (isResult() ? `<span><b>勝選差距</b>（大勝 ≥15、勝 5–15、險勝 &lt;5 個百分點）</span>` : zoom ? `<span><b>選區評級</b></span>` : "") + RATINGS.filter((k) => !isResult() || k !== "Toss-up").map((k) => `<span><i style="background:var(${RATING_VAR[k]})"></i>${RATING_ZH[k]}</span>`).join("") +
       (chamber !== "house" && !zoom ? `<span><i style="background:var(--empty)"></i>本次不改選</span>` : "");
   }
 
+  // " · 52.1–46.3" style vote shares for a result record.
+  function resPct(r) {
+    if (r.uncontested) return " · 無對手";
+    return typeof r.dPct === "number" && typeof r.rPct === "number" ? ` · ${r.dPct}–${r.rPct}` : "";
+  }
   function headline(r) {
     if (!r) return "本次無此選舉";
+    if (isResult()) {
+      if (chamber === "house") {
+        const dW = (r.districts || []).filter((d) => d.incumbentParty === "D").length;
+        return `${r.seats} 席：民主 ${dW} · 共和 ${r.seats - dW}`;
+      }
+      return `${RATING_ZH[r.rating]}${resPct(r)}${r.ev ? ` · ${r.ev} 張選舉人票` : ""}${r.flip ? " · 翻盤" : ""}`;
+    }
     if (chamber === "house") {
       const dF = (r.safeD || 0) + (r.likelyD || 0) + (r.leanD || 0), rF = (r.safeR || 0) + (r.likelyR || 0) + (r.leanR || 0);
       return `${r.seats} 席：民主看好 ${dF} · 拉鋸 ${r.tossup || 0} · 共和看好 ${rF}`;
@@ -538,8 +633,34 @@ footer a { color: inherit; }
     return `<p class="src">${parts.filter(Boolean).map(esc).join(" · ")}${u ? ` · <a href="${esc(u)}" target="_blank" rel="noopener">來源</a>` : ""}</p>`;
   }
 
+  const flipTag = (r) => (r && r.flip ? `<span class="flip">翻盤</span>` : "");
+  function resultDetail(ab, r) {
+    const name = GEO[ab].name;
+    if (chamber === "house") {
+      const ds = r.districts || [];
+      const dW = ds.filter((d) => d.incumbentParty === "D").length;
+      const flips = ds.filter((d) => d.flip);
+      return `<h2>${esc(name)} · ${year} 眾議院</h2>
+        <p class="sub">${r.seats} 席：民主 ${dW} · 共和 ${r.seats - dW}</p>
+        ${flips.length ? `<p class="note">翻盤選區：${flips.map((d) => esc(d.id)).join("、")}</p>` : ""}
+        <button class="tab" id="back">返回總覽</button>`;
+    }
+    const cand = (who, pct, col, won) => `<div class="cand"><span class="who">${esc(who || "–")}${won ? ` <span class="sub">✔ 當選</span>` : ""}</span><span class="pct" style="color:var(${col})">${typeof pct === "number" ? pct + "%" : "–"}</span><div class="pbar"><span style="width:${typeof pct === "number" ? pct : 0}%;background:var(${col})"></span></div></div>`;
+    const m = pollMargin(r);
+    const split = r.evSplit ? Object.entries(r.evSplit).map(([k, v]) => (k === "D" ? "民主 " : "共和 ") + v).join("、") : "";
+    return `<h2>${esc(name)} · ${year} ${CH[chamber].name}${r.special ? "（補選）" : ""}${r.oddYear ? `（${r.oddYear} 年）` : ""}</h2>
+      <div>${chipFor(r.rating)}${flipTag(r)}</div>
+      <div class="cands">${cand(r.dem, r.demPct, "--dem", r.winner !== "R")}${cand(r.rep, r.repPct, "--rep", r.winner === "R")}</div>
+      ${m !== null ? `<p class="sub">得票差距：${m > 0 ? "民主 +" : "共和 +"}${Math.round(Math.abs(m) * 10) / 10} 個百分點</p>` : ""}
+      ${r.ev ? `<p class="sub">選舉人票 ${r.ev} 張${split ? `（分配：${split}）` : ""}</p>` : ""}
+      ${r.winner === "I" ? `<p class="note">當選人為無黨籍，與民主黨同一黨團，地圖以民主黨色標示。</p>` : ""}
+      ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}
+      <button class="tab" id="back">返回總覽</button>`;
+  }
+
   function stateDetail(ab) {
     const r = rec(ab), name = GEO[ab].name;
+    if (r && isResult()) return resultDetail(ab, r);
     if (!r) return `<h2>${esc(name)}</h2><p class="sub">${CH[chamber].name}：本次無此選舉</p><button class="tab" id="back">返回總覽</button>`;
     const rt = ratingOf(r);
     if (chamber === "house") {
@@ -568,6 +689,10 @@ footer a { color: inherit; }
   function districtCard(ab, n) {
     const d = districtsOf(ab)[n];
     if (!d) return `<div class="dcard"><h3>${esc(dName(ab, n))}</h3><p class="sub">尚無此選區資料</p></div>`;
+    if (isResult()) return `<div class="dcard"><h3>${esc(dName(ab, n))} ${chipFor(d.rating)}${flipTag(d)}</h3>
+      <div class="grid2"><span>當選：<b>${esc(d.incumbent || "–")}</b>（${esc(d.incumbentParty || "?")}）</span></div>
+      ${d.uncontested ? `<p class="sub">無對手</p>` : `<div class="grid2"><span style="color:var(--dem)">民主 <b>${esc(d.dPct ?? "–")}%</b></span><span style="color:var(--rep)">共和 <b>${esc(d.rPct ?? "–")}%</b></span></div>`}
+      ${d.note ? `<p class="note">${esc(d.note)}</p>` : ""}</div>`;
     const rt = RATINGS.includes(d.rating) ? d.rating : null;
     const inc = d.incumbent && d.incumbent !== "open" ? `${esc(d.incumbent)}（${esc(d.incumbentParty || "?")}）` : "開放席次";
     return `<div class="dcard"><h3>${esc(dName(ab, n))} ${rt ? chipFor(rt) : ""}</h3>
@@ -577,10 +702,12 @@ footer a { color: inherit; }
       <p class="src">${d.basis === "lean" ? "依選區政黨傾向判定為穩固席次" : "評級：Cook Political Report"}</p></div>`;
   }
   function districtList(ab) {
-    const ds = Object.values(districtsOf(ab)).sort((a, b) => Math.abs(SCORE[a.rating] ?? 9) - Math.abs(SCORE[b.rating] ?? 9) || a.district - b.district);
+    const gap = (d) => (isResult() ? (d.uncontested ? 999 : Math.abs((d.dPct ?? 0) - (d.rPct ?? 0))) : Math.abs(SCORE[d.rating] ?? 9));
+    const ds = Object.values(districtsOf(ab)).sort((a, b) => gap(a) - gap(b) || a.district - b.district);
     if (!ds.length || ds.length === 1) return "";
+    const right = (d) => (isResult() ? (d.uncontested ? "無對手" : typeof d.dPct === "number" && typeof d.rPct === "number" ? fmtM(d.dPct - d.rPct) : "") : d.pvi || "");
     return `<div><p class="sub"><b>眾議院選區</b>（由最競爭的排起，點擊查看）</p><div class="list">${ds.map((d) =>
-      `<button class="row drow" data-n="${esc(d.district)}"><span class="ab">${esc(d.district)}</span><span>${esc(d.incumbent && d.incumbent !== "open" ? d.incumbent : "開放席次")}<br>${RATINGS.includes(d.rating) ? chipFor(d.rating) : ""}</span><span class="mg">${esc(d.pvi || "")}</span></button>`).join("")}</div></div>`;
+      `<button class="row drow" data-n="${esc(d.district)}"><span class="ab">${esc(d.district)}</span><span>${esc(d.incumbent && d.incumbent !== "open" ? d.incumbent : "開放席次")}${flipTag(d)}<br>${RATINGS.includes(d.rating) ? chipFor(d.rating) : ""}</span><span class="mg">${esc(right(d))}</span></button>`).join("")}</div></div>`;
   }
 
   function partyList(p) {
@@ -589,18 +716,36 @@ footer a { color: inherit; }
       .map((x) => ({ ...x, adv: advantage(x.r, p), s: SCORE[ratingOf(x.r)] * (p === "D" ? 1 : -1), m: pollMargin(x.r) }))
       .sort((a, b) => a.s - b.s || (Math.abs(a.m ?? 99) - Math.abs(b.m ?? 99)));
     const t = tally();
-    return `<h2 style="color:var(${p === "D" ? "--dem" : "--rep"})">${name}優勢選區</h2>
-      <p class="sub">${CH[chamber].name}：${rows.length} 州具優勢 · 預估 ${p === "D" ? t.D : t.R}${CH[chamber].unit}（過半 ${CH[chamber].majority}）。由最競爭的排起。</p>
+    return `<h2 style="color:var(${p === "D" ? "--dem" : "--rep"})">${name}${isResult() ? year + " 勝選州" : "優勢選區"}</h2>
+      <p class="sub">${CH[chamber].name}：${rows.length} 州${isResult() ? "勝選" : "具優勢"} · ${isResult() ? "共" : "預估"} ${p === "D" ? t.D : t.R}${CH[chamber].unit}（過半 ${CH[chamber].majority}）。由${isResult() ? "差距最小" : "最競爭"}的排起。</p>
       <div class="list">${rows.map((x) => {
         const rt = ratingOf(x.r);
         const right = chamber === "house"
           ? `${p === "D" ? (x.r.safeD + x.r.likelyD + x.r.leanD) : (x.r.safeR + x.r.likelyR + x.r.leanR)}/${x.r.seats} 席`
+          : chamber === "pres" ? `${x.r.ev} 票`
           : (x.m !== null ? fmtM(x.m) : "");
         return `<button class="row" data-st="${x.ab}"><span class="ab">${x.ab}</span><span>${esc(GEO[x.ab].name)}<br>${x.adv === "tilt" ? `<span class="sub">拉鋸 · 民調些微領先</span>` : chipFor(rt)}</span><span class="mg">${right}</span></button>`;
       }).join("") || `<p class="sub">目前沒有${name}優勢州。</p>`}</div>`;
   }
 
+  function resultOverview() {
+    const t = tally(), c = CH[chamber];
+    const all = Object.keys(GEO).map((ab) => ({ ab, r: rec(ab) })).filter((x) => x.r);
+    const flips = all.filter((x) => x.r.flip);
+    const close = all.filter((x) => chamber !== "house" && pollMargin(x.r) !== null).sort((a, b) => Math.abs(pollMargin(a.r)) - Math.abs(pollMargin(b.r))).slice(0, 8);
+    const hFlips = chamber === "house" ? all.flatMap((x) => (x.r.districts || []).filter((d) => d.flip).map((d) => ({ ab: x.ab, d }))) : [];
+    const row = (x) => `<button class="row" data-st="${x.ab}"><span class="ab">${x.ab}</span><span>${esc(GEO[x.ab].name)}${flipTag(x.r)}</span><span class="mg">${esc(fmtM(pollMargin(x.r)))}</span></button>`;
+    return `<h2>${year} ${c.name}選舉結果</h2>
+      <p class="sub">${c.note}。點擊驢子或大象查看各黨勝選州，點擊地圖查看各州${chamber === "pres" ? "" : "與眾議院選區"}結果。</p>
+      <div class="grid2"><span>民主 <b>${t.D}</b></span><span>共和 <b>${t.R}</b></span></div>
+      ${close.length ? `<div><p class="sub"><b>差距最小</b></p><div class="list">${close.map(row).join("")}</div></div>` : ""}
+      ${flips.length && chamber !== "house" ? `<div><p class="sub"><b>翻盤</b>（席次易黨）</p><div class="list">${flips.map(row).join("")}</div></div>` : ""}
+      ${hFlips.length ? `<div><p class="sub"><b>翻盤選區</b>（${hFlips.length} 席）</p><p class="note">${hFlips.map((x) => esc(x.d.id) + "（" + (x.d.incumbentParty === "D" ? "民→" : "共→") + "）").join("、").replace(/（民→）/g, "（轉民主）").replace(/（共→）/g, "（轉共和）")}</p></div>` : ""}
+      <p class="src">資料來源：${esc((hist().sources || []).join("、") || "官方選舉結果")}</p>`;
+  }
+
   function overview() {
+    if (isResult()) return resultOverview();
     const t = tally(), c = CH[chamber];
     const keyRaces = Object.keys(GEO).map((ab) => ({ ab, r: rec(ab) })).filter((x) => x.r && ratingOf(x.r) === "Toss-up");
     const nat = meta.national || {};
@@ -628,7 +773,11 @@ footer a { color: inherit; }
   }
 
   function renderStatus() {
-    $("dot").classList.toggle("live", live);
+    $("dot").classList.toggle("live", live && !isResult());
+    $("foot-note").textContent = isResult()
+      ? "顏色代表勝選黨與得票差距：大勝 ≥15、勝 5–15、險勝 <5 個百分點。"
+      : "評級分「穩固 / 傾向 / 微傾 / 拉鋸」。拉鋸州以最新民調領先者標示為「些微領先」。民調與預測不是選舉結果。";
+    if (isResult()) { $("status").textContent = year + " 選後結果"; $("foot-src").textContent = "資料來源：" + ((hist().sources || []).join("、") || "官方選舉結果"); return; }
     $("status").textContent = (live ? "即時同步 · " : "資料快照 · ") + "更新於 " + (meta.updated || "—");
     const h = meta.house || {};
     $("foot-src").textContent = `資料來源：各州民調、${h.ratingSource || "Cook Political Report"} 等評級機構、Decision Desk HQ 與預測市場；由 Claude 定期彙整。`;
@@ -636,6 +785,10 @@ footer a { color: inherit; }
 
   function render() {
     document.querySelectorAll(".tab[role=tab]").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.ch === chamber)));
+    $("tab-pres").hidden = !PRES_YEARS.includes(year);
+    $("h1-text").textContent = YEAR_LABEL[year][0]; $("h1-date").textContent = YEAR_LABEL[year][1];
+    document.querySelectorAll(".party .hint").forEach((h) => { h.textContent = isResult() ? "點擊看勝選州" : "點擊看優勢選區"; });
+    document.querySelectorAll(".years button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.year === year)));
     $("btn-D").setAttribute("aria-pressed", String(party === "D"));
     $("btn-R").setAttribute("aria-pressed", String(party === "R"));
     renderProjection(); renderTally(); renderMap(); renderPanel(); renderStatus();
@@ -646,6 +799,30 @@ footer a { color: inherit; }
   $("zoom-back").addEventListener("click", () => { selected = null; dsel = null; render(); });
   $("btn-D").addEventListener("click", () => setParty("D"));
   $("btn-R").addEventListener("click", () => setParty("R"));
+  // Switch the whole page to another election year; past years load once from history/<year>.json.
+  async function setYear(y) {
+    if (y === year) return;
+    if (y !== "2026" && !HIST[y]) {
+      $("status").textContent = "載入 " + y + " 年資料中…";
+      try {
+        const res = await fetch("history/" + y + ".json");
+        if (!res.ok) throw new Error(res.status);
+        HIST[y] = await res.json();
+      } catch (e) {
+        $("status").textContent = y + " 年資料無法載入（本機開啟時請用 python3 -m http.server）";
+        return;
+      }
+    }
+    year = y;
+    races = y === "2026" ? LIVE_RACES : HIST[y].races;
+    DGEO = y === "2026" ? DGEO_LIVE : HIST[y].dgeo;
+    RATING_ZH = y === "2026" ? RATING_ZH_FORECAST : RATING_ZH_RESULT;
+    if (chamber === "pres" && !PRES_YEARS.includes(y)) chamber = "senate";
+    builtFor = null; dsel = null;
+    if (selected && !DGEO[selected]) selected = null;
+    render();
+  }
+  document.querySelectorAll(".years button").forEach((b) => b.addEventListener("click", () => setYear(b.dataset.year)));
   document.querySelectorAll(".tab[role=tab]").forEach((t) => t.addEventListener("click", () => {
     chamber = t.dataset.ch; render();
     try { history.replaceState(null, "", "#" + chamber); } catch (e) {}
@@ -663,7 +840,7 @@ footer a { color: inherit; }
     let pending = null;
     const later = () => { if (!pending) pending = requestAnimationFrame(() => { pending = null; render(); }); };
     db.collection("races").onSnapshot((snap) => {
-      for (const d of snap.docs) if (d.exists) races[d.id] = d.data();
+      for (const d of snap.docs) if (d.exists) LIVE_RACES[d.id] = d.data();
       live = true; later();
     }, () => { live = false; later(); });
     db.doc("meta/summary").onSnapshot((snap) => {

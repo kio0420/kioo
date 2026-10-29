@@ -3,7 +3,7 @@
 互動式美國選舉地圖，分參議院、眾議院、州長三個分頁。點「驢子」或「大象」會只顯示該黨具優勢的州，點地圖上的州會放大成該州的眾議院選區圖（每個選區依評級上色），並顯示候選人、民調和評級。
 
 - 線上版（Claude Artifact）：https://claude.ai/artifact/K3UGnGZZZr4GfxXZW7G187
-- 本機：直接用瀏覽器開啟 `index.html`（資料已內嵌，不需要伺服器）
+- 本機：2026 預測可直接用瀏覽器開啟 `index.html`；要切換到 2020–2024 年需透過伺服器開啟（例如在此資料夾執行 `python3 -m http.server`）
 
 ## 檔案
 
@@ -16,6 +16,8 @@
 | `geo/states-paths.json` | 各州 SVG 路徑，由 `tools/topo2svg.py` 從 us-atlas 的 `states-albers-10m.json` 轉出 |
 | `geo/districts-paths.json` | 各州選區 SVG 路徑，由 `tools/districts2svg.mjs` 投影、`tools/thinpaths.py` 精簡 |
 | `build.py` | 把模板、地圖與資料組成 `index.html`，並在 `seed/` 產生資料庫寫入批次 |
+| `data/history/` | 2020–2024 選後結果：總統、參議院、州長（含奇數年州長選舉）、眾議院各選區 |
+| `build_history.py` | 把歷史結果與當年選區圖組成 `history/<年>.json`，頁面切換年份時才載入 |
 
 ## 資料更新方式
 
