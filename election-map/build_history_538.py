@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent
 YEARS = [str(y) for y in range(1976, 2019, 2)]
 GOV_FROM = 1996  # first year with governor results in the dataset
 STATES = set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split())
-SOURCES = ["FiveThirtyEight election-results（彙整 FEC、眾議院書記官處與各州選務機關）"]
+SOURCES = ["FiveThirtyEight election-results（彙整 FEC、眾議院書記官處與各州選務機關）", "MIT Election Data + Science Lab（1976–1996 總統）"]
 
 # Electoral votes by census apportionment: 1990 census for 2000, 2000 census for 2004–2008, 2010 census for 2012–2020.
 EV_1990 = dict(AL=9, AK=3, AZ=8, AR=6, CA=54, CO=8, CT=8, DE=3, DC=3, FL=25, GA=13, HI=4, ID=4, IL=22, IN=12, IA=7, KS=6, KY=8, LA=9, ME=4, MD=10, MA=12, MI=18, MN=10, MS=7, MO=11, MT=3, NE=5, NV=4, NH=4, NJ=15, NM=5, NY=33, NC=14, ND=3, OH=21, OK=8, OR=7, PA=23, RI=4, SC=8, SD=3, TN=11, TX=32, UT=5, VT=3, VA=13, WA=11, WV=5, WI=11, WY=3)
