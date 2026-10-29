@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "ratingSource": "Cook Political Report (Likely/Lean/Toss-up); Safe seats by partisan lean",
   "districts": [
     {
@@ -175,14 +175,14 @@
       "id": "AZ-6",
       "state": "AZ",
       "district": 6,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Juan Ciscomani",
       "incumbentParty": "R",
       "dem": "JoAnna Mendoza",
       "rep": "Juan Ciscomani",
       "pvi": "EVEN",
-      "note": null
+      "note": "Cook 10/23 由 Toss-up 調整為 Lean D。"
     },
     {
       "id": "AZ-7",
@@ -1046,14 +1046,14 @@
       "id": "CO-8",
       "state": "CO",
       "district": 8,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Gabe Evans",
       "incumbentParty": "R",
       "dem": "Manny Rutinel",
       "rep": "Gabe Evans",
       "pvi": null,
-      "note": null
+      "note": "Cook 10/23 由 Toss-up 調整為 Lean D。"
     },
     {
       "id": "CT-1",
@@ -2242,14 +2242,14 @@
       "id": "KY-6",
       "state": "KY",
       "district": 6,
-      "rating": "Lean R",
+      "rating": "Toss-up",
       "basis": "cook",
       "incumbent": "open",
       "incumbentParty": null,
       "dem": "Zach Dembo",
       "rep": "Ralph Alvarado",
       "pvi": null,
-      "note": "Barr 參選聯邦參議員，開放席位。"
+      "note": "Barr 參選聯邦參議員，開放席位。Cook 10/23 由 Lean R 調整為 Toss-up。"
     },
     {
       "id": "LA-1",
@@ -3815,14 +3815,14 @@
       "id": "NC-11",
       "state": "NC",
       "district": 11,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Chuck Edwards",
       "incumbentParty": "R",
       "dem": "Jamie Ager",
       "rep": "Jennifer Balkcom",
       "pvi": null,
-      "note": "Edwards 8 月退選，由 Balkcom 遞補為共和黨提名人。"
+      "note": "Edwards 8 月退選，由 Balkcom 遞補為共和黨提名人。Cook 10/23 由 Toss-up 調整為 Lean D。"
     },
     {
       "id": "NC-12",
@@ -5115,27 +5115,27 @@
       "id": "TX-34",
       "state": "TX",
       "district": 34,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Vicente Gonzalez",
       "incumbentParty": "D",
       "dem": "Vicente Gonzalez",
       "rep": "Eric Flores",
       "pvi": null,
-      "note": "新圖使選區更偏共和黨。"
+      "note": "新圖使選區更偏共和黨。Cook 10/23 由 Toss-up 調整為 Lean D。"
     },
     {
       "id": "TX-35",
       "state": "TX",
       "district": 35,
-      "rating": "Lean R",
+      "rating": "Toss-up",
       "basis": "cook",
       "incumbent": "open",
       "incumbentParty": null,
       "dem": "Johnny Garcia",
       "rep": "Carlos De La Cruz",
       "pvi": null,
-      "note": "新圖拆解 Casar 原選區，改為聖安東尼奧郊區偏共和黨選區（Trump 約 +10）。"
+      "note": "新圖拆解 Casar 原選區，改為聖安東尼奧郊區偏共和黨選區（Trump 約 +10）。Cook 10/23 由 Lean R 調整為 Toss-up。"
     },
     {
       "id": "TX-36",
@@ -5258,14 +5258,14 @@
       "id": "VA-2",
       "state": "VA",
       "district": 2,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Jen Kiggans",
       "incumbentParty": "R",
       "dem": "Elaine Luria",
       "rep": "Jen Kiggans",
       "pvi": null,
-      "note": "2022 年對決重演。"
+      "note": "2022 年對決重演。Cook 10/23 由 Toss-up 調整為 Lean D。"
     },
     {
       "id": "VA-3",
@@ -5570,14 +5570,14 @@
       "id": "WI-3",
       "state": "WI",
       "district": 3,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Derrick Van Orden",
       "incumbentParty": "R",
       "dem": "Rebecca Cooke",
       "rep": "Derrick Van Orden",
       "pvi": null,
-      "note": "2024 年對決重演（Van Orden 當時以不到 3 點險勝）。"
+      "note": "2024 年對決重演（Van Orden 當時以不到 3 點險勝）。Cook 10/23 由 Toss-up 調整為 Lean D。"
     },
     {
       "id": "WI-4",

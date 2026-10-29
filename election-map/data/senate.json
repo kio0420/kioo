@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-29",
  "currentSeats": {
   "D": 45,
   "I": 2,
@@ -228,13 +228,13 @@
    "rep": "Susan Collins",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 48.8,
-   "repPct": 47.2,
-   "pollSource": "RealClearPolling average, Sep 23-Oct 14 2026",
+   "demPct": 49,
+   "repPct": 47,
+   "pollSource": "Marist Poll (likely voters), Oct 22-25 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "普拉特納退選後由傑克森接任民主黨提名，與現任參議員柯林斯民調難分軒輊。",
-   "url": "https://www.realclearpolling.com/polls/senate/general/2026/maine/collins-vs-platner"
+   "note": "普拉特納退選後由傑克森接任民主黨提名，與現任參議員柯林斯民調難分軒輊，最新馬里斯特民調傑克森以49%對47%小幅領先。",
+   "url": "https://maristpoll.marist.edu/polls/midterm-elections-in-maine-october-2026/"
   },
   {
    "state": "MI",

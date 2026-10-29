@@ -1,15 +1,15 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "ratingSource": "Cook Political Report",
   "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
-  "ratingAsOf": "2026-10-16 (Cook ratings as mirrored by 270toWin, map updated 2026-10-19)",
+  "ratingAsOf": "2026-10-23 (Cook 10/23 update; district-level moves verified: 6 Toss-up to Lean D, 2 Lean R to Toss-up; Cook's other 11 moves in that batch not itemized in available sources)",
   "ratingSourceNote": "District lists for Likely/Lean/Toss-up taken from 270toWin's mirror of Cook ratings; Solid D/R split per state derived from the 2026 maps in effect and checked against Cook's national totals (Solid D 185, Solid R 171).",
   "ratingTotals": {
     "safeD": 185,
     "likelyD": 17,
-    "leanD": 12,
-    "tossup": 21,
-    "leanR": 13,
+    "leanD": 18,
+    "tossup": 17,
+    "leanR": 11,
     "likelyR": 16,
     "safeR": 171
   },
@@ -83,14 +83,12 @@
       },
       "safeD": 3,
       "likelyD": 0,
-      "leanD": 1,
-      "tossup": 1,
+      "leanD": 2,
+      "tossup": 0,
       "leanR": 0,
       "likelyR": 1,
       "safeR": 3,
-      "tossupDistricts": [
-        "AZ-6"
-      ]
+      "tossupDistricts": []
     },
     {
       "state": "AR",
@@ -137,14 +135,12 @@
       },
       "safeD": 4,
       "likelyD": 0,
-      "leanD": 0,
-      "tossup": 1,
+      "leanD": 1,
+      "tossup": 0,
       "leanR": 1,
       "likelyR": 1,
       "safeR": 1,
-      "tossupDistricts": [
-        "CO-8"
-      ]
+      "tossupDistricts": []
     },
     {
       "state": "CT",
@@ -323,11 +319,13 @@
       "safeD": 1,
       "likelyD": 0,
       "leanD": 0,
-      "tossup": 0,
-      "leanR": 1,
+      "tossup": 1,
+      "leanR": 0,
       "likelyR": 0,
       "safeR": 4,
-      "tossupDistricts": []
+      "tossupDistricts": [
+        "KY-6"
+      ]
     },
     {
       "state": "LA",
@@ -588,14 +586,13 @@
       },
       "safeD": 3,
       "likelyD": 0,
-      "leanD": 0,
-      "tossup": 2,
+      "leanD": 1,
+      "tossup": 1,
       "leanR": 0,
       "likelyR": 0,
       "safeR": 9,
       "tossupDistricts": [
-        "NC-1",
-        "NC-11"
+        "NC-1"
       ],
       "note": "2025 年新圖主要針對 NC-1。"
     },
@@ -760,14 +757,14 @@
       },
       "safeD": 8,
       "likelyD": 0,
-      "leanD": 1,
+      "leanD": 2,
       "tossup": 2,
-      "leanR": 1,
+      "leanR": 0,
       "likelyR": 2,
       "safeR": 24,
       "tossupDistricts": [
         "TX-15",
-        "TX-34"
+        "TX-35"
       ],
       "note": "2025 年共和黨中期重劃新圖生效；TX-23 因 Tony Gonzales 辭職出缺。"
     },
@@ -813,14 +810,13 @@
       },
       "safeD": 5,
       "likelyD": 1,
-      "leanD": 0,
-      "tossup": 2,
+      "leanD": 1,
+      "tossup": 1,
       "leanR": 0,
       "likelyR": 1,
       "safeR": 2,
       "tossupDistricts": [
-        "VA-1",
-        "VA-2"
+        "VA-1"
       ],
       "note": "民主黨的重劃修憲案未生效，沿用舊圖。"
     },
@@ -865,14 +861,12 @@
       },
       "safeD": 2,
       "likelyD": 0,
-      "leanD": 0,
-      "tossup": 1,
+      "leanD": 1,
+      "tossup": 0,
       "leanR": 1,
       "likelyR": 0,
       "safeR": 4,
-      "tossupDistricts": [
-        "WI-3"
-      ]
+      "tossupDistricts": []
     },
     {
       "state": "WY",
@@ -988,6 +982,38 @@
         "note": "prediction market（Forbes 10/27 追蹤頁引述）",
         "source": "Kalshi",
         "url": "https://www.forbes.com/sites/saradorn/2026/10/27/latest-polls-in-2026-midterms-democrats-lead-in-michigan-texas-maine-updated-daily/"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-23",
+        "demChance": null,
+        "note": "10/23：再調整 19 場眾議院選區評級偏向民主黨（6 席 Toss-up→Lean D、2 席 Lean R→Toss-up）；民主黨 Solid/Likely/Lean 共 220 席、共和黨 198 席、17 席 Toss-up；最可能結果為民主黨淨增 12–22 席",
+        "source": "Cook Political Report",
+        "url": "https://www.cookpolitical.com/analysis/house/house-overview/democrats-projected-majority-grows-19"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-28",
+        "demChance": 80,
+        "note": "預測民主黨約 238 席；參議院民主黨 58%（新聞彙整，來源日期 10/26–28）",
+        "source": "Decision Desk HQ",
+        "url": "https://votes.decisiondeskhq.com/forecast/2026"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-28",
+        "demChance": 91.3,
+        "note": "prediction market；Kalshi 10/26 席次平均預測民主黨 238.3 席（非勝率）",
+        "source": "Kalshi",
+        "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-28",
+        "demChance": 92,
+        "note": "prediction market；參議院民主黨約 67%",
+        "source": "Polymarket",
+        "url": "https://www.cnbc.com/2026/10/27/2026-midterms-prediction-markets-democrats-congress.html"
       }
     ],
     "genericBallot": [
@@ -1041,6 +1067,15 @@
         "note": "The Conversation 10/26 引述 Silver Bulletin 模型",
         "source": "Silver Bulletin",
         "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
+      },
+      {
+        "date": "2026-10-27",
+        "dem": 51.1,
+        "margin": "D+8.7",
+        "rep": 42.4,
+        "note": "PollCheck 平均",
+        "source": "PollCheck",
+        "url": "https://www.pollcheck.co.uk/us-midterms-2026/generic-ballot"
       }
     ],
     "senateCurrent": {
