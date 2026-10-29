@@ -143,6 +143,10 @@ def record(state, seat, prev_party=None):
 
 def main():
     src = Path(sys.argv[1])
+    # Presidential results before 2000 are not in the FiveThirtyEight data; they come from a separate
+    # state-level file (MIT Election Data + Science Lab) converted to data/history/president-1976-1996.json.
+    old_pres_file = ROOT / "data" / "history" / "president-1976-1996.json"
+    old_pres = json.loads(old_pres_file.read_text(encoding="utf-8")) if old_pres_file.exists() else {}
     pres_rows = read(src / "election_results_presidential.csv")
     sen = races_from(read(src / "election_results_senate.csv"))
     gov = races_from(read(src / "election_results_gubernatorial.csv"))
@@ -202,6 +206,16 @@ def main():
                 "D": {"name": nat["D"][1], "ev": dev, "pct": round(100 * nat["D"][0] / total_votes, 1)},
                 "R": {"name": nat["R"][1], "ev": rev, "pct": round(100 * nat["R"][0] / total_votes, 1)},
             }
+        if year in old_pres:
+            p = old_pres[year]
+            comp["pres"] = p["national"]
+            for st, x in p["states"].items():
+                races["pres-" + st] = {
+                    "state": st, "winner": x["winner"], "rating": margin_rating(x["winner"], abs(x["dPct"] - x["rPct"])),
+                    "dem": p["national"]["D"]["name"], "rep": p["national"]["R"]["name"],
+                    "demPct": x["dPct"], "repPct": x["rPct"], "dPct": x["dPct"], "rPct": x["rPct"],
+                    "ev": x["ev"], "evSplit": x.get("evSplit"),
+                }
         # Senate
         comp["senate"] = SENATE_COMP[year]
         for key in sorted(k for k in sen if k[0] == year):
