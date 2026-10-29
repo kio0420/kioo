@@ -1,4 +1,4 @@
-"""Build history/<year>.json for 2000–2018 from FiveThirtyEight's election-results CSVs.
+"""Build history/<year>.json for 1976–2018 from FiveThirtyEight's election-results CSVs.
 
 Usage: python3 build_history_538.py <csv dir>
 The csv dir holds election_results_{presidential,senate,house,gubernatorial}.csv from
@@ -13,7 +13,8 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-YEARS = [str(y) for y in range(2000, 2019, 2)]
+YEARS = [str(y) for y in range(1976, 2019, 2)]
+GOV_FROM = 1996  # first year with governor results in the dataset
 STATES = set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split())
 SOURCES = ["FiveThirtyEight election-results（彙整 FEC、眾議院書記官處與各州選務機關）"]
 
@@ -28,13 +29,17 @@ EV_SPLIT = {("2008", "NE"): {"R": 4, "D": 1}, ("2016", "ME"): {"D": 3, "R": 1}}
 PRES_EV = {"2000": (266, 271), "2004": (251, 286), "2008": (365, 173), "2012": (332, 206), "2016": (227, 304)}
 # Senate party breakdown when the new Congress convened (independents caucus with Democrats).
 SENATE_COMP = {
+    "1976": {"D": 61, "I": 1, "R": 38}, "1978": {"D": 58, "I": 1, "R": 41}, "1980": {"D": 46, "I": 1, "R": 53},
+    "1982": {"D": 46, "I": 0, "R": 54}, "1984": {"D": 47, "I": 0, "R": 53}, "1986": {"D": 55, "I": 0, "R": 45},
+    "1988": {"D": 55, "I": 0, "R": 45}, "1990": {"D": 56, "I": 0, "R": 44}, "1992": {"D": 57, "I": 0, "R": 43},
+    "1994": {"D": 47, "I": 0, "R": 53}, "1996": {"D": 45, "I": 0, "R": 55}, "1998": {"D": 45, "I": 0, "R": 55},
     "2000": {"D": 50, "I": 0, "R": 50}, "2002": {"D": 48, "I": 1, "R": 51}, "2004": {"D": 44, "I": 1, "R": 55},
     "2006": {"D": 49, "I": 2, "R": 49}, "2008": {"D": 57, "I": 2, "R": 41}, "2010": {"D": 51, "I": 2, "R": 47},
     "2012": {"D": 53, "I": 2, "R": 45}, "2014": {"D": 44, "I": 2, "R": 54}, "2016": {"D": 46, "I": 2, "R": 52},
     "2018": {"D": 45, "I": 2, "R": 53},
 }
 # House flips compare the same district number, which is meaningless right after a census redraw.
-NO_HOUSE_FLIPS = {"2002", "2012"}
+NO_HOUSE_FLIPS = {"1982", "1992", "2002", "2012"}
 
 
 # Louisiana decides most races in a November "jungle primary"; a runoff, when held, decides the seat.
@@ -208,7 +213,7 @@ def main():
             races[rid] = rec
         # Governors: this year plus the following odd year (VA/NJ, KY/LA/MS).
         odd = str(int(year) + 1)
-        for y in (year, odd):
+        for y in ((year, odd) if int(year) >= GOV_FROM else ()):
             for key in sorted(k for k in gov if k[0] == y):
                 rec = record(key[1], gov[key], gov_prev[key])
                 if y == odd:
@@ -221,8 +226,11 @@ def main():
         for st, when, new in GOV_SWITCHES:
             if int(odd) >= when and st in last:
                 last[st] = new
-        comp["gov"] = {p: sum(1 for v in last.values() if v == p) for p in ("D", "R", "I")}
-        comp["gov"]["note"] = "依選舉結果推算（含罷免與換黨），不含任期中的繼任"
+        # Totals need every state's last election; 4-year terms make that complete from the 1998 cycle on.
+        if int(year) >= GOV_FROM + 2:
+            comp["gov"] = {p: sum(1 for v in last.values() if v == p) for p in ("D", "R", "I")}
+        if "gov" in comp:
+            comp["gov"]["note"] = "依選舉結果推算（含罷免與換黨），不含任期中的繼任"
         # House: per-district results grouped by state.
         hprev = {k[1:3]: house[k]["cands"][0]["party"] for k in house if k[0] == str(int(year) - 2) and not k[3]}
         by_state = defaultdict(list)
@@ -249,13 +257,14 @@ def main():
                 rec[cats[d["rating"]]] += 1
                 hD += d["incumbentParty"] == "D"; hR += d["incumbentParty"] == "R"; hI += d["incumbentParty"] == "I"
             races["house-" + st] = rec
-        comp["house"] = {"D": hD, "R": hR, **({"I": hI} if hI else {})}
+        if hD + hR + hI:  # the dataset has no House results for 1982–1996
+            comp["house"] = {"D": hD, "R": hR, **({"I": hI} if hI else {})}
         data = {"year": year, "races": races, "comp": comp, "dgeo": {}, "sources": SOURCES}
         path = out_dir / f"{year}.json"
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         seats = sum(r["seats"] for k, r in races.items() if k.startswith("house-"))
         print(f"{year}: house {hD}D/{hR}R{f'/{hI}I' if hI else ''} ({seats} seats), senate races {sum(1 for k in races if k.startswith('senate-'))}, "
-              f"gov {comp['gov']}, pres {comp.get('pres', {}).get('D', {}).get('name', '-')} vs {comp.get('pres', {}).get('R', {}).get('name', '-')}, {path.stat().st_size // 1024} KB")
+              f"gov {comp.get('gov', '-')}, pres {comp.get('pres', {}).get('D', {}).get('name', '-')} vs {comp.get('pres', {}).get('R', {}).get('name', '-')}, {path.stat().st_size // 1024} KB")
 
 
 if __name__ == "__main__":
