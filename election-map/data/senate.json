@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-31",
  "currentSeats": {
   "D": 45,
   "I": 2,
@@ -318,12 +318,12 @@
    "rep": "Pete Ricketts",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 45.3,
-   "repPct": 47.0,
-   "pollSource": "The Hill/Decision Desk HQ average, Oct 12 2026",
+   "demPct": 45.9,
+   "repPct": 45.3,
+   "pollSource": "PollCheck average, as of Oct 27 2026",
    "rating": "Likely R",
    "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "獨立候選人奧斯本緊追現任參議員里基茨，民調差距在誤差範圍內。",
+   "note": "獨立候選人奧斯本與現任參議員里基茨幾乎平手，最新民調平均奧斯本以45.9%對45.3%略為領先，差距在誤差範圍內。",
    "url": "https://decisiondeskhq.substack.com/p/nebraska-senate-independent-dan-osborn-pete-ricketts"
   },
   {

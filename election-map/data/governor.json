@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-31",
  "currentGovernors": {
   "D": 24,
   "R": 26
@@ -196,9 +196,9 @@
    "demPct": 44,
    "repPct": 49,
    "pollSource": "Siena College, Oct 2026",
-   "rating": "Lean R",
+   "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "Kelly任期屆滿，共和黨Masterson民調領先，可望奪回州長職位。",
+   "note": "Kelly任期屆滿，Masterson民調領先，但Cook於投票前一週將評級由Lean R調為Toss-up。",
    "url": "https://www.270towin.com/2026-governor-polls/kansas"
   },
   {
@@ -280,9 +280,9 @@
    "demPct": 43,
    "repPct": 44,
    "pollSource": "Public Policy Polling, Oct 2026",
-   "rating": "Likely R",
+   "rating": "Lean R",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Pillen與Walz民調幾乎打平，評級轉向民主黨。",
+   "note": "現任州長Pillen與Walz民調幾乎打平，Cook於投票前一週將評級由Likely R調為Lean R。",
    "url": "https://politicalwire.com/2026/10/16/jim-pillen-barely-leads-in-nebraska-governors-race/"
   },
   {
@@ -487,12 +487,12 @@
    "rep": "Tom Tiffany",
    "incumbentParty": "D",
    "incumbentRunning": false,
-   "demPct": 49,
-   "repPct": 46,
-   "pollSource": "Marquette Law School, Sep 2026",
+   "demPct": 51,
+   "repPct": 44,
+   "pollSource": "Marquette Law School, Oct 2026 (likely voters, released Oct 28)",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "Evers不連任，Crowley在誤差範圍內小幅領先。",
+   "note": "Evers不連任，Crowley在最新Marquette民調中領先Tiffany 7點，差距較9月擴大。",
    "url": "https://www.wispolitics.com/2026/marquette-university-law-school-poll-finds-that-wisconsin-governors-race-remains-tight-crowley-49-tiffany-46-among-likely-voters/"
   },
   {
