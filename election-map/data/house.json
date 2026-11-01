@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "ratingSource": "Cook Political Report",
   "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
-  "ratingAsOf": "2026-10-23 (Cook 10/23 update; district-level moves verified: 6 Toss-up to Lean D, 2 Lean R to Toss-up; Cook's other 11 moves in that batch not itemized in available sources)",
+  "ratingAsOf": "2026-10-30 (Cook 10/30 update, 12 moves verified via press coverage; plus 10/23 batch: 6 Toss-up to Lean D, 2 Lean R to Toss-up)",
   "ratingSourceNote": "District lists for Likely/Lean/Toss-up taken from 270toWin's mirror of Cook ratings; Solid D/R split per state derived from the 2026 maps in effect and checked against Cook's national totals (Solid D 185, Solid R 171).",
   "ratingTotals": {
     "safeD": 185,
     "likelyD": 17,
-    "leanD": 18,
-    "tossup": 17,
+    "leanD": 20,
+    "tossup": 18,
     "leanR": 11,
-    "likelyR": 16,
-    "safeR": 171
+    "likelyR": 17,
+    "safeR": 167
   },
   "current": {
     "D": 214,
@@ -136,11 +136,13 @@
       "safeD": 4,
       "likelyD": 0,
       "leanD": 1,
-      "tossup": 0,
-      "leanR": 1,
+      "tossup": 1,
+      "leanR": 0,
       "likelyR": 1,
       "safeR": 1,
-      "tossupDistricts": []
+      "tossupDistricts": [
+        "CO-5"
+      ]
     },
     {
       "state": "CT",
@@ -186,8 +188,8 @@
       "likelyD": 0,
       "leanD": 1,
       "tossup": 2,
-      "leanR": 2,
-      "likelyR": 3,
+      "leanR": 4,
+      "likelyR": 1,
       "safeR": 16,
       "tossupDistricts": [
         "FL-14",
@@ -270,8 +272,8 @@
       "likelyD": 1,
       "leanD": 0,
       "tossup": 0,
-      "leanR": 0,
-      "likelyR": 1,
+      "leanR": 1,
+      "likelyR": 0,
       "safeR": 6,
       "tossupDistricts": []
     },
@@ -539,8 +541,8 @@
       "leanD": 1,
       "tossup": 0,
       "leanR": 0,
-      "likelyR": 0,
-      "safeR": 2,
+      "likelyR": 1,
+      "safeR": 1,
       "tossupDistricts": []
     },
     {
@@ -589,8 +591,8 @@
       "leanD": 1,
       "tossup": 1,
       "leanR": 0,
-      "likelyR": 0,
-      "safeR": 9,
+      "likelyR": 2,
+      "safeR": 7,
       "tossupDistricts": [
         "NC-1"
       ],
@@ -621,14 +623,13 @@
       },
       "safeD": 2,
       "likelyD": 2,
-      "leanD": 0,
-      "tossup": 2,
+      "leanD": 1,
+      "tossup": 1,
       "leanR": 2,
       "likelyR": 0,
       "safeR": 7,
       "tossupDistricts": [
-        "OH-7",
-        "OH-9"
+        "OH-7"
       ],
       "note": "2025 年新選區圖生效，OH-9、OH-13 等民主黨席位變得較競爭。"
     },
@@ -673,13 +674,13 @@
       },
       "safeD": 7,
       "likelyD": 0,
-      "leanD": 2,
+      "leanD": 3,
       "tossup": 1,
-      "leanR": 1,
+      "leanR": 0,
       "likelyR": 0,
       "safeR": 6,
       "tossupDistricts": [
-        "PA-8"
+        "PA-1"
       ]
     },
     {
@@ -708,11 +709,13 @@
       "safeD": 1,
       "likelyD": 0,
       "leanD": 0,
-      "tossup": 0,
-      "leanR": 1,
+      "tossup": 1,
+      "leanR": 0,
       "likelyR": 0,
       "safeR": 5,
-      "tossupDistricts": []
+      "tossupDistricts": [
+        "SC-1"
+      ]
     },
     {
       "state": "SD",
@@ -832,8 +835,8 @@
       "leanD": 1,
       "tossup": 0,
       "leanR": 0,
-      "likelyR": 0,
-      "safeR": 2,
+      "likelyR": 1,
+      "safeR": 1,
       "tossupDistricts": []
     },
     {
@@ -897,11 +900,11 @@
       },
       {
         "chamber": "Senate",
-        "date": "2026-10-18",
-        "demChance": 56,
-        "note": "projected 51 D seats; toss-ups IA, OH, ME, TX",
+        "date": "2026-10-31",
+        "demChance": 63,
+        "note": "預測民主黨約 52 席（搜尋結果摘要，頁面標示 10/31）",
         "source": "Decision Desk HQ",
-        "url": "https://www.newsweek.com/map-shows-republican-chances-of-losing-senate-two-weeks-before-midterms-12590803"
+        "url": "https://votes.decisiondeskhq.com/forecast/2026"
       },
       {
         "chamber": "Senate",
@@ -945,9 +948,9 @@
       },
       {
         "chamber": "Senate",
-        "date": "2026-10-19",
-        "demChance": 63,
-        "note": "prediction market (R 38)",
+        "date": "2026-11-01",
+        "demChance": 72,
+        "note": "prediction market；約 72%（搜尋結果摘要，近似值；Kalshi 參院價格由兩個合約組合而成）",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controls/senate-winner/controls-2026"
       },
@@ -961,11 +964,11 @@
       },
       {
         "chamber": "House",
-        "date": "2026-10-26",
+        "date": "2026-11-01",
         "demChance": 95,
-        "note": "Silver Bulletin 預測模型，10/19 為 94%（The Conversation 10/26 報導；Silver 10/25 CNN 亦稱 95%）",
+        "note": "Silver Bulletin 預測模型 11/1 更新：民主黨約 95% 取得眾議院，平均預測淨增約 25 席（搜尋結果摘要）",
         "source": "Silver Bulletin",
-        "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
+        "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
       },
       {
         "chamber": "Senate",
@@ -985,25 +988,25 @@
       },
       {
         "chamber": "House",
-        "date": "2026-10-23",
+        "date": "2026-10-30",
         "demChance": null,
-        "note": "10/23：再調整 19 場眾議院選區評級偏向民主黨（6 席 Toss-up→Lean D、2 席 Lean R→Toss-up）；民主黨 Solid/Likely/Lean 共 220 席、共和黨 198 席、17 席 Toss-up；最可能結果為民主黨淨增 12–22 席",
+        "note": "10/30：再調整 12 場眾議院選區評級（搜尋結果摘要）；Cook 評定 222 席偏民主黨（Lean D 以上）、18 席 Toss-up；預測民主黨 227–240 席",
         "source": "Cook Political Report",
-        "url": "https://www.cookpolitical.com/analysis/house/house-overview/democrats-projected-majority-grows-19"
+        "url": "https://thehill.com/homenews/campaign/6183415-cook-political-report-house-race-shifts-democrats-midterms/"
       },
       {
         "chamber": "House",
-        "date": "2026-10-28",
-        "demChance": 80,
-        "note": "預測民主黨約 238 席；參議院民主黨 58%（新聞彙整，來源日期 10/26–28）",
+        "date": "2026-10-31",
+        "demChance": 83,
+        "note": "預測民主黨約 241 席（搜尋結果摘要，頁面標示 10/31）",
         "source": "Decision Desk HQ",
         "url": "https://votes.decisiondeskhq.com/forecast/2026"
       },
       {
         "chamber": "House",
-        "date": "2026-10-28",
-        "demChance": 91.3,
-        "note": "prediction market；Kalshi 10/26 席次平均預測民主黨 238.3 席（非勝率）",
+        "date": "2026-11-01",
+        "demChance": 93,
+        "note": "prediction market；約 93%（搜尋結果摘要，近似值）",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026"
       },

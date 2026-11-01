@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "currentGovernors": {
   "D": 24,
   "R": 26
@@ -25,12 +25,12 @@
    "rep": "Bernadette Wilson",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 40,
-   "repPct": 20,
-   "pollSource": "Siena College, Oct 2026 (first-choice, RCV; Bronson 15, Taylor 11)",
+   "demPct": 51,
+   "repPct": 31,
+   "pollSource": "Alaska Survey Research, Oct 23-25 2026 (1,068 LV, first-choice, RCV)",
    "rating": "Lean D",
    "ratingSource": "Cook Political Report",
-   "note": "排序複選制下共和黨分裂為三人，民主黨Kreiss-Tomkins首選票領先。",
+   "note": "排序複選制下共和黨分裂，民主黨Kreiss-Tomkins最新首選票51%對Wilson 31%領先；Murkowski於10/27表態支持Kreiss-Tomkins。",
    "url": "https://alaskalandmine.com/landmines/cook-shifts-governors-race-to-lean-democrat/"
   },
   {
@@ -39,12 +39,12 @@
    "rep": "Andy Biggs",
    "incumbentParty": "D",
    "incumbentRunning": true,
-   "demPct": 47,
-   "repPct": 34,
-   "pollSource": "ASU, Oct 2026",
-   "rating": "Lean D",
+   "demPct": 49,
+   "repPct": 40,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026 (28 polls)",
+   "rating": "Likely D",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Hobbs在多項民調中以兩位數領先Biggs。",
+   "note": "現任州長Hobbs在民調平均中領先Biggs約9點，Cook於最終評級由Lean D調為Likely D。",
    "url": "https://www.azfamily.com/2026/10/14/new-arizona-poll-shows-democrats-leading-several-key-races/"
   },
   {
@@ -109,12 +109,12 @@
    "rep": "Byron Donalds",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 47,
+   "demPct": 44,
    "repPct": 49,
-   "pollSource": "UNF Public Opinion Research Lab, Oct 12-19 2026",
+   "pollSource": "PollCheck polling average, updated Oct 27 2026",
    "rating": "Lean R",
    "ratingSource": "Cook Political Report",
-   "note": "DeSantis任期屆滿，Donalds多數民調領先，最新UNF民調差距縮小至2點。",
+   "note": "DeSantis任期屆滿，Donalds在民調平均中領先約5點；個別民調（如UNF）顯示差距僅約2點。",
    "url": "https://floridapolitics.com/archives/825948-unf-poll-governors-race-too-close-to-call-in-final-days/"
   },
   {
@@ -123,12 +123,12 @@
    "rep": "Rick Jackson",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 45,
-   "repPct": 46,
-   "pollSource": "AJC/UGA SPIA, Oct 7-15 2026",
+   "demPct": 46,
+   "repPct": 48,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "Kemp任期屆滿，Jackson在誤差範圍內小幅領先，雙方幾乎打平。",
+   "note": "Kemp任期屆滿，Jackson在民調平均中小幅領先約1.5點，雙方在誤差範圍內幾乎打平。",
    "url": "https://www.ajc.com/politics/2026/10/rick-jackson-has-outspent-keisha-lance-bottoms-but-democratic-enthusiasm-has-the-race-knotted/"
   },
   {
@@ -179,12 +179,12 @@
    "rep": "Zach Lahn",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 52,
-   "repPct": 45,
-   "pollSource": "Marist, Oct 2026",
+   "demPct": 51,
+   "repPct": 44,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026 (Marist Oct 8-11: 52-45)",
    "rating": "Lean D",
    "ratingSource": "Cook Political Report",
-   "note": "Reynolds不連任，民主黨Sand在各民調中持續領先，有望翻盤。",
+   "note": "Reynolds不連任，民主黨Sand在民調平均中領先約8點，有望翻盤。",
    "url": "https://maristpoll.marist.edu/polls/2026-midterm-elections-in-iowa-october-2026/"
   },
   {
@@ -194,11 +194,11 @@
    "incumbentParty": "D",
    "incumbentRunning": false,
    "demPct": 44,
-   "repPct": 49,
-   "pollSource": "Siena College, Oct 2026",
+   "repPct": 48,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026 (Holscher campaign GSG Oct 18-21: 47-47)",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "Kelly任期屆滿，Masterson民調領先，但Cook於投票前一週將評級由Lean R調為Toss-up。",
+   "note": "Kelly任期屆滿，Masterson在民調平均中領先約4點，但Cook於10/27將評級由Lean R調為Toss-up。",
    "url": "https://www.270towin.com/2026-governor-polls/kansas"
   },
   {
@@ -277,12 +277,12 @@
    "rep": "Jim Pillen",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 43,
-   "repPct": 44,
-   "pollSource": "Public Policy Polling, Oct 2026",
+   "demPct": 41,
+   "repPct": 43,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026",
    "rating": "Lean R",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Pillen與Walz民調幾乎打平，Cook於投票前一週將評級由Likely R調為Lean R。",
+   "note": "現任州長Pillen在民調平均中領先Walz約2點，Cook已將評級由Likely R調為Lean R。",
    "url": "https://politicalwire.com/2026/10/16/jim-pillen-barely-leads-in-nebraska-governors-race/"
   },
   {
@@ -291,12 +291,12 @@
    "rep": "Joe Lombardo",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 37,
-   "repPct": 40,
-   "pollSource": "Noble Predictive Insights, Oct 7-13 2026 (RV, 23% undecided)",
+   "demPct": 45,
+   "repPct": 44,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026 (RedBox Research Oct 20-23 LV: Ford 46, Lombardo 43)",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Lombardo與州檢察長Ford勢均力敵，最新民調Lombardo小幅領先3點。",
+   "note": "現任州長Lombardo與州檢察長Ford勢均力敵，民調平均Ford微幅領先不到1點。",
    "url": "https://www.ktnv.com/news/new-poll-shows-lombardo-has-slight-lead-in-2026-governor-matchup"
   },
   {
@@ -350,9 +350,9 @@
    "demPct": 50,
    "repPct": 43,
    "pollSource": "Marist, Oct 15-18 2026",
-   "rating": "Toss-up",
+   "rating": "Lean D",
    "ratingSource": "Cook Political Report",
-   "note": "DeWine任期屆滿，Acton在多數民調中領先Ramaswamy，最新Marist民調領先7點。",
+   "note": "DeWine任期屆滿，Acton在多數民調中領先Ramaswamy，最新Marist民調領先7點；Cook於10/23將評級由Toss-up調為Lean D。",
    "url": "https://www.newsmax.com/politics/marist-poll-ohio-governor/2026/10/20/id/1273399/"
   },
   {
@@ -376,11 +376,11 @@
    "incumbentParty": "D",
    "incumbentRunning": true,
    "demPct": 46,
-   "repPct": 44,
-   "pollSource": "Oregonian/DHM Research, Oct 2026",
+   "repPct": 45,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026",
    "rating": "Lean D",
    "ratingSource": "Cook Political Report",
-   "note": "Kotek與Drazan再度對決，民調在誤差範圍內。",
+   "note": "Kotek與Drazan再度對決，民調平均Kotek僅領先約1點，在誤差範圍內。",
    "url": "https://www.opb.org/article/2026/10/08/new-polls-kotek-may-lead/"
   },
   {
@@ -459,12 +459,12 @@
    "rep": "Greg Abbott",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 45,
-   "repPct": 49,
-   "pollSource": "Marist, Oct 2026",
+   "demPct": 47,
+   "repPct": 50,
+   "pollSource": "Texas Southern University, Oct 21-25 2026",
    "rating": "Lean R",
    "ratingSource": "Cook Political Report",
-   "note": "現任州長Abbott小幅領先，部分民調顯示Hinojosa領先。",
+   "note": "現任州長Abbott在最新民調中領先3點，近期各民調差距約1至3點。",
    "url": "https://maristpoll.marist.edu/polls/2026-midterm-elections-in-texas-october-2026/"
   },
   {
@@ -473,12 +473,12 @@
    "rep": "Phil Scott",
    "incumbentParty": "R",
    "incumbentRunning": true,
-   "demPct": 43,
-   "repPct": 46,
-   "pollSource": "State Navigate, Oct 2026",
+   "demPct": 41,
+   "repPct": 45,
+   "pollSource": "PollCheck polling average, updated Oct 27 2026",
    "rating": "Likely R",
    "ratingSource": "Cook Political Report",
-   "note": "尋求第六任的Scott支持度下滑，民調差距縮小。",
+   "note": "尋求第六任的Scott支持度下滑，民調平均領先約4點，差距縮小。",
    "url": "https://politicalwire.com/2026/10/07/phil-scott-barely-leads-in-vermont-governors-race/"
   },
   {
@@ -489,11 +489,11 @@
    "incumbentRunning": false,
    "demPct": 51,
    "repPct": 44,
-   "pollSource": "Marquette Law School, Oct 2026 (likely voters, released Oct 28)",
-   "rating": "Toss-up",
+   "pollSource": "Marquette Law School, Oct 14-22 2026 (likely voters, released Oct 28)",
+   "rating": "Lean D",
    "ratingSource": "Cook Political Report",
-   "note": "Evers不連任，Crowley在最新Marquette民調中領先Tiffany 7點，差距較9月擴大。",
-   "url": "https://www.wispolitics.com/2026/marquette-university-law-school-poll-finds-that-wisconsin-governors-race-remains-tight-crowley-49-tiffany-46-among-likely-voters/"
+   "note": "Evers不連任，Crowley在最終Marquette民調中以51比44領先Tiffany 7點，差距較9月擴大；Cook最終評級由Toss-up調為Lean D。",
+   "url": "https://fox11online.com/news/state/2026-wisconsin-gubernatorial-race-midterm-election-marquette-university-law-school-poll-david-crowley-tom-tiffany"
   },
   {
    "state": "WY",

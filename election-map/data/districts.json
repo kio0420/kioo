@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "ratingSource": "Cook Political Report (Likely/Lean/Toss-up); Safe seats by partisan lean",
   "districts": [
     {
@@ -1007,14 +1007,14 @@
       "id": "CO-5",
       "state": "CO",
       "district": 5,
-      "rating": "Lean R",
+      "rating": "Toss-up",
       "basis": "cook",
       "incumbent": "Jeff Crank",
       "incumbentParty": "R",
       "dem": "Jessica Killin",
       "rep": "Jeff Crank",
       "pvi": null,
-      "note": "Cook 9/25 由 Likely 改為 Lean R。"
+      "note": "Cook 10/30 由 Lean R 改為 Toss-up。"
     },
     {
       "id": "CO-6",
@@ -1215,14 +1215,14 @@
       "id": "FL-7",
       "state": "FL",
       "district": 7,
-      "rating": "Likely R",
+      "rating": "Lean R",
       "basis": "cook",
       "incumbent": "Cory Mills",
       "incumbentParty": "R",
       "dem": null,
       "rep": "Ryan Elijah",
       "pvi": null,
-      "note": "現任 Cory Mills 8 月初選落敗。"
+      "note": "現任 Cory Mills 8 月初選落敗；Cook 10/30 由 Likely R 改為 Lean R。"
     },
     {
       "id": "FL-8",
@@ -1241,14 +1241,14 @@
       "id": "FL-9",
       "state": "FL",
       "district": 9,
-      "rating": "Likely R",
+      "rating": "Lean R",
       "basis": "cook",
       "incumbent": "Darren Soto",
       "incumbentParty": "D",
       "dem": "Darren Soto",
       "rep": "Dan Green",
       "pvi": "R+8",
-      "note": "新選區圖使本區明顯轉紅。"
+      "note": "新選區圖使本區明顯轉紅；Cook 10/30 由 Likely R 改為 Lean R。"
     },
     {
       "id": "FL-10",
@@ -2008,14 +2008,14 @@
       "id": "IN-5",
       "state": "IN",
       "district": 5,
-      "rating": "Likely R",
+      "rating": "Lean R",
       "basis": "cook",
       "incumbent": "Victoria Spartz",
       "incumbentParty": "R",
       "dem": "J.D. Ford",
       "rep": "Victoria Spartz",
       "pvi": null,
-      "note": "Cook 10/9 由 Safe 改為 Likely R。"
+      "note": "Cook 10/9 由 Safe 改為 Likely R；10/30 再改為 Lean R。"
     },
     {
       "id": "IN-6",
@@ -3165,14 +3165,14 @@
       "id": "NJ-2",
       "state": "NJ",
       "district": 2,
-      "rating": "Safe R",
-      "basis": "lean",
+      "rating": "Likely R",
+      "basis": "cook",
       "incumbent": "Jeff Van Drew",
       "incumbentParty": "R",
       "dem": null,
       "rep": null,
       "pvi": null,
-      "note": null
+      "note": "Cook 10/30 由 Solid R 改為 Likely R。"
     },
     {
       "id": "NJ-3",
@@ -3737,14 +3737,14 @@
       "id": "NC-5",
       "state": "NC",
       "district": 5,
-      "rating": "Safe R",
-      "basis": "lean",
+      "rating": "Likely R",
+      "basis": "cook",
       "incumbent": "Virginia Foxx",
       "incumbentParty": "R",
       "dem": null,
       "rep": null,
       "pvi": null,
-      "note": null
+      "note": "Cook 10/30 由 Solid R 改為 Likely R。"
     },
     {
       "id": "NC-6",
@@ -3789,14 +3789,14 @@
       "id": "NC-9",
       "state": "NC",
       "district": 9,
-      "rating": "Safe R",
-      "basis": "lean",
+      "rating": "Likely R",
+      "basis": "cook",
       "incumbent": "Richard Hudson",
       "incumbentParty": "R",
       "dem": null,
       "rep": null,
       "pvi": null,
-      "note": null
+      "note": "Cook 10/30 由 Solid R 改為 Likely R。"
     },
     {
       "id": "NC-10",
@@ -3984,14 +3984,14 @@
       "id": "OH-9",
       "state": "OH",
       "district": 9,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Marcy Kaptur",
       "incumbentParty": "D",
       "dem": "Marcy Kaptur",
       "rep": "Derek Merrin",
       "pvi": null,
-      "note": "共和黨新圖鎖定此席；2024 年對決重演。"
+      "note": "共和黨新圖鎖定此席；2024 年對決重演；Cook 10/30 由 Toss-up 改為 Lean D。"
     },
     {
       "id": "OH-10",
@@ -4218,14 +4218,14 @@
       "id": "PA-1",
       "state": "PA",
       "district": 1,
-      "rating": "Lean R",
+      "rating": "Toss-up",
       "basis": "cook",
       "incumbent": "Brian Fitzpatrick",
       "incumbentParty": "R",
       "dem": "Bob Harvie",
       "rep": "Brian Fitzpatrick",
       "pvi": null,
-      "note": "Cook 10/9 由 Likely R 改為 Lean R。"
+      "note": "Cook 10/30 由 Lean R 改為 Toss-up。"
     },
     {
       "id": "PA-2",
@@ -4309,14 +4309,14 @@
       "id": "PA-8",
       "state": "PA",
       "district": 8,
-      "rating": "Toss-up",
+      "rating": "Lean D",
       "basis": "cook",
       "incumbent": "Rob Bresnahan",
       "incumbentParty": "R",
       "dem": "Paige Cognetti",
       "rep": "Rob Bresnahan",
       "pvi": null,
-      "note": null
+      "note": "Cook 10/30 由 Toss-up 改為 Lean D（共和黨現任者 Bresnahan 近期民調落後）。"
     },
     {
       "id": "PA-9",
@@ -4465,14 +4465,14 @@
       "id": "SC-1",
       "state": "SC",
       "district": 1,
-      "rating": "Lean R",
+      "rating": "Toss-up",
       "basis": "cook",
       "incumbent": "open",
       "incumbentParty": "R",
       "dem": "Nancy Lacore",
       "rep": "Jenny Costa Honeycutt",
       "pvi": null,
-      "note": "Nancy Mace 參選州長；Cook 10/16 由 Likely R 改為 Lean R。"
+      "note": "Nancy Mace 參選州長；Cook 10/30 由 Lean R 改為 Toss-up。"
     },
     {
       "id": "SC-2",
@@ -5440,14 +5440,14 @@
       "id": "WA-5",
       "state": "WA",
       "district": 5,
-      "rating": "Safe R",
-      "basis": "lean",
+      "rating": "Likely R",
+      "basis": "cook",
       "incumbent": "Michael Baumgartner",
       "incumbentParty": "R",
       "dem": null,
       "rep": null,
       "pvi": null,
-      "note": null
+      "note": "Cook 10/30 由 Solid R 改為 Likely R。"
     },
     {
       "id": "WA-6",
