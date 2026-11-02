@@ -18,6 +18,7 @@
   --safe-d: #1d4f9e; --likely-d: #4f81cc; --lean-d: #9bbbe8;
   --safe-r: #a5221d; --likely-r: #d8625a; --lean-r: #f0aaa3;
   --focus: #e0a100;
+  --other: #d9822b;
   --font-num: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
 }
@@ -27,6 +28,7 @@
     --dem: #5b8fe6; --rep: #ec5d58; --toss: #b3a26b;
     --safe-d: #2c63bd; --likely-d: #5a8ad3; --lean-d: #8fb0e3;
     --safe-r: #c23a33; --likely-r: #dc6d65; --lean-r: #eda39c;
+    --other: #e69a4a;
     color-scheme: dark;
   }
 }
@@ -35,6 +37,7 @@
   --dem: #5b8fe6; --rep: #ec5d58; --toss: #b3a26b;
   --safe-d: #2c63bd; --likely-d: #5a8ad3; --lean-d: #8fb0e3;
   --safe-r: #c23a33; --likely-r: #dc6d65; --lean-r: #eda39c;
+  --other: #e69a4a;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -210,6 +213,7 @@ footer a { color: inherit; }
       <option value="1992">1992 大選（總統、參議院）</option><option value="1990">1990 期中（參議院）</option><option value="1988">1988 大選（總統、參議院）</option>
       <option value="1986">1986 期中（參議院）</option><option value="1984">1984 大選（總統、參議院）</option><option value="1982">1982 期中（參議院）</option>
       <option value="1980">1980 大選（總統、參眾兩院）</option><option value="1978">1978 期中（參眾兩院）</option><option value="1976">1976 大選（總統、參眾兩院）</option>
+      <option value="1972">1972 大選（總統）</option><option value="1968">1968 大選（總統）</option><option value="1964">1964 大選（總統）</option><option value="1960">1960 大選（總統）</option>
     </select>
   </label>
   </div>
@@ -244,9 +248,10 @@ footer a { color: inherit; }
   const RATINGS = ["Safe D", "Likely D", "Lean D", "Toss-up", "Lean R", "Likely R", "Safe R"];
   const RATING_ZH_FORECAST = { "Safe D": "穩固 民主", "Likely D": "傾向 民主", "Lean D": "微傾 民主", "Toss-up": "拉鋸", "Lean R": "微傾 共和", "Likely R": "傾向 共和", "Safe R": "穩固 共和" };
   // Past years reuse the rating scale for the winning margin: ≥15 points, 5–15, under 5.
-  const RATING_ZH_RESULT = { "Safe D": "民主 大勝", "Likely D": "民主 勝", "Lean D": "民主 險勝", "Toss-up": "兩黨平分", "Lean R": "共和 險勝", "Likely R": "共和 勝", "Safe R": "共和 大勝" };
+  const RATING_ZH_RESULT = { "Other": "第三勢力勝", "Safe D": "民主 大勝", "Likely D": "民主 勝", "Lean D": "民主 險勝", "Toss-up": "兩黨平分", "Lean R": "共和 險勝", "Likely R": "共和 勝", "Safe R": "共和 大勝" };
   let RATING_ZH = RATING_ZH_FORECAST;
-  const RATING_VAR = { "Safe D": "--safe-d", "Likely D": "--likely-d", "Lean D": "--lean-d", "Toss-up": "--toss", "Lean R": "--lean-r", "Likely R": "--likely-r", "Safe R": "--safe-r" };
+  // "Other": a state won by neither major party (Wallace 1968, unpledged electors 1960).
+  const RATING_VAR = { "Other": "--other", "Safe D": "--safe-d", "Likely D": "--likely-d", "Lean D": "--lean-d", "Toss-up": "--toss", "Lean R": "--lean-r", "Likely R": "--likely-r", "Safe R": "--safe-r" };
   const SCORE = { "Safe D": 3, "Likely D": 2, "Lean D": 1, "Toss-up": 0, "Lean R": -1, "Likely R": -2, "Safe R": -3 };
   const CH = {
     senate: { name: "參議院", majority: 51, unit: "席", note: "副總統為共和黨，50:50 時由共和黨掌控" },
@@ -255,7 +260,7 @@ footer a { color: inherit; }
     pres: { name: "總統", majority: 270, unit: "票", note: "538 張選舉人票，過半 270" },
   };
   // Election day of each cycle; presidential years are the multiples of four.
-  const ELECTION_DAY = { 1976: "NOV 2", 1978: "NOV 7", 1980: "NOV 4", 1982: "NOV 2", 1984: "NOV 6", 1986: "NOV 4", 1988: "NOV 8", 1990: "NOV 6", 1992: "NOV 3", 1994: "NOV 8", 1996: "NOV 5", 1998: "NOV 3", 2000: "NOV 7", 2002: "NOV 5", 2004: "NOV 2", 2006: "NOV 7", 2008: "NOV 4", 2010: "NOV 2", 2012: "NOV 6", 2014: "NOV 4", 2016: "NOV 8", 2018: "NOV 6", 2020: "NOV 3", 2022: "NOV 8", 2024: "NOV 5", 2026: "NOV 3" };
+  const ELECTION_DAY = { 1960: "NOV 8", 1964: "NOV 3", 1968: "NOV 5", 1972: "NOV 7", 1976: "NOV 2", 1978: "NOV 7", 1980: "NOV 4", 1982: "NOV 2", 1984: "NOV 6", 1986: "NOV 4", 1988: "NOV 8", 1990: "NOV 6", 1992: "NOV 3", 1994: "NOV 8", 1996: "NOV 5", 1998: "NOV 3", 2000: "NOV 7", 2002: "NOV 5", 2004: "NOV 2", 2006: "NOV 7", 2008: "NOV 4", 2010: "NOV 2", 2012: "NOV 6", 2014: "NOV 4", 2016: "NOV 8", 2018: "NOV 6", 2020: "NOV 3", 2022: "NOV 8", 2024: "NOV 5", 2026: "NOV 3" };
   const yearLabel = (y) => [y === "2026" ? "2026 期中選舉地圖" : y + (y % 4 === 0 ? " 大選結果" : " 期中選舉結果"), ELECTION_DAY[y] + ", " + y];
 
   // State: snapshot is the baseline; live db docs override records with the same id.
@@ -290,7 +295,7 @@ footer a { color: inherit; }
   }
   function ratingOf(r) {
     if (!r) return null;
-    return chamber === "house" ? houseRating(r) : (RATINGS.includes(r.rating) ? r.rating : "Toss-up");
+    return chamber === "house" ? houseRating(r) : (RATINGS.includes(r.rating) || r.rating === "Other" ? r.rating : "Toss-up");
   }
   function pollMargin(r) {
     return r && typeof r.demPct === "number" && typeof r.repPct === "number" ? r.demPct - r.repPct : null;
@@ -361,6 +366,8 @@ footer a { color: inherit; }
     }
     t.D = t.baseD + t.seg["Safe D"] + t.seg["Likely D"] + t.seg["Lean D"];
     t.R = t.baseR + t.seg["Safe R"] + t.seg["Likely R"] + t.seg["Lean R"];
+    // Electoral votes: show the official totals, which differ from pledged sums where electors broke ranks.
+    if (chamber === "pres" && comp.D) { t.D = comp.D.ev; t.R = comp.R.ev; }
     t.toss = t.seg["Toss-up"];
     return t;
   }
@@ -443,7 +450,7 @@ footer a { color: inherit; }
   function renderResultCards() {
     const comp = hist().comp || {};
     const cards = [];
-    if (comp.pres) cards.push({ name: "總統（選舉人票）", D: comp.pres.D.ev, R: comp.pres.R.ev, total: 538, maj: 270, sub: `${comp.pres.D.name} ${comp.pres.D.pct}% · ${comp.pres.R.name} ${comp.pres.R.pct}%（普選票）` });
+    if (comp.pres) cards.push({ name: "總統（選舉人票）", D: comp.pres.D.ev, R: comp.pres.R.ev, total: year === "1960" ? 537 : 538, maj: year === "1960" ? 269 : 270, sub: `${comp.pres.D.name} ${comp.pres.D.pct}% · ${comp.pres.R.name} ${comp.pres.R.pct}%（普選票）${comp.pres.O ? ` · ${comp.pres.O.name} ${comp.pres.O.ev} 票` : ""}` });
     if (comp.senate) cards.push({ name: "參議院", D: (comp.senate.D || 0) + (comp.senate.I || 0), R: comp.senate.R || 0, total: 100, maj: 51, sub: comp.senate.I ? `民主含 ${comp.senate.I} 名無黨籍` : "", tieR: year !== "2020" });
     if (comp.house) cards.push({ name: "眾議院", D: comp.house.D, R: comp.house.R, total: 435, maj: 218, sub: "" });
     $("proj").innerHTML = cards.map((c) => {
@@ -462,7 +469,7 @@ footer a { color: inherit; }
     $("num-D").textContent = t.D; $("num-R").textContent = t.R;
     const bar = $("bar"); bar.innerHTML = "";
     const total = t.total || 1;
-    const parts = [["--safe-d", t.baseD, "未改選（民主）"], ...["Safe D", "Likely D", "Lean D", "Toss-up", "Lean R", "Likely R", "Safe R"].map((k) => [RATING_VAR[k], t.seg[k], RATING_ZH[k]]), ["--safe-r", t.baseR, "未改選（共和）"]];
+    const parts = [["--safe-d", t.baseD, "未改選（民主）"], ...["Safe D", "Likely D", "Lean D", "Toss-up", "Other", "Lean R", "Likely R", "Safe R"].map((k) => [RATING_VAR[k], t.seg[k], RATING_ZH[k] || "第三勢力"]), ["--safe-r", t.baseR, "未改選（共和）"]];
     for (const [v, n, label] of parts) {
       if (!n) continue;
       const s = document.createElement("span");
@@ -595,7 +602,8 @@ footer a { color: inherit; }
     }
     const key = $("key");
     key.innerHTML = (isResult() ? `<span><b>勝選差距</b>（大勝 ≥15、勝 5–15、險勝 &lt;5 個百分點）</span>` : zoom ? `<span><b>選區評級</b></span>` : "") + RATINGS.filter((k) => !isResult() || k !== "Toss-up" || (chamber === "house" && !zoom)).map((k) => `<span><i style="background:var(${RATING_VAR[k]})"></i>${RATING_ZH[k]}</span>`).join("") +
-      (chamber !== "house" && !zoom ? `<span><i style="background:var(--empty)"></i>本次不改選</span>` : "");
+      (Object.keys(GEO).some((ab) => (rec(ab) || {}).rating === "Other") ? `<span><i style="background:var(--other)"></i>第三勢力勝</span>` : "") +
+      (chamber !== "house" && !zoom ? `<span><i style="background:var(--empty)"></i>本次${chamber === "pres" ? "未投票" : "不改選"}</span>` : "");
   }
 
   // " · 52.1–46.3" style vote shares for a result record.
@@ -658,8 +666,8 @@ footer a { color: inherit; }
     const split = r.evSplit ? Object.entries(r.evSplit).map(([k, v]) => (k === "D" ? "民主 " : "共和 ") + v).join("、") : "";
     return `<h2>${esc(name)} · ${year} ${CH[chamber].name}${r.special ? "（補選）" : ""}${r.oddYear ? `（${r.oddYear} 年）` : ""}</h2>
       <div>${chipFor(r.rating)}${flipTag(r)}</div>
-      <div class="cands">${cand(r.dem, r.demPct, "--dem", r.winner !== "R")}${cand(r.rep, r.repPct, "--rep", r.winner === "R")}</div>
-      ${m !== null ? `<p class="sub">得票差距：${m > 0 ? "民主 +" : "共和 +"}${Math.round(Math.abs(m) * 10) / 10} 個百分點</p>` : ""}
+      <div class="cands">${cand(r.dem, r.demPct, "--dem", r.winner === "D" || r.winner === "I")}${cand(r.rep, r.repPct, "--rep", r.winner === "R")}${r.other ? cand(r.other.name, r.other.pct, "--other", r.winner === "O") : ""}</div>
+      ${m !== null && r.winner !== "O" ? `<p class="sub">得票差距：${m > 0 ? "民主 +" : "共和 +"}${Math.round(Math.abs(m) * 10) / 10} 個百分點</p>` : ""}
       ${r.ev ? `<p class="sub">選舉人票 ${r.ev} 張${split ? `（分配：${split}）` : ""}</p>` : ""}
       ${r.winner === "I" ? `<p class="note">當選人為無黨籍，與民主黨同一黨團，地圖以民主黨色標示。</p>` : ""}
       ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}
@@ -834,7 +842,7 @@ footer a { color: inherit; }
     races = y === "2026" ? LIVE_RACES : HIST[y].races;
     DGEO = y === "2026" ? DGEO_LIVE : HIST[y].dgeo;
     RATING_ZH = y === "2026" ? RATING_ZH_FORECAST : RATING_ZH_RESULT;
-    if (!hasChamber(chamber)) chamber = "senate";
+    if (!hasChamber(chamber)) chamber = ["senate", "pres", "house", "gov"].find(hasChamber) || "senate";
     builtFor = null; dsel = null;
     if (selected && !DGEO[selected]) selected = null;
     render();
