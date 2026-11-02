@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "currentGovernors": {
   "D": 24,
   "R": 26
@@ -193,12 +193,12 @@
    "rep": "Ty Masterson",
    "incumbentParty": "D",
    "incumbentRunning": false,
-   "demPct": 44,
-   "repPct": 48,
-   "pollSource": "PollCheck polling average, updated Oct 27 2026 (Holscher campaign GSG Oct 18-21: 47-47)",
+   "demPct": 46,
+   "repPct": 50,
+   "pollSource": "Emerson College final poll, released Oct 30 2026 (PollCheck avg Oct 27: 44-48)",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report",
-   "note": "Kelly任期屆滿，Masterson在民調平均中領先約4點，但Cook於10/27將評級由Lean R調為Toss-up。",
+   "note": "Kelly任期屆滿，Emerson最終民調顯示Masterson以50比46領先Holscher 4點；Cook已將評級由Lean R調為Toss-up。",
    "url": "https://www.270towin.com/2026-governor-polls/kansas"
   },
   {

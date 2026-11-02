@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "ratingSource": "Cook Political Report",
   "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
-  "ratingAsOf": "2026-10-30 (Cook 10/30 update, 12 moves verified via press coverage; plus 10/23 batch: 6 Toss-up to Lean D, 2 Lean R to Toss-up)",
+  "ratingAsOf": "2026-10-30 (Cook 10/30 update, 12 moves; plus 10/23 batch: 6 Toss-up to Lean D, 2 Lean R to Toss-up); 11/2 檢查：未發現 10/30 之後的新 Cook 評級調整",
   "ratingSourceNote": "District lists for Likely/Lean/Toss-up taken from 270toWin's mirror of Cook ratings; Solid D/R split per state derived from the 2026 maps in effect and checked against Cook's national totals (Solid D 185, Solid R 171).",
   "ratingTotals": {
     "safeD": 185,
@@ -892,65 +892,65 @@
     "forecasts": [
       {
         "chamber": "House",
-        "date": "2026-10-18",
-        "demChance": 77,
-        "note": "projected 235 D seats (single secondary report)",
-        "source": "Decision Desk HQ",
-        "url": "https://www.decisiondeskhq.com/press/decision-desk-hq-releases-2026-congressional-forecast-model"
-      },
-      {
-        "chamber": "Senate",
         "date": "2026-10-31",
-        "demChance": 63,
-        "note": "預測民主黨約 52 席（搜尋結果摘要，頁面標示 10/31）",
+        "demChance": 83,
+        "note": "預測民主黨約 241 席（搜尋結果摘要，頁面標示 10/31）",
         "source": "Decision Desk HQ",
         "url": "https://votes.decisiondeskhq.com/forecast/2026"
       },
       {
         "chamber": "Senate",
-        "date": "2026-10-20",
-        "demChance": 75,
-        "note": "Silver Bulletin forecast page via search summary",
+        "date": "2026-11-02",
+        "demChance": 64,
+        "note": "預測民主黨約 52 席（搜尋結果摘要，頁面標示 11/2）",
+        "source": "Decision Desk HQ",
+        "url": "https://votes.decisiondeskhq.com/forecast/2026/senate"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-11-02",
+        "demChance": 80.1,
+        "note": "Silver Bulletin 預測模型（搜尋結果摘要／Newsweek 轉述，原始頁面日期未能確認）",
         "source": "Silver Bulletin",
         "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
       },
       {
         "chamber": "House",
-        "date": "2026-10-20",
-        "demChance": 94,
-        "note": "per Silver Bulletin forecast page via search summary",
+        "date": "2026-11-01",
+        "demChance": 95,
+        "note": "Silver Bulletin 預測模型 11/1 更新：民主黨約 95% 取得眾議院，平均預測淨增約 25 席（搜尋結果摘要）",
         "source": "Silver Bulletin",
         "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
       },
       {
         "chamber": "House",
-        "date": "2026-10-19",
-        "demChance": 91,
-        "note": "prediction market",
+        "date": "2026-11-02",
+        "demChance": 95,
+        "note": "prediction market；約 95%（搜尋結果摘要，近似值）",
         "source": "Polymarket",
         "url": "https://polymarket.com"
       },
       {
         "chamber": "Senate",
-        "date": "2026-10-19",
-        "demChance": 65,
-        "note": "prediction market",
+        "date": "2026-11-02",
+        "demChance": 72,
+        "note": "prediction market；約 72%（搜尋結果摘要，近似值）",
         "source": "Polymarket",
         "url": "https://polymarket.com"
       },
       {
         "chamber": "House",
-        "date": "2026-10-21",
-        "demChance": 91,
-        "note": "prediction market; 91% as of 3:22 p.m. ET Oct 21 per Prediction News (Forbes tracker same day: 90.1%)",
+        "date": "2026-11-02",
+        "demChance": 93.3,
+        "note": "prediction market；約 93.3%（搜尋結果摘要，近似值）",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026"
       },
       {
         "chamber": "Senate",
-        "date": "2026-11-01",
-        "demChance": 72,
-        "note": "prediction market；約 72%（搜尋結果摘要，近似值；Kalshi 參院價格由兩個合約組合而成）",
+        "date": "2026-11-02",
+        "demChance": 74,
+        "note": "prediction market；11/2 中午 ET 約 74%（搜尋結果摘要，近似值）",
         "source": "Kalshi",
         "url": "https://kalshi.com/markets/controls/senate-winner/controls-2026"
       },
@@ -964,30 +964,6 @@
       },
       {
         "chamber": "House",
-        "date": "2026-11-01",
-        "demChance": 95,
-        "note": "Silver Bulletin 預測模型 11/1 更新：民主黨約 95% 取得眾議院，平均預測淨增約 25 席（搜尋結果摘要）",
-        "source": "Silver Bulletin",
-        "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
-      },
-      {
-        "chamber": "Senate",
-        "date": "2026-10-26",
-        "demChance": 75,
-        "note": "Silver Bulletin 預測模型（The Conversation 10/26 報導）",
-        "source": "Silver Bulletin",
-        "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
-      },
-      {
-        "chamber": "House",
-        "date": "2026-10-27",
-        "demChance": 90.7,
-        "note": "prediction market（Forbes 10/27 追蹤頁引述）",
-        "source": "Kalshi",
-        "url": "https://www.forbes.com/sites/saradorn/2026/10/27/latest-polls-in-2026-midterms-democrats-lead-in-michigan-texas-maine-updated-daily/"
-      },
-      {
-        "chamber": "House",
         "date": "2026-10-30",
         "demChance": null,
         "note": "10/30：再調整 12 場眾議院選區評級（搜尋結果摘要）；Cook 評定 222 席偏民主黨（Lean D 以上）、18 席 Toss-up；預測民主黨 227–240 席",
@@ -995,37 +971,21 @@
         "url": "https://thehill.com/homenews/campaign/6183415-cook-political-report-house-race-shifts-democrats-midterms/"
       },
       {
-        "chamber": "House",
-        "date": "2026-10-31",
-        "demChance": 83,
-        "note": "預測民主黨約 241 席（搜尋結果摘要，頁面標示 10/31）",
-        "source": "Decision Desk HQ",
-        "url": "https://votes.decisiondeskhq.com/forecast/2026"
-      },
-      {
-        "chamber": "House",
-        "date": "2026-11-01",
-        "demChance": 93,
-        "note": "prediction market；約 93%（搜尋結果摘要，近似值）",
-        "source": "Kalshi",
-        "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026"
-      },
-      {
-        "chamber": "House",
-        "date": "2026-10-28",
-        "demChance": 92,
-        "note": "prediction market；參議院民主黨約 67%",
-        "source": "Polymarket",
-        "url": "https://www.cnbc.com/2026/10/27/2026-midterms-prediction-markets-democrats-congress.html"
+        "chamber": "Senate",
+        "date": "2026-10-27",
+        "demChance": 56,
+        "note": "The Economist 預測模型：民主黨奪回參院機率 56%，自月初 62% 下降（The Economist 官方 X 貼文摘要）",
+        "source": "The Economist",
+        "url": "https://x.com/TheEconomist/status/2114935153680126459"
       }
     ],
     "genericBallot": [
       {
-        "date": "2026-10-20",
-        "dem": 49.7,
-        "margin": "D+8.6",
-        "note": "Forbes citing Silver Bulletin on Oct 20 (base average); site headline D+8.9, likely-voter version D+9.6",
-        "rep": 41.1,
+        "date": "2026-10-30",
+        "dem": null,
+        "margin": "D+8.9",
+        "note": "Silver Bulletin 基礎平均 D+8.9（搜尋結果摘要，截至 10/30）；預測模型採用的 likely-voter 版本約 D+9.1（52.4%–43.3%，二手轉述）",
+        "rep": null,
         "source": "Silver Bulletin",
         "url": "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls"
       },
@@ -1061,15 +1021,6 @@
         "rep": 41.9,
         "source": "PollsMax",
         "url": "https://www.pollsmax.com/approval/generic-ballot/"
-      },
-      {
-        "date": "2026-10-26",
-        "dem": 51.6,
-        "margin": "D+9.5",
-        "rep": 42.1,
-        "note": "The Conversation 10/26 引述 Silver Bulletin 模型",
-        "source": "Silver Bulletin",
-        "url": "https://theconversation.com/democrats-remain-clear-favourites-to-gain-control-of-congress-at-midterms-as-trumps-ratings-slide-again-295134"
       },
       {
         "date": "2026-10-27",

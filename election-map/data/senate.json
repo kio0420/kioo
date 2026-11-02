@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "currentSeats": {
   "D": 45,
   "I": 2,
@@ -483,12 +483,12 @@
    "rep": "Ken Paxton",
    "incumbentParty": "R",
    "incumbentRunning": false,
-   "demPct": 48,
-   "repPct": 46,
-   "pollSource": "University of Houston Hobby School, Oct 2026",
+   "demPct": 47.6,
+   "repPct": 48.7,
+   "pollSource": "Quantus Insights (likely voters), Oct 26-28 2026",
    "rating": "Toss-up",
    "ratingSource": "Cook Political Report (Oct 6, 2026)",
-   "note": "帕克斯頓初選擊敗科寧，塔拉里科在多份十月民調中小幅領先。",
+   "note": "帕克斯頓初選擊敗科寧，最新的Quantus民調（10月26至28日）顯示帕克斯頓以48.7%對47.6%微幅領先塔拉里科；先前多份十月民調（如休士頓大學）則是塔拉里科小幅領先，PollCheck平均（10月27日）為塔拉里科48.4%對45.8%，選情極度膠著。",
    "url": "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/10/18/564673/talarico-holds-slight-edge-over-paxton-in-u-s-senate-race-on-cusp-of-election-poll-shows/"
   },
   {
