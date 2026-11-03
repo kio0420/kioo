@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "ratingSource": "Cook Political Report",
   "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
-  "ratingAsOf": "2026-10-30 (Cook 10/30 update, 12 moves; plus 10/23 batch: 6 Toss-up to Lean D, 2 Lean R to Toss-up); 11/2 檢查：未發現 10/30 之後的新 Cook 評級調整",
+  "ratingAsOf": "2026-10-30 (Cook 10/30 update, 12 moves; plus 10/23 batch: 6 Toss-up to Lean D, 2 Lean R to Toss-up); 11/3 檢查：未發現 10/30 之後的新 Cook 評級調整",
   "ratingSourceNote": "District lists for Likely/Lean/Toss-up taken from 270toWin's mirror of Cook ratings; Solid D/R split per state derived from the 2026 maps in effect and checked against Cook's national totals (Solid D 185, Solid R 171).",
   "ratingTotals": {
     "safeD": 185,

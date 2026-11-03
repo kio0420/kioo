@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "currentGovernors": {
   "D": 24,
   "R": 26
@@ -249,12 +249,12 @@
    "rep": "John James",
    "incumbentParty": "D",
    "incumbentRunning": false,
-   "demPct": 46,
-   "repPct": 39,
-   "pollSource": "Mitchell Research, Oct 2026",
+   "demPct": 51,
+   "repPct": 45,
+   "pollSource": "WDIV/Detroit News (Glengariff Group), published Oct 27 2026 (51.4-44.5, LV; Marist Oct 15-18: 51-45)",
    "rating": "Lean D",
    "ratingSource": "Cook Political Report",
-   "note": "Whitmer任期屆滿，Benson領先James約7點；Duggan已退選。",
+   "note": "Whitmer任期屆滿，Benson在最新WDIV/Detroit News民調領先James約7點（Marist為6點）；Duggan已退選。",
    "url": "https://upnorthlive.com/news/local/michigan-governor-poll-jocelyn-benson-john-james-election-2026-mitchell-research-el-sayed-rogers"
   },
   {
