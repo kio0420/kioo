@@ -42,3 +42,7 @@
 - `build.py` 把結果併入：參議院、州長文件新增 `actual`；眾議院州文件新增 `actual`（以選區號為鍵）；`meta/summary` 新增 `results`（updated、asOf、source 與已確定席次 totals，totals 由 build 依已確定競賽重算）。缺檔或缺鍵一律視為 pending。
 - 頁面右上角「預測 / 實際」切換地圖模式：實際模式依確定勝者上色（斜線 = 計票中、依領先者），並顯示計分板（各院已確定席次、預測命中率不含拉鋸、賽前控制權機率）。州與選區面板有「預測 vs 實際」對照與命中／落空判定。參議院與州長席次僅計本次改選。
 - 更新流程：編輯 `data/results.json` → `python3 build.py` → 依上方步驟用 `ArtifactData` 批次寫入（頁面會即時同步，不必重新發布）；僅在 `template.html` 有改動時才需重新發布頁面。
+
+### 抓取 NBC 開票結果
+
+`python3 tools/fetch_nbc_results.py` 從 NBC News 公開結果頁（senate / governor / house-results 內嵌的 `__NEXT_DATA__`）解析各競賽，就地更新 `data/results.json`。只有 NBC 明確標示勝者才填 `called`（依政黨代碼對應 D / R / I，非兩大黨者為 I）；已確定的競賽不會被降級；可重複執行（只有內容有變才改動該筆與 `asOf`）。頁面取不到內嵌資料時略過該院，不會嘗試繞過任何驗證。可用 `--dir 資料夾` 改讀已下載的 `senate.html`、`governor.html`、`house.html`。執行後接 `python3 build.py` 與上方的資料庫批次寫入。
