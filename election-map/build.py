@@ -1,7 +1,8 @@
 """Build index.html from template.html + map geometry + poll data.
 
 Usage: python3 build.py
-Reads data/senate.json, data/governor.json, data/house.json, data/districts.json (optional)
+Reads data/senate.json, data/governor.json, data/house.json, data/districts.json (optional),
+data/results.json (optional actual results; merged as "actual" on race docs and "results" in meta/summary)
 and geo/states-paths.json + geo/districts-paths.json (optional),
 writes index.html (self-contained) and seed/ (documents and write batches for the artifact db).
 """
@@ -16,7 +17,46 @@ def load(name):
     return json.loads((DATA / name).read_text(encoding="utf-8"))
 
 
+ACTUAL_FIELDS = ("status", "called", "calledBy", "dem", "rep", "other", "demPct", "repPct", "pctReporting", "note", "asOf")
+
+
+def load_results():
+    """data/results.json (optional). Missing file or bad JSON means every race is pending."""
+    try:
+        res = load("results.json")
+    except (OSError, ValueError):
+        return {"races": {}}
+    return res if isinstance(res, dict) and isinstance(res.get("races"), dict) else {"races": {}}
+
+
+def actual_of(results, key):
+    """Normalised actual-result record for one race key; absent keys become pending. Empty fields are dropped to keep docs small."""
+    raw = results["races"].get(key)
+    raw = raw if isinstance(raw, dict) else {}
+    a = {f: raw.get(f) for f in ACTUAL_FIELDS}
+    if a["status"] not in ("pending", "counting", "called"):
+        a["status"] = "called" if a["called"] in ("D", "R", "I") else "pending"
+    if a["called"] not in ("D", "R", "I"):
+        a["called"] = None
+        if a["status"] == "called":
+            a["status"] = "pending"
+    return {f: v for f, v in a.items() if v not in (None, "") or f in ("status", "called")}
+
+
+def result_totals(results, actuals):
+    """Count called races per chamber (senate/house/governor) from the normalised actuals (the file's own totals are not trusted)."""
+    tot = {c: {"D": 0, "R": 0, "I": 0, "called": 0} for c in ("senate", "house", "governor")}
+    for key, a in actuals.items():
+        chamber = {"senate": "senate", "gov": "governor", "house": "house"}[key.split("-")[0]]
+        if a.get("called"):
+            tot[chamber][a["called"]] += 1
+            tot[chamber]["called"] += 1
+    return tot
+
+
 def snapshot():
+    results = load_results()
+    actuals = {}
     senate, gov, house = load("senate.json"), load("governor.json"), load("house.json")
     races = {}
     for r in senate["races"]:
@@ -24,9 +64,12 @@ def snapshot():
         # A state holding two races in one year keeps the second under its own key (counted, not mapped).
         if key in races:
             key += "-2"
-        races[key] = {**r, "chamber": "senate", "updated": senate["updated"]}
+        actuals[key] = actual_of(results, key)
+        races[key] = {**r, "chamber": "senate", "updated": senate["updated"], "actual": actuals[key]}
     for r in gov["races"]:
-        races["gov-" + r["state"]] = {**r, "chamber": "gov", "updated": gov["updated"]}
+        key = "gov-" + r["state"]
+        actuals[key] = actual_of(results, key)
+        races[key] = {**r, "chamber": "gov", "updated": gov["updated"], "actual": actuals[key]}
     districts = load("districts.json")["districts"] if (DATA / "districts.json").exists() else []
     by_state = {}
     for d in districts:
@@ -45,6 +88,12 @@ def snapshot():
             for d in ds:
                 rec[cats[d["rating"]]] += 1
             rec["tossupDistricts"] = [d["id"] for d in ds if d["rating"] == "Toss-up"]
+        # Per-district actuals keyed by district number, e.g. {"1": {...}, "2": {...}}.
+        act = {}
+        for d in ds:
+            k = f"house-{d['state']}-{d['district']}"
+            actuals[k] = act[str(d["district"])] = actual_of(results, k)
+        rec["actual"] = act
         races["house-" + s["state"]] = rec
     meta = {
         "updated": max(senate["updated"], gov["updated"], house["updated"]),
@@ -52,6 +101,8 @@ def snapshot():
         "gov": {"currentGovernors": gov.get("currentGovernors")},
         "house": {"current": house.get("current"), "ratingSource": house.get("ratingSource"), "ratingUrl": house.get("ratingUrl")},
         "national": house.get("national", {}),
+        "results": {"updated": results.get("updated"), "asOf": results.get("asOf"), "source": results.get("source"),
+                    "totals": result_totals(results, actuals)},
     }
     return {"meta": meta, "races": races}
 

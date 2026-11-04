@@ -12,6 +12,7 @@
 | `template.html` | 頁面原始碼（樣式與程式） |
 | `data/senate.json` `data/governor.json` `data/house.json` | 民調與評級資料 |
 | `data/districts.json` | 435 個眾議院選區的評級、現任者與候選人（Likely/Lean/拉鋸取自 Cook，穩固席次依選區政黨傾向判定） |
+| `data/results.json` | 實際開票結果層（見下方「實際結果」） |
 | `data/district-map-sources.json` | 各州選區邊界的來源與採用的 2026 選區圖 |
 | `geo/states-paths.json` | 各州 SVG 路徑，由 `tools/topo2svg.py` 從 us-atlas 的 `states-albers-10m.json` 轉出 |
 | `geo/districts-paths.json` | 各州選區 SVG 路徑，由 `tools/districts2svg.mjs` 投影、`tools/thinpaths.py` 精簡 |
@@ -33,3 +34,11 @@
 4. commit 並 push `data/` 與 `index.html`。
 
 資料欄位格式：見各 JSON 檔；評級只能是 `Safe D`、`Likely D`、`Lean D`、`Toss-up`、`Lean R`、`Likely R`、`Safe R`。
+
+## 實際結果（預測 vs 實際）
+
+`data/results.json` 存放開票結果，不會改動任何預測、民調或評級欄位。結構：`updated`、`source`、`asOf`、`races`、`totals`。`races` 的鍵為 `senate-XX`、`gov-XX`、`house-XX-N`（N 為 `districts.json` 的選區號，全州一席者為 1），每筆含 `status`（pending / counting / called）、`called`（D / R / I / null）、`calledBy`、`dem` `rep` `other`（票數）、`demPct` `repPct`、`pctReporting`、`note`、`asOf`。檔案已預填所有競賽（皆 pending）。
+
+- `build.py` 把結果併入：參議院、州長文件新增 `actual`；眾議院州文件新增 `actual`（以選區號為鍵）；`meta/summary` 新增 `results`（updated、asOf、source 與已確定席次 totals，totals 由 build 依已確定競賽重算）。缺檔或缺鍵一律視為 pending。
+- 頁面右上角「預測 / 實際」切換地圖模式：實際模式依確定勝者上色（斜線 = 計票中、依領先者），並顯示計分板（各院已確定席次、預測命中率不含拉鋸、賽前控制權機率）。州與選區面板有「預測 vs 實際」對照與命中／落空判定。參議院與州長席次僅計本次改選。
+- 更新流程：編輯 `data/results.json` → `python3 build.py` → 依上方步驟用 `ArtifactData` 批次寫入（頁面會即時同步，不必重新發布）；僅在 `template.html` 有改動時才需重新發布頁面。
