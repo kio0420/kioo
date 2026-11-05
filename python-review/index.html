@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Python 期中速讀</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: study notebook — sticky mode bar on top, chapter rail + note column below; highlighter yellow marks what to memorise, red marks slide errata. */
+:root {
+  --bg: #eef1f5;
+  --paper: #fbfcfd;
+  --ink: #18202c;
+  --muted: #5b6676;
+  --line: #d7dde6;
+  --accent: #2b5aa6;
+  --accent-soft: #e2eaf7;
+  --mark: #f7dc5c;
+  --mark-ink: #3a3000;
+  --err: #b4322b;
+  --err-soft: #fbe9e7;
+  --ok: #217a4b;
+  --ok-soft: #e3f3ea;
+  --code-bg: #1d2533;
+  --code-fg: #dfe6f1;
+  --c-kw: #8fb8ff;
+  --c-str: #f2d27a;
+  --c-num: #f3a07a;
+  --c-com: #7f8ea6;
+  --c-fn: #9fe0c0;
+  --f-display: "Noto Serif TC", "Songti TC", serif;
+  --f-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121722; --paper: #192030; --ink: #e6ebf3; --muted: #9aa6b8; --line: #2c3547;
+  --accent: #7ea6ec; --accent-soft: #22304a; --mark: #b99a1c; --mark-ink: #fff8d6;
+  --err: #f08a80; --err-soft: #3a2224; --ok: #6fd19c; --ok-soft: #1c3428;
+  --code-bg: #0e131c; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #121722; --paper: #192030; --ink: #e6ebf3; --muted: #9aa6b8; --line: #2c3547;
+  --accent: #7ea6ec; --accent-soft: #22304a; --mark: #b99a1c; --mark-ink: #fff8d6;
+  --err: #f08a80; --err-soft: #3a2224; --ok: #6fd19c; --ok-soft: #1c3428;
+  --code-bg: #0e131c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.7; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+code { font-family: var(--f-mono); font-size: .88em; background: var(--accent-soft); color: var(--ink); padding: .05em .35em; border-radius: 4px; word-break: break-word; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+mark { background: var(--mark); color: var(--mark-ink); padding: 0 .1em; border-radius: 2px; }
+
+/* header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.top-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 10px; }
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand h1 { font-family: var(--f-display); font-weight: 900; font-size: 1.25rem; margin: 0; letter-spacing: .02em; }
+.brand small { color: var(--muted); font-size: .8rem; }
+nav.tabs { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+nav.tabs a { text-decoration: none; color: var(--muted); padding: 6px 12px; border-radius: 999px; font-weight: 500; font-size: .92rem; }
+nav.tabs a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.meter { display: flex; align-items: center; gap: 8px; font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { width: 90px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+
+main { padding-block: 24px 64px; }
+.view[hidden] { display: none; }
+h2.sec { font-family: var(--f-display); font-size: 1.6rem; margin: 0 0 4px; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0 0 20px; max-width: 65ch; }
+.eyebrow { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+
+/* overview */
+.route { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 28px; }
+.route a { display: inline-flex; gap: 8px; align-items: center; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; font-weight: 500; }
+.route a b { font-family: var(--f-mono); font-size: .8rem; color: var(--accent); }
+.route span { color: var(--muted); }
+.stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 4px 0 18px; }
+.stats div { font-variant-numeric: tabular-nums; }
+.stats b { font-family: var(--f-display); font-size: 2rem; display: block; line-height: 1.1; }
+.stats span { color: var(--muted); font-size: .82rem; }
+.chapters { display: grid; gap: 14px; }
+.ch-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; display: grid; grid-template-columns: 240px 1fr; gap: 20px; }
+.ch-card > * { min-width: 0; }
+.ch-card h3 { font-family: var(--f-display); margin: 2px 0 6px; font-size: 1.25rem; }
+.ch-card .topics { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+.ch-card .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { border: 1px solid var(--line); background: var(--paper); padding: 6px 12px; border-radius: 8px; font-size: .88rem; text-decoration: none; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn:hover { border-color: var(--accent); }
+.tldr { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.tldr li { padding-left: 18px; position: relative; }
+.tldr li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 8px; height: 8px; border-radius: 2px; background: var(--mark); }
+.prog { display: flex; align-items: center; gap: 8px; font-size: .78rem; color: var(--muted); margin: 10px 0 12px; font-variant-numeric: tabular-nums; }
+.prog .bar { flex: 1; max-width: 160px; }
+
+/* notes */
+.notes { display: grid; grid-template-columns: 210px 1fr; gap: 28px; align-items: start; }
+.notes > * { min-width: 0; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 72px); display: grid; gap: 4px; }
+.rail button { text-align: left; border: 0; background: transparent; padding: 8px 10px; border-radius: 8px; display: flex; justify-content: space-between; gap: 8px; font-size: .92rem; }
+.rail button.on { background: var(--paper); box-shadow: inset 3px 0 0 var(--accent); font-weight: 700; }
+.rail button small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+.search { flex: 1 1 220px; min-width: 0; border: 1px solid var(--line); background: var(--paper); border-radius: 8px; padding: 8px 12px; font: inherit; color: var(--ink); }
+.toggle { display: inline-flex; gap: 6px; align-items: center; font-size: .88rem; color: var(--muted); user-select: none; }
+.ch-head { margin-bottom: 18px; }
+.box30 { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 18px; margin: 12px 0 22px; }
+.box30 .eyebrow { margin-bottom: 6px; }
+.pages { display: grid; gap: 12px; }
+.pg { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 18px; }
+.pg.read { opacity: .62; }
+.pg.read:hover { opacity: 1; }
+.pg-h { display: flex; gap: 10px; align-items: baseline; }
+.pg-h .no { font-family: var(--f-mono); font-size: .78rem; color: var(--accent); font-weight: 600; flex: none; width: 2.6em; }
+.pg-h h4 { margin: 0; font-size: 1.02rem; flex: 1; min-width: 0; }
+.chk { flex: none; border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 1px 10px; font-size: .75rem; color: var(--muted); }
+.pg.read .chk { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.pg ul { margin: 8px 0 0; padding-left: 3.2em; }
+.pg li { margin: 2px 0; }
+.errata { margin: 10px 0 0 2.6em; display: grid; gap: 6px; }
+.errata div { background: var(--err-soft); color: var(--ink); border-left: 3px solid var(--err); padding: 6px 10px; border-radius: 0 6px 6px 0; font-size: .92rem; }
+.errata b { color: var(--err); margin-right: 6px; font-size: .8rem; }
+pre.code { margin: 10px 0 0 2.6em; background: var(--code-bg); color: var(--code-fg); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font-family: var(--f-mono); font-size: .83rem; line-height: 1.6; position: relative; }
+pre.code .copy { position: absolute; top: 6px; right: 6px; background: transparent; border: 1px solid #ffffff33; color: var(--code-fg); font-size: .7rem; border-radius: 6px; padding: 1px 8px; opacity: .7; }
+.k { color: var(--c-kw); } .s { color: var(--c-str); } .n { color: var(--c-num); } .c { color: var(--c-com); font-style: italic; } .f { color: var(--c-fn); }
+.empty { color: var(--muted); padding: 30px 0; text-align: center; }
+
+/* chips */
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
+.chip { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 4px 12px; font-size: .85rem; }
+.chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* flashcards */
+.deck { max-width: 640px; }
+.fc { perspective: 1200px; cursor: pointer; }
+.fc-in { position: relative; min-height: 240px; transition: transform .45s; transform-style: preserve-3d; }
+.fc.flip .fc-in { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; justify-content: center; gap: 12px; border: 1px solid var(--line); }
+.front { background: var(--paper); }
+.front .q { font-family: var(--f-mono); font-size: 1.25rem; font-weight: 600; word-break: break-word; }
+.back { background: var(--mark); color: var(--mark-ink); transform: rotateY(180deg); }
+.back .a { font-size: 1.2rem; font-weight: 700; }
+.face .eyebrow { color: inherit; opacity: .7; }
+.fc-ctrl { display: flex; gap: 10px; align-items: center; margin-top: 16px; flex-wrap: wrap; }
+.fc-ctrl .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; font-size: .88rem; }
+.btn.know { background: var(--ok-soft); border-color: transparent; color: var(--ok); font-weight: 700; }
+.btn.again { background: var(--err-soft); border-color: transparent; color: var(--err); font-weight: 700; }
+.hint { color: var(--muted); font-size: .8rem; margin-top: 10px; }
+kbd { font-family: var(--f-mono); font-size: .75rem; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--paper); }
+
+/* quiz */
+.qz { max-width: 720px; }
+.qcard { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+.qcard .qq { font-size: 1.08rem; font-weight: 500; margin: 6px 0 4px; }
+.qcard pre.code { margin-left: 0; }
+.opts { display: grid; gap: 8px; margin-top: 16px; }
+.opt { text-align: left; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 10px 14px; display: flex; gap: 10px; align-items: baseline; }
+.opt .l { font-family: var(--f-mono); font-weight: 600; color: var(--muted); flex: none; }
+.opt:hover:not([disabled]) { border-color: var(--accent); }
+.opt.right { background: var(--ok-soft); border-color: var(--ok); }
+.opt.wrong { background: var(--err-soft); border-color: var(--err); }
+.opt[disabled] { cursor: default; }
+.explain { margin-top: 14px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); }
+.qbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.score { font-family: var(--f-display); font-size: 3rem; margin: 0; line-height: 1.1; }
+.review { display: grid; gap: 10px; margin-top: 16px; }
+.review div { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--err); border-radius: 0 8px 8px 0; padding: 10px 14px; }
+
+@media (max-width: 760px) {
+  .ch-card { grid-template-columns: 1fr; gap: 10px; }
+  .notes { grid-template-columns: 1fr; gap: 14px; }
+  .rail { position: static; display: flex; overflow-x: auto; gap: 4px; padding-bottom: 4px; }
+  .rail button { flex: none; }
+  .rail button.on { box-shadow: inset 0 -3px 0 var(--accent); }
+  nav.tabs { margin-left: 0; width: 100%; }
+  nav.tabs a { flex: 1; text-align: center; padding: 6px 4px; }
+  .meter { display: none; }
+  .pg ul { padding-left: 1.3em; }
+  .errata, pre.code { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .fc-in, .bar > i { transition: none; } }
+</style>
+
+<header class="top">
+  <div class="wrap top-row">
+    <div class="brand"><h1>Python 期中速讀</h1><small>軟體技術 · CH2–CH6</small></div>
+    <nav class="tabs" aria-label="模式">
+      <a href="#overview">速覽</a>
+      <a href="#notes">逐頁筆記</a>
+      <a href="#cards">陷阱閃卡</a>
+      <a href="#quiz">自我測驗</a>
+    </nav>
+    <div class="meter" title="已讀頁數"><span id="meterTxt">0/93</span><div class="bar"><i id="meterBar"></i></div></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="view" id="v-overview">
+    <div class="eyebrow">五份講義 · 一頁吸收</div>
+    <h2 class="sec">考前 10 分鐘先看這裡</h2>
+    <p class="lede">每章濃縮成 30 秒重點。黃色方塊是要背的，紅色是講義本身的錯誤，考試以正確寫法為準。</p>
+    <div class="stats" id="stats"></div>
+    <div class="route">
+      <a href="#overview"><b>1</b>速覽重點</a><span>→</span>
+      <a href="#cards"><b>2</b>刷陷阱閃卡</a><span>→</span>
+      <a href="#quiz"><b>3</b>自我測驗</a><span>→</span>
+      <a href="#notes"><b>4</b>逐頁補弱</a>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </section>
+
+  <section class="view" id="v-notes" hidden>
+    <div class="notes">
+      <aside class="rail" id="rail"></aside>
+      <div>
+        <div class="toolbar">
+          <input id="q" class="search" type="search" placeholder="搜尋全部筆記，例如 range、shallow、NameError">
+          <label class="toggle"><input type="checkbox" id="onlyErr"> 只看講義錯誤</label>
+          <label class="toggle"><input type="checkbox" id="hideRead"> 隱藏已讀</label>
+        </div>
+        <div id="notesBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-cards" hidden>
+    <h2 class="sec">陷阱閃卡</h2>
+    <p class="lede">先自己說出答案再翻牌。標「我會了」的卡下一輪會跳過。</p>
+    <div class="chips" id="cardChips"></div>
+    <div class="deck" id="deck"></div>
+  </section>
+
+  <section class="view" id="v-quiz" hidden>
+    <h2 class="sec">自我測驗</h2>
+    <p class="lede">考題風格：輸出是什麼、型態是什麼、哪裡錯了。每題作答後立刻看解析。</p>
+    <div class="chips" id="quizChips"></div>
+    <div class="qz" id="qz"></div>
+  </section>
+</main>
+
+<script>
+const DATA = {"chapters": [{"id": "ch2", "title": "CH2 基礎篇", "file": "intro.pdf", "intro": "本章重點是 print 的參數、型態與運算規則，考題最常出在「輸出結果是什麼」和「運算結果是什麼型態」。", "tldr": ["`print()` 預設以空白分隔、結尾換行；`sep`、`end` 必須用關鍵字參數", "`print()` 不給物件時只印出 `end`，即一個換行", "`/` 結果一律是 float；`//` 往負無限大取整", "`%` 的正負號跟除數相同，`-9%2` 為 1", "運算式只要有一方是 float，結果就是 float", "`input()` 永遠回傳字串，需自行轉型；`int('5.5')` 會 ValueError", "變數是貼在物件上的名字；`**` 右結合，且比負號優先"], "pages": [{"p": 1, "title": "封面", "points": ["CH2 基礎篇 1。"]}, {"p": 2, "title": "前置作業", "points": ["開發環境三選一：Anaconda（含 Spyder、Jupyter）、PyCharm，或直接用 Google Colab。"]}, {"p": 3, "title": "第一個程式 test.py", "points": ["`#` 是單行註解；`'''` ... `'''` 用來寫多行說明。嚴格說它是字串常數（docstring），只是沒被使用，所以效果等同註解。", "沒有流程控制時，程式依行號由上往下執行。"], "errata": ["講義錯誤：第二個 print 用了全形引號 \"，實際執行會 SyntaxError。"]}, {"p": 4, "title": "print() 是函數", "points": ["完整簽名是 `print(*objects, sep=' ', end='\\n', file=sys.stdout, flush=False)`。", "`*objects`：可變數量參數，可以印任意多個物件，全部先轉成字串（類似 `str()`）。", "`sep`：物件之間的分隔字串，預設一個空白。", "`end`：結尾字串，預設換行。", "`file`：輸出目的地，預設螢幕。`flush`：是否立刻清出緩衝區。", "考點：`sep`、`end` 必須用關鍵字參數寫（`sep='-'`），值只能是字串或 `None`。`print()` 不給物件時只印出 `end`，也就是一個換行。"]}, {"p": 5, "title": "練習：用 file 參數輸出到檔案", "points": ["長時間實驗時把輸出寫進文字檔。"], "code": "import random\nL = [random.randint(1,100) for i in range(10)]\nwith open('log.txt', 'w') as f:\n    print(L, file=f)\n    for i in range(1, len(L)-1):\n        print('sum(', L[:i], ')=', sum(L[:i]), file=f)"}, {"p": 6, "title": "print 用法與 end 練習", "points": ["`print('I','Love','Python')` → `I Love Python`。", "`print(\"Peter\",\"1012\",\"88.92\",sep='-')` → `Peter-1012-88.92`。", "`print(3*5%2)` → `1`（15 % 2）。", "`print('3*5%2=', 3*5%2, end=' (next line) ')` 不換行，下一個 print 會接在同一行：`3*5%2= 1 (next line) area=3.141592`。", "練習 1：用 `->` 串接全部：`print(acc[i], end='->' if i < len(acc)-1 else '\\n')`。", "練習 2：規律是遇到 `-1` 就換行且不印出 `-1`，其他元素用 `->` 串接。"], "code": "first = True\nfor v in acc:\n    if v == -1:\n        print(); first = True; continue\n    print(v if first else f'->{v}', end='')\n    first = False\nprint()"}, {"p": 7, "title": "常數", "points": ["整數：`0b` 二進位、`0o` 八進位、`0x` 十六進位；可用底線分隔位數 `100_000`；Python 整數位數沒有上限。", "實數：`23.`、`6.02e-23`、`0e0` 都合法。", "字串：單引號或雙引號都可以。"]}, {"p": 8, "title": "跳脫字元", "points": ["`\\n` 換行、`\\r` 游標回到行首（後面的字會覆蓋前面的）、`\\t` Tab、`\\\\` 反斜線、`\\\"` 雙引號、`\\a` 響鈴。", "考點：`print(\"abc-d\\refg\\n1234\\r56\")` 在終端機顯示 `efg-d` 與 `5634`，因為 `\\r` 讓後面的字蓋掉行首。"]}, {"p": 9, "title": "練習：Tab 對齊與覆蓋播放", "points": ["重點是 `\\r` 開頭加 `end=''`，下一列才會覆蓋前一列。"], "code": "import time\nprint(\"ID\\tName\\tuPrice\")\ncnt = 0\nwhile True:\n    time.sleep(1)\n    print(f'\\r{data[cnt+1]}\\t{data[cnt]}\\t{data[cnt+2]}', end='')\n    cnt = (cnt + 3) % len(data)  # 循環播放"}, {"p": 10, "title": "變數", "points": ["等號是「把右邊算出的值存進左邊的名字」，不是數學方程式。同一個變數可以先存整數再存實數。"]}, {"p": 11, "title": "變數型態與轉換", "points": ["七大類：數值（`int`、`float`、`complex`）、字串 `str`、迭代器、序列（`list`、`tuple`、`range`）、二進位序列、集合（`set`、`frozenset`）、對應 `dict`。", "陷阱一：`int('5.5')` 會 `ValueError`，要寫 `int(float('5.5'))`。", "陷阱二：`set([3,5,4])` 會印出 `{3, 4, 5}`，集合沒有重複元素也不保證順序。", "陷阱三：複數 `c=5+3j` 有 `c.real`、`c.imag`；但 `int(c)` 會 `TypeError`，複數不能直接轉整數。"]}, {"p": 12, "title": "型態與記憶體位置", "points": ["`type(x)` 看型態，`id(x)` 看物件識別碼。變數只是貼在物件上的名字，重新指定就是貼到新物件，所以 `y` 從 `2.5` 改成 `'hello'` 後 `id` 會變。"]}, {"p": 13, "title": "id() 定義", "points": ["`id` 在物件存活期間唯一且不變；CPython 中就是記憶體位址。兩個生命期不重疊的物件可能拿到相同 id。"]}, {"p": 14, "title": "f-string 格式化輸出", "points": ["`f'{x}'` 嵌入值；`f'{c:.3f}'` 取小數 3 位；大括號內可以直接寫運算式。", "Python 3.8 起 `f'{c=}'` 會印出 `c=0.37...`，方便除錯。", "練習答案：accuracy = 157/200 = 0.785，recall_p = 72/100 = 0.72，recall_n = 85/100 = 0.85。", "改寫：`print(f'r={r}, h={h}, v={math.pi*r*r*h:.3f}')`（要先 `import math`）。"]}, {"p": 15, "title": "變數命名", "points": ["字母或底線開頭，之後可接字母、數字；不可用保留字；支援 Unicode（中文變數名合法）；大小寫有別。風格有 snake_case（Python 慣用）、lowerCamelCase、UpperCamelCase，重點是全程統一。"]}, {"p": 16, "title": "算術運算子", "points": ["`+ - * / % // **`。", "`/` 結果永遠是 float：`4/2` 是 `2.0`。", "`//` 是往負無限大取整：`9//2` = `4`，`-9//2` = `-5`。", "`%` 的正負號跟除數：`-9 % 2` = `1`。恆等式 `a == (a//b)*b + a%b`。"]}, {"p": 17, "title": "運算優先順序", "points": ["由高到低：`**` > 正負號 > `* / // %` > `+ -` > 比較 > `not` > `and` > `or`。", "`6/2*(1+2)` = `9.0`（同級由左到右）。", "`7-8/4*6+2/2` = 7 - 12 + 1 = `-4.0`。", "`3-200//7**25%5*2`：先算 `7**25`（巨大），`200//巨大` = 0，`0%5*2` = 0，答案 3。", "額外陷阱：`**` 是右結合且比負號高，`-2**2` = `-4`，`2**3**2` = `512`。"]}, {"p": 18, "title": "練習：黃金重量換算", "points": ["1 斤 = 600 g = 16 兩，所以 1 兩 = 37.5 g、1 錢 = 3.75 g、1 分 = 0.375 g。", "訣竅是先換成最小單位「分」再用 `//` 和 `%` 拆。", "5 oz 約 141.75 g，輸出 `3兩7錢8分`；1.35 oz 輸出 `1兩2分`（0 錢不印）。"], "code": "oz = float(input('How many ounces? '))\nfen = round(oz * 28.3495231 / 0.375)  # 全部換成「分」\nunits = [('斤', fen//1600), ('兩', fen//100%16), ('錢', fen//10%10), ('分', fen%10)]\nprint(''.join(f'{v}{u}' for u, v in units if v != 0))"}, {"p": 19, "title": "運算結果的型態", "points": ["`5+3` → int；`5+3.0` → float", "`5*3` → int；`5*3.0` → float", "`4/2` → float；`5/3` → float", "`5%3` → int；`5.2%3` → float", "`5+30//4` → int；`30//4.5` → float（6.0）", "`5**2` → int；`2**-1` → float", "規則：只要有一方是 float 結果就是 float；`/` 一律 float。"]}, {"p": 20, "title": "input()", "points": ["`input()` 永遠回傳字串，要自己轉型。多個輸入用 `.split()` 切開再轉換，常見寫法是 `a, b, c = map(float, input().split())`。"]}, {"p": 21, "title": "練習", "points": ["練習 1：一元二次方程式：`d = b*b - 4*a*c`，`x1 = (-b + d**0.5)/(2*a)`。`a=-4`、`b=8`、`c=3` 時 `d=112`，`x1 = -0.3229`、`x2 = 2.3229`。要處理 `d<0` 的情況（無實根，或用 `cmath.sqrt`）。", "練習 2：時間代碼只准整數運算。代碼第一位是 AM/PM，後面依序是 hh、mm、ss 各兩位。2013905 → 13:39:05；1090736 → 隔天 09:07:36。兩者相差：把時間都換成秒，第二個加 `86400`，相減後得 `19:28:31`。"], "code": "ap, hh, mm, ss = code//1000000, code//10000%100, code//100%100, code%100\nif ap == 2: hh += 12  # 2 代表 PM"}], "quiz": [{"q": "執行下列程式，輸出是什麼？", "code": "print(-9//2, -9%2)", "options": ["-4 -1", "-4 1", "-5 1", "-5 -1"], "answer": 2, "explain": "`//` 往負無限大取整，`-9//2` 為 `-5`；`%` 的正負號跟除數相同，`-9%2` 為 `1`。"}, {"q": "下列程式的輸出型態是什麼？", "code": "print(type(30//4.5))", "options": ["<class 'int'>", "<class 'float'>", "<class 'str'>", "<class 'complex'>"], "answer": 1, "explain": "只要運算式中有一方是 float，結果就是 float，所以 `30//4.5` 為 `6.0`。"}, {"q": "執行 `int('5.5')` 會發生什麼事？", "options": ["回傳 5", "回傳 5.5", "TypeError", "ValueError"], "answer": 3, "explain": "字串含小數點不能直接用 `int()` 轉換，會拋出 `ValueError`；要寫 `int(float('5.5'))`。"}, {"q": "執行後，`len(s)` 是多少？", "code": "s = set([3,5,4,3])\nprint(len(s))", "options": ["3", "2", "4", "5"], "answer": 0, "explain": "集合沒有重複元素，重複的 `3` 只會保留一個，所以 `len(s)` 為 3。"}, {"q": "`c = 5+3j`，下列哪一個運算會拋出 TypeError？", "code": "c = 5+3j", "options": ["c.real", "int(c)", "c.imag", "type(c)"], "answer": 1, "explain": "複數可以用 `c.real`、`c.imag` 取實部與虛部，但不能直接用 `int(c)` 轉成整數。"}, {"q": "下列程式的輸出是什麼？", "code": "print(f'{3.14159:.3f}')", "options": ["3.14159", "3.1416", "3.142", "3.141"], "answer": 2, "explain": "`f'{c:.3f}'` 取小數 3 位，`3.14159` 四捨五入後為 `3.142`。"}, {"q": "下列程式的輸出是什麼？", "code": "print(7-8/4*6+2/2)", "options": ["-4", "-4.0", "4.0", "-3.0"], "answer": 1, "explain": "先乘除後加減，且 `/` 的結果永遠是 float，所以整個運算結果為 `-4.0`。"}, {"q": "下列程式的輸出是什麼？", "code": "print('I', 'Love', 'Python', '-')", "options": ["I-Love-Python", "I Love Python-", "I Love Python", "I Love Python -"], "answer": 3, "explain": "`sep` 與 `end` 必須用關鍵字參數指定；沒有關鍵字的 `'-'` 只是第四個要印出的物件，所以輸出為 `I Love Python -`。"}]}, {"id": "ch3", "title": "CH3 控制結構 I", "file": "intro_1.pdf", "intro": "本章考的是「條件寫得對不對」：布林運算的優先順序、縮排決定程式意義、巢狀 `if` 少寫 `else` 會出錯。", "tldr": ["循序結構會執行所有情況，用 `if` 依條件改變流程才正確。", "布林運算優先順序：`not` > `and` > `or`，括號讓意思更清楚。", "`=` 是設值，`==` 是比較；比較運算子中間不能有空白。", "縮排決定程式意義，縮排在 else 內與否結果完全不同。", "巢狀 if 漏寫 else 可能讓變數沒被設定，導致 `NameError`。", "`randint(0,6)` 兩端都包含，0 和 6 不在合法區間 [1,5]。", "`match-case` 需 Python 3.10+，`case _:` 為預設分支。"], "pages": [{"p": 1, "title": "封面", "points": ["CH3 Control Statements Part I"]}, {"p": 2, "title": "控制結構", "points": ["循序結構會把合法、不合法兩種情況的程式都執行，結果錯誤；用 `if` 依條件改變執行流程才正確。", "Python 的流程控制指令：`if-else`、`while`、`for`、`match-case`。", "三角形合法條件：`a+b>c and a+c>b and b+c>a`；面積用海龍公式 `s=(a+b+c)/2`，`area=(s*(s-a)*(s-b)*(s-c))**0.5`。"], "errata": ["`sum(a,b,c)` 會 TypeError，`sum` 只吃一個可迭代物件，應寫 `(a+b+c)/2` 或 `sum([a,b,c])/2`。海龍公式也漏乘了 `s`。"]}, {"p": 3, "title": "布林運算式", "points": ["結果只能是 `True` 或 `False`。", "可以直接放在 `if` 後面，也可以先存進變數（`is_makeup = score>=50 and score<60`）再判斷，可讀性更好。", "7-11 買早餐的例子是在練習把口語需求拆成正確的巢狀條件。"], "errata": ["講義中 `sore` 是 `score` 的筆誤。"]}, {"p": 4, "title": "關係運算子", "points": ["`>` `<` `>=` `<=` `==` `!=`，兩個字元之間不能有空白（`> =` 是錯的）。", "`=` 是設值、`==` 是比較。", "判別式 `b*b-4*a*c >= 0` 有實根，`== 0` 有重根。"]}, {"p": 5, "title": "if-else 格式", "points": ["`if 條件:` 加縮排區塊，`else:` 加縮排區塊，最後不縮排的 `print(v)` 兩條路都會執行。"]}, {"p": 6, "title": "縮排決定意義", "points": ["左邊版本：`print(\"v=\",v)` 縮排在 else 裡，只有 `e>=0` 才印。", "右邊版本：print 沒縮排，兩條路都會執行；當 `e<0` 時 `v` 沒有定義，會 `NameError`。", "條件運算式（三元運算子）：`x = A if 條件 else B`。例：`score = 59 if score<60 else score+3`。"]}, {"p": 7, "title": "只有 if 沒有 else", "points": ["else 不寫也可以。", "`pass` 是佔位用的空指令，語法上需要一個區塊但什麼都不做時使用。", "兩段程式效果相同。"]}, {"p": 8, "title": "練習", "points": ["練習 1：滿 1000 打九折且稅內含，否則稅外加 5%。", "1200 → total 1080、tax 51.43；800 → tax 40、total 840。", "練習 2：四個整數比較奇偶個數（題目說 a,b,c 但實際輸入四個數）。逐一用 `x % 2` 判斷累加 odd、even，`odd>even` 印 `odd-bias`，相反印 `even-bias`，相等印 `balance`。15、18、7、31 → odd=3、even=1。"], "code": "price = float(input())\nif price > 1000:\n    total = price * 0.9\n    tax = total - total / 1.05 # 內含稅\nelse:\n    tax = price * 0.05\n    total = price + tax\nprint(f'tax={tax:.2f}, total={total:.2f}')"}, {"p": 9, "title": "邏輯運算子 and、or、not", "points": ["優先順序：`not` > `and` > `or`。所以 `A and B or C` 等於 `(A and B) or C`，括號只是讓意思清楚。", "`price>=800 and price<1000` 表示區間 [800, 1000)，Python 也可寫成 `800 <= price < 1000`。", "狄摩根定律：`not(price>=800 and price<1000)` 等於 `price<800 or price>=1000`。"]}, {"p": 10, "title": "拆解 and", "points": ["`if a>b and a>c:` 可以拆成兩層 if，下一頁示範。"], "errata": ["講義中 `ans a)` 是筆誤。"]}, {"p": 11, "title": "練習：區域判斷", "points": ["版面是 3×3 格：上排中 E、右上 D；中排 B、A、C；下排中 F。", "A+E+F（中間那一欄）：`x1 <= x <= x2`。用 `<` 或 `<=` 決定邊界算不算，要前後一致。", "A：`x1<x<x2 and y1<y<y2`。", "B+C（中排扣掉 A）：`y1<y<y2 and (x<x1 or x>x2)`。", "B+D：`(x<x1 and y1<y<y2) or (x>x2 and y>y2)`。"]}, {"p": 12, "title": "巢狀 if 的四個版本", "points": ["題意：`a` 同時大於 `b`、`c` 時 `ans=a`，否則 `ans=-(b+c)`。", "`ver1`（and 寫法）與 `ver2`（兩層 if，各自都有 else）等價。", "`ver3` 錯：`a>b` 但 `a<=c` 時沒有 else，`ans` 沒被設定，會 `NameError`。", "`ver4` 對：先給預設值 `ans=-(b+c)`，符合條件才覆蓋。這是避免漏掉 else 的好技巧。"]}, {"p": 13, "title": "巢狀 if 範例（膽固醇）", "points": ["三個獨立 if 每次都要檢查三個條件；巢狀 if 判斷到就停，比較有效率。"], "errata": ["講義中 `score<220` 應是 `cho<220`。"]}, {"p": 14, "title": "多分支：if-elif-else 與 match-case", "points": ["`match-case`（Python 3.10+）：`match 變數:` 下接 `case 值:`，`case _:` 是預設分支。", "「小漏洞」答案：`randint(0,6)` 包含兩端，0 和 6 都不在合法區間 [1,5]，卻會落入 else 印出 `excellent`。修正：else 前加 `elif pt==5:`，else 改為印 `illegal`；或改用 `randint(1,5)`。"], "errata": ["講義寫成大寫 `Match` 會 `SyntaxError`。"]}, {"p": 15, "title": "練習", "points": ["練習 1：分數轉兩種級分。算法一 `G1 = score//20 + 1`（100 分剛好得 6）。算法二用 if-elif 依區間 [1,37]、[38,59]、[60,69]、[70,83]、[84,91]、[92,100] 對應 1 到 6。`score=55` → `G1=3`、`G2=2`。", "練習 2：隨機點分區：先用 `x` 決定欄（B、A、C），再用 `y` 決定上中下（U、無、D），組合成 BU、A、CD 等名稱。", "練習 3：LeetCode Roman to Integer：由左往右掃，當前符號值小於右邊符號值就減，否則加（IV=4、IX=9）。"]}], "quiz": [{"q": "執行下列程式，輸出是什麼？", "code": "print(True or False and False)", "options": ["False", "0", "True", "None"], "answer": 2, "explain": "`and` 優先於 `or`，先算 `False and False` 得 `False`，再與 `True` 做 `or`，結果為 `True`。"}, {"q": "下列哪一行會出現 SyntaxError？", "options": ["if x >= 0:", "if x > = 0:", "if x == 0:", "if x != 0:"], "answer": 1, "explain": "比較運算子的兩個字元之間不能有空白，`> =` 是錯的；`=` 是設值，`==` 才是比較。"}, {"q": "執行下列程式後，score 是多少？", "code": "score = 55\nscore = 59 if score<60 else score+3\nprint(score)", "options": ["55", "58", "59", "60"], "answer": 2, "explain": "`55<60` 成立，所以條件運算式取 `59`，score 被設為 `59`。"}, {"q": "關於 pass 的敘述，何者正確？", "options": ["會停止整個程式", "會跳到下一次迴圈", "會回傳一個值給呼叫者", "是佔位用的空指令，語法需要區塊但什麼都不做時使用"], "answer": 3, "explain": "`pass` 是佔位用的空指令，語法上需要一個區塊但什麼都不做時使用。"}, {"q": "執行下列程式，會發生什麼？", "code": "e = -1\nif e >= 0:\n    v = e\nprint(v)", "options": ["印出 -1", "NameError", "印出 None", "印出 0"], "answer": 1, "explain": "`e=-1` 時 if 條件不成立，`v` 沒有被定義，print 沒有縮排，執行 `print(v)` 時會 `NameError`。"}, {"q": "程式用 randint(0,6) 產生亂數，哪些值會落在合法區間 [1,5] 之外？", "options": ["0 和 6", "只有 0", "只有 6", "1 到 5"], "answer": 0, "explain": "`randint(0,6)` 兩端都包含，0 與 6 不在合法區間 [1,5] 中，應另外處理。"}, {"q": "`not(price>=800 and price<1000)` 等於下列哪一個？", "options": ["price>=800 or price<1000", "price<=800 and price>1000", "price<800 and price>=1000", "price<800 or price>=1000"], "answer": 3, "explain": "狄摩根定律：`not(A and B)` 等於 `(not A) or (not B)`，即 `price<800 or price>=1000`。"}, {"q": "執行下列程式，輸出是什麼？", "code": "a, b, c = 1, 2, 3\nprint(sum(a,b,c))", "options": ["6", "TypeError", "1", "(a+b+c)/2"], "answer": 1, "explain": "`sum` 只吃一個可迭代物件，傳入三個參數會 TypeError；應寫 `sum([a,b,c])`。"}]}, {"id": "ch4", "title": "CH4 控制結構 II", "file": "intro_2.pdf", "intro": "本章是期中最重的一章：while 的三種控制方式、for 背後其實是iterator、range 的邊界，以及巢狀迴圈畫圖形。", "tldr": ["while 條件為真就重複；忘了更新計數器會變無窮迴圈。", "累加器初值：加總設 `0`，乘積設 `1`。", "`for` 底層就是 `iter` 加 `next`，可走訪任何可迭代物件。", "`range(start, stop, step)` 不包含 stop；step 為負時要 `> stop`。", "`while True` 要靠 `break` 結束；`5>3==True` 一次都不執行。", "for-else：迴圈沒被 `break` 才執行 else。", "巢狀迴圈：外層控制列、內層控制欄。"], "pages": [{"p": 1, "title": "封面", "points": ["CH4 Control Statements Part 2"]}, {"p": 2, "title": "while 迴圈", "points": ["格式 `while 布林運算式:` 加迴圈本體。", "把重複 10 次的 `print` 改寫成計數器加 `while`，條件為真就一直執行。"]}, {"p": 3, "title": "計數控制迴圈", "points": ["三要素：計數器初值（`cnt=1`）、繼續條件（`cnt<=5`）、更新運算式（`cnt+=1`）。", "忘了更新就會變無窮迴圈。"]}, {"p": 4, "title": "搭配其他變數（累加器）", "points": ["`total` 先設 `0`，迴圈內 `total += ...`。", "練習：10 個遞增隨機整數的乘積，第一個是 1，相鄰差距 1 到 5。", "乘積的初值要設 `1`，不是 `0`。"], "code": "x, prod = 1, 1\nfor _ in range(10):\n    prod *= x\n    x += random.randint(1, 5)"}, {"p": 5, "title": "練習：猜數字", "points": ["[1,100] 版本：維護 `lo`、`hi`，猜太小就 `lo = g+1`，太大就 `hi = g-1`，提示區間跟著縮小。用二分法最壞要猜 7 次（2^7=128 ≥ 100），講義限 6 次時最佳策略也可能失敗。", "四位數 1A2B：A 是位置和數字都對，B 是數字對但位置錯。逐位比較算 A，再算共同數字數減 A 得 B。"]}, {"p": 6, "title": "旗標控制迴圈（sentinel）", "points": ["次數不固定，靠檢查某個值決定是否繼續。", "海象運算子 `:=`（3.8+）可以在條件裡同時設值：`while (x:=random.randint(0,100)) % 4 != 0:`。", "改寫讓 `input` 只出現一次："], "code": "total, cnt = 0, 0\nwhile 0 <= (score := int(input('input score(-1 to exit):'))) <= 100:\n    total += score; cnt += 1\nprint(f'avg={total/cnt:.3f}' if cnt else 'no data')"}, {"p": 7, "title": "練習", "points": ["練習 1：等腰三角形：無限迴圈隨機產生 `a`、`b`、`c`，先檢查合法三角形，再檢查 `a==b or b==c or a==c`，成立就 `break` 並用海龍公式算面積。", "練習 2：Quadratic Probing：第 i 次探測位置是 `(key + i*i) % n`，i 從 0 開始，用集合記錄看過的位置，重複就停。n=11、key=3 依公式得 3→4→7→1→8→6→6（重複停止）。"], "errata": ["講義範例寫 8→3，與公式結果不符，考試時以老師定義為準。"]}, {"p": 8, "title": "無窮迴圈", "points": ["`while True:` 永遠不會結束，除非用 `break`。"], "errata": ["講義錯誤，而且是很好的考題：`while 5>3==True:` 其實一次都不會執行。Python 的比較運算子會串接，`5>3==True` 等於 `(5>3) and (3==True)`，而 `3==True` 是 False。"]}, {"p": 9, "title": "break 與 continue", "points": ["`break` 跳出最內層迴圈；`continue` 跳過本輪剩下的指令，直接進下一輪。", "EX1 標準差（不用現成公式函數）：先存 100 個 `0.05 + random.random()*0.9`，算平均 m，再算 `(sum((v-m)**2 for v in L)/len(L))**0.5`。", "EX2 改成傳統 while：把 break 條件反過來當繼續條件，並在迴圈前先取一次值（或用 `:=`）。"], "errata": ["右邊程式 `total += score` 應為 `total += x`。"]}, {"p": 10, "title": "練習：質因數分解", "points": ["質因數分解（程式如下）。", "LeetCode Integer to Roman：由大到小準備 1000、900、500、400、100、90、50、40、10、9、5、4、1 對應符號，能減就減並加上符號。"], "code": "d = 2\nwhile d * d <= x:\n    while x % d == 0:\n        print(d, end=' '); x //= d\n    d += 1\nif x > 1: print(x)"}, {"p": 11, "title": "iterator 物件", "points": ["`iter(物件)` 取得迭代器，`next(it)` 取下一個元素。物件需實作 `__iter__`/`__next__` 或 `__getitem__`。", "對 list 依序得到元素；對 dict 迭代得到的是 key（A、B、C）。"], "errata": ["講義中 `L=[10,...,50]` 卻註解印出 0,1,2，那是被註解掉的 range 版本的結果；用 L 應印 10、20、30..."]}, {"p": 12, "title": "next 的預設值", "points": ["`next(it, None)`：迭代器用完時回傳 `None`；沒給預設值則丟出 `StopIteration` 例外。", "練習改寫見 P16。"]}, {"p": 13, "title": "for 語法", "points": ["C/C++ 的 for 是計數迴圈；Python 的 `for 目標 in 可迭代物件:` 會先建立 iterator，每輪把下一個元素指定給目標變數，再執行本體，直到元素用完。", "可接 `else`。"]}, {"p": 14, "title": "for 的意義", "points": ["逐一走訪序列或任何可迭代物件的每個元素。", "範例：計算字串中大寫字母個數（`c.isupper()`）、加總正數。"], "errata": ["投影片標題寫「平均」但程式只算總和。"]}, {"p": 15, "title": "用 for 模仿計數迴圈", "points": ["準備一個 index 串列 `[0,1,2,3,4]` 很彆扭，所以下一步引出 `range()`。"]}, {"p": 16, "title": "for 等於 iter + next", "points": ["`for x in L:` 底層就是 `it=iter(L)` 再不斷 `x=next(it)`。while 版本：", "陷阱：用 None 當結束記號時，若串列本身含 None 會提早結束；判斷 None 用 `is` 比 `==` 正確。"], "code": "it = iter(L)\nwhile True:\n    x = next(it, None)\n    if x is None: break\n    print(x)", "errata": ["講義 `next(int)` 是 `next(it)` 的筆誤。"]}, {"p": 17, "title": "range()", "points": ["`range(stop)` 或 `range(start, stop, step)`，產生不可變的整數序列，不包含 stop。", "`list(range(10))` → `[0, 1, ..., 9]`", "`list(range(5, 11))` → `[5, 6, 7, 8, 9, 10]`", "`list(range(0, 20, 4))` → `[0, 4, 8, 12, 16]`", "`list(range(2, 10, 3))` → `[2, 5, 8]`", "`list(range(0, -5, -1))` → `[0, -1, -2, -3, -4]`", "`list(range(0))` → `[]`", "`list(range(5, 0))` → `[]`（step 預設 1，走不到）", "規則：參數必須是整數；start 預設 `0`、step 預設 `1`；`step=0` 會 `ValueError`。", "`r[i] = start + step*i`，step 為正時要 `< stop`，為負時要 `> stop`。"]}, {"p": 18, "title": "range 搭配 for", "points": ["range 物件有 `.start`、`.stop`、`.step` 屬性，可用 iter/next 走訪，可 `list(r)` 轉串列。", "`for _ in range(5):` 的 `_` 是不需要用到的匿名變數。"]}, {"p": 19, "title": "練習", "points": ["練習 1：互質數對：`math.gcd(a, b) == 1` 就算一對。題意是 L1[i] 對 L2[i] 逐一比對，或兩兩組合（雙層 for），兩種都要會。", "練習 2：成長率表：欄寬 6、12、12、12，第一欄靠左、其餘靠右，小數 3 位，log 用以 2 為底。"], "code": "print(f'{\"n\":<6}{\"log(n)\":>12}{\"nlog(n)\":>12}{\"n^2\":>12}')\nfor n in [1, 10, 100, 1000, 10000]:\n    print(f'{n:<6}{math.log2(n):>12.3f}{n*math.log2(n):>12.3f}{n*n:>12}')"}, {"p": 20, "title": "巢狀迴圈結構", "points": ["`for` 包 `for`、`while` 包 `while`、`while` 包 `for`、`for` 內並列多個 `for` 都可以。", "三層以上也很常見，例如矩陣乘法就是三層。"]}, {"p": 21, "title": "巢狀迴圈範例", "points": ["外層控制列、內層控制欄；內層 `print(..., end='\\t')` 不換行，內層結束後外層 `print()` 換行。"]}, {"p": 22, "title": "古典練習：印圖形", "points": ["(a) 數字三角形：`for i in range(1,h+1): print(''.join(str(j) for j in range(1,i+1)))`。", "(b) 數字倒三角形的規律是長度遞減且方向交替：第 0 列 54321（遞減）、第 1 列 1234（遞增）、第 2 列 321...", "(c) 星號圖形：先印上半部 i=1..h，每列 `' '*(h-i) + '*'*i`；再印下半部 i=h-1..1。"], "code": "for i in range(h):\n    k = h - i\n    seq = range(k, 0, -1) if i % 2 == 0 else range(1, k+1)\n    print(''.join(str(j) for j in seq))"}, {"p": 23, "title": "for-else", "points": ["迴圈正常跑完（沒被 break）才執行 else；被 break 就跳過 else。範例：資料中有負數就 break 並報錯，全部正常才在 else 計算平均。", "`enumerate(data)` 同時給 index 和值。", "陷阱：迴圈中 `data[idx] *= 1.05` 會直接改原串列，就算後面 break，前面的元素也已經被乘過了。"]}, {"p": 24, "title": "練習", "points": ["練習 1：質數問答：迴圈 10 次，產生 [50,200] 亂數，問使用者 y/n，與自寫 `is_prime` 比對計算答對數；達 5 次印 `Congrats`（可用 `break` 提早結束），否則印 `Try Again`。這題適合用 for-else。", "練習 2：LeetCode Two Sum：用 dict 記錄「看過的值 → index」，對每個 x 檢查 `target-x` 是否已在 dict 中，一次走訪 O(n)。"]}], "quiz": [{"q": "下列程式的輸出是什麼？", "code": "print(list(range(0, -5, -1)))", "options": ["[0, -1, -2, -3, -4]", "[0, -1, -2, -3, -4, -5]", "[-4, -3, -2, -1, 0]", "[]"], "answer": 0, "explain": "range 不包含 stop，step 為負時從 start 開始往下數到 stop 之前，因此結果是 [0, -1, -2, -3, -4]。"}, {"q": "下列程式的輸出是什麼？", "code": "print(list(range(5, 0)))", "options": ["[5, 4, 3, 2, 1]", "[5, 4, 3, 2, 1, 0]", "[]", "ValueError"], "answer": 2, "explain": "step 預設為 1，從 5 往上走走不到 0，所以結果是空串列，不會報錯。"}, {"q": "下列迴圈會執行幾次？", "code": "while 5 > 3 == True:\n    print('hi')", "options": ["無限次", "一次", "會丟出 SyntaxError", "0 次（一次都不執行）"], "answer": 3, "explain": "Python 比較運算子會串接，5>3==True 等於 (5>3) and (3==True)，而 3==True 是 False，所以一次都不執行。"}, {"q": "下列程式的結果是什麼？", "code": "print(list(range(1, 5, 0)))", "options": ["[]", "ValueError", "[1]", "無限迴圈"], "answer": 1, "explain": "range 的 step 不能為 0，step=0 會丟出 ValueError。"}, {"q": "下列程式的輸出是什麼？", "code": "L = [1, None, 3]\nit = iter(L)\nwhile True:\n    x = next(it, None)\n    if x is None: break\n    print(x)", "options": ["1 3", "1 None 3", "1", "沒有輸出"], "answer": 2, "explain": "用 None 當結束記號時，串列中的 None 會被誤判為結束，所以迴圈在第二個元素就停止，只印出 1。"}, {"q": "下列程式的結果是什麼？", "code": "it = iter([])\nprint(next(it))", "options": ["回傳 0", "回傳 None", "無限等待", "丟出 StopIteration"], "answer": 3, "explain": "沒有給 next 預設值時，迭代器用完會丟出 StopIteration 例外；只有 next(it, None) 才會回傳 None。"}, {"q": "下列程式的輸出是什麼？", "code": "for x in [1, -2, 3]:\n    if x < 0:\n        break\nelse:\n    print('ok')\nprint('end')", "options": ["ok", "end", "ok 與 end 都印出", "沒有輸出"], "answer": 1, "explain": "迴圈在 x=-2 時被 break 跳出，for-else 的 else 不會執行，因此只印出 end。"}, {"q": "對 dict 做 for 迭代時，每輪取得的是什麼？", "code": "for k in {'A': 1, 'B': 2}:\n    print(k)", "options": ["key", "value", "(key, value) 配對", "index"], "answer": 0, "explain": "對 dict 迭代得到的是 key，所以輸出是 A 與 B，而不是值或配對。"}]}, {"id": "ch5", "title": "CH5 函數", "file": "intro_3.pdf", "intro": "本章重點是把運算包成 def、回傳值的寫法，以及 math 模組函數的回傳型態和邊界行為。", "tldr": ["用 `def` 定義函數，以 `return` 回傳值。", "多個輸出可回傳串列或 tuple。", "函數用來模組化，利於重複使用與維護。", "內建函數不需 import；math 三角函數參數是弧度。", "`ceil`、`floor`、`gcd` 回傳 int，`fabs` 回傳 float。", "`a.sort()` 原地排序回傳 `None`；`sorted(a)` 回傳新串列。", "型態提示不會被 Python 強制檢查；函數內變數為區域變數。"], "pages": [{"p": 1, "title": "封面", "points": ["CH5 Functions"]}, {"p": 2, "title": "數學中的函數", "points": ["函數把一個或一組輸入轉成輸出，y=f(x)。", "多輸入多輸出寫成 Y=f(X)。", "可以多對一，不能一對多。"]}, {"p": 3, "title": "用 Python 實作函數", "points": ["`def 函數名(參數):` 加本體，用 `return` 回傳。", "BMI 範例 `return w/h**2`。", "多個輸出可以包成串列回傳，例如 `return [mage, nchild, life]`（也可以用 tuple：`return a, b, c`）。"]}, {"p": 4, "title": "函數是模組化工具", "points": ["把「讀資料、處理、產生報告」拆成 `read_data`、`process`、`gen_report`，再由 `do_it_all` 串起來。", "優點：重複使用、可讀性高、容易維護。"]}, {"p": 5, "title": "內建函數", "points": ["不用 import 就能用，例如 `abs`、`len`、`max`、`min`、`sum`、`sorted`、`map`、`filter`、`zip`、`enumerate`、`range`、`round`、`divmod`、`eval`、`isinstance`。"]}, {"p": 6, "title": "使用範例（講義錯誤很多，適合當除錯題）", "points": ["`a[-1]` 是最後一個元素，等於 `a[len(a)-1]`。", "`eval('5+3-2')` 把字串當運算式計算，結果 6。", "`list(map(int, [3.3, 4.4, 5.5, 6.6]))` → `[3, 4, 5, 6]`（int 是捨去小數，不是四捨五入）。", "`list(filter(lambda x: x>=60, [68,50,33,70,85,25,100]))` → `[68, 70, 85, 100]`。"], "errata": ["`sort(a)` 不存在，會 NameError。要用 `a.sort()`（原地排序，回傳 `None`）或 `b = sorted(a)`（回傳新串列）。", "`len[a]` 用了中括號會 TypeError。", "`pow(5.5, 3, 3)` 會 TypeError：三參數版本（模數次方）只接受整數。"]}, {"p": 7, "title": "math 模組常用函數", "points": ["`sin`、`cos`：參數是弧度，不是角度；`math.sin(math.pi/4)` 即 sin 45°。", "`ceil`：往上取整，回傳 int；`ceil(2.35)=3`，`ceil(-1.35)=-1`。", "`floor`：往下取整，回傳 int；`floor(2.35)=2`，`floor(-1.35)=-2`。", "`fabs`：絕對值，回傳 float；`fabs(-3)=3.0`。", "`log(x, base)`：指定底數；`log(12, 2)` ≈ 3.585。", "`log2`、`log10`：專用版本較精確；`log10(50)` ≈ 1.699。", "`fmod(x, y)`：餘數正負號跟 x（與 `%` 不同）；`fmod(13.5, 4.3)` ≈ 0.6。", "`gcd`：最大公因數，回傳 int；`gcd(98, 28)=14`。", "`factorial`：階乘，回傳 int；`factorial(5)=120`。", "轉角度用 `math.radians(45)`。"], "errata": ["講義寫 gcd 回傳 float，實際是 int。"]}, {"p": 8, "title": "練習", "points": ["練習 1：圓上的點：隨機產生 10 個角度後排序（保證後一個在前一個之後），座標 `x=r*cos(θ)`、`y=r*sin(θ)`。距離總和是 p1p2、p3p4... 兩兩一組相加，用 `math.dist(p, q)`。", "練習 2：質數產生公式 `a(n) = a(n-1) + gcd(n, a(n-1))`，`a(1)=7`。每一項的差 `a(n)-a(n-1)` 不是 1 就是質數；跳過 1，數到第 1000 個質數（含重複）時印出 n。"]}, {"p": 9, "title": "練習：球面座標", "points": ["半徑 1，`x = sinθ·cosφ`，`y = sinθ·sinφ`，`z = cosθ`。", "標準定義 θ 在 `[0, π]`、φ 在 `[0, 2π)`。", "相鄰點距離加總用 `math.dist`。"]}, {"p": 10, "title": "自訂函數與型態提示", "points": ["`def sphereVolume(r: float) -> float:` 中 `: float`、`-> float` 是型態提示，只是給人和工具看的，Python 執行時不會強制檢查。", "函數內遇到 `return` 立刻結束，所以 `if r<0: return 0` 可以提早離開。", "函數外的程式碼屬於 global scope；函數內建立的變數是區域變數，離開函數就消失。"]}, {"p": 11, "title": "範例二：回傳多個值", "points": ["`gap(x,y,z)` 回傳 `[abs(x-y), abs(y-z)]`。", "練習：`cal_list_gap` 計算相鄰差值，`cal_gap_median` 求中位數（自寫選擇排序）。"], "code": "def cal_list_gap(L):\n    return [abs(L[i+1]-L[i]) for i in range(len(L)-1)]\n\ndef cal_gap_median(G):\n    G = G[:] # 不改到原串列\n    for i in range(len(G)): # 自寫選擇排序\n        for j in range(i+1, len(G)):\n            if G[j] < G[i]: G[i], G[j] = G[j], G[i]\n    n = len(G)\n    return G[n//2] if n % 2 else (G[n//2-1] + G[n//2]) / 2", "errata": ["講義中 Print 大寫、gapList 與 gap_list 名稱不一致都會出錯；medium 應為 median（中位數）。"]}, {"p": 12, "title": "範例三：最大值與其位置", "points": ["`min_max` 回傳 `[min(L), max(L)]`。", "`max_index` 回傳所有最大值的 index，`L=[1,5,18,5,18,3,18]` 印出 `[2, 4, 6]`。"], "errata": ["`if (L[i]==m) idx.append(i)` 少了冒號，會 SyntaxError。"]}, {"p": 13, "title": "基本練習（不用內建函數）", "points": ["`factorial(x)`：r=1，迴圈乘 1 到 x。", "`mypow(x, y)`：r=1，乘 y 次 x。", "`gcd(a, b)`：輾轉相除法，`while b: a, b = b, a % b`，最後回傳 a。", "`isPrime(x)`：x<2 不是；從 2 試除到 `√x`（`i*i <= x`），整除就不是質數。"]}, {"p": 14, "title": "練習一：最近質數", "points": ["x 本身是質數時 d=0 直接回傳；20 → 19（19 和 23 一樣近時取小）。"], "code": "def nearest_prime(x):\n    d = 0\n    while True:\n        if is_prime(x - d): return x - d # 先檢查較小的，平手取小\n        if is_prime(x + d): return x + d\n        d += 1"}, {"p": 15, "title": "練習二", "points": ["練習 1：串列全部的 GCD：`g = data[0]`，再對其餘元素 `g = math.gcd(g, v)`。", "練習 2：組合數有效率的算法：利用 `C(n,k) = C(n,n-k)` 先讓 k 取較小者，再逐步相乘相除，全程保持整數。", "`C(100,10)` = 17310309456440；`C(100,85)` = `C(100,15)` = 253338471349988640。不要先算 `100!` 再除，數字太大又慢。"], "code": "def C(n, k):\n    k = min(k, n - k)\n    r = 1\n    for i in range(k):\n        r = r * (n - i) // (i + 1) # 每一步都整除\n    return r", "errata": ["講義 `data` 第三項結尾多了 `*` 會 SyntaxError。"]}], "quiz": [{"q": "下列程式的輸出是什麼？", "code": "a = [3, 1, 2]\nb = a.sort()\nprint(b)", "options": ["[1, 2, 3]", "None", "[3, 1, 2]", "NameError"], "answer": 1, "explain": "`a.sort()` 原地排序並回傳 `None`，所以 `b` 是 `None`。"}, {"q": "下列程式的輸出是什麼？", "code": "print(list(map(int, [3.3, 4.4, 5.5, 6.6])))", "options": ["[3, 4, 5, 6]", "[3, 4, 6, 7]", "[3.0, 4.0, 5.0, 6.0]", "[4, 4, 6, 7]"], "answer": 0, "explain": "`int` 是捨去小數，不是四捨五入，所以 6.6 變成 6。"}, {"q": "下列程式的輸出是什麼？", "code": "print(eval('5+3-2'))", "options": ["'5+3-2'", "None", "6", "TypeError"], "answer": 2, "explain": "`eval` 把字串當運算式計算，`5+3-2` 結果為 6。"}, {"q": "下列程式的輸出是什麼？", "code": "import math\nprint(math.ceil(-1.35), math.floor(-1.35))", "options": ["-2 -1", "-1 -1", "-2 -2", "-1 -2"], "answer": 3, "explain": "`ceil` 往上取整得 -1，`floor` 往下取整得 -2，兩者都回傳 int。"}, {"q": "下列程式的輸出是什麼？", "code": "import math\nr = math.gcd(98, 28)\nprint(r, type(r).__name__)", "options": ["14 float", "14 int", "14.0 float", "14 str"], "answer": 1, "explain": "`gcd` 回傳 int，98 與 28 的最大公因數是 14。"}, {"q": "下列程式的輸出是什麼？", "code": "import math\nprint(math.fabs(-3))", "options": ["3", "-3.0", "3.0", "TypeError"], "answer": 2, "explain": "`fabs` 回傳 float，所以 -3 的絕對值是 `3.0`。"}, {"q": "下列程式的輸出是什麼？", "code": "print(pow(5.5, 3, 3))", "options": ["TypeError", "1.0", "3", "0"], "answer": 0, "explain": "三參數的 `pow` 只接受整數，傳入 5.5 會 TypeError。"}, {"q": "下列程式的輸出是什麼？", "code": "def f():\n    x = 1\n    return x\n\nf()\nprint(x)", "options": ["1", "None", "0", "NameError"], "answer": 3, "explain": "`x` 是函數內的區域變數，離開函數後就不存在，外層 `print(x)` 會 NameError。"}]}, {"id": "ch6", "title": "CH6 陣列與串列", "file": "intro_4.pdf", "intro": "本章重點是 array、list、NumPy 三者的差異，以及切片和串列方法「會不會改到原串列、回傳什麼」。", "tldr": ["array 只能存同一型態、省記憶體；list 可混合型態、彈性大但較耗記憶體。", "`append`、`extend`、`insert`、`remove`、`reverse`、`sort` 都是原地修改並回傳 `None`。", "`a[:]` 是淺層複製，內層子串列仍共用，不是 deep copy。", "`a.append([1,3,5])` 會加入一個巢狀元素；逐個加入要用 `extend` 或 `+=`。", "切片設值可改變長度，`a[2:5] = []` 會刪除索引 2 到 4 的元素。", "`L*2` 是重複串列兩次；NumPy 的 `a/2` 才是逐元素運算。", "`np.sum(a)` 比內建 `sum(L)` 快很多，因為迴圈在 C 層完成。"], "pages": [{"p": 1, "title": "封面", "points": ["CH6 Arrays & Lists"]}, {"p": 2, "title": "陣列概念", "points": ["陣列是線性、有序地存放大量「同型態」資料的結構，用索引 `0` 開始取值。", "對應數學的 `a0`、`a1`...`a99`，可宣告、設值（如 `a[i] = a[i-1]*2`）、運算（如平均）。"]}, {"p": 3, "title": "各語言如何定義陣列", "points": ["Java 用 `new int[10]`；C++ 用 `new int[10]`；Python 用 `from array import array`，`array('i', [1,2,3])` 是整數陣列、`array('f', [...])` 是浮點數陣列。", "陣列元素可用索引修改：`a[3] = -1`。", "補充：C++ 範例對指標做 `sizeof(a)/sizeof(a[0])` 算不出陣列長度，這是常見錯誤。"]}, {"p": 4, "title": "型態代碼", "points": ["常用：`'b'` 有號 1 byte、`'h'` 2 bytes、`'i'` 整數（通常 4 bytes）、`'l'` 4 bytes 以上、`'q'` 8 bytes、`'f'` 單精度 4 bytes、`'d'` 雙精度 8 bytes。", "大寫（`'B'`、`'H'`、`'I'`）是無號版本。", "放入不符型態的值會 `TypeError` 或 `OverflowError`。"]}, {"p": 5, "title": "array 的方法", "points": ["常用方法：`append`、`insert(i,x)`、`pop([i])`、`count(x)`、`remove(x)`、`tolist()`、`fromlist(L)`、`tofile`、`fromfile`、`itemsize`。", "追蹤 1：`array('i',[1,2,3,4,5])` 後 `append(6)` → 1...6。", "追蹤 2：`fromlist([1,3,5])` 逐個接到尾端 → 1...6,1,3,5。", "追蹤 3：`insert(0,0)` → 0,1...6,1,3,5。", "追蹤 4：`pop()` 移除最後的 5 → `[0,1,2,3,4,5,6,1,3]`，`count(3)` = 2。"]}, {"p": 6, "title": "array 與 list 對照", "points": ["選擇考量：存什麼型態、記憶體大小、運算效率。", "正確追蹤：`[1,2,3,4,5,6,[1,3,5]]` → insert 後 `[0,1,...,6,[1,3,5]]` → `pop()` 移除的是 `[1,3,5]` → 結果 `[0,1,2,3,4,5,6]`，`count(3)` = 1。", "要逐個加入應該用 `a.extend([1,3,5])` 或 `a += [1,3,5]`。"], "errata": ["講義右欄註解錯誤，是很好的追蹤題：`list` 的 `a.append([1,3,5])` 會把整個串列當成「一個元素」放進去（巢狀串列），不是逐個加入。"]}, {"p": 7, "title": "記憶體差異", "points": ["`array` 直接連續存放原始數值（每個 `'i'` 佔 4 bytes），省記憶體但只能放同一型態。", "`list` 存的是指向物件的參考，每個元素可以是不同型態（如 `['Data1', 10, 20]`），彈性大但較耗記憶體。"]}, {"p": 8, "title": "NumPy", "points": ["底層是 C 陣列，支援向量化運算：`a**2`、`a/2` 會對每個元素運算，不用寫迴圈。", "`a/2` 結果變 float。", "`np.concatenate((a, b))` 串接兩個陣列。", "對照：list 的 `L*2` 是重複串列兩次，不是每個元素乘 2。"]}, {"p": 9, "title": "執行效率比較", "points": ["100 萬個整數加總做 5000 次，`np.sum(a)` 比內建 `sum(L)` 快非常多（通常數十倍），因為迴圈在 C 層完成。", "計時用 `time.time()` 前後相減。"]}, {"p": 10, "title": "串列基本操作與切片", "points": ["索引：`a[0]` 第一個、`a[-2]` 倒數第二個；`len(a)` 長度。", "串接：`a = a + [4]` 或 `a += [5,6,7]`；`append(18)` 加在尾端；`insert(2,'Empty')` 插在索引 2。", "切片 `a[i:j:k]`：取 i 到 j-1，間隔 k。`a[-3:]` 最後 3 個；`a[::-1]` 反轉；`a[:]` 複製。", "切片設值可以改變長度；`a=[1,2,3,4,5,6,7]` 時，每次都從上一步結果繼續：", "`a[2:5] = [11,12,13]` → `[1, 2, 11, 12, 13, 6, 7]`", "`a[2:5] = [33,44]` → `[1, 2, 33, 44, 6, 7]`", "`a[2:5] = []` → `[1, 2, 7]`", "`del a[::2]` 刪除索引 0、2、4... 的元素；`[1..10]` 執行後剩 `[2, 4, 6, 8, 10]`。"], "errata": ["講義說 `a[:]` 是 deep copy，錯誤：它是淺層複製（shallow copy），內層的子串列仍共用。"]}, {"p": 11, "title": "範例一：成績處理", "points": ["`score` 有 10 筆，平均 52.3、及格 5 人、缺考（0 分）2 人（`score.count(0)`）。", "用 `enumerate` 調分 `int(val**0.5*10)`，即開根號乘 10，得到 `[88, 50, 65, 98, 0, 92, 89, 79, 71, 0]`，平均 63.2。"]}, {"p": 12, "title": "範例二：切片技巧", "points": ["`a=[11,23,35,46,51,63,72,85]`。", "前後半交換：`a[4:8] + a[0:4]` → `[51, 63, 72, 85, 11, 23, 35, 46]`。", "反轉：`a[::-1]`。", "向右旋轉一格：`[a[-1]] + a[:-1]` → `[85, 11, 23, ..., 72]`。", "向左旋轉 p 格：`a[p:] + a[:p]`。"]}, {"p": 13, "title": "List comprehension", "points": ["`[運算式 for 變數 in 可迭代物件 if 條件]`，一行產生串列。", "`[i for i in range(10)]` → 0 到 9。", "`[i**2 for i in range(1,10)]` → `[1, 4, ..., 81]`。", "`[random.randint(0,100) for _ in range(100)]` → 100 個亂數。", "加條件：`[x for x in L if x > 0]`。"], "errata": ["講義迴圈版本寫 `range(10)`，與題目的 100 個不符。"]}, {"p": 14, "title": "序列通用操作", "points": ["`x in s`、`x not in s`、`s+t` 串接、`s*n` 重複、`s[i]`、`s[i:j]`、`s[i:j:k]`、`len`、`min`、`max`、`s.count(x)`。", "`s.index(x[, i[, j]])`，找不到會 `ValueError`。"]}, {"p": 15, "title": "串列專用（可變）操作", "points": ["`s.append(x)`：加一個元素到尾端；等價 `s[len(s):len(s)] = [x]`。", "`s.extend(t)` / `s += t`：逐個加入 `t` 的元素；等價 `s[len(s):len(s)] = t`。", "`s.insert(i, x)`：插入成為第 `i` 個；等價 `s[i:i] = [x]`。", "`s.pop([i])`：取出並刪除，預設最後一個。", "`s.remove(x)`：刪除第一個等於 `x` 的元素。", "`s.clear()`：清空；等價 `del s[:]`。", "`s.copy()`：淺層複製；等價 `s[:]`。", "`s.reverse()`：原地反轉，回傳 `None`；等價 `s[:] = s[::-1]`。", "`s *= n`：原地重複 n 次（如 `[1,2]` 變 `[1,2,1,2,1,2]`）。", "考點：`append`、`extend`、`insert`、`remove`、`reverse`、`sort` 都是原地修改並回傳 `None`，所以 `a = a.reverse()` 會把 `a` 變成 `None`。"]}, {"p": 16, "title": "練習：連續旋轉", "points": ["依 `L2` 的每個 `p`，對「目前的 `L`」做 `L = L[p:] + L[:p]`（向左旋轉 p 格），結果會累積。", "`p=3` 與 `p=7` 剛好轉完一圈回到原樣（3+7=10），`p=4` 時得 `[62, 78, 25, 43, 59, 37, 10, 24, 8, 34]`。", "全部做完最後是 `[8, 34, 62, 78, 25, 43, 59, 37, 10, 24]`。"]}, {"p": 17, "title": "練習", "points": ["練習 1：六邊形周長。P 是攤平的 `[x0,y0,x1,y1,...]`，第 i 點是 `(P[2*i], P[2*i+1])`。周長要包含最後一點回到第一點的邊，用 `(i+1) % 6` 處理。", "練習 2：合數且與前一個互質。迴圈產生亂數，`not is_prime(x) and math.gcd(x, a[-1]) == 1` 才放進 a，直到 20 個（第一個只需是合數）。", "練習 3：正負分邊，不可產生新串列，用雙指標原地交換。"], "code": "i, j = 0, len(L) - 1\nwhile i < j:\n    if L[i] < 0: i += 1\n    elif L[j] >= 0: j -= 1\n    else: L[i], L[j] = L[j], L[i]"}, {"p": 18, "title": "練習：凸多邊形面積", "points": ["依序檢查每三個連續頂點的外積 `(x2-x1)*(y3-y2) - (y2-y1)*(x3-x2)`，全部同號就是凸多邊形；不是就重新產生。", "面積用鞋帶公式 `abs(sum(x[i]*y[i+1] - x[i+1]*y[i])) / 2`（索引取 `% 6` 讓最後一點接回第一點）。", "隨機六點直接連線很少剛好是凸的，所以迴圈可能要跑很多次。"]}], "quiz": [{"q": "執行下列程式，輸出是什麼？", "code": "a = [1, 2, 3]\nb = a.reverse()\nprint(b)", "options": ["[3, 2, 1]", "None", "[1, 2, 3]", "[]"], "answer": 1, "explain": "`reverse()` 是原地反轉並回傳 `None`，所以 `b` 是 `None`（`a` 本身已變成 `[3, 2, 1]`）。"}, {"q": "執行下列程式後，`a` 是什麼？", "code": "a = [1, 2, 3, 4, 5, 6, 7]\na[2:5] = []\nprint(a)", "options": ["[1, 2, 7]", "[1, 2, 3, 6, 7]", "[1, 2, 6, 7]", "[1, 2, 3, 4, 5, 6, 7]"], "answer": 2, "explain": "切片設值可以改變長度；`a[2:5]` 對應索引 2、3、4（值 3、4、5），設為空串列後這三個元素被刪除。"}, {"q": "執行下列程式，輸出是什麼？", "code": "a = list(range(1, 11))\ndel a[::2]\nprint(a)", "options": ["[1, 3, 5, 7, 9]", "[1, 2, 3, 4, 5]", "[]", "[2, 4, 6, 8, 10]"], "answer": 3, "explain": "`del a[::2]` 刪除索引 0、2、4… 的元素（值為 1、3、5、7、9），剩下偶數。"}, {"q": "依序執行下列陣列操作後，`a.count(3)` 的結果是？", "code": "from array import array\na = array('i', [1, 2, 3, 4, 5])\na.append(6)\na.fromlist([1, 3, 5])\na.insert(0, 0)\na.pop()\nprint(a.count(3))", "options": ["2", "1", "3", "0"], "answer": 0, "explain": "`pop()` 會移除最後的 5，剩下 `[0,1,2,3,4,5,6,1,3]`，其中 3 出現兩次。"}, {"q": "下列程式中 `len(L)` 的輸出是什麼？", "code": "L = [1, 2, 3, 4, 5, 6]\nL.append([1, 3, 5])\nprint(len(L))", "options": ["6", "7", "9", "8"], "answer": 1, "explain": "`append` 會把整個串列當成一個元素放入（巢狀串列），所以長度是 7，不是逐個加入的 9。"}, {"q": "下列程式輸出是什麼？", "code": "a = [[1, 2], [3]]\nb = a[:]\nb[0].append(9)\nprint(a)", "options": ["[[1, 2], [3]]", "[[1, 2], [3], 9]", "[[1, 2, 9], [3]]", "[[1, 2, 9]]"], "answer": 2, "explain": "`a[:]` 是淺層複製，內層的子串列 `b[0]` 與 `a[0]` 仍是同一個物件，修改 `b[0]` 也會影響 `a`。"}, {"q": "下列程式會發生什麼？", "code": "s = [1, 2, 3]\nprint(s.index(9))", "options": ["ValueError", "-1", "9", "None"], "answer": 0, "explain": "`list.index` 找不到元素時會拋出 `ValueError`，不是回傳 `-1`。"}, {"q": "下列程式輸出是什麼？", "code": "a = [1, 2, 3]\nprint(a * 2)", "options": ["[2, 4, 6]", "[1, 1, 2, 2, 3, 3]", "[1, 2, 3, 2, 4, 6]", "[1, 2, 3, 1, 2, 3]"], "answer": 3, "explain": "list 的 `L*2` 是重複串列兩次，不是每個元素乘 2。"}]}], "traps": [["ch2", "-9//2 和 -9%2", "-5 和 1（往負無限大取整）"], ["ch2", "4/2 的型態", "float，結果 2.0"], ["ch2", "-2**2、2**3**2", "-4、512（** 比負號高、右結合）"], ["ch2", "int('5.5')", "ValueError，要 int(float('5.5'))"], ["ch2", "int(5+3j)", "TypeError，複數不能直接轉整數"], ["ch2", "print('a','b',sep='-',end='!')", "a-b! 且不換行"], ["ch2", "input() 回傳型態", "一律 str"], ["ch3", "A and B or C", "等於 (A and B) or C（not > and > or）"], ["ch3", "not(800<=p<1000)", "p<800 or p>=1000（狄摩根）"], ["ch3", "巢狀 if 漏寫 else", "變數可能未定義，NameError"], ["ch3", "randint(0,6)", "包含 0 和 6 兩端"], ["ch4", "while 5>3==True:", "一次都不執行（串接比較：(5>3) and (3==True)）"], ["ch4", "list(range(5,0))", "[]，step 預設 1 走不到"], ["ch4", "range(0,10,0)", "ValueError"], ["ch4", "next(it) 用完", "StopIteration；next(it, None) 則回傳 None"], ["ch4", "for-else 的 else", "沒被 break 才執行"], ["ch4", "對 dict 做 for", "取得的是 key"], ["ch5", "math.ceil(-1.35)、math.floor(-1.35)", "-1、-2"], ["ch5", "math.gcd 回傳型態", "int"], ["ch5", "pow(5.5, 3, 3)", "TypeError，三參數只收整數"], ["ch5", "list(map(int, [3.3, 6.6]))", "[3, 6]，捨去不是四捨五入"], ["ch5", "型態提示 r: float", "不會在執行時強制檢查"], ["ch6", "L.append([1,3])", "加入一個巢狀串列元素"], ["ch6", "L.extend([1,3])", "逐個加入兩個元素"], ["ch6", "a[:]", "淺層複製，不是深層"], ["ch6", "a = a.reverse()", "a 變成 None（原地修改回傳 None）"], ["ch6", "NumPy a*2 vs list L*2", "每個元素乘 2 vs 串列重複兩次"]]};
+const META = {
+  ch2: { short: "CH2", pages: 21, topics: "print、常數、跳脫字元、變數、型態、f-string、運算子、input" },
+  ch3: { short: "CH3", pages: 15, topics: "布林運算式、if-else、巢狀 if、elif、match-case" },
+  ch4: { short: "CH4", pages: 24, topics: "while、break、iterator、for、range、巢狀迴圈、for-else" },
+  ch5: { short: "CH5", pages: 15, topics: "內建函數、math 模組、自訂函數、型態提示" },
+  ch6: { short: "CH6", pages: 18, topics: "array 模組、list vs array、NumPy、切片、串列操作" },
+};
+const CH = DATA.chapters;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* storage (per-viewer convenience only) */
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("pyrev:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("pyrev:" + k, JSON.stringify(v)); } catch {} },
+};
+let readSet = new Set(store.get("read", []));
+let knownSet = new Set(store.get("known", []));
+
+/* inline text: escape, `code`, optional search highlight */
+function inline(s, hl) {
+  const parts = String(s).split("`");
+  return parts.map((p, i) => {
+    let h = esc(p);
+    if (hl) h = h.replace(hl, m => `<mark>${m}</mark>`);
+    return i % 2 ? `<code>${h}</code>` : h;
+  }).join("");
+}
+
+/* tiny Python highlighter */
+const KW = new Set("and as assert break class continue def del elif else except False finally for from global if import in is lambda None nonlocal not or pass raise return True try while with yield match case".split(" "));
+const BI = new Set("print len range int float str list dict set tuple input sum max min abs sorted map filter zip enumerate round divmod eval isinstance iter next type id pow open".split(" "));
+function hlPy(src) {
+  const re = /(#[^\n]*)|([rbfRBF]{0,2}(?:'''[\s\S]*?'''|"""[\s\S]*?"""|'(?:\\.|[^'\\\n])*'|"(?:\\.|[^"\\\n])*"))|(\b\d[\d_]*\.?\d*(?:e-?\d+)?j?\b)|([A-Za-z_]\w*)/g;
+  let out = "", last = 0, m;
+  while ((m = re.exec(src))) {
+    out += esc(src.slice(last, m.index));
+    const t = esc(m[0]);
+    if (m[1]) out += `<span class="c">${t}</span>`;
+    else if (m[2]) out += `<span class="s">${t}</span>`;
+    else if (m[3]) out += `<span class="n">${t}</span>`;
+    else if (KW.has(m[4])) out += `<span class="k">${t}</span>`;
+    else if (BI.has(m[4])) out += `<span class="f">${t}</span>`;
+    else out += t;
+    last = re.lastIndex;
+  }
+  return out + esc(src.slice(last));
+}
+const codeBlock = (src, copy = true) => `<pre class="code">${copy ? '<button class="copy" type="button">複製</button>' : ""}<code style="background:none;padding:0;color:inherit;font-size:1em">${hlPy(src)}</code></pre>`;
+
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy");
+  if (!b) return;
+  const txt = b.parentElement.querySelector("code").textContent;
+  const done = () => { b.textContent = "已複製"; setTimeout(() => (b.textContent = "複製"), 1200); };
+  try { navigator.clipboard.writeText(txt).then(done, () => selectText(b.parentElement)); } catch { selectText(b.parentElement); }
+});
+function selectText(el) { const r = document.createRange(); r.selectNodeContents(el.querySelector("code")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+const pageKey = (c, p) => `${c.id}:${p.p}`;
+const totalPages = CH.reduce((a, c) => a + c.pages.length, 0);
+const chRead = c => c.pages.filter(p => readSet.has(pageKey(c, p))).length;
+function updateMeter() {
+  const n = CH.reduce((a, c) => a + chRead(c), 0);
+  $("#meterTxt").textContent = `已讀 ${n}/${totalPages}`;
+  $("#meterBar").style.width = (100 * n / totalPages) + "%";
+}
+
+/* ---------- overview ---------- */
+function renderOverview() {
+  const nErr = CH.reduce((a, c) => a + c.pages.reduce((b, p) => b + (p.errata || []).length, 0), 0);
+  const nQ = CH.reduce((a, c) => a + c.quiz.length, 0);
+  $("#stats").innerHTML = [[CH.length, "章"], [totalPages, "頁講義"], [DATA.traps.length, "張陷阱閃卡"], [nQ, "題測驗"], [nErr, "處講義錯誤"]]
+    .map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join("");
+  $("#chapters").innerHTML = CH.map(c => {
+    const r = chRead(c), t = c.pages.length;
+    return `<article class="ch-card">
+      <div>
+        <div class="eyebrow">${esc(c.file)} · ${t} 頁</div>
+        <h3>${esc(c.title)}</h3>
+        <p class="topics">${esc(META[c.id]?.topics || "")}</p>
+        <div class="prog"><div class="bar"><i style="width:${100 * r / t}%"></i></div>已讀 ${r}/${t}</div>
+        <div class="acts">
+          <a class="btn primary" href="#notes" data-ch="${c.id}">讀筆記</a>
+          <a class="btn" href="#cards" data-cardch="${c.id}">閃卡</a>
+          <a class="btn" href="#quiz" data-quizch="${c.id}">測驗</a>
+        </div>
+      </div>
+      <div><div class="eyebrow" style="margin-bottom:8px">30 秒重點</div><ul class="tldr">${c.tldr.map(x => `<li>${inline(x)}</li>`).join("")}</ul></div>
+    </article>`;
+  }).join("");
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-ch],[data-cardch],[data-quizch]");
+  if (!a) return;
+  if (a.dataset.ch) { curCh = a.dataset.ch; store.set("ch", curCh); }
+  if (a.dataset.cardch) { cardFilter = a.dataset.cardch; buildDeck(); }
+  if (a.dataset.quizch) { quizFilter = a.dataset.quizch; startQuiz(); }
+});
+
+/* ---------- notes ---------- */
+let curCh = store.get("ch", CH[0].id);
+if (!CH.find(c => c.id === curCh)) curCh = CH[0].id;
+function renderRail() {
+  $("#rail").innerHTML = CH.map(c => `<button type="button" data-rail="${c.id}" class="${c.id === curCh && !$("#q").value.trim() ? "on" : ""}">${esc(c.title)}<small>${chRead(c)}/${c.pages.length}</small></button>`).join("");
+}
+$("#rail").addEventListener("click", e => {
+  const b = e.target.closest("[data-rail]"); if (!b) return;
+  curCh = b.dataset.rail; store.set("ch", curCh); $("#q").value = ""; renderNotes(); scrollTo({ top: 0 });
+});
+function pageHTML(c, p, hl) {
+  const read = readSet.has(pageKey(c, p));
+  return `<article class="pg${read ? " read" : ""}" data-key="${pageKey(c, p)}">
+    <div class="pg-h"><span class="no">P${p.p}</span><h4>${inline(p.title, hl)}</h4><button type="button" class="chk">${read ? "✓ 已讀" : "標記已讀"}</button></div>
+    ${p.points?.length ? `<ul>${p.points.map(x => `<li>${inline(x, hl)}</li>`).join("")}</ul>` : ""}
+    ${p.code ? codeBlock(p.code) : ""}
+    ${p.errata?.length ? `<div class="errata">${p.errata.map(x => `<div><b>⚠ 講義錯誤</b>${inline(x, hl)}</div>`).join("")}</div>` : ""}
+  </article>`;
+}
+function renderNotes() {
+  const q = $("#q").value.trim(), onlyErr = $("#onlyErr").checked, hideRead = $("#hideRead").checked;
+  const hl = q ? new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"), "gi") : null;
+  const ql = q.toLowerCase();
+  const keep = (c, p) => (!onlyErr || p.errata?.length) && (!hideRead || !readSet.has(pageKey(c, p))) &&
+    (!q || [p.title, ...(p.points || []), ...(p.errata || []), p.code || ""].join("\n").toLowerCase().includes(ql));
+  let html = "";
+  const list = q ? CH : CH.filter(c => c.id === curCh);
+  for (const c of list) {
+    const ps = c.pages.filter(p => keep(c, p));
+    if (q && !ps.length) continue;
+    html += `<div class="ch-head"><div class="eyebrow">${esc(c.file)}</div><h2 class="sec">${esc(c.title)}</h2>`;
+    if (!q) html += `<p class="lede" style="margin-bottom:0">${inline(c.intro)}</p><div class="box30"><div class="eyebrow">30 秒重點</div><ul class="tldr">${c.tldr.map(x => `<li>${inline(x)}</li>`).join("")}</ul></div>`;
+    html += `</div><div class="pages" style="margin-bottom:32px">${ps.map(p => pageHTML(c, p, hl)).join("") || `<p class="empty">這章沒有符合條件的頁面。</p>`}</div>`;
+  }
+  $("#notesBody").innerHTML = html || `<p class="empty">找不到「${esc(q)}」。換個關鍵字試試，例如函數名稱或錯誤類型。</p>`;
+  renderRail();
+}
+$("#q").addEventListener("input", renderNotes);
+$("#onlyErr").addEventListener("change", renderNotes);
+$("#hideRead").addEventListener("change", renderNotes);
+$("#notesBody").addEventListener("click", e => {
+  const b = e.target.closest(".chk"); if (!b) return;
+  const art = b.closest(".pg"), k = art.dataset.key;
+  readSet.has(k) ? readSet.delete(k) : readSet.add(k);
+  store.set("read", [...readSet]);
+  const on = readSet.has(k);
+  art.classList.toggle("read", on); b.textContent = on ? "✓ 已讀" : "標記已讀";
+  renderRail(); updateMeter();
+});
+
+/* ---------- chips ---------- */
+function chips(el, cur, onPick) {
+  const opts = [["all", "全部"], ...CH.map(c => [c.id, META[c.id]?.short || c.id])];
+  el.innerHTML = opts.map(([id, l]) => `<button type="button" class="chip${id === cur ? " on" : ""}" data-v="${id}">${l}</button>`).join("");
+  el.onclick = e => { const b = e.target.closest(".chip"); if (b) onPick(b.dataset.v); };
+}
+
+/* ---------- flashcards ---------- */
+let cardFilter = "all", deck = [], di = 0, onlyUnknown = true;
+const cardKey = t => t[0] + ":" + t[1];
+function buildDeck() {
+  chips($("#cardChips"), cardFilter, v => { cardFilter = v; buildDeck(); });
+  const all = DATA.traps.filter(t => cardFilter === "all" || t[0] === cardFilter);
+  deck = onlyUnknown ? all.filter(t => !knownSet.has(cardKey(t))) : all.slice();
+  di = 0; renderCard(all.length);
+}
+function renderCard(totalInFilter) {
+  const total = totalInFilter ?? DATA.traps.filter(t => cardFilter === "all" || t[0] === cardFilter).length;
+  const known = DATA.traps.filter(t => (cardFilter === "all" || t[0] === cardFilter) && knownSet.has(cardKey(t))).length;
+  if (di >= deck.length) {
+    $("#deck").innerHTML = `<div class="qcard"><p class="score">${known}/${total}</p><p>這一輪的卡片都翻完了。${known === total ? "全部都會了，可以去做測驗。" : "還有不熟的卡，再刷一輪。"}</p>
+      <div class="fc-ctrl"><button class="btn primary" type="button" id="again">再刷一輪</button><button class="btn" type="button" id="reset">清除「我會了」紀錄</button><a class="btn" href="#quiz">去做測驗</a></div></div>`;
+    $("#again").onclick = buildDeck;
+    $("#reset").onclick = () => { DATA.traps.forEach(t => (cardFilter === "all" || t[0] === cardFilter) && knownSet.delete(cardKey(t))); store.set("known", [...knownSet]); buildDeck(); };
+    return;
+  }
+  const t = deck[di];
+  $("#deck").innerHTML = `<div class="fc" id="fc" tabindex="0" role="button" aria-label="翻牌">
+      <div class="fc-in">
+        <div class="face front"><div class="eyebrow">${META[t[0]].short} · 結果／答案是？</div><div class="q">${esc(t[1])}</div></div>
+        <div class="face back"><div class="eyebrow">${META[t[0]].short} · 答案</div><div class="a">${esc(t[2])}</div><div style="font-family:var(--f-mono);font-size:.9rem;opacity:.8">${esc(t[1])}</div></div>
+      </div></div>
+    <div class="fc-ctrl">
+      <button class="btn again" type="button" id="bAgain">再看一次</button>
+      <button class="btn know" type="button" id="bKnow">我會了</button>
+      <label class="toggle"><input type="checkbox" id="onlyUnk" ${onlyUnknown ? "checked" : ""}> 只刷還不會的</label>
+      <span class="count">${di + 1} / ${deck.length} · 已會 ${known}/${total}</span>
+    </div>
+    <p class="hint"><kbd>空白鍵</kbd> 翻牌　<kbd>1</kbd> 再看一次　<kbd>2</kbd> 我會了</p>`;
+  const fc = $("#fc");
+  fc.onclick = () => fc.classList.toggle("flip");
+  $("#bAgain").onclick = () => mark(false);
+  $("#bKnow").onclick = () => mark(true);
+  $("#onlyUnk").onchange = e => { onlyUnknown = e.target.checked; buildDeck(); };
+}
+function mark(know) {
+  const t = deck[di]; if (!t) return;
+  if (know) knownSet.add(cardKey(t)); else { knownSet.delete(cardKey(t)); deck.push(t); }
+  store.set("known", [...knownSet]);
+  di++; renderCard();
+}
+document.addEventListener("keydown", e => {
+  if (location.hash !== "#cards" || e.target.matches("input,textarea")) return;
+  if (e.key === " ") { e.preventDefault(); $("#fc")?.classList.toggle("flip"); }
+  if (e.key === "1") mark(false);
+  if (e.key === "2") mark(true);
+});
+
+/* ---------- quiz ---------- */
+let quizFilter = "all", qs = [], qi = 0, qScore = 0, qWrong = [];
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function startQuiz() {
+  chips($("#quizChips"), quizFilter, v => { quizFilter = v; startQuiz(); });
+  qs = shuffle(CH.filter(c => quizFilter === "all" || c.id === quizFilter).flatMap(c => c.quiz.map(q => {
+    const order = shuffle([0, 1, 2, 3]);
+    return { ...q, ch: c.id, options: order.map(i => q.options[i]), answer: order.indexOf(q.answer) };
+  })));
+  if (quizFilter === "all") qs = qs.slice(0, 15);
+  qi = 0; qScore = 0; qWrong = []; renderQ();
+}
+function renderQ() {
+  if (qi >= qs.length) {
+    $("#qz").innerHTML = `<div class="qcard"><div class="eyebrow">結果</div><p class="score">${qScore} / ${qs.length}</p>
+      <p>${qWrong.length ? "下面是答錯的題目，回逐頁筆記搜尋關鍵字補強。" : "全對，這部分可以放心了。"}</p>
+      <div class="review">${qWrong.map(q => `<div><b>${META[q.ch].short}</b>　${inline(q.q)}<br>正解：${inline(q.options[q.answer])}<br><span style="color:var(--muted)">${inline(q.explain)}</span></div>`).join("")}</div>
+      <div class="fc-ctrl"><button class="btn primary" type="button" id="qAgain">再測一次（重新抽題）</button></div></div>`;
+    $("#qAgain").onclick = startQuiz;
+    return;
+  }
+  const q = qs[qi];
+  $("#qz").innerHTML = `<div class="qbar"><span>第 ${qi + 1} / ${qs.length} 題 · ${META[q.ch].short}</span><span>得分 ${qScore}</span></div>
+    <div class="qcard">
+      <div class="qq">${inline(q.q)}</div>
+      ${q.code ? codeBlock(q.code, false) : ""}
+      <div class="opts">${q.options.map((o, i) => `<button type="button" class="opt" data-i="${i}"><span class="l">${"ABCD"[i]}</span><span>${inline(o)}</span></button>`).join("")}</div>
+      <div id="qexp"></div>
+    </div>`;
+  $("#qz .opts").onclick = e => {
+    const b = e.target.closest(".opt"); if (!b || b.disabled) return;
+    const pick = +b.dataset.i, ok = pick === q.answer;
+    if (ok) qScore++; else qWrong.push(q);
+    $("#qz").querySelectorAll(".opt").forEach((x, i) => { x.disabled = true; if (i === q.answer) x.classList.add("right"); else if (i === pick) x.classList.add("wrong"); });
+    $("#qexp").innerHTML = `<div class="explain"><b>${ok ? "答對了。" : "答錯了。"}</b> ${inline(q.explain)}</div>
+      <div class="fc-ctrl"><button class="btn primary" type="button" id="qNext">${qi + 1 < qs.length ? "下一題" : "看結果"}</button></div>`;
+    $("#qNext").onclick = () => { qi++; renderQ(); };
+    $("#qNext").focus();
+  };
+}
+
+/* ---------- routing ---------- */
+const VIEWS = ["overview", "notes", "cards", "quiz"];
+function route() {
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "overview";
+  VIEWS.forEach(n => ($("#v-" + n).hidden = n !== v));
+  document.querySelectorAll("nav.tabs a").forEach(a => a.getAttribute("href") === "#" + v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  if (v === "overview") renderOverview();
+  if (v === "notes") renderNotes();
+  scrollTo({ top: 0 });
+}
+addEventListener("hashchange", route);
+buildDeck(); startQuiz(); updateMeter(); route();
+</script>
+
+</body>
+</html>

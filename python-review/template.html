@@ -1,0 +1,506 @@
+<title>Python 期中速讀</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: study notebook — sticky mode bar on top, chapter rail + note column below; highlighter yellow marks what to memorise, red marks slide errata. */
+:root {
+  --bg: #eef1f5;
+  --paper: #fbfcfd;
+  --ink: #18202c;
+  --muted: #5b6676;
+  --line: #d7dde6;
+  --accent: #2b5aa6;
+  --accent-soft: #e2eaf7;
+  --mark: #f7dc5c;
+  --mark-ink: #3a3000;
+  --err: #b4322b;
+  --err-soft: #fbe9e7;
+  --ok: #217a4b;
+  --ok-soft: #e3f3ea;
+  --code-bg: #1d2533;
+  --code-fg: #dfe6f1;
+  --c-kw: #8fb8ff;
+  --c-str: #f2d27a;
+  --c-num: #f3a07a;
+  --c-com: #7f8ea6;
+  --c-fn: #9fe0c0;
+  --f-display: "Noto Serif TC", "Songti TC", serif;
+  --f-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121722; --paper: #192030; --ink: #e6ebf3; --muted: #9aa6b8; --line: #2c3547;
+  --accent: #7ea6ec; --accent-soft: #22304a; --mark: #b99a1c; --mark-ink: #fff8d6;
+  --err: #f08a80; --err-soft: #3a2224; --ok: #6fd19c; --ok-soft: #1c3428;
+  --code-bg: #0e131c; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #121722; --paper: #192030; --ink: #e6ebf3; --muted: #9aa6b8; --line: #2c3547;
+  --accent: #7ea6ec; --accent-soft: #22304a; --mark: #b99a1c; --mark-ink: #fff8d6;
+  --err: #f08a80; --err-soft: #3a2224; --ok: #6fd19c; --ok-soft: #1c3428;
+  --code-bg: #0e131c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.7; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+code { font-family: var(--f-mono); font-size: .88em; background: var(--accent-soft); color: var(--ink); padding: .05em .35em; border-radius: 4px; word-break: break-word; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+mark { background: var(--mark); color: var(--mark-ink); padding: 0 .1em; border-radius: 2px; }
+
+/* header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.top-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 10px; }
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand h1 { font-family: var(--f-display); font-weight: 900; font-size: 1.25rem; margin: 0; letter-spacing: .02em; }
+.brand small { color: var(--muted); font-size: .8rem; }
+nav.tabs { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+nav.tabs a { text-decoration: none; color: var(--muted); padding: 6px 12px; border-radius: 999px; font-weight: 500; font-size: .92rem; }
+nav.tabs a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.meter { display: flex; align-items: center; gap: 8px; font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { width: 90px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+
+main { padding-block: 24px 64px; }
+.view[hidden] { display: none; }
+h2.sec { font-family: var(--f-display); font-size: 1.6rem; margin: 0 0 4px; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0 0 20px; max-width: 65ch; }
+.eyebrow { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+
+/* overview */
+.route { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 28px; }
+.route a { display: inline-flex; gap: 8px; align-items: center; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; font-weight: 500; }
+.route a b { font-family: var(--f-mono); font-size: .8rem; color: var(--accent); }
+.route span { color: var(--muted); }
+.stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 4px 0 18px; }
+.stats div { font-variant-numeric: tabular-nums; }
+.stats b { font-family: var(--f-display); font-size: 2rem; display: block; line-height: 1.1; }
+.stats span { color: var(--muted); font-size: .82rem; }
+.chapters { display: grid; gap: 14px; }
+.ch-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; display: grid; grid-template-columns: 240px 1fr; gap: 20px; }
+.ch-card > * { min-width: 0; }
+.ch-card h3 { font-family: var(--f-display); margin: 2px 0 6px; font-size: 1.25rem; }
+.ch-card .topics { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+.ch-card .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { border: 1px solid var(--line); background: var(--paper); padding: 6px 12px; border-radius: 8px; font-size: .88rem; text-decoration: none; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn:hover { border-color: var(--accent); }
+.tldr { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.tldr li { padding-left: 18px; position: relative; }
+.tldr li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 8px; height: 8px; border-radius: 2px; background: var(--mark); }
+.prog { display: flex; align-items: center; gap: 8px; font-size: .78rem; color: var(--muted); margin: 10px 0 12px; font-variant-numeric: tabular-nums; }
+.prog .bar { flex: 1; max-width: 160px; }
+
+/* notes */
+.notes { display: grid; grid-template-columns: 210px 1fr; gap: 28px; align-items: start; }
+.notes > * { min-width: 0; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 72px); display: grid; gap: 4px; }
+.rail button { text-align: left; border: 0; background: transparent; padding: 8px 10px; border-radius: 8px; display: flex; justify-content: space-between; gap: 8px; font-size: .92rem; }
+.rail button.on { background: var(--paper); box-shadow: inset 3px 0 0 var(--accent); font-weight: 700; }
+.rail button small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+.search { flex: 1 1 220px; min-width: 0; border: 1px solid var(--line); background: var(--paper); border-radius: 8px; padding: 8px 12px; font: inherit; color: var(--ink); }
+.toggle { display: inline-flex; gap: 6px; align-items: center; font-size: .88rem; color: var(--muted); user-select: none; }
+.ch-head { margin-bottom: 18px; }
+.box30 { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 18px; margin: 12px 0 22px; }
+.box30 .eyebrow { margin-bottom: 6px; }
+.pages { display: grid; gap: 12px; }
+.pg { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 18px; }
+.pg.read { opacity: .62; }
+.pg.read:hover { opacity: 1; }
+.pg-h { display: flex; gap: 10px; align-items: baseline; }
+.pg-h .no { font-family: var(--f-mono); font-size: .78rem; color: var(--accent); font-weight: 600; flex: none; width: 2.6em; }
+.pg-h h4 { margin: 0; font-size: 1.02rem; flex: 1; min-width: 0; }
+.chk { flex: none; border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 1px 10px; font-size: .75rem; color: var(--muted); }
+.pg.read .chk { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.pg ul { margin: 8px 0 0; padding-left: 3.2em; }
+.pg li { margin: 2px 0; }
+.errata { margin: 10px 0 0 2.6em; display: grid; gap: 6px; }
+.errata div { background: var(--err-soft); color: var(--ink); border-left: 3px solid var(--err); padding: 6px 10px; border-radius: 0 6px 6px 0; font-size: .92rem; }
+.errata b { color: var(--err); margin-right: 6px; font-size: .8rem; }
+pre.code { margin: 10px 0 0 2.6em; background: var(--code-bg); color: var(--code-fg); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font-family: var(--f-mono); font-size: .83rem; line-height: 1.6; position: relative; }
+pre.code .copy { position: absolute; top: 6px; right: 6px; background: transparent; border: 1px solid #ffffff33; color: var(--code-fg); font-size: .7rem; border-radius: 6px; padding: 1px 8px; opacity: .7; }
+.k { color: var(--c-kw); } .s { color: var(--c-str); } .n { color: var(--c-num); } .c { color: var(--c-com); font-style: italic; } .f { color: var(--c-fn); }
+.empty { color: var(--muted); padding: 30px 0; text-align: center; }
+
+/* chips */
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
+.chip { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 4px 12px; font-size: .85rem; }
+.chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* flashcards */
+.deck { max-width: 640px; }
+.fc { perspective: 1200px; cursor: pointer; }
+.fc-in { position: relative; min-height: 240px; transition: transform .45s; transform-style: preserve-3d; }
+.fc.flip .fc-in { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; justify-content: center; gap: 12px; border: 1px solid var(--line); }
+.front { background: var(--paper); }
+.front .q { font-family: var(--f-mono); font-size: 1.25rem; font-weight: 600; word-break: break-word; }
+.back { background: var(--mark); color: var(--mark-ink); transform: rotateY(180deg); }
+.back .a { font-size: 1.2rem; font-weight: 700; }
+.face .eyebrow { color: inherit; opacity: .7; }
+.fc-ctrl { display: flex; gap: 10px; align-items: center; margin-top: 16px; flex-wrap: wrap; }
+.fc-ctrl .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; font-size: .88rem; }
+.btn.know { background: var(--ok-soft); border-color: transparent; color: var(--ok); font-weight: 700; }
+.btn.again { background: var(--err-soft); border-color: transparent; color: var(--err); font-weight: 700; }
+.hint { color: var(--muted); font-size: .8rem; margin-top: 10px; }
+kbd { font-family: var(--f-mono); font-size: .75rem; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--paper); }
+
+/* quiz */
+.qz { max-width: 720px; }
+.qcard { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+.qcard .qq { font-size: 1.08rem; font-weight: 500; margin: 6px 0 4px; }
+.qcard pre.code { margin-left: 0; }
+.opts { display: grid; gap: 8px; margin-top: 16px; }
+.opt { text-align: left; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 10px 14px; display: flex; gap: 10px; align-items: baseline; }
+.opt .l { font-family: var(--f-mono); font-weight: 600; color: var(--muted); flex: none; }
+.opt:hover:not([disabled]) { border-color: var(--accent); }
+.opt.right { background: var(--ok-soft); border-color: var(--ok); }
+.opt.wrong { background: var(--err-soft); border-color: var(--err); }
+.opt[disabled] { cursor: default; }
+.explain { margin-top: 14px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); }
+.qbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.score { font-family: var(--f-display); font-size: 3rem; margin: 0; line-height: 1.1; }
+.review { display: grid; gap: 10px; margin-top: 16px; }
+.review div { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--err); border-radius: 0 8px 8px 0; padding: 10px 14px; }
+
+@media (max-width: 760px) {
+  .ch-card { grid-template-columns: 1fr; gap: 10px; }
+  .notes { grid-template-columns: 1fr; gap: 14px; }
+  .rail { position: static; display: flex; overflow-x: auto; gap: 4px; padding-bottom: 4px; }
+  .rail button { flex: none; }
+  .rail button.on { box-shadow: inset 0 -3px 0 var(--accent); }
+  nav.tabs { margin-left: 0; width: 100%; }
+  nav.tabs a { flex: 1; text-align: center; padding: 6px 4px; }
+  .meter { display: none; }
+  .pg ul { padding-left: 1.3em; }
+  .errata, pre.code { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .fc-in, .bar > i { transition: none; } }
+</style>
+
+<header class="top">
+  <div class="wrap top-row">
+    <div class="brand"><h1>Python 期中速讀</h1><small>軟體技術 · CH2–CH6</small></div>
+    <nav class="tabs" aria-label="模式">
+      <a href="#overview">速覽</a>
+      <a href="#notes">逐頁筆記</a>
+      <a href="#cards">陷阱閃卡</a>
+      <a href="#quiz">自我測驗</a>
+    </nav>
+    <div class="meter" title="已讀頁數"><span id="meterTxt">0/93</span><div class="bar"><i id="meterBar"></i></div></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="view" id="v-overview">
+    <div class="eyebrow">五份講義 · 一頁吸收</div>
+    <h2 class="sec">考前 10 分鐘先看這裡</h2>
+    <p class="lede">每章濃縮成 30 秒重點。黃色方塊是要背的，紅色是講義本身的錯誤，考試以正確寫法為準。</p>
+    <div class="stats" id="stats"></div>
+    <div class="route">
+      <a href="#overview"><b>1</b>速覽重點</a><span>→</span>
+      <a href="#cards"><b>2</b>刷陷阱閃卡</a><span>→</span>
+      <a href="#quiz"><b>3</b>自我測驗</a><span>→</span>
+      <a href="#notes"><b>4</b>逐頁補弱</a>
+    </div>
+    <div class="chapters" id="chapters"></div>
+  </section>
+
+  <section class="view" id="v-notes" hidden>
+    <div class="notes">
+      <aside class="rail" id="rail"></aside>
+      <div>
+        <div class="toolbar">
+          <input id="q" class="search" type="search" placeholder="搜尋全部筆記，例如 range、shallow、NameError">
+          <label class="toggle"><input type="checkbox" id="onlyErr"> 只看講義錯誤</label>
+          <label class="toggle"><input type="checkbox" id="hideRead"> 隱藏已讀</label>
+        </div>
+        <div id="notesBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-cards" hidden>
+    <h2 class="sec">陷阱閃卡</h2>
+    <p class="lede">先自己說出答案再翻牌。標「我會了」的卡下一輪會跳過。</p>
+    <div class="chips" id="cardChips"></div>
+    <div class="deck" id="deck"></div>
+  </section>
+
+  <section class="view" id="v-quiz" hidden>
+    <h2 class="sec">自我測驗</h2>
+    <p class="lede">考題風格：輸出是什麼、型態是什麼、哪裡錯了。每題作答後立刻看解析。</p>
+    <div class="chips" id="quizChips"></div>
+    <div class="qz" id="qz"></div>
+  </section>
+</main>
+
+<script>
+const DATA = __DATA__;
+const META = {
+  ch2: { short: "CH2", pages: 21, topics: "print、常數、跳脫字元、變數、型態、f-string、運算子、input" },
+  ch3: { short: "CH3", pages: 15, topics: "布林運算式、if-else、巢狀 if、elif、match-case" },
+  ch4: { short: "CH4", pages: 24, topics: "while、break、iterator、for、range、巢狀迴圈、for-else" },
+  ch5: { short: "CH5", pages: 15, topics: "內建函數、math 模組、自訂函數、型態提示" },
+  ch6: { short: "CH6", pages: 18, topics: "array 模組、list vs array、NumPy、切片、串列操作" },
+};
+const CH = DATA.chapters;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* storage (per-viewer convenience only) */
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("pyrev:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("pyrev:" + k, JSON.stringify(v)); } catch {} },
+};
+let readSet = new Set(store.get("read", []));
+let knownSet = new Set(store.get("known", []));
+
+/* inline text: escape, `code`, optional search highlight */
+function inline(s, hl) {
+  const parts = String(s).split("`");
+  return parts.map((p, i) => {
+    let h = esc(p);
+    if (hl) h = h.replace(hl, m => `<mark>${m}</mark>`);
+    return i % 2 ? `<code>${h}</code>` : h;
+  }).join("");
+}
+
+/* tiny Python highlighter */
+const KW = new Set("and as assert break class continue def del elif else except False finally for from global if import in is lambda None nonlocal not or pass raise return True try while with yield match case".split(" "));
+const BI = new Set("print len range int float str list dict set tuple input sum max min abs sorted map filter zip enumerate round divmod eval isinstance iter next type id pow open".split(" "));
+function hlPy(src) {
+  const re = /(#[^\n]*)|([rbfRBF]{0,2}(?:'''[\s\S]*?'''|"""[\s\S]*?"""|'(?:\\.|[^'\\\n])*'|"(?:\\.|[^"\\\n])*"))|(\b\d[\d_]*\.?\d*(?:e-?\d+)?j?\b)|([A-Za-z_]\w*)/g;
+  let out = "", last = 0, m;
+  while ((m = re.exec(src))) {
+    out += esc(src.slice(last, m.index));
+    const t = esc(m[0]);
+    if (m[1]) out += `<span class="c">${t}</span>`;
+    else if (m[2]) out += `<span class="s">${t}</span>`;
+    else if (m[3]) out += `<span class="n">${t}</span>`;
+    else if (KW.has(m[4])) out += `<span class="k">${t}</span>`;
+    else if (BI.has(m[4])) out += `<span class="f">${t}</span>`;
+    else out += t;
+    last = re.lastIndex;
+  }
+  return out + esc(src.slice(last));
+}
+const codeBlock = (src, copy = true) => `<pre class="code">${copy ? '<button class="copy" type="button">複製</button>' : ""}<code style="background:none;padding:0;color:inherit;font-size:1em">${hlPy(src)}</code></pre>`;
+
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy");
+  if (!b) return;
+  const txt = b.parentElement.querySelector("code").textContent;
+  const done = () => { b.textContent = "已複製"; setTimeout(() => (b.textContent = "複製"), 1200); };
+  try { navigator.clipboard.writeText(txt).then(done, () => selectText(b.parentElement)); } catch { selectText(b.parentElement); }
+});
+function selectText(el) { const r = document.createRange(); r.selectNodeContents(el.querySelector("code")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+const pageKey = (c, p) => `${c.id}:${p.p}`;
+const totalPages = CH.reduce((a, c) => a + c.pages.length, 0);
+const chRead = c => c.pages.filter(p => readSet.has(pageKey(c, p))).length;
+function updateMeter() {
+  const n = CH.reduce((a, c) => a + chRead(c), 0);
+  $("#meterTxt").textContent = `已讀 ${n}/${totalPages}`;
+  $("#meterBar").style.width = (100 * n / totalPages) + "%";
+}
+
+/* ---------- overview ---------- */
+function renderOverview() {
+  const nErr = CH.reduce((a, c) => a + c.pages.reduce((b, p) => b + (p.errata || []).length, 0), 0);
+  const nQ = CH.reduce((a, c) => a + c.quiz.length, 0);
+  $("#stats").innerHTML = [[CH.length, "章"], [totalPages, "頁講義"], [DATA.traps.length, "張陷阱閃卡"], [nQ, "題測驗"], [nErr, "處講義錯誤"]]
+    .map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join("");
+  $("#chapters").innerHTML = CH.map(c => {
+    const r = chRead(c), t = c.pages.length;
+    return `<article class="ch-card">
+      <div>
+        <div class="eyebrow">${esc(c.file)} · ${t} 頁</div>
+        <h3>${esc(c.title)}</h3>
+        <p class="topics">${esc(META[c.id]?.topics || "")}</p>
+        <div class="prog"><div class="bar"><i style="width:${100 * r / t}%"></i></div>已讀 ${r}/${t}</div>
+        <div class="acts">
+          <a class="btn primary" href="#notes" data-ch="${c.id}">讀筆記</a>
+          <a class="btn" href="#cards" data-cardch="${c.id}">閃卡</a>
+          <a class="btn" href="#quiz" data-quizch="${c.id}">測驗</a>
+        </div>
+      </div>
+      <div><div class="eyebrow" style="margin-bottom:8px">30 秒重點</div><ul class="tldr">${c.tldr.map(x => `<li>${inline(x)}</li>`).join("")}</ul></div>
+    </article>`;
+  }).join("");
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-ch],[data-cardch],[data-quizch]");
+  if (!a) return;
+  if (a.dataset.ch) { curCh = a.dataset.ch; store.set("ch", curCh); }
+  if (a.dataset.cardch) { cardFilter = a.dataset.cardch; buildDeck(); }
+  if (a.dataset.quizch) { quizFilter = a.dataset.quizch; startQuiz(); }
+});
+
+/* ---------- notes ---------- */
+let curCh = store.get("ch", CH[0].id);
+if (!CH.find(c => c.id === curCh)) curCh = CH[0].id;
+function renderRail() {
+  $("#rail").innerHTML = CH.map(c => `<button type="button" data-rail="${c.id}" class="${c.id === curCh && !$("#q").value.trim() ? "on" : ""}">${esc(c.title)}<small>${chRead(c)}/${c.pages.length}</small></button>`).join("");
+}
+$("#rail").addEventListener("click", e => {
+  const b = e.target.closest("[data-rail]"); if (!b) return;
+  curCh = b.dataset.rail; store.set("ch", curCh); $("#q").value = ""; renderNotes(); scrollTo({ top: 0 });
+});
+function pageHTML(c, p, hl) {
+  const read = readSet.has(pageKey(c, p));
+  return `<article class="pg${read ? " read" : ""}" data-key="${pageKey(c, p)}">
+    <div class="pg-h"><span class="no">P${p.p}</span><h4>${inline(p.title, hl)}</h4><button type="button" class="chk">${read ? "✓ 已讀" : "標記已讀"}</button></div>
+    ${p.points?.length ? `<ul>${p.points.map(x => `<li>${inline(x, hl)}</li>`).join("")}</ul>` : ""}
+    ${p.code ? codeBlock(p.code) : ""}
+    ${p.errata?.length ? `<div class="errata">${p.errata.map(x => `<div><b>⚠ 講義錯誤</b>${inline(x, hl)}</div>`).join("")}</div>` : ""}
+  </article>`;
+}
+function renderNotes() {
+  const q = $("#q").value.trim(), onlyErr = $("#onlyErr").checked, hideRead = $("#hideRead").checked;
+  const hl = q ? new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"), "gi") : null;
+  const ql = q.toLowerCase();
+  const keep = (c, p) => (!onlyErr || p.errata?.length) && (!hideRead || !readSet.has(pageKey(c, p))) &&
+    (!q || [p.title, ...(p.points || []), ...(p.errata || []), p.code || ""].join("\n").toLowerCase().includes(ql));
+  let html = "";
+  const list = q ? CH : CH.filter(c => c.id === curCh);
+  for (const c of list) {
+    const ps = c.pages.filter(p => keep(c, p));
+    if (q && !ps.length) continue;
+    html += `<div class="ch-head"><div class="eyebrow">${esc(c.file)}</div><h2 class="sec">${esc(c.title)}</h2>`;
+    if (!q) html += `<p class="lede" style="margin-bottom:0">${inline(c.intro)}</p><div class="box30"><div class="eyebrow">30 秒重點</div><ul class="tldr">${c.tldr.map(x => `<li>${inline(x)}</li>`).join("")}</ul></div>`;
+    html += `</div><div class="pages" style="margin-bottom:32px">${ps.map(p => pageHTML(c, p, hl)).join("") || `<p class="empty">這章沒有符合條件的頁面。</p>`}</div>`;
+  }
+  $("#notesBody").innerHTML = html || `<p class="empty">找不到「${esc(q)}」。換個關鍵字試試，例如函數名稱或錯誤類型。</p>`;
+  renderRail();
+}
+$("#q").addEventListener("input", renderNotes);
+$("#onlyErr").addEventListener("change", renderNotes);
+$("#hideRead").addEventListener("change", renderNotes);
+$("#notesBody").addEventListener("click", e => {
+  const b = e.target.closest(".chk"); if (!b) return;
+  const art = b.closest(".pg"), k = art.dataset.key;
+  readSet.has(k) ? readSet.delete(k) : readSet.add(k);
+  store.set("read", [...readSet]);
+  const on = readSet.has(k);
+  art.classList.toggle("read", on); b.textContent = on ? "✓ 已讀" : "標記已讀";
+  renderRail(); updateMeter();
+});
+
+/* ---------- chips ---------- */
+function chips(el, cur, onPick) {
+  const opts = [["all", "全部"], ...CH.map(c => [c.id, META[c.id]?.short || c.id])];
+  el.innerHTML = opts.map(([id, l]) => `<button type="button" class="chip${id === cur ? " on" : ""}" data-v="${id}">${l}</button>`).join("");
+  el.onclick = e => { const b = e.target.closest(".chip"); if (b) onPick(b.dataset.v); };
+}
+
+/* ---------- flashcards ---------- */
+let cardFilter = "all", deck = [], di = 0, onlyUnknown = true;
+const cardKey = t => t[0] + ":" + t[1];
+function buildDeck() {
+  chips($("#cardChips"), cardFilter, v => { cardFilter = v; buildDeck(); });
+  const all = DATA.traps.filter(t => cardFilter === "all" || t[0] === cardFilter);
+  deck = onlyUnknown ? all.filter(t => !knownSet.has(cardKey(t))) : all.slice();
+  di = 0; renderCard(all.length);
+}
+function renderCard(totalInFilter) {
+  const total = totalInFilter ?? DATA.traps.filter(t => cardFilter === "all" || t[0] === cardFilter).length;
+  const known = DATA.traps.filter(t => (cardFilter === "all" || t[0] === cardFilter) && knownSet.has(cardKey(t))).length;
+  if (di >= deck.length) {
+    $("#deck").innerHTML = `<div class="qcard"><p class="score">${known}/${total}</p><p>這一輪的卡片都翻完了。${known === total ? "全部都會了，可以去做測驗。" : "還有不熟的卡，再刷一輪。"}</p>
+      <div class="fc-ctrl"><button class="btn primary" type="button" id="again">再刷一輪</button><button class="btn" type="button" id="reset">清除「我會了」紀錄</button><a class="btn" href="#quiz">去做測驗</a></div></div>`;
+    $("#again").onclick = buildDeck;
+    $("#reset").onclick = () => { DATA.traps.forEach(t => (cardFilter === "all" || t[0] === cardFilter) && knownSet.delete(cardKey(t))); store.set("known", [...knownSet]); buildDeck(); };
+    return;
+  }
+  const t = deck[di];
+  $("#deck").innerHTML = `<div class="fc" id="fc" tabindex="0" role="button" aria-label="翻牌">
+      <div class="fc-in">
+        <div class="face front"><div class="eyebrow">${META[t[0]].short} · 結果／答案是？</div><div class="q">${esc(t[1])}</div></div>
+        <div class="face back"><div class="eyebrow">${META[t[0]].short} · 答案</div><div class="a">${esc(t[2])}</div><div style="font-family:var(--f-mono);font-size:.9rem;opacity:.8">${esc(t[1])}</div></div>
+      </div></div>
+    <div class="fc-ctrl">
+      <button class="btn again" type="button" id="bAgain">再看一次</button>
+      <button class="btn know" type="button" id="bKnow">我會了</button>
+      <label class="toggle"><input type="checkbox" id="onlyUnk" ${onlyUnknown ? "checked" : ""}> 只刷還不會的</label>
+      <span class="count">${di + 1} / ${deck.length} · 已會 ${known}/${total}</span>
+    </div>
+    <p class="hint"><kbd>空白鍵</kbd> 翻牌　<kbd>1</kbd> 再看一次　<kbd>2</kbd> 我會了</p>`;
+  const fc = $("#fc");
+  fc.onclick = () => fc.classList.toggle("flip");
+  $("#bAgain").onclick = () => mark(false);
+  $("#bKnow").onclick = () => mark(true);
+  $("#onlyUnk").onchange = e => { onlyUnknown = e.target.checked; buildDeck(); };
+}
+function mark(know) {
+  const t = deck[di]; if (!t) return;
+  if (know) knownSet.add(cardKey(t)); else { knownSet.delete(cardKey(t)); deck.push(t); }
+  store.set("known", [...knownSet]);
+  di++; renderCard();
+}
+document.addEventListener("keydown", e => {
+  if (location.hash !== "#cards" || e.target.matches("input,textarea")) return;
+  if (e.key === " ") { e.preventDefault(); $("#fc")?.classList.toggle("flip"); }
+  if (e.key === "1") mark(false);
+  if (e.key === "2") mark(true);
+});
+
+/* ---------- quiz ---------- */
+let quizFilter = "all", qs = [], qi = 0, qScore = 0, qWrong = [];
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function startQuiz() {
+  chips($("#quizChips"), quizFilter, v => { quizFilter = v; startQuiz(); });
+  qs = shuffle(CH.filter(c => quizFilter === "all" || c.id === quizFilter).flatMap(c => c.quiz.map(q => {
+    const order = shuffle([0, 1, 2, 3]);
+    return { ...q, ch: c.id, options: order.map(i => q.options[i]), answer: order.indexOf(q.answer) };
+  })));
+  if (quizFilter === "all") qs = qs.slice(0, 15);
+  qi = 0; qScore = 0; qWrong = []; renderQ();
+}
+function renderQ() {
+  if (qi >= qs.length) {
+    $("#qz").innerHTML = `<div class="qcard"><div class="eyebrow">結果</div><p class="score">${qScore} / ${qs.length}</p>
+      <p>${qWrong.length ? "下面是答錯的題目，回逐頁筆記搜尋關鍵字補強。" : "全對，這部分可以放心了。"}</p>
+      <div class="review">${qWrong.map(q => `<div><b>${META[q.ch].short}</b>　${inline(q.q)}<br>正解：${inline(q.options[q.answer])}<br><span style="color:var(--muted)">${inline(q.explain)}</span></div>`).join("")}</div>
+      <div class="fc-ctrl"><button class="btn primary" type="button" id="qAgain">再測一次（重新抽題）</button></div></div>`;
+    $("#qAgain").onclick = startQuiz;
+    return;
+  }
+  const q = qs[qi];
+  $("#qz").innerHTML = `<div class="qbar"><span>第 ${qi + 1} / ${qs.length} 題 · ${META[q.ch].short}</span><span>得分 ${qScore}</span></div>
+    <div class="qcard">
+      <div class="qq">${inline(q.q)}</div>
+      ${q.code ? codeBlock(q.code, false) : ""}
+      <div class="opts">${q.options.map((o, i) => `<button type="button" class="opt" data-i="${i}"><span class="l">${"ABCD"[i]}</span><span>${inline(o)}</span></button>`).join("")}</div>
+      <div id="qexp"></div>
+    </div>`;
+  $("#qz .opts").onclick = e => {
+    const b = e.target.closest(".opt"); if (!b || b.disabled) return;
+    const pick = +b.dataset.i, ok = pick === q.answer;
+    if (ok) qScore++; else qWrong.push(q);
+    $("#qz").querySelectorAll(".opt").forEach((x, i) => { x.disabled = true; if (i === q.answer) x.classList.add("right"); else if (i === pick) x.classList.add("wrong"); });
+    $("#qexp").innerHTML = `<div class="explain"><b>${ok ? "答對了。" : "答錯了。"}</b> ${inline(q.explain)}</div>
+      <div class="fc-ctrl"><button class="btn primary" type="button" id="qNext">${qi + 1 < qs.length ? "下一題" : "看結果"}</button></div>`;
+    $("#qNext").onclick = () => { qi++; renderQ(); };
+    $("#qNext").focus();
+  };
+}
+
+/* ---------- routing ---------- */
+const VIEWS = ["overview", "notes", "cards", "quiz"];
+function route() {
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "overview";
+  VIEWS.forEach(n => ($("#v-" + n).hidden = n !== v));
+  document.querySelectorAll("nav.tabs a").forEach(a => a.getAttribute("href") === "#" + v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  if (v === "overview") renderOverview();
+  if (v === "notes") renderNotes();
+  scrollTo({ top: 0 });
+}
+addEventListener("hashchange", route);
+buildDeck(); startQuiz(); updateMeter(); route();
+</script>

@@ -1,0 +1,288 @@
+{
+  "id": "ch4",
+  "title": "CH4 控制結構 II",
+  "file": "intro_2.pdf",
+  "intro": "本章是期中最重的一章：while 的三種控制方式、for 背後其實是iterator、range 的邊界，以及巢狀迴圈畫圖形。",
+  "tldr": [
+    "while 條件為真就重複；忘了更新計數器會變無窮迴圈。",
+    "累加器初值：加總設 `0`，乘積設 `1`。",
+    "`for` 底層就是 `iter` 加 `next`，可走訪任何可迭代物件。",
+    "`range(start, stop, step)` 不包含 stop；step 為負時要 `> stop`。",
+    "`while True` 要靠 `break` 結束；`5>3==True` 一次都不執行。",
+    "for-else：迴圈沒被 `break` 才執行 else。",
+    "巢狀迴圈：外層控制列、內層控制欄。"
+  ],
+  "pages": [
+    {
+      "p": 1,
+      "title": "封面",
+      "points": ["CH4 Control Statements Part 2"]
+    },
+    {
+      "p": 2,
+      "title": "while 迴圈",
+      "points": [
+        "格式 `while 布林運算式:` 加迴圈本體。",
+        "把重複 10 次的 `print` 改寫成計數器加 `while`，條件為真就一直執行。"
+      ]
+    },
+    {
+      "p": 3,
+      "title": "計數控制迴圈",
+      "points": [
+        "三要素：計數器初值（`cnt=1`）、繼續條件（`cnt<=5`）、更新運算式（`cnt+=1`）。",
+        "忘了更新就會變無窮迴圈。"
+      ]
+    },
+    {
+      "p": 4,
+      "title": "搭配其他變數（累加器）",
+      "points": [
+        "`total` 先設 `0`，迴圈內 `total += ...`。",
+        "練習：10 個遞增隨機整數的乘積，第一個是 1，相鄰差距 1 到 5。",
+        "乘積的初值要設 `1`，不是 `0`。"
+      ],
+      "code": "x, prod = 1, 1\nfor _ in range(10):\n    prod *= x\n    x += random.randint(1, 5)"
+    },
+    {
+      "p": 5,
+      "title": "練習：猜數字",
+      "points": [
+        "[1,100] 版本：維護 `lo`、`hi`，猜太小就 `lo = g+1`，太大就 `hi = g-1`，提示區間跟著縮小。用二分法最壞要猜 7 次（2^7=128 ≥ 100），講義限 6 次時最佳策略也可能失敗。",
+        "四位數 1A2B：A 是位置和數字都對，B 是數字對但位置錯。逐位比較算 A，再算共同數字數減 A 得 B。"
+      ]
+    },
+    {
+      "p": 6,
+      "title": "旗標控制迴圈（sentinel）",
+      "points": [
+        "次數不固定，靠檢查某個值決定是否繼續。",
+        "海象運算子 `:=`（3.8+）可以在條件裡同時設值：`while (x:=random.randint(0,100)) % 4 != 0:`。",
+        "改寫讓 `input` 只出現一次："
+      ],
+      "code": "total, cnt = 0, 0\nwhile 0 <= (score := int(input('input score(-1 to exit):'))) <= 100:\n    total += score; cnt += 1\nprint(f'avg={total/cnt:.3f}' if cnt else 'no data')"
+    },
+    {
+      "p": 7,
+      "title": "練習",
+      "points": [
+        "練習 1：等腰三角形：無限迴圈隨機產生 `a`、`b`、`c`，先檢查合法三角形，再檢查 `a==b or b==c or a==c`，成立就 `break` 並用海龍公式算面積。",
+        "練習 2：Quadratic Probing：第 i 次探測位置是 `(key + i*i) % n`，i 從 0 開始，用集合記錄看過的位置，重複就停。n=11、key=3 依公式得 3→4→7→1→8→6→6（重複停止）。"
+      ],
+      "errata": ["講義範例寫 8→3，與公式結果不符，考試時以老師定義為準。"]
+    },
+    {
+      "p": 8,
+      "title": "無窮迴圈",
+      "points": [
+        "`while True:` 永遠不會結束，除非用 `break`。"
+      ],
+      "errata": [
+        "講義錯誤，而且是很好的考題：`while 5>3==True:` 其實一次都不會執行。Python 的比較運算子會串接，`5>3==True` 等於 `(5>3) and (3==True)`，而 `3==True` 是 False。"
+      ]
+    },
+    {
+      "p": 9,
+      "title": "break 與 continue",
+      "points": [
+        "`break` 跳出最內層迴圈；`continue` 跳過本輪剩下的指令，直接進下一輪。",
+        "EX1 標準差（不用現成公式函數）：先存 100 個 `0.05 + random.random()*0.9`，算平均 m，再算 `(sum((v-m)**2 for v in L)/len(L))**0.5`。",
+        "EX2 改成傳統 while：把 break 條件反過來當繼續條件，並在迴圈前先取一次值（或用 `:=`）。"
+      ],
+      "errata": ["右邊程式 `total += score` 應為 `total += x`。"]
+    },
+    {
+      "p": 10,
+      "title": "練習：質因數分解",
+      "points": [
+        "質因數分解（程式如下）。",
+        "LeetCode Integer to Roman：由大到小準備 1000、900、500、400、100、90、50、40、10、9、5、4、1 對應符號，能減就減並加上符號。"
+      ],
+      "code": "d = 2\nwhile d * d <= x:\n    while x % d == 0:\n        print(d, end=' '); x //= d\n    d += 1\nif x > 1: print(x)"
+    },
+    {
+      "p": 11,
+      "title": "iterator 物件",
+      "points": [
+        "`iter(物件)` 取得迭代器，`next(it)` 取下一個元素。物件需實作 `__iter__`/`__next__` 或 `__getitem__`。",
+        "對 list 依序得到元素；對 dict 迭代得到的是 key（A、B、C）。"
+      ],
+      "errata": ["講義中 `L=[10,...,50]` 卻註解印出 0,1,2，那是被註解掉的 range 版本的結果；用 L 應印 10、20、30..."]
+    },
+    {
+      "p": 12,
+      "title": "next 的預設值",
+      "points": [
+        "`next(it, None)`：迭代器用完時回傳 `None`；沒給預設值則丟出 `StopIteration` 例外。",
+        "練習改寫見 P16。"
+      ]
+    },
+    {
+      "p": 13,
+      "title": "for 語法",
+      "points": [
+        "C/C++ 的 for 是計數迴圈；Python 的 `for 目標 in 可迭代物件:` 會先建立 iterator，每輪把下一個元素指定給目標變數，再執行本體，直到元素用完。",
+        "可接 `else`。"
+      ]
+    },
+    {
+      "p": 14,
+      "title": "for 的意義",
+      "points": [
+        "逐一走訪序列或任何可迭代物件的每個元素。",
+        "範例：計算字串中大寫字母個數（`c.isupper()`）、加總正數。"
+      ],
+      "errata": ["投影片標題寫「平均」但程式只算總和。"]
+    },
+    {
+      "p": 15,
+      "title": "用 for 模仿計數迴圈",
+      "points": [
+        "準備一個 index 串列 `[0,1,2,3,4]` 很彆扭，所以下一步引出 `range()`。"
+      ]
+    },
+    {
+      "p": 16,
+      "title": "for 等於 iter + next",
+      "points": [
+        "`for x in L:` 底層就是 `it=iter(L)` 再不斷 `x=next(it)`。while 版本：",
+        "陷阱：用 None 當結束記號時，若串列本身含 None 會提早結束；判斷 None 用 `is` 比 `==` 正確。"
+      ],
+      "code": "it = iter(L)\nwhile True:\n    x = next(it, None)\n    if x is None: break\n    print(x)",
+      "errata": ["講義 `next(int)` 是 `next(it)` 的筆誤。"]
+    },
+    {
+      "p": 17,
+      "title": "range()",
+      "points": [
+        "`range(stop)` 或 `range(start, stop, step)`，產生不可變的整數序列，不包含 stop。",
+        "`list(range(10))` → `[0, 1, ..., 9]`",
+        "`list(range(5, 11))` → `[5, 6, 7, 8, 9, 10]`",
+        "`list(range(0, 20, 4))` → `[0, 4, 8, 12, 16]`",
+        "`list(range(2, 10, 3))` → `[2, 5, 8]`",
+        "`list(range(0, -5, -1))` → `[0, -1, -2, -3, -4]`",
+        "`list(range(0))` → `[]`",
+        "`list(range(5, 0))` → `[]`（step 預設 1，走不到）",
+        "規則：參數必須是整數；start 預設 `0`、step 預設 `1`；`step=0` 會 `ValueError`。",
+        "`r[i] = start + step*i`，step 為正時要 `< stop`，為負時要 `> stop`。"
+      ]
+    },
+    {
+      "p": 18,
+      "title": "range 搭配 for",
+      "points": [
+        "range 物件有 `.start`、`.stop`、`.step` 屬性，可用 iter/next 走訪，可 `list(r)` 轉串列。",
+        "`for _ in range(5):` 的 `_` 是不需要用到的匿名變數。"
+      ]
+    },
+    {
+      "p": 19,
+      "title": "練習",
+      "points": [
+        "練習 1：互質數對：`math.gcd(a, b) == 1` 就算一對。題意是 L1[i] 對 L2[i] 逐一比對，或兩兩組合（雙層 for），兩種都要會。",
+        "練習 2：成長率表：欄寬 6、12、12、12，第一欄靠左、其餘靠右，小數 3 位，log 用以 2 為底。"
+      ],
+      "code": "print(f'{\"n\":<6}{\"log(n)\":>12}{\"nlog(n)\":>12}{\"n^2\":>12}')\nfor n in [1, 10, 100, 1000, 10000]:\n    print(f'{n:<6}{math.log2(n):>12.3f}{n*math.log2(n):>12.3f}{n*n:>12}')"
+    },
+    {
+      "p": 20,
+      "title": "巢狀迴圈結構",
+      "points": [
+        "`for` 包 `for`、`while` 包 `while`、`while` 包 `for`、`for` 內並列多個 `for` 都可以。",
+        "三層以上也很常見，例如矩陣乘法就是三層。"
+      ]
+    },
+    {
+      "p": 21,
+      "title": "巢狀迴圈範例",
+      "points": [
+        "外層控制列、內層控制欄；內層 `print(..., end='\\t')` 不換行，內層結束後外層 `print()` 換行。"
+      ]
+    },
+    {
+      "p": 22,
+      "title": "古典練習：印圖形",
+      "points": [
+        "(a) 數字三角形：`for i in range(1,h+1): print(''.join(str(j) for j in range(1,i+1)))`。",
+        "(b) 數字倒三角形的規律是長度遞減且方向交替：第 0 列 54321（遞減）、第 1 列 1234（遞增）、第 2 列 321...",
+        "(c) 星號圖形：先印上半部 i=1..h，每列 `' '*(h-i) + '*'*i`；再印下半部 i=h-1..1。"
+      ],
+      "code": "for i in range(h):\n    k = h - i\n    seq = range(k, 0, -1) if i % 2 == 0 else range(1, k+1)\n    print(''.join(str(j) for j in seq))"
+    },
+    {
+      "p": 23,
+      "title": "for-else",
+      "points": [
+        "迴圈正常跑完（沒被 break）才執行 else；被 break 就跳過 else。範例：資料中有負數就 break 並報錯，全部正常才在 else 計算平均。",
+        "`enumerate(data)` 同時給 index 和值。",
+        "陷阱：迴圈中 `data[idx] *= 1.05` 會直接改原串列，就算後面 break，前面的元素也已經被乘過了。"
+      ]
+    },
+    {
+      "p": 24,
+      "title": "練習",
+      "points": [
+        "練習 1：質數問答：迴圈 10 次，產生 [50,200] 亂數，問使用者 y/n，與自寫 `is_prime` 比對計算答對數；達 5 次印 `Congrats`（可用 `break` 提早結束），否則印 `Try Again`。這題適合用 for-else。",
+        "練習 2：LeetCode Two Sum：用 dict 記錄「看過的值 → index」，對每個 x 檢查 `target-x` 是否已在 dict 中，一次走訪 O(n)。"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "print(list(range(0, -5, -1)))",
+      "options": ["[0, -1, -2, -3, -4]", "[0, -1, -2, -3, -4, -5]", "[-4, -3, -2, -1, 0]", "[]"],
+      "answer": 0,
+      "explain": "range 不包含 stop，step 為負時從 start 開始往下數到 stop 之前，因此結果是 [0, -1, -2, -3, -4]。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "print(list(range(5, 0)))",
+      "options": ["[5, 4, 3, 2, 1]", "[5, 4, 3, 2, 1, 0]", "[]", "ValueError"],
+      "answer": 2,
+      "explain": "step 預設為 1，從 5 往上走走不到 0，所以結果是空串列，不會報錯。"
+    },
+    {
+      "q": "下列迴圈會執行幾次？",
+      "code": "while 5 > 3 == True:\n    print('hi')",
+      "options": ["無限次", "一次", "會丟出 SyntaxError", "0 次（一次都不執行）"],
+      "answer": 3,
+      "explain": "Python 比較運算子會串接，5>3==True 等於 (5>3) and (3==True)，而 3==True 是 False，所以一次都不執行。"
+    },
+    {
+      "q": "下列程式的結果是什麼？",
+      "code": "print(list(range(1, 5, 0)))",
+      "options": ["[]", "ValueError", "[1]", "無限迴圈"],
+      "answer": 1,
+      "explain": "range 的 step 不能為 0，step=0 會丟出 ValueError。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "L = [1, None, 3]\nit = iter(L)\nwhile True:\n    x = next(it, None)\n    if x is None: break\n    print(x)",
+      "options": ["1 3", "1 None 3", "1", "沒有輸出"],
+      "answer": 2,
+      "explain": "用 None 當結束記號時，串列中的 None 會被誤判為結束，所以迴圈在第二個元素就停止，只印出 1。"
+    },
+    {
+      "q": "下列程式的結果是什麼？",
+      "code": "it = iter([])\nprint(next(it))",
+      "options": ["回傳 0", "回傳 None", "無限等待", "丟出 StopIteration"],
+      "answer": 3,
+      "explain": "沒有給 next 預設值時，迭代器用完會丟出 StopIteration 例外；只有 next(it, None) 才會回傳 None。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "for x in [1, -2, 3]:\n    if x < 0:\n        break\nelse:\n    print('ok')\nprint('end')",
+      "options": ["ok", "end", "ok 與 end 都印出", "沒有輸出"],
+      "answer": 1,
+      "explain": "迴圈在 x=-2 時被 break 跳出，for-else 的 else 不會執行，因此只印出 end。"
+    },
+    {
+      "q": "對 dict 做 for 迭代時，每輪取得的是什麼？",
+      "code": "for k in {'A': 1, 'B': 2}:\n    print(k)",
+      "options": ["key", "value", "(key, value) 配對", "index"],
+      "answer": 0,
+      "explain": "對 dict 迭代得到的是 key，所以輸出是 A 與 B，而不是值或配對。"
+    }
+  ]
+}

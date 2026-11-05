@@ -1,0 +1,256 @@
+{
+  "id": "ch3",
+  "title": "CH3 控制結構 I",
+  "file": "intro_1.pdf",
+  "intro": "本章考的是「條件寫得對不對」：布林運算的優先順序、縮排決定程式意義、巢狀 `if` 少寫 `else` 會出錯。",
+  "tldr": [
+    "循序結構會執行所有情況，用 `if` 依條件改變流程才正確。",
+    "布林運算優先順序：`not` > `and` > `or`，括號讓意思更清楚。",
+    "`=` 是設值，`==` 是比較；比較運算子中間不能有空白。",
+    "縮排決定程式意義，縮排在 else 內與否結果完全不同。",
+    "巢狀 if 漏寫 else 可能讓變數沒被設定，導致 `NameError`。",
+    "`randint(0,6)` 兩端都包含，0 和 6 不在合法區間 [1,5]。",
+    "`match-case` 需 Python 3.10+，`case _:` 為預設分支。"
+  ],
+  "pages": [
+    {
+      "p": 1,
+      "title": "封面",
+      "points": [
+        "CH3 Control Statements Part I"
+      ]
+    },
+    {
+      "p": 2,
+      "title": "控制結構",
+      "points": [
+        "循序結構會把合法、不合法兩種情況的程式都執行，結果錯誤；用 `if` 依條件改變執行流程才正確。",
+        "Python 的流程控制指令：`if-else`、`while`、`for`、`match-case`。",
+        "三角形合法條件：`a+b>c and a+c>b and b+c>a`；面積用海龍公式 `s=(a+b+c)/2`，`area=(s*(s-a)*(s-b)*(s-c))**0.5`。"
+      ],
+      "errata": [
+        "`sum(a,b,c)` 會 TypeError，`sum` 只吃一個可迭代物件，應寫 `(a+b+c)/2` 或 `sum([a,b,c])/2`。海龍公式也漏乘了 `s`。"
+      ]
+    },
+    {
+      "p": 3,
+      "title": "布林運算式",
+      "points": [
+        "結果只能是 `True` 或 `False`。",
+        "可以直接放在 `if` 後面，也可以先存進變數（`is_makeup = score>=50 and score<60`）再判斷，可讀性更好。",
+        "7-11 買早餐的例子是在練習把口語需求拆成正確的巢狀條件。"
+      ],
+      "errata": [
+        "講義中 `sore` 是 `score` 的筆誤。"
+      ]
+    },
+    {
+      "p": 4,
+      "title": "關係運算子",
+      "points": [
+        "`>` `<` `>=` `<=` `==` `!=`，兩個字元之間不能有空白（`> =` 是錯的）。",
+        "`=` 是設值、`==` 是比較。",
+        "判別式 `b*b-4*a*c >= 0` 有實根，`== 0` 有重根。"
+      ]
+    },
+    {
+      "p": 5,
+      "title": "if-else 格式",
+      "points": [
+        "`if 條件:` 加縮排區塊，`else:` 加縮排區塊，最後不縮排的 `print(v)` 兩條路都會執行。"
+      ]
+    },
+    {
+      "p": 6,
+      "title": "縮排決定意義",
+      "points": [
+        "左邊版本：`print(\"v=\",v)` 縮排在 else 裡，只有 `e>=0` 才印。",
+        "右邊版本：print 沒縮排，兩條路都會執行；當 `e<0` 時 `v` 沒有定義，會 `NameError`。",
+        "條件運算式（三元運算子）：`x = A if 條件 else B`。例：`score = 59 if score<60 else score+3`。"
+      ]
+    },
+    {
+      "p": 7,
+      "title": "只有 if 沒有 else",
+      "points": [
+        "else 不寫也可以。",
+        "`pass` 是佔位用的空指令，語法上需要一個區塊但什麼都不做時使用。",
+        "兩段程式效果相同。"
+      ]
+    },
+    {
+      "p": 8,
+      "title": "練習",
+      "points": [
+        "練習 1：滿 1000 打九折且稅內含，否則稅外加 5%。",
+        "1200 → total 1080、tax 51.43；800 → tax 40、total 840。",
+        "練習 2：四個整數比較奇偶個數（題目說 a,b,c 但實際輸入四個數）。逐一用 `x % 2` 判斷累加 odd、even，`odd>even` 印 `odd-bias`，相反印 `even-bias`，相等印 `balance`。15、18、7、31 → odd=3、even=1。"
+      ],
+      "code": "price = float(input())\nif price > 1000:\n    total = price * 0.9\n    tax = total - total / 1.05 # 內含稅\nelse:\n    tax = price * 0.05\n    total = price + tax\nprint(f'tax={tax:.2f}, total={total:.2f}')"
+    },
+    {
+      "p": 9,
+      "title": "邏輯運算子 and、or、not",
+      "points": [
+        "優先順序：`not` > `and` > `or`。所以 `A and B or C` 等於 `(A and B) or C`，括號只是讓意思清楚。",
+        "`price>=800 and price<1000` 表示區間 [800, 1000)，Python 也可寫成 `800 <= price < 1000`。",
+        "狄摩根定律：`not(price>=800 and price<1000)` 等於 `price<800 or price>=1000`。"
+      ]
+    },
+    {
+      "p": 10,
+      "title": "拆解 and",
+      "points": [
+        "`if a>b and a>c:` 可以拆成兩層 if，下一頁示範。"
+      ],
+      "errata": [
+        "講義中 `ans a)` 是筆誤。"
+      ]
+    },
+    {
+      "p": 11,
+      "title": "練習：區域判斷",
+      "points": [
+        "版面是 3×3 格：上排中 E、右上 D；中排 B、A、C；下排中 F。",
+        "A+E+F（中間那一欄）：`x1 <= x <= x2`。用 `<` 或 `<=` 決定邊界算不算，要前後一致。",
+        "A：`x1<x<x2 and y1<y<y2`。",
+        "B+C（中排扣掉 A）：`y1<y<y2 and (x<x1 or x>x2)`。",
+        "B+D：`(x<x1 and y1<y<y2) or (x>x2 and y>y2)`。"
+      ]
+    },
+    {
+      "p": 12,
+      "title": "巢狀 if 的四個版本",
+      "points": [
+        "題意：`a` 同時大於 `b`、`c` 時 `ans=a`，否則 `ans=-(b+c)`。",
+        "`ver1`（and 寫法）與 `ver2`（兩層 if，各自都有 else）等價。",
+        "`ver3` 錯：`a>b` 但 `a<=c` 時沒有 else，`ans` 沒被設定，會 `NameError`。",
+        "`ver4` 對：先給預設值 `ans=-(b+c)`，符合條件才覆蓋。這是避免漏掉 else 的好技巧。"
+      ]
+    },
+    {
+      "p": 13,
+      "title": "巢狀 if 範例（膽固醇）",
+      "points": [
+        "三個獨立 if 每次都要檢查三個條件；巢狀 if 判斷到就停，比較有效率。"
+      ],
+      "errata": [
+        "講義中 `score<220` 應是 `cho<220`。"
+      ]
+    },
+    {
+      "p": 14,
+      "title": "多分支：if-elif-else 與 match-case",
+      "points": [
+        "`match-case`（Python 3.10+）：`match 變數:` 下接 `case 值:`，`case _:` 是預設分支。",
+        "「小漏洞」答案：`randint(0,6)` 包含兩端，0 和 6 都不在合法區間 [1,5]，卻會落入 else 印出 `excellent`。修正：else 前加 `elif pt==5:`，else 改為印 `illegal`；或改用 `randint(1,5)`。"
+      ],
+      "errata": [
+        "講義寫成大寫 `Match` 會 `SyntaxError`。"
+      ]
+    },
+    {
+      "p": 15,
+      "title": "練習",
+      "points": [
+        "練習 1：分數轉兩種級分。算法一 `G1 = score//20 + 1`（100 分剛好得 6）。算法二用 if-elif 依區間 [1,37]、[38,59]、[60,69]、[70,83]、[84,91]、[92,100] 對應 1 到 6。`score=55` → `G1=3`、`G2=2`。",
+        "練習 2：隨機點分區：先用 `x` 決定欄（B、A、C），再用 `y` 決定上中下（U、無、D），組合成 BU、A、CD 等名稱。",
+        "練習 3：LeetCode Roman to Integer：由左往右掃，當前符號值小於右邊符號值就減，否則加（IV=4、IX=9）。"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "執行下列程式，輸出是什麼？",
+      "code": "print(True or False and False)",
+      "options": [
+        "False",
+        "0",
+        "True",
+        "None"
+      ],
+      "answer": 2,
+      "explain": "`and` 優先於 `or`，先算 `False and False` 得 `False`，再與 `True` 做 `or`，結果為 `True`。"
+    },
+    {
+      "q": "下列哪一行會出現 SyntaxError？",
+      "options": [
+        "if x >= 0:",
+        "if x > = 0:",
+        "if x == 0:",
+        "if x != 0:"
+      ],
+      "answer": 1,
+      "explain": "比較運算子的兩個字元之間不能有空白，`> =` 是錯的；`=` 是設值，`==` 才是比較。"
+    },
+    {
+      "q": "執行下列程式後，score 是多少？",
+      "code": "score = 55\nscore = 59 if score<60 else score+3\nprint(score)",
+      "options": [
+        "55",
+        "58",
+        "59",
+        "60"
+      ],
+      "answer": 2,
+      "explain": "`55<60` 成立，所以條件運算式取 `59`，score 被設為 `59`。"
+    },
+    {
+      "q": "關於 pass 的敘述，何者正確？",
+      "options": [
+        "會停止整個程式",
+        "會跳到下一次迴圈",
+        "會回傳一個值給呼叫者",
+        "是佔位用的空指令，語法需要區塊但什麼都不做時使用"
+      ],
+      "answer": 3,
+      "explain": "`pass` 是佔位用的空指令，語法上需要一個區塊但什麼都不做時使用。"
+    },
+    {
+      "q": "執行下列程式，會發生什麼？",
+      "code": "e = -1\nif e >= 0:\n    v = e\nprint(v)",
+      "options": [
+        "印出 -1",
+        "NameError",
+        "印出 None",
+        "印出 0"
+      ],
+      "answer": 1,
+      "explain": "`e=-1` 時 if 條件不成立，`v` 沒有被定義，print 沒有縮排，執行 `print(v)` 時會 `NameError`。"
+    },
+    {
+      "q": "程式用 randint(0,6) 產生亂數，哪些值會落在合法區間 [1,5] 之外？",
+      "options": [
+        "0 和 6",
+        "只有 0",
+        "只有 6",
+        "1 到 5"
+      ],
+      "answer": 0,
+      "explain": "`randint(0,6)` 兩端都包含，0 與 6 不在合法區間 [1,5] 中，應另外處理。"
+    },
+    {
+      "q": "`not(price>=800 and price<1000)` 等於下列哪一個？",
+      "options": [
+        "price>=800 or price<1000",
+        "price<=800 and price>1000",
+        "price<800 and price>=1000",
+        "price<800 or price>=1000"
+      ],
+      "answer": 3,
+      "explain": "狄摩根定律：`not(A and B)` 等於 `(not A) or (not B)`，即 `price<800 or price>=1000`。"
+    },
+    {
+      "q": "執行下列程式，輸出是什麼？",
+      "code": "a, b, c = 1, 2, 3\nprint(sum(a,b,c))",
+      "options": [
+        "6",
+        "TypeError",
+        "1",
+        "(a+b+c)/2"
+      ],
+      "answer": 1,
+      "explain": "`sum` 只吃一個可迭代物件，傳入三個參數會 TypeError；應寫 `sum([a,b,c])`。"
+    }
+  ]
+}

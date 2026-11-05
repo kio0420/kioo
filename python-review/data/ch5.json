@@ -1,0 +1,227 @@
+{
+  "id": "ch5",
+  "title": "CH5 函數",
+  "file": "intro_3.pdf",
+  "intro": "本章重點是把運算包成 def、回傳值的寫法，以及 math 模組函數的回傳型態和邊界行為。",
+  "tldr": [
+    "用 `def` 定義函數，以 `return` 回傳值。",
+    "多個輸出可回傳串列或 tuple。",
+    "函數用來模組化，利於重複使用與維護。",
+    "內建函數不需 import；math 三角函數參數是弧度。",
+    "`ceil`、`floor`、`gcd` 回傳 int，`fabs` 回傳 float。",
+    "`a.sort()` 原地排序回傳 `None`；`sorted(a)` 回傳新串列。",
+    "型態提示不會被 Python 強制檢查；函數內變數為區域變數。"
+  ],
+  "pages": [
+    {
+      "p": 1,
+      "title": "封面",
+      "points": ["CH5 Functions"]
+    },
+    {
+      "p": 2,
+      "title": "數學中的函數",
+      "points": [
+        "函數把一個或一組輸入轉成輸出，y=f(x)。",
+        "多輸入多輸出寫成 Y=f(X)。",
+        "可以多對一，不能一對多。"
+      ]
+    },
+    {
+      "p": 3,
+      "title": "用 Python 實作函數",
+      "points": [
+        "`def 函數名(參數):` 加本體，用 `return` 回傳。",
+        "BMI 範例 `return w/h**2`。",
+        "多個輸出可以包成串列回傳，例如 `return [mage, nchild, life]`（也可以用 tuple：`return a, b, c`）。"
+      ]
+    },
+    {
+      "p": 4,
+      "title": "函數是模組化工具",
+      "points": [
+        "把「讀資料、處理、產生報告」拆成 `read_data`、`process`、`gen_report`，再由 `do_it_all` 串起來。",
+        "優點：重複使用、可讀性高、容易維護。"
+      ]
+    },
+    {
+      "p": 5,
+      "title": "內建函數",
+      "points": [
+        "不用 import 就能用，例如 `abs`、`len`、`max`、`min`、`sum`、`sorted`、`map`、`filter`、`zip`、`enumerate`、`range`、`round`、`divmod`、`eval`、`isinstance`。"
+      ]
+    },
+    {
+      "p": 6,
+      "title": "使用範例（講義錯誤很多，適合當除錯題）",
+      "points": [
+        "`a[-1]` 是最後一個元素，等於 `a[len(a)-1]`。",
+        "`eval('5+3-2')` 把字串當運算式計算，結果 6。",
+        "`list(map(int, [3.3, 4.4, 5.5, 6.6]))` → `[3, 4, 5, 6]`（int 是捨去小數，不是四捨五入）。",
+        "`list(filter(lambda x: x>=60, [68,50,33,70,85,25,100]))` → `[68, 70, 85, 100]`。"
+      ],
+      "errata": [
+        "`sort(a)` 不存在，會 NameError。要用 `a.sort()`（原地排序，回傳 `None`）或 `b = sorted(a)`（回傳新串列）。",
+        "`len[a]` 用了中括號會 TypeError。",
+        "`pow(5.5, 3, 3)` 會 TypeError：三參數版本（模數次方）只接受整數。"
+      ]
+    },
+    {
+      "p": 7,
+      "title": "math 模組常用函數",
+      "points": [
+        "`sin`、`cos`：參數是弧度，不是角度；`math.sin(math.pi/4)` 即 sin 45°。",
+        "`ceil`：往上取整，回傳 int；`ceil(2.35)=3`，`ceil(-1.35)=-1`。",
+        "`floor`：往下取整，回傳 int；`floor(2.35)=2`，`floor(-1.35)=-2`。",
+        "`fabs`：絕對值，回傳 float；`fabs(-3)=3.0`。",
+        "`log(x, base)`：指定底數；`log(12, 2)` ≈ 3.585。",
+        "`log2`、`log10`：專用版本較精確；`log10(50)` ≈ 1.699。",
+        "`fmod(x, y)`：餘數正負號跟 x（與 `%` 不同）；`fmod(13.5, 4.3)` ≈ 0.6。",
+        "`gcd`：最大公因數，回傳 int；`gcd(98, 28)=14`。",
+        "`factorial`：階乘，回傳 int；`factorial(5)=120`。",
+        "轉角度用 `math.radians(45)`。"
+      ],
+      "errata": [
+        "講義寫 gcd 回傳 float，實際是 int。"
+      ]
+    },
+    {
+      "p": 8,
+      "title": "練習",
+      "points": [
+        "練習 1：圓上的點：隨機產生 10 個角度後排序（保證後一個在前一個之後），座標 `x=r*cos(θ)`、`y=r*sin(θ)`。距離總和是 p1p2、p3p4... 兩兩一組相加，用 `math.dist(p, q)`。",
+        "練習 2：質數產生公式 `a(n) = a(n-1) + gcd(n, a(n-1))`，`a(1)=7`。每一項的差 `a(n)-a(n-1)` 不是 1 就是質數；跳過 1，數到第 1000 個質數（含重複）時印出 n。"
+      ]
+    },
+    {
+      "p": 9,
+      "title": "練習：球面座標",
+      "points": [
+        "半徑 1，`x = sinθ·cosφ`，`y = sinθ·sinφ`，`z = cosθ`。",
+        "標準定義 θ 在 `[0, π]`、φ 在 `[0, 2π)`。",
+        "相鄰點距離加總用 `math.dist`。"
+      ]
+    },
+    {
+      "p": 10,
+      "title": "自訂函數與型態提示",
+      "points": [
+        "`def sphereVolume(r: float) -> float:` 中 `: float`、`-> float` 是型態提示，只是給人和工具看的，Python 執行時不會強制檢查。",
+        "函數內遇到 `return` 立刻結束，所以 `if r<0: return 0` 可以提早離開。",
+        "函數外的程式碼屬於 global scope；函數內建立的變數是區域變數，離開函數就消失。"
+      ]
+    },
+    {
+      "p": 11,
+      "title": "範例二：回傳多個值",
+      "points": [
+        "`gap(x,y,z)` 回傳 `[abs(x-y), abs(y-z)]`。",
+        "練習：`cal_list_gap` 計算相鄰差值，`cal_gap_median` 求中位數（自寫選擇排序）。"
+      ],
+      "code": "def cal_list_gap(L):\n    return [abs(L[i+1]-L[i]) for i in range(len(L)-1)]\n\ndef cal_gap_median(G):\n    G = G[:] # 不改到原串列\n    for i in range(len(G)): # 自寫選擇排序\n        for j in range(i+1, len(G)):\n            if G[j] < G[i]: G[i], G[j] = G[j], G[i]\n    n = len(G)\n    return G[n//2] if n % 2 else (G[n//2-1] + G[n//2]) / 2",
+      "errata": [
+        "講義中 Print 大寫、gapList 與 gap_list 名稱不一致都會出錯；medium 應為 median（中位數）。"
+      ]
+    },
+    {
+      "p": 12,
+      "title": "範例三：最大值與其位置",
+      "points": [
+        "`min_max` 回傳 `[min(L), max(L)]`。",
+        "`max_index` 回傳所有最大值的 index，`L=[1,5,18,5,18,3,18]` 印出 `[2, 4, 6]`。"
+      ],
+      "errata": [
+        "`if (L[i]==m) idx.append(i)` 少了冒號，會 SyntaxError。"
+      ]
+    },
+    {
+      "p": 13,
+      "title": "基本練習（不用內建函數）",
+      "points": [
+        "`factorial(x)`：r=1，迴圈乘 1 到 x。",
+        "`mypow(x, y)`：r=1，乘 y 次 x。",
+        "`gcd(a, b)`：輾轉相除法，`while b: a, b = b, a % b`，最後回傳 a。",
+        "`isPrime(x)`：x<2 不是；從 2 試除到 `√x`（`i*i <= x`），整除就不是質數。"
+      ]
+    },
+    {
+      "p": 14,
+      "title": "練習一：最近質數",
+      "points": [
+        "x 本身是質數時 d=0 直接回傳；20 → 19（19 和 23 一樣近時取小）。"
+      ],
+      "code": "def nearest_prime(x):\n    d = 0\n    while True:\n        if is_prime(x - d): return x - d # 先檢查較小的，平手取小\n        if is_prime(x + d): return x + d\n        d += 1"
+    },
+    {
+      "p": 15,
+      "title": "練習二",
+      "points": [
+        "練習 1：串列全部的 GCD：`g = data[0]`，再對其餘元素 `g = math.gcd(g, v)`。",
+        "練習 2：組合數有效率的算法：利用 `C(n,k) = C(n,n-k)` 先讓 k 取較小者，再逐步相乘相除，全程保持整數。",
+        "`C(100,10)` = 17310309456440；`C(100,85)` = `C(100,15)` = 253338471349988640。不要先算 `100!` 再除，數字太大又慢。"
+      ],
+      "code": "def C(n, k):\n    k = min(k, n - k)\n    r = 1\n    for i in range(k):\n        r = r * (n - i) // (i + 1) # 每一步都整除\n    return r",
+      "errata": [
+        "講義 `data` 第三項結尾多了 `*` 會 SyntaxError。"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "a = [3, 1, 2]\nb = a.sort()\nprint(b)",
+      "options": ["[1, 2, 3]", "None", "[3, 1, 2]", "NameError"],
+      "answer": 1,
+      "explain": "`a.sort()` 原地排序並回傳 `None`，所以 `b` 是 `None`。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "print(list(map(int, [3.3, 4.4, 5.5, 6.6])))",
+      "options": ["[3, 4, 5, 6]", "[3, 4, 6, 7]", "[3.0, 4.0, 5.0, 6.0]", "[4, 4, 6, 7]"],
+      "answer": 0,
+      "explain": "`int` 是捨去小數，不是四捨五入，所以 6.6 變成 6。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "print(eval('5+3-2'))",
+      "options": ["'5+3-2'", "None", "6", "TypeError"],
+      "answer": 2,
+      "explain": "`eval` 把字串當運算式計算，`5+3-2` 結果為 6。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "import math\nprint(math.ceil(-1.35), math.floor(-1.35))",
+      "options": ["-2 -1", "-1 -1", "-2 -2", "-1 -2"],
+      "answer": 3,
+      "explain": "`ceil` 往上取整得 -1，`floor` 往下取整得 -2，兩者都回傳 int。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "import math\nr = math.gcd(98, 28)\nprint(r, type(r).__name__)",
+      "options": ["14 float", "14 int", "14.0 float", "14 str"],
+      "answer": 1,
+      "explain": "`gcd` 回傳 int，98 與 28 的最大公因數是 14。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "import math\nprint(math.fabs(-3))",
+      "options": ["3", "-3.0", "3.0", "TypeError"],
+      "answer": 2,
+      "explain": "`fabs` 回傳 float，所以 -3 的絕對值是 `3.0`。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "print(pow(5.5, 3, 3))",
+      "options": ["TypeError", "1.0", "3", "0"],
+      "answer": 0,
+      "explain": "三參數的 `pow` 只接受整數，傳入 5.5 會 TypeError。"
+    },
+    {
+      "q": "下列程式的輸出是什麼？",
+      "code": "def f():\n    x = 1\n    return x\n\nf()\nprint(x)",
+      "options": ["1", "None", "0", "NameError"],
+      "answer": 3,
+      "explain": "`x` 是函數內的區域變數，離開函數後就不存在，外層 `print(x)` 會 NameError。"
+    }
+  ]
+}
