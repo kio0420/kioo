@@ -1,0 +1,1041 @@
+{
+  "updated": "2026-11-03",
+  "ratingSource": "Cook Political Report",
+  "ratingUrl": "https://www.cookpolitical.com/ratings/house-race-ratings",
+  "ratingAsOf": "2026-10-30 (Cook 10/30 update, 12 moves; plus 10/23 batch: 6 Toss-up to Lean D, 2 Lean R to Toss-up); 11/3 檢查：未發現 10/30 之後的新 Cook 評級調整",
+  "ratingSourceNote": "District lists for Likely/Lean/Toss-up taken from 270toWin's mirror of Cook ratings; Solid D/R split per state derived from the 2026 maps in effect and checked against Cook's national totals (Solid D 185, Solid R 171).",
+  "ratingTotals": {
+    "safeD": 185,
+    "likelyD": 17,
+    "leanD": 20,
+    "tossup": 18,
+    "leanR": 11,
+    "likelyR": 17,
+    "safeR": 167
+  },
+  "current": {
+    "D": 214,
+    "R": 218,
+    "I": 1,
+    "vacant": 2,
+    "note": "Independent = Kevin Kiley (CA-3), caucuses with Republicans. Vacant: TX-23 (Tony Gonzales, R, resigned), FL-20 (Sheila Cherfilus-McCormick, D, resigned).",
+    "source": "https://www.congresscountdown.com/info/party-breakdown",
+    "date": "2026-10-19"
+  },
+  "redistricting": {
+    "newMapsInEffect": [
+      "AL",
+      "CA",
+      "FL",
+      "LA",
+      "NC",
+      "OH",
+      "TN",
+      "TX",
+      "UT"
+    ],
+    "notInEffect": {
+      "MO": "new map on hold pending Nov 2026 referendum; 2022 map used",
+      "VA": "Democratic redistricting amendment did not take effect; old map used"
+    },
+    "source": "https://www.usnews.com/news/us/articles/2026-09-28/9-states-have-new-us-house-districts-for-the-midterm-elections-after-trump-urged-changes"
+  },
+  "states": [
+    {
+      "state": "AL",
+      "seats": 7,
+      "current": {
+        "D": 2,
+        "R": 5
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 5,
+      "tossupDistricts": [],
+      "note": "Callais 判決後重劃，AL-2 轉為偏共和黨。"
+    },
+    {
+      "state": "AK",
+      "seats": 1,
+      "current": {
+        "D": 0,
+        "R": 1
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "AZ",
+      "seats": 9,
+      "current": {
+        "D": 3,
+        "R": 6
+      },
+      "safeD": 3,
+      "likelyD": 0,
+      "leanD": 2,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 3,
+      "tossupDistricts": []
+    },
+    {
+      "state": "AR",
+      "seats": 4,
+      "current": {
+        "D": 0,
+        "R": 4
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 3,
+      "tossupDistricts": []
+    },
+    {
+      "state": "CA",
+      "seats": 52,
+      "current": {
+        "D": 43,
+        "R": 8,
+        "I": 1
+      },
+      "safeD": 43,
+      "likelyD": 2,
+      "leanD": 2,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 4,
+      "tossupDistricts": [
+        "CA-22"
+      ],
+      "note": "Prop 50 新選區圖生效，民主黨目標多取 5 席；Kevin Kiley 已改為無黨籍。"
+    },
+    {
+      "state": "CO",
+      "seats": 8,
+      "current": {
+        "D": 4,
+        "R": 4
+      },
+      "safeD": 4,
+      "likelyD": 0,
+      "leanD": 1,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 1,
+      "tossupDistricts": [
+        "CO-5"
+      ]
+    },
+    {
+      "state": "CT",
+      "seats": 5,
+      "current": {
+        "D": 5,
+        "R": 0
+      },
+      "safeD": 5,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "DE",
+      "seats": 1,
+      "current": {
+        "D": 1,
+        "R": 0
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "FL",
+      "seats": 28,
+      "current": {
+        "D": 7,
+        "R": 20,
+        "vacant": 1
+      },
+      "safeD": 4,
+      "likelyD": 0,
+      "leanD": 1,
+      "tossup": 2,
+      "leanR": 4,
+      "likelyR": 1,
+      "safeR": 16,
+      "tossupDistricts": [
+        "FL-14",
+        "FL-22"
+      ],
+      "note": "DeSantis 推動的新選區圖生效（訴訟仍在進行）；FL-20 出缺。"
+    },
+    {
+      "state": "GA",
+      "seats": 14,
+      "current": {
+        "D": 5,
+        "R": 9
+      },
+      "safeD": 5,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 9,
+      "tossupDistricts": []
+    },
+    {
+      "state": "HI",
+      "seats": 2,
+      "current": {
+        "D": 2,
+        "R": 0
+      },
+      "safeD": 2,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "ID",
+      "seats": 2,
+      "current": {
+        "D": 0,
+        "R": 2
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 2,
+      "tossupDistricts": []
+    },
+    {
+      "state": "IL",
+      "seats": 17,
+      "current": {
+        "D": 14,
+        "R": 3
+      },
+      "safeD": 14,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 3,
+      "tossupDistricts": []
+    },
+    {
+      "state": "IN",
+      "seats": 9,
+      "current": {
+        "D": 2,
+        "R": 7
+      },
+      "safeD": 1,
+      "likelyD": 1,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 1,
+      "likelyR": 0,
+      "safeR": 6,
+      "tossupDistricts": []
+    },
+    {
+      "state": "IA",
+      "seats": 4,
+      "current": {
+        "D": 0,
+        "R": 4
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 2,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": [
+        "IA-2"
+      ]
+    },
+    {
+      "state": "KS",
+      "seats": 4,
+      "current": {
+        "D": 1,
+        "R": 3
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 2,
+      "tossupDistricts": []
+    },
+    {
+      "state": "KY",
+      "seats": 6,
+      "current": {
+        "D": 1,
+        "R": 5
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 4,
+      "tossupDistricts": [
+        "KY-6"
+      ]
+    },
+    {
+      "state": "LA",
+      "seats": 6,
+      "current": {
+        "D": 2,
+        "R": 4
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 5,
+      "tossupDistricts": [],
+      "note": "Callais 判決後新圖取消第二個黑人多數選區，眾院初選移至 11 月 3 日。"
+    },
+    {
+      "state": "ME",
+      "seats": 2,
+      "current": {
+        "D": 2,
+        "R": 0
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 1,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "MD",
+      "seats": 8,
+      "current": {
+        "D": 7,
+        "R": 1
+      },
+      "safeD": 7,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "MA",
+      "seats": 9,
+      "current": {
+        "D": 9,
+        "R": 0
+      },
+      "safeD": 9,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "MI",
+      "seats": 13,
+      "current": {
+        "D": 6,
+        "R": 7
+      },
+      "safeD": 5,
+      "likelyD": 1,
+      "leanD": 0,
+      "tossup": 3,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 4,
+      "tossupDistricts": [
+        "MI-4",
+        "MI-7",
+        "MI-10"
+      ]
+    },
+    {
+      "state": "MN",
+      "seats": 8,
+      "current": {
+        "D": 4,
+        "R": 4
+      },
+      "safeD": 3,
+      "likelyD": 1,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 1,
+      "likelyR": 0,
+      "safeR": 3,
+      "tossupDistricts": []
+    },
+    {
+      "state": "MS",
+      "seats": 4,
+      "current": {
+        "D": 1,
+        "R": 3
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 3,
+      "tossupDistricts": []
+    },
+    {
+      "state": "MO",
+      "seats": 8,
+      "current": {
+        "D": 2,
+        "R": 6
+      },
+      "safeD": 2,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 5,
+      "tossupDistricts": [],
+      "note": "新圖因公投連署暫緩，2026 年沿用 2022 年舊圖，新圖交由 11 月公投。"
+    },
+    {
+      "state": "MT",
+      "seats": 2,
+      "current": {
+        "D": 0,
+        "R": 2
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": [
+        "MT-1"
+      ]
+    },
+    {
+      "state": "NE",
+      "seats": 3,
+      "current": {
+        "D": 0,
+        "R": 3
+      },
+      "safeD": 0,
+      "likelyD": 1,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "NV",
+      "seats": 4,
+      "current": {
+        "D": 3,
+        "R": 1
+      },
+      "safeD": 0,
+      "likelyD": 3,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "NH",
+      "seats": 2,
+      "current": {
+        "D": 2,
+        "R": 0
+      },
+      "safeD": 1,
+      "likelyD": 1,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "NJ",
+      "seats": 12,
+      "current": {
+        "D": 9,
+        "R": 3
+      },
+      "safeD": 8,
+      "likelyD": 1,
+      "leanD": 1,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "NM",
+      "seats": 3,
+      "current": {
+        "D": 3,
+        "R": 0
+      },
+      "safeD": 2,
+      "likelyD": 0,
+      "leanD": 1,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "NY",
+      "seats": 26,
+      "current": {
+        "D": 19,
+        "R": 7
+      },
+      "safeD": 16,
+      "likelyD": 3,
+      "leanD": 0,
+      "tossup": 1,
+      "leanR": 1,
+      "likelyR": 0,
+      "safeR": 5,
+      "tossupDistricts": [
+        "NY-17"
+      ]
+    },
+    {
+      "state": "NC",
+      "seats": 14,
+      "current": {
+        "D": 4,
+        "R": 10
+      },
+      "safeD": 3,
+      "likelyD": 0,
+      "leanD": 1,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 2,
+      "safeR": 7,
+      "tossupDistricts": [
+        "NC-1"
+      ],
+      "note": "2025 年新圖主要針對 NC-1。"
+    },
+    {
+      "state": "ND",
+      "seats": 1,
+      "current": {
+        "D": 0,
+        "R": 1
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "OH",
+      "seats": 15,
+      "current": {
+        "D": 5,
+        "R": 10
+      },
+      "safeD": 2,
+      "likelyD": 2,
+      "leanD": 1,
+      "tossup": 1,
+      "leanR": 2,
+      "likelyR": 0,
+      "safeR": 7,
+      "tossupDistricts": [
+        "OH-7"
+      ],
+      "note": "2025 年新選區圖生效，OH-9、OH-13 等民主黨席位變得較競爭。"
+    },
+    {
+      "state": "OK",
+      "seats": 5,
+      "current": {
+        "D": 0,
+        "R": 5
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 5,
+      "tossupDistricts": []
+    },
+    {
+      "state": "OR",
+      "seats": 6,
+      "current": {
+        "D": 5,
+        "R": 1
+      },
+      "safeD": 5,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "PA",
+      "seats": 17,
+      "current": {
+        "D": 7,
+        "R": 10
+      },
+      "safeD": 7,
+      "likelyD": 0,
+      "leanD": 3,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 6,
+      "tossupDistricts": [
+        "PA-1"
+      ]
+    },
+    {
+      "state": "RI",
+      "seats": 2,
+      "current": {
+        "D": 2,
+        "R": 0
+      },
+      "safeD": 2,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "SC",
+      "seats": 7,
+      "current": {
+        "D": 1,
+        "R": 6
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 5,
+      "tossupDistricts": [
+        "SC-1"
+      ]
+    },
+    {
+      "state": "SD",
+      "seats": 1,
+      "current": {
+        "D": 0,
+        "R": 1
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "TN",
+      "seats": 9,
+      "current": {
+        "D": 1,
+        "R": 8
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 9,
+      "tossupDistricts": [],
+      "note": "新圖拆分孟菲斯 TN-9，預期全州 9 席皆偏共和黨。"
+    },
+    {
+      "state": "TX",
+      "seats": 38,
+      "current": {
+        "D": 13,
+        "R": 24,
+        "vacant": 1
+      },
+      "safeD": 8,
+      "likelyD": 0,
+      "leanD": 2,
+      "tossup": 2,
+      "leanR": 0,
+      "likelyR": 2,
+      "safeR": 24,
+      "tossupDistricts": [
+        "TX-15",
+        "TX-35"
+      ],
+      "note": "2025 年共和黨中期重劃新圖生效；TX-23 因 Tony Gonzales 辭職出缺。"
+    },
+    {
+      "state": "UT",
+      "seats": 4,
+      "current": {
+        "D": 0,
+        "R": 4
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 3,
+      "tossupDistricts": [],
+      "note": "法院命令的新圖在鹽湖城一帶新增一個偏民主黨選區。"
+    },
+    {
+      "state": "VT",
+      "seats": 1,
+      "current": {
+        "D": 1,
+        "R": 0
+      },
+      "safeD": 1,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 0,
+      "tossupDistricts": []
+    },
+    {
+      "state": "VA",
+      "seats": 11,
+      "current": {
+        "D": 6,
+        "R": 5
+      },
+      "safeD": 5,
+      "likelyD": 1,
+      "leanD": 1,
+      "tossup": 1,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 2,
+      "tossupDistricts": [
+        "VA-1"
+      ],
+      "note": "民主黨的重劃修憲案未生效，沿用舊圖。"
+    },
+    {
+      "state": "WA",
+      "seats": 10,
+      "current": {
+        "D": 8,
+        "R": 2
+      },
+      "safeD": 7,
+      "likelyD": 0,
+      "leanD": 1,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 1,
+      "safeR": 1,
+      "tossupDistricts": []
+    },
+    {
+      "state": "WV",
+      "seats": 2,
+      "current": {
+        "D": 0,
+        "R": 2
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 2,
+      "tossupDistricts": []
+    },
+    {
+      "state": "WI",
+      "seats": 8,
+      "current": {
+        "D": 2,
+        "R": 6
+      },
+      "safeD": 2,
+      "likelyD": 0,
+      "leanD": 1,
+      "tossup": 0,
+      "leanR": 1,
+      "likelyR": 0,
+      "safeR": 4,
+      "tossupDistricts": []
+    },
+    {
+      "state": "WY",
+      "seats": 1,
+      "current": {
+        "D": 0,
+        "R": 1
+      },
+      "safeD": 0,
+      "likelyD": 0,
+      "leanD": 0,
+      "tossup": 0,
+      "leanR": 0,
+      "likelyR": 0,
+      "safeR": 1,
+      "tossupDistricts": []
+    }
+  ],
+  "national": {
+    "forecasts": [
+      {
+        "chamber": "House",
+        "date": "2026-10-31",
+        "demChance": 83,
+        "note": "預測民主黨約 241 席（搜尋結果摘要，頁面標示 10/31）",
+        "source": "Decision Desk HQ",
+        "url": "https://votes.decisiondeskhq.com/forecast/2026"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-11-02",
+        "demChance": 64,
+        "note": "預測民主黨約 52 席（搜尋結果摘要，頁面標示 11/2）",
+        "source": "Decision Desk HQ",
+        "url": "https://votes.decisiondeskhq.com/forecast/2026/senate"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-11-02",
+        "demChance": 80.1,
+        "note": "Silver Bulletin 預測模型（搜尋結果摘要／Newsweek 轉述，原始頁面日期未能確認）",
+        "source": "Silver Bulletin",
+        "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-11-01",
+        "demChance": 95,
+        "note": "Silver Bulletin 預測模型 11/1 更新：民主黨約 95% 取得眾議院，平均預測淨增約 25 席（搜尋結果摘要）",
+        "source": "Silver Bulletin",
+        "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-11-02",
+        "demChance": 95,
+        "note": "prediction market；約 95%（搜尋結果摘要，近似值）",
+        "source": "Polymarket",
+        "url": "https://polymarket.com"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-11-02",
+        "demChance": 72,
+        "note": "prediction market；約 72%（搜尋結果摘要，近似值）",
+        "source": "Polymarket",
+        "url": "https://polymarket.com"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-11-02",
+        "demChance": 93.3,
+        "note": "prediction market；約 93.3%（搜尋結果摘要，近似值）",
+        "source": "Kalshi",
+        "url": "https://kalshi.com/markets/controlh/house-winner/controlh-2026"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-11-02",
+        "demChance": 74,
+        "note": "prediction market；11/2 中午 ET 約 74%（搜尋結果摘要，近似值）",
+        "source": "Kalshi",
+        "url": "https://kalshi.com/markets/controls/senate-winner/controls-2026"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-09",
+        "demChance": null,
+        "note": "Oct 9: shifted 18 races toward Democrats; projects D net gain of 9-19 seats (224-234 D)",
+        "source": "Cook Political Report",
+        "url": "https://political.org/2026/10/09/cook-political-report-shifts-18-house-races-toward-democrats-as-gop-midterm-outlook-darkens/"
+      },
+      {
+        "chamber": "House",
+        "date": "2026-10-30",
+        "demChance": null,
+        "note": "10/30：再調整 12 場眾議院選區評級（搜尋結果摘要）；Cook 評定 222 席偏民主黨（Lean D 以上）、18 席 Toss-up；預測民主黨 227–240 席",
+        "source": "Cook Political Report",
+        "url": "https://thehill.com/homenews/campaign/6183415-cook-political-report-house-race-shifts-democrats-midterms/"
+      },
+      {
+        "chamber": "Senate",
+        "date": "2026-10-27",
+        "demChance": 56,
+        "note": "The Economist 預測模型：民主黨奪回參院機率 56%，自月初 62% 下降（The Economist 官方 X 貼文摘要）",
+        "source": "The Economist",
+        "url": "https://x.com/TheEconomist/status/2114935153680126459"
+      }
+    ],
+    "genericBallot": [
+      {
+        "date": "2026-10-30",
+        "dem": null,
+        "margin": "D+8.9",
+        "note": "Silver Bulletin 基礎平均 D+8.9（搜尋結果摘要，截至 10/30）；預測模型採用的 likely-voter 版本約 D+9.1（52.4%–43.3%，二手轉述）",
+        "rep": null,
+        "source": "Silver Bulletin",
+        "url": "https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls"
+      },
+      {
+        "date": "2026-10-14",
+        "dem": null,
+        "margin": "D+7.8",
+        "rep": null,
+        "source": "Decision Desk HQ",
+        "url": "https://votes.decisiondeskhq.com/polls/generic-ballot/national"
+      },
+      {
+        "date": "2026-10-08",
+        "dem": null,
+        "margin": "D+7.9",
+        "note": "secondhand figure (Scenarica); current RCP page not reachable",
+        "rep": null,
+        "source": "RealClearPolling",
+        "url": "https://www.realclearpolling.com/polls/state-of-the-union/generic-congressional-vote"
+      },
+      {
+        "date": "2026-10-19",
+        "dem": null,
+        "margin": "D+9",
+        "rep": null,
+        "source": "FiftyPlusOne",
+        "url": "https://fiftyplusone.news/polls/generic-ballot/generic-ballot"
+      },
+      {
+        "date": "2026-10-19",
+        "dem": 49.4,
+        "margin": "D+7.5",
+        "rep": 41.9,
+        "source": "PollsMax",
+        "url": "https://www.pollsmax.com/approval/generic-ballot/"
+      },
+      {
+        "date": "2026-10-27",
+        "dem": 51.1,
+        "margin": "D+8.7",
+        "rep": 42.4,
+        "note": "PollCheck 平均",
+        "source": "PollCheck",
+        "url": "https://www.pollcheck.co.uk/us-midterms-2026/generic-ballot"
+      }
+    ],
+    "senateCurrent": {
+      "D": 47,
+      "R": 53,
+      "note": "D total includes 2 independents caucusing with Democrats"
+    }
+  }
+}

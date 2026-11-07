@@ -1,0 +1,1099 @@
+{
+ "2020": {
+  "composition": {
+   "D": 48,
+   "I": 2,
+   "R": 50,
+   "note": "after the election, Jan 2021 (Georgia runoffs included); 50-50 with VP Harris tie-break; I = King, Sanders (caucus with D)"
+  },
+  "races": [
+   {
+    "state": "AK",
+    "special": false,
+    "winner": "R",
+    "dem": "Al Gross",
+    "rep": "Dan Sullivan",
+    "dPct": 41.2,
+    "rPct": 53.9,
+    "flip": false
+   },
+   {
+    "state": "AL",
+    "special": false,
+    "winner": "R",
+    "dem": "Doug Jones",
+    "rep": "Tommy Tuberville",
+    "dPct": 39.7,
+    "rPct": 60.1,
+    "flip": true,
+    "note": "前美式足球教練圖伯維爾擊敗現任瓊斯，共和黨翻盤"
+   },
+   {
+    "state": "AR",
+    "special": false,
+    "winner": "R",
+    "dem": "Ricky Dale Harrington (L)",
+    "rep": "Tom Cotton",
+    "dPct": 33.5,
+    "rPct": 66.5,
+    "flip": false,
+    "note": "民主黨未提名候選人，主要對手為自由意志黨的哈靈頓"
+   },
+   {
+    "state": "AZ",
+    "special": true,
+    "winner": "D",
+    "dem": "Mark Kelly",
+    "rep": "Martha McSally",
+    "dPct": 51.2,
+    "rPct": 48.8,
+    "flip": true,
+    "note": "補選（原麥凱恩席位），凱利擊敗被任命的麥克薩莉，民主黨翻盤"
+   },
+   {
+    "state": "CO",
+    "special": false,
+    "winner": "D",
+    "dem": "John Hickenlooper",
+    "rep": "Cory Gardner",
+    "dPct": 53.5,
+    "rPct": 44.2,
+    "flip": true,
+    "note": "前州長希肯盧珀擊敗現任加德納，民主黨翻盤"
+   },
+   {
+    "state": "DE",
+    "special": false,
+    "winner": "D",
+    "dem": "Chris Coons",
+    "rep": "Lauren Witzke",
+    "dPct": 59.4,
+    "rPct": 37.9,
+    "flip": false
+   },
+   {
+    "state": "GA",
+    "special": false,
+    "winner": "D",
+    "dem": "Jon Ossoff",
+    "rep": "David Perdue",
+    "dPct": 50.6,
+    "rPct": 49.4,
+    "flip": true,
+    "note": "11月大選無人過半（珀杜49.7%），以2021年1月5日決選結果為準；奧索夫勝出，民主黨翻盤"
+   },
+   {
+    "state": "GA",
+    "special": true,
+    "winner": "D",
+    "dem": "Raphael Warnock",
+    "rep": "Kelly Loeffler",
+    "dPct": 51.0,
+    "rPct": 49.0,
+    "flip": true,
+    "note": "補選；11月為不分黨派初選（叢林初選），以2021年1月5日決選結果為準；沃諾克勝出，民主黨翻盤"
+   },
+   {
+    "state": "IA",
+    "special": false,
+    "winner": "R",
+    "dem": "Theresa Greenfield",
+    "rep": "Joni Ernst",
+    "dPct": 45.2,
+    "rPct": 51.7,
+    "flip": false
+   },
+   {
+    "state": "ID",
+    "special": false,
+    "winner": "R",
+    "dem": "Paulette Jordan",
+    "rep": "Jim Risch",
+    "dPct": 33.2,
+    "rPct": 62.6,
+    "flip": false
+   },
+   {
+    "state": "IL",
+    "special": false,
+    "winner": "D",
+    "dem": "Dick Durbin",
+    "rep": "Mark Curran",
+    "dPct": 54.9,
+    "rPct": 38.9,
+    "flip": false
+   },
+   {
+    "state": "KS",
+    "special": false,
+    "winner": "R",
+    "dem": "Barbara Bollier",
+    "rep": "Roger Marshall",
+    "dPct": 41.8,
+    "rPct": 53.2,
+    "flip": false
+   },
+   {
+    "state": "KY",
+    "special": false,
+    "winner": "R",
+    "dem": "Amy McGrath",
+    "rep": "Mitch McConnell",
+    "dPct": 38.2,
+    "rPct": 57.8,
+    "flip": false
+   },
+   {
+    "state": "LA",
+    "special": false,
+    "winner": "R",
+    "dem": "Adrian Perkins",
+    "rep": "Bill Cassidy",
+    "dPct": 19.0,
+    "rPct": 59.3,
+    "flip": false,
+    "note": "路易斯安那叢林初選，卡西迪得票過半直接當選；對手為得票最高的民主黨人"
+   },
+   {
+    "state": "MA",
+    "special": false,
+    "winner": "D",
+    "dem": "Ed Markey",
+    "rep": "Kevin O'Connor",
+    "dPct": 66.2,
+    "rPct": 33.0,
+    "flip": false
+   },
+   {
+    "state": "ME",
+    "special": false,
+    "winner": "R",
+    "dem": "Sara Gideon",
+    "rep": "Susan Collins",
+    "dPct": 42.4,
+    "rPct": 51.0,
+    "flip": false,
+    "note": "排序複選制，柯林斯首輪即過半連任"
+   },
+   {
+    "state": "MI",
+    "special": false,
+    "winner": "D",
+    "dem": "Gary Peters",
+    "rep": "John James",
+    "dPct": 49.9,
+    "rPct": 48.2,
+    "flip": false,
+    "note": "彼得斯以不到兩個百分點險勝"
+   },
+   {
+    "state": "MN",
+    "special": false,
+    "winner": "D",
+    "dem": "Tina Smith",
+    "rep": "Jason Lewis",
+    "dPct": 48.7,
+    "rPct": 43.5,
+    "flip": false
+   },
+   {
+    "state": "MS",
+    "special": false,
+    "winner": "R",
+    "dem": "Mike Espy",
+    "rep": "Cindy Hyde-Smith",
+    "dPct": 44.1,
+    "rPct": 54.1,
+    "flip": false
+   },
+   {
+    "state": "MT",
+    "special": false,
+    "winner": "R",
+    "dem": "Steve Bullock",
+    "rep": "Steve Daines",
+    "dPct": 45.0,
+    "rPct": 55.0,
+    "flip": false
+   },
+   {
+    "state": "NC",
+    "special": false,
+    "winner": "R",
+    "dem": "Cal Cunningham",
+    "rep": "Thom Tillis",
+    "dPct": 46.9,
+    "rPct": 48.7,
+    "flip": false
+   },
+   {
+    "state": "NE",
+    "special": false,
+    "winner": "R",
+    "dem": "Chris Janicek",
+    "rep": "Ben Sasse",
+    "dPct": 24.4,
+    "rPct": 62.7,
+    "flip": false
+   },
+   {
+    "state": "NH",
+    "special": false,
+    "winner": "D",
+    "dem": "Jeanne Shaheen",
+    "rep": "Bryant Messner",
+    "dPct": 56.6,
+    "rPct": 41.0,
+    "flip": false
+   },
+   {
+    "state": "NJ",
+    "special": false,
+    "winner": "D",
+    "dem": "Cory Booker",
+    "rep": "Rikin Mehta",
+    "dPct": 57.2,
+    "rPct": 40.9,
+    "flip": false
+   },
+   {
+    "state": "NM",
+    "special": false,
+    "winner": "D",
+    "dem": "Ben Ray Luján",
+    "rep": "Mark Ronchetti",
+    "dPct": 51.7,
+    "rPct": 45.6,
+    "flip": false
+   },
+   {
+    "state": "OK",
+    "special": false,
+    "winner": "R",
+    "dem": "Abby Broyles",
+    "rep": "Jim Inhofe",
+    "dPct": 32.8,
+    "rPct": 62.9,
+    "flip": false
+   },
+   {
+    "state": "OR",
+    "special": false,
+    "winner": "D",
+    "dem": "Jeff Merkley",
+    "rep": "Jo Rae Perkins",
+    "dPct": 56.9,
+    "rPct": 39.3,
+    "flip": false
+   },
+   {
+    "state": "RI",
+    "special": false,
+    "winner": "D",
+    "dem": "Jack Reed",
+    "rep": "Allen Waters",
+    "dPct": 66.5,
+    "rPct": 33.4,
+    "flip": false
+   },
+   {
+    "state": "SC",
+    "special": false,
+    "winner": "R",
+    "dem": "Jaime Harrison",
+    "rep": "Lindsey Graham",
+    "dPct": 44.2,
+    "rPct": 54.4,
+    "flip": false
+   },
+   {
+    "state": "SD",
+    "special": false,
+    "winner": "R",
+    "dem": "Dan Ahlers",
+    "rep": "Mike Rounds",
+    "dPct": 34.3,
+    "rPct": 65.7,
+    "flip": false
+   },
+   {
+    "state": "TN",
+    "special": false,
+    "winner": "R",
+    "dem": "Marquita Bradshaw",
+    "rep": "Bill Hagerty",
+    "dPct": 35.2,
+    "rPct": 62.2,
+    "flip": false
+   },
+   {
+    "state": "TX",
+    "special": false,
+    "winner": "R",
+    "dem": "MJ Hegar",
+    "rep": "John Cornyn",
+    "dPct": 43.9,
+    "rPct": 53.5,
+    "flip": false
+   },
+   {
+    "state": "VA",
+    "special": false,
+    "winner": "D",
+    "dem": "Mark Warner",
+    "rep": "Daniel Gade",
+    "dPct": 56.0,
+    "rPct": 43.9,
+    "flip": false
+   },
+   {
+    "state": "WV",
+    "special": false,
+    "winner": "R",
+    "dem": "Paula Jean Swearengin",
+    "rep": "Shelley Moore Capito",
+    "dPct": 27.0,
+    "rPct": 70.3,
+    "flip": false
+   },
+   {
+    "state": "WY",
+    "special": false,
+    "winner": "R",
+    "dem": "Merav Ben-David",
+    "rep": "Cynthia Lummis",
+    "dPct": 26.8,
+    "rPct": 72.8,
+    "flip": false
+   }
+  ]
+ },
+ "2022": {
+  "composition": {
+   "D": 48,
+   "I": 3,
+   "R": 49,
+   "note": "start of 118th Congress, Jan 2023; election produced 49D+2I vs 49R, then Kyrsten Sinema left the Democratic Party (Dec 9, 2022); I = King, Sanders, Sinema (caucus with D)"
+  },
+  "races": [
+   {
+    "state": "AK",
+    "special": false,
+    "winner": "R",
+    "rep": "Lisa Murkowski",
+    "dem": "Kelly Tshibaka (R)",
+    "rPct": 53.7,
+    "dPct": 46.3,
+    "flip": false,
+    "note": "排序複選制，兩名共和黨人對決，穆爾科斯基第三輪勝出；民主黨候選人切斯布羅首輪約10%"
+   },
+   {
+    "state": "AL",
+    "special": false,
+    "winner": "R",
+    "dem": "Will Boyd",
+    "rep": "Katie Britt",
+    "dPct": 30.9,
+    "rPct": 66.6,
+    "flip": false
+   },
+   {
+    "state": "AR",
+    "special": false,
+    "winner": "R",
+    "dem": "Natalie James",
+    "rep": "John Boozman",
+    "dPct": 31.1,
+    "rPct": 65.7,
+    "flip": false
+   },
+   {
+    "state": "AZ",
+    "special": false,
+    "winner": "D",
+    "dem": "Mark Kelly",
+    "rep": "Blake Masters",
+    "dPct": 51.4,
+    "rPct": 46.5,
+    "flip": false,
+    "note": "凱利連任；席尼瑪（另一席）於2022年12月退出民主黨改為獨立"
+   },
+   {
+    "state": "CA",
+    "special": false,
+    "winner": "D",
+    "dem": "Alex Padilla",
+    "rep": "Mark Meuser",
+    "dPct": 61.1,
+    "rPct": 38.9,
+    "flip": false,
+    "note": "同日另有剩餘任期補選，結果相同（帕迪拉勝出）"
+   },
+   {
+    "state": "CO",
+    "special": false,
+    "winner": "D",
+    "dem": "Michael Bennet",
+    "rep": "Joe O'Dea",
+    "dPct": 55.9,
+    "rPct": 41.3,
+    "flip": false
+   },
+   {
+    "state": "CT",
+    "special": false,
+    "winner": "D",
+    "dem": "Richard Blumenthal",
+    "rep": "Leora Levy",
+    "dPct": 57.5,
+    "rPct": 42.5,
+    "flip": false
+   },
+   {
+    "state": "FL",
+    "special": false,
+    "winner": "R",
+    "dem": "Val Demings",
+    "rep": "Marco Rubio",
+    "dPct": 41.3,
+    "rPct": 57.7,
+    "flip": false
+   },
+   {
+    "state": "GA",
+    "special": false,
+    "winner": "D",
+    "dem": "Raphael Warnock",
+    "rep": "Herschel Walker",
+    "dPct": 51.4,
+    "rPct": 48.6,
+    "flip": false,
+    "note": "11月大選無人過半，以12月6日決選結果為準"
+   },
+   {
+    "state": "HI",
+    "special": false,
+    "winner": "D",
+    "dem": "Brian Schatz",
+    "rep": "Bob McDermott",
+    "dPct": 71.2,
+    "rPct": 26.0,
+    "flip": false
+   },
+   {
+    "state": "IA",
+    "special": false,
+    "winner": "R",
+    "dem": "Michael Franken",
+    "rep": "Chuck Grassley",
+    "dPct": 43.8,
+    "rPct": 56.0,
+    "flip": false
+   },
+   {
+    "state": "ID",
+    "special": false,
+    "winner": "R",
+    "dem": "David Roth",
+    "rep": "Mike Crapo",
+    "dPct": 28.7,
+    "rPct": 60.7,
+    "flip": false
+   },
+   {
+    "state": "IL",
+    "special": false,
+    "winner": "D",
+    "dem": "Tammy Duckworth",
+    "rep": "Kathy Salvi",
+    "dPct": 56.8,
+    "rPct": 41.5,
+    "flip": false
+   },
+   {
+    "state": "IN",
+    "special": false,
+    "winner": "R",
+    "dem": "Thomas McDermott Jr.",
+    "rep": "Todd Young",
+    "dPct": 37.9,
+    "rPct": 58.6,
+    "flip": false
+   },
+   {
+    "state": "KS",
+    "special": false,
+    "winner": "R",
+    "dem": "Mark Holland",
+    "rep": "Jerry Moran",
+    "dPct": 37.0,
+    "rPct": 60.0,
+    "flip": false
+   },
+   {
+    "state": "KY",
+    "special": false,
+    "winner": "R",
+    "dem": "Charles Booker",
+    "rep": "Rand Paul",
+    "dPct": 38.2,
+    "rPct": 61.8,
+    "flip": false
+   },
+   {
+    "state": "LA",
+    "special": false,
+    "winner": "R",
+    "dem": "Gary Chambers",
+    "rep": "John Kennedy",
+    "dPct": 17.9,
+    "rPct": 61.6,
+    "flip": false,
+    "note": "路易斯安那叢林初選，甘迺迪得票過半直接當選"
+   },
+   {
+    "state": "MD",
+    "special": false,
+    "winner": "D",
+    "dem": "Chris Van Hollen",
+    "rep": "Chris Chaffee",
+    "dPct": 65.8,
+    "rPct": 34.1,
+    "flip": false
+   },
+   {
+    "state": "MO",
+    "special": false,
+    "winner": "R",
+    "dem": "Trudy Busch Valentine",
+    "rep": "Eric Schmitt",
+    "dPct": 42.2,
+    "rPct": 55.4,
+    "flip": false
+   },
+   {
+    "state": "NC",
+    "special": false,
+    "winner": "R",
+    "dem": "Cheri Beasley",
+    "rep": "Ted Budd",
+    "dPct": 47.3,
+    "rPct": 50.5,
+    "flip": false
+   },
+   {
+    "state": "ND",
+    "special": false,
+    "winner": "R",
+    "dem": "Katrina Christiansen",
+    "rep": "John Hoeven",
+    "dPct": 25.0,
+    "rPct": 56.4,
+    "flip": false
+   },
+   {
+    "state": "NH",
+    "special": false,
+    "winner": "D",
+    "dem": "Maggie Hassan",
+    "rep": "Don Bolduc",
+    "dPct": 53.5,
+    "rPct": 44.4,
+    "flip": false
+   },
+   {
+    "state": "NV",
+    "special": false,
+    "winner": "D",
+    "dem": "Catherine Cortez Masto",
+    "rep": "Adam Laxalt",
+    "dPct": 48.8,
+    "rPct": 48.0,
+    "flip": false
+   },
+   {
+    "state": "NY",
+    "special": false,
+    "winner": "D",
+    "dem": "Chuck Schumer",
+    "rep": "Joe Pinion",
+    "dPct": 56.7,
+    "rPct": 42.7,
+    "flip": false
+   },
+   {
+    "state": "OH",
+    "special": false,
+    "winner": "R",
+    "dem": "Tim Ryan",
+    "rep": "JD Vance",
+    "dPct": 46.9,
+    "rPct": 53.0,
+    "flip": false
+   },
+   {
+    "state": "OK",
+    "special": false,
+    "winner": "R",
+    "dem": "Madison Horn",
+    "rep": "James Lankford",
+    "dPct": 32.1,
+    "rPct": 64.3,
+    "flip": false
+   },
+   {
+    "state": "OK",
+    "special": true,
+    "winner": "R",
+    "dem": "Kendra Horn",
+    "rep": "Markwayne Mullin",
+    "dPct": 35.2,
+    "rPct": 61.8,
+    "flip": false,
+    "note": "補選（英霍夫提前退休），穆林勝出"
+   },
+   {
+    "state": "OR",
+    "special": false,
+    "winner": "D",
+    "dem": "Ron Wyden",
+    "rep": "Jo Rae Perkins",
+    "dPct": 55.8,
+    "rPct": 40.9,
+    "flip": false
+   },
+   {
+    "state": "PA",
+    "special": false,
+    "winner": "D",
+    "dem": "John Fetterman",
+    "rep": "Mehmet Oz",
+    "dPct": 51.2,
+    "rPct": 46.3,
+    "flip": true,
+    "note": "費特曼擊敗奧茲，接替退休的共和黨圖米，民主黨翻盤（本屆唯一翻盤席位）"
+   },
+   {
+    "state": "SC",
+    "special": false,
+    "winner": "R",
+    "dem": "Krystle Matthews",
+    "rep": "Tim Scott",
+    "dPct": 37.0,
+    "rPct": 62.9,
+    "flip": false
+   },
+   {
+    "state": "SD",
+    "special": false,
+    "winner": "R",
+    "dem": "Brian Bengs",
+    "rep": "John Thune",
+    "dPct": 26.1,
+    "rPct": 69.6,
+    "flip": false
+   },
+   {
+    "state": "UT",
+    "special": false,
+    "winner": "R",
+    "dem": "Evan McMullin (I)",
+    "rep": "Mike Lee",
+    "dPct": 42.7,
+    "rPct": 53.2,
+    "flip": false,
+    "note": "民主黨未提名，支持獨立候選人麥克馬林"
+   },
+   {
+    "state": "VT",
+    "special": false,
+    "winner": "D",
+    "dem": "Peter Welch",
+    "rep": "Gerald Malloy",
+    "dPct": 68.5,
+    "rPct": 28.0,
+    "flip": false
+   },
+   {
+    "state": "WA",
+    "special": false,
+    "winner": "D",
+    "dem": "Patty Murray",
+    "rep": "Tiffany Smiley",
+    "dPct": 57.1,
+    "rPct": 42.6,
+    "flip": false
+   },
+   {
+    "state": "WI",
+    "special": false,
+    "winner": "R",
+    "dem": "Mandela Barnes",
+    "rep": "Ron Johnson",
+    "dPct": 49.4,
+    "rPct": 50.4,
+    "flip": false
+   }
+  ]
+ },
+ "2024": {
+  "composition": {
+   "D": 45,
+   "I": 2,
+   "R": 53,
+   "note": "start of 119th Congress, Jan 2025; I = King, Sanders (caucus with D)"
+  },
+  "races": [
+   {
+    "state": "AZ",
+    "special": false,
+    "winner": "D",
+    "dem": "Ruben Gallego",
+    "rep": "Kari Lake",
+    "dPct": 50.1,
+    "rPct": 47.7,
+    "flip": false,
+    "note": "席尼瑪（2018年以民主黨當選，後改獨立）未尋求連任，加列戈勝出，席位仍屬民主黨"
+   },
+   {
+    "state": "CA",
+    "special": false,
+    "winner": "D",
+    "dem": "Adam Schiff",
+    "rep": "Steve Garvey",
+    "dPct": 58.9,
+    "rPct": 41.1,
+    "flip": false,
+    "note": "同日另有剩餘任期補選，結果相同（希夫勝出）"
+   },
+   {
+    "state": "CT",
+    "special": false,
+    "winner": "D",
+    "dem": "Chris Murphy",
+    "rep": "Matthew Corey",
+    "dPct": 58.6,
+    "rPct": 39.7,
+    "flip": false
+   },
+   {
+    "state": "DE",
+    "special": false,
+    "winner": "D",
+    "dem": "Lisa Blunt Rochester",
+    "rep": "Eric Hansen",
+    "dPct": 56.6,
+    "rPct": 39.5,
+    "flip": false
+   },
+   {
+    "state": "FL",
+    "special": false,
+    "winner": "R",
+    "dem": "Debbie Mucarsel-Powell",
+    "rep": "Rick Scott",
+    "dPct": 42.8,
+    "rPct": 55.6,
+    "flip": false
+   },
+   {
+    "state": "HI",
+    "special": false,
+    "winner": "D",
+    "dem": "Mazie Hirono",
+    "rep": "Bob McDermott",
+    "dPct": 64.6,
+    "rPct": 31.9,
+    "flip": false
+   },
+   {
+    "state": "IN",
+    "special": false,
+    "winner": "R",
+    "dem": "Valerie McCray",
+    "rep": "Jim Banks",
+    "dPct": 38.8,
+    "rPct": 58.6,
+    "flip": false
+   },
+   {
+    "state": "MA",
+    "special": false,
+    "winner": "D",
+    "dem": "Elizabeth Warren",
+    "rep": "John Deaton",
+    "dPct": 59.8,
+    "rPct": 40.0,
+    "flip": false
+   },
+   {
+    "state": "MD",
+    "special": false,
+    "winner": "D",
+    "dem": "Angela Alsobrooks",
+    "rep": "Larry Hogan",
+    "dPct": 54.6,
+    "rPct": 42.8,
+    "flip": false
+   },
+   {
+    "state": "ME",
+    "special": false,
+    "winner": "I",
+    "dem": "Angus King (I)",
+    "rep": "Demi Kouzounas",
+    "dPct": 52.1,
+    "rPct": 34.6,
+    "flip": false,
+    "note": "獨立派金恩連任，與民主黨團一同運作；民主黨候選人科斯特洛得票約10.8%"
+   },
+   {
+    "state": "MI",
+    "special": false,
+    "winner": "D",
+    "dem": "Elissa Slotkin",
+    "rep": "Mike Rogers",
+    "dPct": 48.6,
+    "rPct": 48.3,
+    "flip": false
+   },
+   {
+    "state": "MN",
+    "special": false,
+    "winner": "D",
+    "dem": "Amy Klobuchar",
+    "rep": "Royce White",
+    "dPct": 56.2,
+    "rPct": 40.5,
+    "flip": false
+   },
+   {
+    "state": "MO",
+    "special": false,
+    "winner": "R",
+    "dem": "Lucas Kunce",
+    "rep": "Josh Hawley",
+    "dPct": 41.8,
+    "rPct": 55.6,
+    "flip": false
+   },
+   {
+    "state": "MS",
+    "special": false,
+    "winner": "R",
+    "dem": "Ty Pinkins",
+    "rep": "Roger Wicker",
+    "dPct": 37.2,
+    "rPct": 62.8,
+    "flip": false
+   },
+   {
+    "state": "MT",
+    "special": false,
+    "winner": "R",
+    "dem": "Jon Tester",
+    "rep": "Tim Sheehy",
+    "dPct": 45.5,
+    "rPct": 52.6,
+    "flip": true,
+    "note": "希伊擊敗現任泰斯特，共和黨翻盤"
+   },
+   {
+    "state": "ND",
+    "special": false,
+    "winner": "R",
+    "dem": "Katrina Christiansen",
+    "rep": "Kevin Cramer",
+    "dPct": 33.4,
+    "rPct": 66.3,
+    "flip": false
+   },
+   {
+    "state": "NE",
+    "special": false,
+    "winner": "R",
+    "dem": "Dan Osborn (I)",
+    "rep": "Deb Fischer",
+    "dPct": 46.5,
+    "rPct": 53.2,
+    "flip": false,
+    "note": "民主黨未提名，主要對手為獨立候選人奧斯本"
+   },
+   {
+    "state": "NE",
+    "special": true,
+    "winner": "R",
+    "dem": "Preston Love Jr.",
+    "rep": "Pete Ricketts",
+    "dPct": 37.4,
+    "rPct": 62.6,
+    "flip": false,
+    "note": "補選（薩斯辭職），被任命的里基茨勝出"
+   },
+   {
+    "state": "NJ",
+    "special": false,
+    "winner": "D",
+    "dem": "Andy Kim",
+    "rep": "Curtis Bashaw",
+    "dPct": 53.6,
+    "rPct": 44.0,
+    "flip": false
+   },
+   {
+    "state": "NM",
+    "special": false,
+    "winner": "D",
+    "dem": "Martin Heinrich",
+    "rep": "Nella Domenici",
+    "dPct": 55.1,
+    "rPct": 44.9,
+    "flip": false
+   },
+   {
+    "state": "NV",
+    "special": false,
+    "winner": "D",
+    "dem": "Jacky Rosen",
+    "rep": "Sam Brown",
+    "dPct": 47.9,
+    "rPct": 46.2,
+    "flip": false
+   },
+   {
+    "state": "NY",
+    "special": false,
+    "winner": "D",
+    "dem": "Kirsten Gillibrand",
+    "rep": "Mike Sapraicone",
+    "dPct": 58.8,
+    "rPct": 40.5,
+    "flip": false
+   },
+   {
+    "state": "OH",
+    "special": false,
+    "winner": "R",
+    "dem": "Sherrod Brown",
+    "rep": "Bernie Moreno",
+    "dPct": 46.5,
+    "rPct": 50.1,
+    "flip": true,
+    "note": "莫雷諾擊敗現任布朗，共和黨翻盤"
+   },
+   {
+    "state": "PA",
+    "special": false,
+    "winner": "R",
+    "dem": "Bob Casey",
+    "rep": "Dave McCormick",
+    "dPct": 48.6,
+    "rPct": 48.8,
+    "flip": true,
+    "note": "麥考密克以極小差距擊敗現任凱西，共和黨翻盤"
+   },
+   {
+    "state": "RI",
+    "special": false,
+    "winner": "D",
+    "dem": "Sheldon Whitehouse",
+    "rep": "Patricia Morgan",
+    "dPct": 59.9,
+    "rPct": 39.8,
+    "flip": false
+   },
+   {
+    "state": "TN",
+    "special": false,
+    "winner": "R",
+    "dem": "Gloria Johnson",
+    "rep": "Marsha Blackburn",
+    "dPct": 34.2,
+    "rPct": 63.8,
+    "flip": false
+   },
+   {
+    "state": "TX",
+    "special": false,
+    "winner": "R",
+    "dem": "Colin Allred",
+    "rep": "Ted Cruz",
+    "dPct": 44.6,
+    "rPct": 53.1,
+    "flip": false
+   },
+   {
+    "state": "UT",
+    "special": false,
+    "winner": "R",
+    "dem": "Caroline Gleich",
+    "rep": "John Curtis",
+    "dPct": 31.7,
+    "rPct": 62.5,
+    "flip": false
+   },
+   {
+    "state": "VA",
+    "special": false,
+    "winner": "D",
+    "dem": "Tim Kaine",
+    "rep": "Hung Cao",
+    "dPct": 54.4,
+    "rPct": 45.4,
+    "flip": false
+   },
+   {
+    "state": "VT",
+    "special": false,
+    "winner": "I",
+    "dem": "Bernie Sanders (I)",
+    "rep": "Gerald Malloy",
+    "dPct": 63.2,
+    "rPct": 32.1,
+    "flip": false,
+    "note": "獨立派桑德斯連任，與民主黨團一同運作（未有民主黨提名人）"
+   },
+   {
+    "state": "WA",
+    "special": false,
+    "winner": "D",
+    "dem": "Maria Cantwell",
+    "rep": "Raul Garcia",
+    "dPct": 59.1,
+    "rPct": 40.6,
+    "flip": false
+   },
+   {
+    "state": "WI",
+    "special": false,
+    "winner": "D",
+    "dem": "Tammy Baldwin",
+    "rep": "Eric Hovde",
+    "dPct": 49.3,
+    "rPct": 48.5,
+    "flip": false
+   },
+   {
+    "state": "WV",
+    "special": false,
+    "winner": "R",
+    "dem": "Glenn Elliott",
+    "rep": "Jim Justice",
+    "dPct": 27.8,
+    "rPct": 68.8,
+    "flip": true,
+    "note": "曼欽（2018年以民主黨當選，後改獨立）退休，賈斯蒂斯勝出，共和黨翻盤"
+   },
+   {
+    "state": "WY",
+    "special": false,
+    "winner": "R",
+    "dem": "Scott Morrow",
+    "rep": "John Barrasso",
+    "dPct": 24.1,
+    "rPct": 75.1,
+    "flip": false
+   }
+  ]
+ }
+}

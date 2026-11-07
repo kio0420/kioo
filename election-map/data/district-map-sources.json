@@ -1,0 +1,302 @@
+{
+ "AK": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_02_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "AL": {
+  "map": "Alabama 2023 legislature plan (Livingston Plan 3), reinstated for 2026 after Louisiana v. Callais (SCOTUS order June 2, 2026)",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "AR": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_05_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "AZ": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_04_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "CA": {
+  "map": "California Proposition 50 map (Election Rigging Response Act, AB 604), approved Nov 4, 2025",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "CO": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_08_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "CT": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_09_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "DE": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_10_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "FL": {
+  "map": "Florida 2026 congressional map, passed Apr 29 and signed May 4, 2026",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "GA": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_13_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "HI": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://github.com/camilleberg/cc_dashboard/tree/main/.src/data/cd_119_geos/extracted/tl_2024_15_cd119 (tl_2024_15_cd119.shp/.dbf)",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "IA": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_19_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "ID": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_16_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "IL": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_17_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "IN": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_18_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "KS": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_20_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "KY": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_21_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "LA": {
+  "map": "Louisiana 2026 congressional map enacted in May-June 2026 special session after Louisiana v. Callais",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports). Source repo built LA from redist.legis.la.gov block files, not DRA."
+ },
+ "MA": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_25_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "MD": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_24_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "ME": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_23_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "MI": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_26_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "MN": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_27_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "MO": {
+  "map": "119th Congress (2024) districts = 2022 map",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_29_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026. 2025 map (HB 1) blocked by MO Supreme Court (Sept 3, 2026) pending Nov 2026 referendum; 2022 map governs Nov 2026."
+ },
+ "MS": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_28_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "MT": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_30_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NC": {
+  "map": "North Carolina 2025 congressional map (SB 249, enacted Oct 2025)",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "ND": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_38_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NE": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_31_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NH": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_33_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NJ": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_34_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NM": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_35_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NV": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_32_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "NY": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_36_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "OH": {
+  "map": "Ohio Redistricting Commission 2025 congressional map (adopted Oct 31, 2025)",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "OK": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_40_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "OR": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_41_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "PA": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_42_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "RI": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_44_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "SC": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_45_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "SD": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_46_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "TN": {
+  "map": "Tennessee 2026 congressional map (special session, signed May 7, 2026)",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "TX": {
+  "map": "Texas PLANC2333 (2025, HB 4, 2nd called session)",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "UT": {
+  "map": "Utah court-ordered 2025 congressional map (Third District Court, Nov 2025)",
+  "source": "https://github.com/rgao/redistricting_tracker/blob/main/docs/map2026.geojson",
+  "status": "exact",
+  "note": "Enacted 2026 map; geometry from rgao/redistricting_tracker (Dave's Redistricting exports)."
+ },
+ "VA": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_51_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026. Proposed Democratic redraw did not take effect."
+ },
+ "VT": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_50_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "WA": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_53_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "WI": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_55_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "WV": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_54_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ },
+ "WY": {
+  "map": "119th Congress (2024) districts",
+  "source": "https://raw.githubusercontent.com/christine-iyer/twootwosix/main/data/cdistricts-by-state/tl_2024_56_cd119.geojson",
+  "status": "exact",
+  "note": "119th Congress districts (Census TIGER/Line 2024 cd119, NAD83 treated as WGS84); unchanged for 2026."
+ }
+}

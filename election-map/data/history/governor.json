@@ -1,0 +1,667 @@
+{
+ "2020": {
+  "composition": {
+   "D": 23,
+   "R": 27,
+   "note": "governors after this election"
+  },
+  "races": [
+   {
+    "state": "DE",
+    "winner": "D",
+    "dem": "John C. Carney Jr.",
+    "rep": "Julianne E. Murray",
+    "dPct": 59.5,
+    "rPct": 38.6,
+    "flip": false
+   },
+   {
+    "state": "IN",
+    "winner": "R",
+    "dem": "Woody Myers",
+    "rep": "Eric Joseph Holcomb",
+    "dPct": 32.1,
+    "rPct": 56.5,
+    "flip": false
+   },
+   {
+    "state": "MO",
+    "winner": "R",
+    "dem": "Nicole Galloway",
+    "rep": "Mike Parson",
+    "dPct": 40.7,
+    "rPct": 57.1,
+    "flip": false
+   },
+   {
+    "state": "MT",
+    "winner": "R",
+    "dem": "Mike Cooney",
+    "rep": "Greg Gianforte",
+    "dPct": 41.6,
+    "rPct": 54.4,
+    "flip": true,
+    "note": "共和黨自2004年以來首次奪回蒙大拿州長"
+   },
+   {
+    "state": "NC",
+    "winner": "D",
+    "dem": "Roy A. Cooper",
+    "rep": "Dan Forest",
+    "dPct": 51.5,
+    "rPct": 47.0,
+    "flip": false
+   },
+   {
+    "state": "ND",
+    "winner": "R",
+    "dem": "Shelley Lenz",
+    "rep": "Doug Burgum",
+    "dPct": 25.4,
+    "rPct": 65.8,
+    "flip": false
+   },
+   {
+    "state": "NH",
+    "winner": "R",
+    "dem": "Dan Feltes",
+    "rep": "Chris Sununu",
+    "dPct": 33.4,
+    "rPct": 65.1,
+    "flip": false,
+    "note": "州長任期兩年"
+   },
+   {
+    "state": "UT",
+    "winner": "R",
+    "dem": "Chris Peterson",
+    "rep": "Spencer J. Cox",
+    "dPct": 30.3,
+    "rPct": 63.0,
+    "flip": false
+   },
+   {
+    "state": "VT",
+    "winner": "R",
+    "dem": "David Zuckerman",
+    "rep": "Phil Scott",
+    "dPct": 27.4,
+    "rPct": 68.5,
+    "flip": false,
+    "note": "民主黨候選人Zuckerman同時代表進步黨（Progressive/Democrat）"
+   },
+   {
+    "state": "WA",
+    "winner": "D",
+    "dem": "Jay Robert Inslee",
+    "rep": "Loren Culp",
+    "dPct": 56.6,
+    "rPct": 43.1,
+    "flip": false
+   },
+   {
+    "state": "WV",
+    "winner": "R",
+    "dem": "Ben Salango",
+    "rep": "Jim Justice",
+    "dPct": 30.8,
+    "rPct": 64.8,
+    "flip": false
+   }
+  ]
+ },
+ "2021": {
+  "composition": {
+   "D": 22,
+   "R": 28,
+   "note": "governors after this election"
+  },
+  "races": [
+   {
+    "state": "NJ",
+    "winner": "D",
+    "dem": "Philip Murphy",
+    "rep": "Jack M. Ciattarelli",
+    "dPct": 51.2,
+    "rPct": 48.0,
+    "flip": false,
+    "note": "墨菲成為1977年以來首位連任的民主黨新州州長"
+   },
+   {
+    "state": "VA",
+    "winner": "R",
+    "dem": "Terry R. McAuliffe",
+    "rep": "Glenn Youngkin",
+    "dPct": 48.6,
+    "rPct": 50.6,
+    "flip": true,
+    "note": "楊金（Youngkin）為共和黨翻轉維吉尼亞州長"
+   }
+  ]
+ },
+ "2022": {
+  "composition": {
+   "D": 24,
+   "R": 26,
+   "note": "governors after this election"
+  },
+  "races": [
+   {
+    "state": "AK",
+    "winner": "R",
+    "dem": "Les Gara",
+    "rep": "Mike Dunleavy",
+    "dPct": 24.2,
+    "rPct": 50.3,
+    "flip": false,
+    "note": "採排序複選制，鄧利維首輪即過半，未進入後續輪次"
+   },
+   {
+    "state": "AL",
+    "winner": "R",
+    "dem": "Yolanda Rochelle Flowers",
+    "rep": "Kay Ivey",
+    "dPct": 29.2,
+    "rPct": 66.9,
+    "flip": false
+   },
+   {
+    "state": "AR",
+    "winner": "R",
+    "dem": "Chris Jones",
+    "rep": "Sarah Huckabee Sanders",
+    "dPct": 35.2,
+    "rPct": 63.0,
+    "flip": false
+   },
+   {
+    "state": "AZ",
+    "winner": "D",
+    "dem": "Katie Hobbs",
+    "rep": "Kari Lake",
+    "dPct": 50.3,
+    "rPct": 49.6,
+    "flip": true,
+    "note": "民主黨翻轉亞利桑那，霍布斯險勝凱莉·萊克"
+   },
+   {
+    "state": "CA",
+    "winner": "D",
+    "dem": "Gavin Newsom",
+    "rep": "Brian Dahle",
+    "dPct": 59.2,
+    "rPct": 40.8,
+    "flip": false
+   },
+   {
+    "state": "CO",
+    "winner": "D",
+    "dem": "Jared Polis",
+    "rep": "Heidi Ganahl",
+    "dPct": 58.5,
+    "rPct": 39.2,
+    "flip": false
+   },
+   {
+    "state": "CT",
+    "winner": "D",
+    "dem": "Edward Lamont",
+    "rep": "Robert Stefanowski",
+    "dPct": 55.9,
+    "rPct": 43.1,
+    "flip": false,
+    "note": "得票率合計政黨聯合提名（fusion）各線票數"
+   },
+   {
+    "state": "FL",
+    "winner": "R",
+    "dem": "Charlie Crist",
+    "rep": "Ron DeSantis",
+    "dPct": 40.0,
+    "rPct": 59.4,
+    "flip": false
+   },
+   {
+    "state": "GA",
+    "winner": "R",
+    "dem": "Stacey Abrams",
+    "rep": "Brian Kemp",
+    "dPct": 45.9,
+    "rPct": 53.4,
+    "flip": false
+   },
+   {
+    "state": "HI",
+    "winner": "D",
+    "dem": "Josh Green",
+    "rep": "Duke Aiona",
+    "dPct": 63.2,
+    "rPct": 36.8,
+    "flip": false
+   },
+   {
+    "state": "IA",
+    "winner": "R",
+    "dem": "Deidre DeJear",
+    "rep": "Kim Reynolds",
+    "dPct": 39.5,
+    "rPct": 58.0,
+    "flip": false
+   },
+   {
+    "state": "ID",
+    "winner": "R",
+    "dem": "Stephen Heidt",
+    "rep": "Brad Little",
+    "dPct": 20.3,
+    "rPct": 60.5,
+    "flip": false,
+    "note": "無黨籍Ammon Bundy得票17.2%"
+   },
+   {
+    "state": "IL",
+    "winner": "D",
+    "dem": "J.B. Pritzker",
+    "rep": "Darren Bailey",
+    "dPct": 54.9,
+    "rPct": 42.4,
+    "flip": false
+   },
+   {
+    "state": "KS",
+    "winner": "D",
+    "dem": "Laura Kelly",
+    "rep": "Derek Schmidt",
+    "dPct": 49.5,
+    "rPct": 47.3,
+    "flip": false
+   },
+   {
+    "state": "MA",
+    "winner": "D",
+    "dem": "Maura Healey",
+    "rep": "Geoff Diehl",
+    "dPct": 63.7,
+    "rPct": 34.6,
+    "flip": true,
+    "note": "民主黨翻轉麻薩諸塞，希利成為首位女性民選州長"
+   },
+   {
+    "state": "MD",
+    "winner": "D",
+    "dem": "Wes Moore",
+    "rep": "Dan Cox",
+    "dPct": 64.5,
+    "rPct": 32.1,
+    "flip": true,
+    "note": "民主黨翻轉馬里蘭，韋斯·摩爾成為該州首位非裔州長"
+   },
+   {
+    "state": "ME",
+    "winner": "D",
+    "dem": "Janet T. Mills",
+    "rep": "Paul R. LePage",
+    "dPct": 55.7,
+    "rPct": 42.4,
+    "flip": false,
+    "note": "採排序複選制，米爾斯首輪即過半"
+   },
+   {
+    "state": "MI",
+    "winner": "D",
+    "dem": "Gretchen Whitmer",
+    "rep": "Tudor M. Dixon",
+    "dPct": 54.5,
+    "rPct": 43.9,
+    "flip": false
+   },
+   {
+    "state": "MN",
+    "winner": "D",
+    "dem": "Tim Walz",
+    "rep": "Scott Jensen",
+    "dPct": 52.3,
+    "rPct": 44.6,
+    "flip": false
+   },
+   {
+    "state": "NE",
+    "winner": "R",
+    "dem": "Carol Blood",
+    "rep": "Jim Pillen",
+    "dPct": 36.0,
+    "rPct": 59.2,
+    "flip": false
+   },
+   {
+    "state": "NH",
+    "winner": "R",
+    "dem": "Tom Sherman",
+    "rep": "Chris Sununu",
+    "dPct": 41.5,
+    "rPct": 57.0,
+    "flip": false,
+    "note": "州長任期兩年"
+   },
+   {
+    "state": "NM",
+    "winner": "D",
+    "dem": "Michelle Lujan Grisham",
+    "rep": "Mark V. Ronchetti",
+    "dPct": 52.0,
+    "rPct": 45.6,
+    "flip": false
+   },
+   {
+    "state": "NV",
+    "winner": "R",
+    "dem": "Steve Sisolak",
+    "rep": "Joe Lombardo",
+    "dPct": 47.3,
+    "rPct": 48.8,
+    "flip": true,
+    "note": "共和黨翻轉內華達，現任民主黨州長西索拉克落選"
+   },
+   {
+    "state": "NY",
+    "winner": "D",
+    "dem": "Kathy C. Hochul",
+    "rep": "Lee M. Zeldin",
+    "dPct": 53.1,
+    "rPct": 46.7,
+    "flip": false,
+    "note": "得票率合計政黨聯合提名（fusion）各線票數"
+   },
+   {
+    "state": "OH",
+    "winner": "R",
+    "dem": "Nan Whaley",
+    "rep": "Mike DeWine",
+    "dPct": 37.4,
+    "rPct": 62.4,
+    "flip": false
+   },
+   {
+    "state": "OK",
+    "winner": "R",
+    "dem": "Joy Hofmeister",
+    "rep": "Kevin Stitt",
+    "dPct": 41.8,
+    "rPct": 55.4,
+    "flip": false
+   },
+   {
+    "state": "OR",
+    "winner": "D",
+    "dem": "Tina Kotek",
+    "rep": "Christine Drazan",
+    "dPct": 47.0,
+    "rPct": 43.5,
+    "flip": false,
+    "note": "無黨籍Betsy Johnson得票8.6%"
+   },
+   {
+    "state": "PA",
+    "winner": "D",
+    "dem": "Josh Shapiro",
+    "rep": "Douglas V. Mastriano",
+    "dPct": 56.5,
+    "rPct": 41.7,
+    "flip": false
+   },
+   {
+    "state": "RI",
+    "winner": "D",
+    "dem": "Daniel J. McKee",
+    "rep": "Ashley Kalus",
+    "dPct": 57.9,
+    "rPct": 38.9,
+    "flip": false
+   },
+   {
+    "state": "SC",
+    "winner": "R",
+    "dem": "Joe Cunningham",
+    "rep": "Henry McMaster",
+    "dPct": 40.7,
+    "rPct": 58.0,
+    "flip": false
+   },
+   {
+    "state": "SD",
+    "winner": "R",
+    "dem": "Jamie Smith",
+    "rep": "Kristi Noem",
+    "dPct": 35.2,
+    "rPct": 62.0,
+    "flip": false
+   },
+   {
+    "state": "TN",
+    "winner": "R",
+    "dem": "Jason Brantley Martin",
+    "rep": "Bill Lee",
+    "dPct": 32.9,
+    "rPct": 64.9,
+    "flip": false
+   },
+   {
+    "state": "TX",
+    "winner": "R",
+    "dem": "Beto O'Rourke",
+    "rep": "Greg Abbott",
+    "dPct": 43.9,
+    "rPct": 54.8,
+    "flip": false
+   },
+   {
+    "state": "VT",
+    "winner": "R",
+    "dem": "Brenda Siegel",
+    "rep": "Phil Scott",
+    "dPct": 24.0,
+    "rPct": 71.0,
+    "flip": false,
+    "note": "州長任期兩年"
+   },
+   {
+    "state": "WI",
+    "winner": "D",
+    "dem": "Tony Evers",
+    "rep": "Tim Michels",
+    "dPct": 51.1,
+    "rPct": 47.8,
+    "flip": false
+   },
+   {
+    "state": "WY",
+    "winner": "R",
+    "dem": "Theresa A. Livingston",
+    "rep": "Mark Gordon",
+    "dPct": 15.8,
+    "rPct": 74.1,
+    "flip": false
+   }
+  ]
+ },
+ "2023": {
+  "composition": {
+   "D": 23,
+   "R": 27,
+   "note": "governors after this election"
+  },
+  "races": [
+   {
+    "state": "KY",
+    "winner": "D",
+    "dem": "Andy Beshear",
+    "rep": "Daniel Cameron",
+    "dPct": 52.5,
+    "rPct": 47.5,
+    "flip": false,
+    "note": "貝希爾在深紅州連任"
+   },
+   {
+    "state": "LA",
+    "winner": "R",
+    "dem": "Shawn Wilson",
+    "rep": "Jeff Landry",
+    "dPct": 25.9,
+    "rPct": 51.6,
+    "flip": true,
+    "note": "叢林初選（jungle primary）中蘭德里得票過半直接當選，免除決選；共和黨翻轉路易斯安那"
+   },
+   {
+    "state": "MS",
+    "winner": "R",
+    "dem": "Brandon Presley",
+    "rep": "Tate Reeves",
+    "dPct": 47.7,
+    "rPct": 50.9,
+    "flip": false,
+    "note": "里夫斯連任，差距約3.2個百分點"
+   }
+  ]
+ },
+ "2024": {
+  "composition": {
+   "D": 23,
+   "R": 27,
+   "note": "governors after this election"
+  },
+  "races": [
+   {
+    "state": "DE",
+    "winner": "D",
+    "dem": "Matthew Meyer",
+    "rep": "Michael J. Ramone",
+    "dPct": 56.1,
+    "rPct": 43.9,
+    "flip": false
+   },
+   {
+    "state": "IN",
+    "winner": "R",
+    "dem": "Jennifer McCormick",
+    "rep": "Mike Braun",
+    "dPct": 41.1,
+    "rPct": 54.4,
+    "flip": false
+   },
+   {
+    "state": "MO",
+    "winner": "R",
+    "dem": "Crystal Quade",
+    "rep": "Mike Kehoe",
+    "dPct": 38.7,
+    "rPct": 59.1,
+    "flip": false
+   },
+   {
+    "state": "MT",
+    "winner": "R",
+    "dem": "Ryan Busse",
+    "rep": "Greg Gianforte",
+    "dPct": 38.6,
+    "rPct": 58.9,
+    "flip": false
+   },
+   {
+    "state": "NC",
+    "winner": "D",
+    "dem": "Joshua Harold Stein",
+    "rep": "Mark Keith Robinson",
+    "dPct": 54.9,
+    "rPct": 40.1,
+    "flip": false,
+    "note": "共和黨候選人羅賓森爆發醜聞後大敗"
+   },
+   {
+    "state": "ND",
+    "winner": "R",
+    "dem": "Merrill Piepkorn",
+    "rep": "Kelly Armstrong",
+    "dPct": 26.0,
+    "rPct": 68.3,
+    "flip": false
+   },
+   {
+    "state": "NH",
+    "winner": "R",
+    "dem": "Joyce Craig",
+    "rep": "Kelly Ayotte",
+    "dPct": 44.3,
+    "rPct": 53.6,
+    "flip": false,
+    "note": "州長任期兩年；阿約特接替蘇努努"
+   },
+   {
+    "state": "UT",
+    "winner": "R",
+    "dem": "Brian S. King",
+    "rep": "Spencer J. Cox",
+    "dPct": 28.5,
+    "rPct": 52.9,
+    "flip": false,
+    "note": "初選落敗的Phil Lyman以寫入候選人身份得票13.6%"
+   },
+   {
+    "state": "VT",
+    "winner": "R",
+    "dem": "Esther Charlestin",
+    "rep": "Phil Scott",
+    "dPct": 21.8,
+    "rPct": 73.4,
+    "flip": false,
+    "note": "州長任期兩年"
+   },
+   {
+    "state": "WA",
+    "winner": "D",
+    "dem": "Bob Ferguson",
+    "rep": "David G. Reichert",
+    "dPct": 55.5,
+    "rPct": 44.3,
+    "flip": false
+   },
+   {
+    "state": "WV",
+    "winner": "R",
+    "dem": "Steve Williams",
+    "rep": "Patrick Morrisey",
+    "dPct": 31.6,
+    "rPct": 62.0,
+    "flip": false
+   }
+  ]
+ },
+ "2025": {
+  "composition": {
+   "D": 24,
+   "R": 26,
+   "note": "governors after this election"
+  },
+  "races": [
+   {
+    "state": "NJ",
+    "winner": "D",
+    "dem": "Mikie Sherrill",
+    "rep": "Jack Ciattarelli",
+    "dPct": 56.9,
+    "rPct": 42.5,
+    "flip": false,
+    "note": "謝里爾當選，民主黨連續第三屆執政新州"
+   },
+   {
+    "state": "VA",
+    "winner": "D",
+    "dem": "Abigail Spanberger",
+    "rep": "Winsome Earle-Sears",
+    "dPct": 57.6,
+    "rPct": 42.2,
+    "flip": true,
+    "note": "民主黨翻轉維吉尼亞，斯潘伯格成為該州首位女性州長"
+   }
+  ]
+ }
+}
