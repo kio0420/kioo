@@ -38,10 +38,11 @@ export function mountPage(opts: PageOpts): void {
     }, h('span', { class: 'menu-bars', 'aria-hidden': 'true' }));
     const header = h('header', { class: 'site-header' },
       h('div', { class: 'wrap header-row' },
-        h('a', { href: 'index.html', class: 'brand' },
+        h('a', { href: 'index.html', class: 'brand brand-' + lang },
           logoSvg('brand-mark'),
           h('span', { class: 'brand-text' },
             h('span', { class: 'brand-name' }, t('siteName')),
+            h('span', { class: 'brand-short' }, t('siteShort')),
             h('span', { class: 'brand-sub' }, t('siteSub')))),
         navLinks,
         h('div', { class: 'lang-capsule', role: 'group', 'aria-label': 'Language / 語言' },

@@ -14,6 +14,7 @@ type Dict = Record<string, string>;
 
 const zh: Dict = {
   siteName: '十二向度：政治光譜自省',
+  siteShort: '十二向度',
   siteSub: '12 軸政治觀點自我反思測驗',
   navHome: '首頁',
   navMethod: '計分方法',
@@ -79,6 +80,7 @@ const zh: Dict = {
 
 const en: Dict = {
   siteName: 'Twelve Dimensions: A Political Self-Reflection Quiz',
+  siteShort: 'Twelve Dimensions',
   siteSub: 'A 12-axis quiz for reflecting on your political views',
   navHome: 'Home',
   navMethod: 'Method',
