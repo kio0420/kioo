@@ -5,7 +5,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "There is no need for a national government.",
-    "text_zh": ""
+    "text_zh": "不需要國家政府。"
   },
   {
     "id": "A00-L1-Q2",
@@ -13,7 +13,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Subdivisions of nations should have their own militaries.",
-    "text_zh": ""
+    "text_zh": "國家的下級行政區應該擁有自己的軍隊。"
   },
   {
     "id": "A00-L1-Q3",
@@ -21,7 +21,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "State laws should have precedence over national laws.",
-    "text_zh": ""
+    "text_zh": "州法律應該優先於國家法律。"
   },
   {
     "id": "A00-L2-Q1",
@@ -29,7 +29,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "State and local laws should have precedence over national laws",
-    "text_zh": ""
+    "text_zh": "州與地方法律應該優先於國家法律。"
   },
   {
     "id": "A00-L2-Q2",
@@ -37,7 +37,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "The national government can't understand what the people need.",
-    "text_zh": ""
+    "text_zh": "國家政府無法理解人民的需求。"
   },
   {
     "id": "A00-L2-Q3",
@@ -45,7 +45,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "People should hold more loyalty to their local state than their country.",
-    "text_zh": ""
+    "text_zh": "人民對所屬的地方州應該比對國家更忠誠。"
   },
   {
     "id": "A00-L3-Q1",
@@ -53,7 +53,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Local governments should have more power than they currently do.",
-    "text_zh": ""
+    "text_zh": "地方政府應該擁有比現在更多的權力。"
   },
   {
     "id": "A00-L3-Q2",
@@ -61,7 +61,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Laws should vary from area to area and culture to culture within a country.",
-    "text_zh": ""
+    "text_zh": "一個國家之內，法律應該因地區與文化而異。"
   },
   {
     "id": "A00-L3-Q3",
@@ -69,7 +69,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "It's a good idea to test a policy in one state rather than implementing it nationwide right away.",
-    "text_zh": ""
+    "text_zh": "先在單一州試行政策，比立即在全國實施是個好主意。"
   },
   {
     "id": "A00-L4-Q1",
@@ -77,7 +77,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Local governments can understand their citizens better than the national government could.",
-    "text_zh": ""
+    "text_zh": "地方政府比國家政府更能了解其公民。"
   },
   {
     "id": "A00-L4-Q2",
@@ -85,7 +85,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Local governments address issues that the national government would never touch without them.",
-    "text_zh": ""
+    "text_zh": "有些議題若無地方政府，國家政府是絕不會處理的。"
   },
   {
     "id": "A00-L4-Q3",
@@ -93,7 +93,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Local governments give each region good representation of their views.",
-    "text_zh": ""
+    "text_zh": "地方政府能讓各地區的意見獲得良好的代表。"
   },
   {
     "id": "A00-L5-Q1",
@@ -101,7 +101,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "A country cannot function without a national government",
-    "text_zh": ""
+    "text_zh": "沒有國家政府，國家就無法運作。"
   },
   {
     "id": "A00-L5-Q2",
@@ -109,7 +109,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "The national government protects minorities better than some local governments do.",
-    "text_zh": ""
+    "text_zh": "國家政府比某些地方政府更能保護少數群體。"
   },
   {
     "id": "A00-L5-Q3",
@@ -117,7 +117,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "There are many issues that it does not make sense to address at a local level.",
-    "text_zh": ""
+    "text_zh": "有許多議題在地方層級處理是不合理的。"
   },
   {
     "id": "A00-L6-Q1",
@@ -125,7 +125,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "The national government needs more power.",
-    "text_zh": ""
+    "text_zh": "國家政府需要更多權力。"
   },
   {
     "id": "A00-L6-Q2",
@@ -133,7 +133,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Subdivisions should not be able to exempt from national laws.",
-    "text_zh": ""
+    "text_zh": "下級行政區不應該能豁免於國家法律。"
   },
   {
     "id": "A00-L6-Q3",
@@ -141,7 +141,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "People should think of themselves as citizens of their nation rather than their state.",
-    "text_zh": ""
+    "text_zh": "人民應該把自己視為國家的公民，而非州的公民。"
   },
   {
     "id": "A00-L7-Q1",
@@ -149,7 +149,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "A group of states without a strong national government is merely an alliance, not a nation.",
-    "text_zh": ""
+    "text_zh": "一群沒有強大國家政府的州，只是一個聯盟，而不是一個國家。"
   },
   {
     "id": "A00-L7-Q2",
@@ -157,7 +157,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "A national government must be strong to adequately protect all its citizens.",
-    "text_zh": ""
+    "text_zh": "國家政府必須強大，才能充分保護所有公民。"
   },
   {
     "id": "A00-L7-Q3",
@@ -165,7 +165,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "States cannot function without a strong national government.",
-    "text_zh": ""
+    "text_zh": "沒有強大的國家政府，各州就無法運作。"
   },
   {
     "id": "A00-L8-Q1",
@@ -173,7 +173,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "There is no need for local or state governments.",
-    "text_zh": ""
+    "text_zh": "不需要地方或州政府。"
   },
   {
     "id": "A00-L8-Q2",
@@ -181,7 +181,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Laws should be completely consistent within all regions of a nation.",
-    "text_zh": ""
+    "text_zh": "法律在一個國家的所有地區之間應該完全一致。"
   },
   {
     "id": "A00-L8-Q3",
@@ -189,7 +189,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Strong states weaken a nation",
-    "text_zh": ""
+    "text_zh": "強大的州會削弱國家。"
   },
   {
     "id": "A01-L1-Q1",
@@ -197,7 +197,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Direct democracy is the best form of government.",
-    "text_zh": ""
+    "text_zh": "直接民主是最好的政府形式。"
   },
   {
     "id": "A01-L1-Q2",
@@ -205,7 +205,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "People should vote issue by issue themselves.",
-    "text_zh": ""
+    "text_zh": "人民應該親自逐項議題投票。"
   },
   {
     "id": "A01-L1-Q3",
@@ -213,7 +213,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Representatives rarely represent the nation well.",
-    "text_zh": ""
+    "text_zh": "民意代表很少能妥善地代表國家。"
   },
   {
     "id": "A01-L2-Q1",
@@ -221,7 +221,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "It is important that the government follows the majority opinion, even if it is wrong.",
-    "text_zh": ""
+    "text_zh": "政府遵循多數意見很重要，即使多數意見是錯的。"
   },
   {
     "id": "A01-L2-Q2",
@@ -229,7 +229,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "The more people asked, the better chance there is of reaching the best decision.",
-    "text_zh": ""
+    "text_zh": "被詢問的人越多，就越有機會做出最好的決定。"
   },
   {
     "id": "A01-L2-Q3",
@@ -237,7 +237,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Nobody but me can adequately represent my views.",
-    "text_zh": ""
+    "text_zh": "除了我自己，沒有人能充分代表我的意見。"
   },
   {
     "id": "A01-L3-Q1",
@@ -245,7 +245,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Elections are an effective way of showing government approval.",
-    "text_zh": ""
+    "text_zh": "選舉是展現政府受支持程度的有效方式。"
   },
   {
     "id": "A01-L3-Q2",
@@ -253,7 +253,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Democracy is the worst form of government, except for all the others we've tried.",
-    "text_zh": ""
+    "text_zh": "民主是最糟的政府形式，但其他所有我們試過的形式都更糟。"
   },
   {
     "id": "A01-L3-Q3",
@@ -261,7 +261,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Each person should have one vote, each equal to every other.",
-    "text_zh": ""
+    "text_zh": "每個人都應該有一票，且每一票都與其他票等值。"
   },
   {
     "id": "A01-L4-Q1",
@@ -269,7 +269,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Democracy is more than a decision-making process.",
-    "text_zh": ""
+    "text_zh": "民主不只是一種決策過程。"
   },
   {
     "id": "A01-L4-Q2",
@@ -277,7 +277,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "People should have the power to choose their leaders",
-    "text_zh": ""
+    "text_zh": "人民應該有權選擇自己的領導人。"
   },
   {
     "id": "A01-L4-Q3",
@@ -285,7 +285,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "The government must be by the people for the people.",
-    "text_zh": ""
+    "text_zh": "政府必須是民有、民治、民享的。"
   },
   {
     "id": "A01-L5-Q1",
@@ -293,7 +293,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Democracy is inefficient and slow.",
-    "text_zh": ""
+    "text_zh": "民主缺乏效率且緩慢。"
   },
   {
     "id": "A01-L5-Q2",
@@ -301,7 +301,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Popular opinion is not always right",
-    "text_zh": ""
+    "text_zh": "民意並不總是正確的。"
   },
   {
     "id": "A01-L5-Q3",
@@ -309,7 +309,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Autocracy is the best way to rule a nation.",
-    "text_zh": ""
+    "text_zh": "專制是統治一個國家的最佳方式。"
   },
   {
     "id": "A01-L6-Q1",
@@ -317,7 +317,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "A hierarchical state is best.",
-    "text_zh": ""
+    "text_zh": "階層分明的國家是最好的。"
   },
   {
     "id": "A01-L6-Q2",
@@ -325,7 +325,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Society could not function without leaders and followers.",
-    "text_zh": ""
+    "text_zh": "沒有領導者與追隨者，社會就無法運作。"
   },
   {
     "id": "A01-L6-Q3",
@@ -333,7 +333,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Democracy makes it too easy for a majority to further itself at the expense of minorities.",
-    "text_zh": ""
+    "text_zh": "民主使多數人太容易以犧牲少數人為代價來謀取自身利益。"
   },
   {
     "id": "A01-L7-Q1",
@@ -341,7 +341,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "The general populace makes poor decisions.",
-    "text_zh": ""
+    "text_zh": "一般大眾做出的決定很糟。"
   },
   {
     "id": "A01-L7-Q2",
@@ -349,7 +349,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "An absolute monarchy is more preferable than a liberal democracy.",
-    "text_zh": ""
+    "text_zh": "絕對君主制比自由民主更可取。"
   },
   {
     "id": "A01-L7-Q3",
@@ -357,7 +357,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Public opinion swings too much with emotional events to be useful for policy making.",
-    "text_zh": ""
+    "text_zh": "民意隨情緒性事件起伏過大，無法作為制定政策的依據。"
   },
   {
     "id": "A01-L8-Q1",
@@ -365,7 +365,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Elections are a waste of resources.",
-    "text_zh": ""
+    "text_zh": "選舉是浪費資源。"
   },
   {
     "id": "A01-L8-Q2",
@@ -373,7 +373,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Catering to popular opinion is detrimental to a nation.",
-    "text_zh": ""
+    "text_zh": "迎合民意對國家有害。"
   },
   {
     "id": "A01-L8-Q3",
@@ -381,7 +381,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "A nation must obey its leadership without question.",
-    "text_zh": ""
+    "text_zh": "國家必須毫無疑問地服從其領導階層。"
   },
   {
     "id": "A02-L1-Q1",
@@ -389,7 +389,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "A united world government would be beneficial to mankind.",
-    "text_zh": ""
+    "text_zh": "統一的世界政府將造福人類。"
   },
   {
     "id": "A02-L1-Q2",
@@ -397,7 +397,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "We are first and foremost citizens of Earth.",
-    "text_zh": ""
+    "text_zh": "我們首先且最重要的身分是地球公民。"
   },
   {
     "id": "A02-L1-Q3",
@@ -405,7 +405,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "In order for humanity to survive, we must get past having separate nations.",
-    "text_zh": ""
+    "text_zh": "人類要生存下去，就必須超越各自分立的國家。"
   },
   {
     "id": "A02-L2-Q1",
@@ -413,7 +413,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "The United Nations needs more power.",
-    "text_zh": ""
+    "text_zh": "聯合國需要更多權力。"
   },
   {
     "id": "A02-L2-Q2",
@@ -421,7 +421,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "The United Nations should have a military to enforce its resolutions.",
-    "text_zh": ""
+    "text_zh": "聯合國應該擁有軍隊來執行其決議。"
   },
   {
     "id": "A02-L2-Q3",
@@ -429,7 +429,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Having independent nations with the risk of global conflict creates a large threat to humanity as a whole.",
-    "text_zh": ""
+    "text_zh": "獨立國家並存且伴隨全球衝突的風險，對整體人類構成重大威脅。"
   },
   {
     "id": "A02-L3-Q1",
@@ -437,7 +437,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "I support regional unions, such as the European Union.",
-    "text_zh": ""
+    "text_zh": "我支持區域性聯盟，例如歐盟。"
   },
   {
     "id": "A02-L3-Q2",
@@ -445,7 +445,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Governments should be accountable to the international community.",
-    "text_zh": ""
+    "text_zh": "各國政府應該對國際社會負責。"
   },
   {
     "id": "A02-L3-Q3",
@@ -453,7 +453,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Nations fighting among each other gets in the way of progress.",
-    "text_zh": ""
+    "text_zh": "國與國之間的爭鬥阻礙了進步。"
   },
   {
     "id": "A02-L4-Q1",
@@ -461,7 +461,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "International trade is generally beneficial.",
-    "text_zh": ""
+    "text_zh": "國際貿易整體而言是有益的。"
   },
   {
     "id": "A02-L4-Q2",
@@ -469,7 +469,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Alliances are important for protecting a nation",
-    "text_zh": ""
+    "text_zh": "結盟對保護一個國家很重要。"
   },
   {
     "id": "A02-L4-Q3",
@@ -477,7 +477,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Nations should cooperate whenever it benefits them both",
-    "text_zh": ""
+    "text_zh": "只要對雙方都有利，各國就應該合作。"
   },
   {
     "id": "A02-L5-Q1",
@@ -485,7 +485,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "It is important to maintain our national sovereignty.",
-    "text_zh": ""
+    "text_zh": "維護我們的國家主權很重要。"
   },
   {
     "id": "A02-L5-Q2",
@@ -493,7 +493,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "An ideal nation must mostly stay neutral during foreign affairs.",
-    "text_zh": ""
+    "text_zh": "理想的國家在外交事務上必須大多保持中立。"
   },
   {
     "id": "A02-L5-Q3",
@@ -501,7 +501,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Intervention has caused more harm than good.",
-    "text_zh": ""
+    "text_zh": "干預造成的傷害多於益處。"
   },
   {
     "id": "A02-L6-Q1",
@@ -509,7 +509,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "International aid is a waste of money most of the time.",
-    "text_zh": ""
+    "text_zh": "國際援助大多時候是浪費金錢。"
   },
   {
     "id": "A02-L6-Q2",
@@ -517,7 +517,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Alliances can pose a threat to a nation's sovereignty.",
-    "text_zh": ""
+    "text_zh": "結盟可能對一個國家的主權構成威脅。"
   },
   {
     "id": "A02-L6-Q3",
@@ -525,7 +525,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "National cultures are important to protect.",
-    "text_zh": ""
+    "text_zh": "保護民族文化很重要。"
   },
   {
     "id": "A02-L7-Q1",
@@ -533,7 +533,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "My nation should stay out of international affairs.",
-    "text_zh": ""
+    "text_zh": "我的國家應該置身於國際事務之外。"
   },
   {
     "id": "A02-L7-Q2",
@@ -541,7 +541,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "The United Nations should be abolished.",
-    "text_zh": ""
+    "text_zh": "聯合國應該被廢除。"
   },
   {
     "id": "A02-L7-Q3",
@@ -549,7 +549,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Nobody in other countries has our best interests in mind.",
-    "text_zh": ""
+    "text_zh": "其他國家沒有人會為我們的最佳利益著想。"
   },
   {
     "id": "A02-L8-Q1",
@@ -557,7 +557,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "My nation is better than all other nations.",
-    "text_zh": ""
+    "text_zh": "我的國家優於所有其他國家。"
   },
   {
     "id": "A02-L8-Q2",
@@ -565,7 +565,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "There should not be international law.",
-    "text_zh": ""
+    "text_zh": "不應該有國際法。"
   },
   {
     "id": "A02-L8-Q3",
@@ -573,7 +573,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Any deals other countries want must be bad for us.",
-    "text_zh": ""
+    "text_zh": "其他國家想要的任何協議，對我們來說必然是不利的。"
   },
   {
     "id": "A03-L1-Q1",
@@ -581,7 +581,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "War is needed to make an economy thrive.",
-    "text_zh": ""
+    "text_zh": "經濟需要戰爭才能繁榮。"
   },
   {
     "id": "A03-L1-Q2",
@@ -589,7 +589,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "A constant state of war benefits a country.",
-    "text_zh": ""
+    "text_zh": "持續的戰爭狀態對國家有益。"
   },
   {
     "id": "A03-L1-Q3",
@@ -597,7 +597,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Only those who serve in the military should be allowed to have influence on who is in power.",
-    "text_zh": ""
+    "text_zh": "只有服過兵役的人才應該被允許影響誰掌權。"
   },
   {
     "id": "A03-L2-Q1",
@@ -605,7 +605,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "There should be compulsory military service.",
-    "text_zh": ""
+    "text_zh": "應該有強制性的兵役。"
   },
   {
     "id": "A03-L2-Q2",
@@ -613,7 +613,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Countries that do not serve our interests should be toppled.",
-    "text_zh": ""
+    "text_zh": "不符合我們利益的國家應該被推翻。"
   },
   {
     "id": "A03-L2-Q3",
@@ -621,7 +621,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Only those who served in the military should be able to gain power in government.",
-    "text_zh": ""
+    "text_zh": "只有服過兵役的人才應該能在政府中取得權力。"
   },
   {
     "id": "A03-L3-Q1",
@@ -629,7 +629,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Military action by our nation is often necessary to protect it.",
-    "text_zh": ""
+    "text_zh": "我國為了保護自己，經常需要採取軍事行動。"
   },
   {
     "id": "A03-L3-Q2",
@@ -637,7 +637,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Countries that violate human rights should be toppled",
-    "text_zh": ""
+    "text_zh": "侵犯人權的國家應該被推翻。"
   },
   {
     "id": "A03-L3-Q3",
@@ -645,7 +645,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "A military option should always be considered.",
-    "text_zh": ""
+    "text_zh": "軍事選項應該一律納入考慮。"
   },
   {
     "id": "A03-L4-Q1",
@@ -653,7 +653,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "A government must maintain a strong military to defend itself.",
-    "text_zh": ""
+    "text_zh": "政府必須維持強大的軍隊來保衛自己。"
   },
   {
     "id": "A03-L4-Q2",
@@ -661,7 +661,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "A nation usually needs a military in order to survive.",
-    "text_zh": ""
+    "text_zh": "一個國家通常需要軍隊才能生存。"
   },
   {
     "id": "A03-L4-Q3",
@@ -669,7 +669,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "We should respect those who have served in our military.",
-    "text_zh": ""
+    "text_zh": "我們應該尊敬曾在我國軍隊服役的人。"
   },
   {
     "id": "A03-L5-Q1",
@@ -677,7 +677,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "It is more important to retain peaceful relations than to further our strength.",
-    "text_zh": ""
+    "text_zh": "維持和平關係比增強我們的實力更重要。"
   },
   {
     "id": "A03-L5-Q2",
@@ -685,7 +685,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Diplomatic options should always be tried before war is even considered.",
-    "text_zh": ""
+    "text_zh": "在考慮戰爭之前，應該一律先嘗試外交途徑。"
   },
   {
     "id": "A03-L5-Q3",
@@ -693,7 +693,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Peace is preferable to war whenever possible.",
-    "text_zh": ""
+    "text_zh": "只要可能，和平就比戰爭更可取。"
   },
   {
     "id": "A03-L6-Q1",
@@ -701,7 +701,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Humanity has passed the point in which war is needed for resources.",
-    "text_zh": ""
+    "text_zh": "人類已經過了需要為資源而戰的階段。"
   },
   {
     "id": "A03-L6-Q2",
@@ -709,7 +709,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Lasting peace leads to prosperity.",
-    "text_zh": ""
+    "text_zh": "持久的和平帶來繁榮。"
   },
   {
     "id": "A03-L6-Q3",
@@ -717,7 +717,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "My country spends too much money on the military.",
-    "text_zh": ""
+    "text_zh": "我的國家在軍事上花費太多金錢。"
   },
   {
     "id": "A03-L7-Q1",
@@ -725,7 +725,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Military spending is a waste of money.",
-    "text_zh": ""
+    "text_zh": "軍事支出是浪費金錢。"
   },
   {
     "id": "A03-L7-Q2",
@@ -733,7 +733,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "We have no right to militarily intervene in other nations.",
-    "text_zh": ""
+    "text_zh": "我們無權對其他國家進行軍事干預。"
   },
   {
     "id": "A03-L7-Q3",
@@ -741,7 +741,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Countries fall apart with constant war.",
-    "text_zh": ""
+    "text_zh": "持續的戰爭會使國家崩潰。"
   },
   {
     "id": "A03-L8-Q1",
@@ -749,7 +749,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "War is never justified.",
-    "text_zh": ""
+    "text_zh": "戰爭絕不正當。"
   },
   {
     "id": "A03-L8-Q2",
@@ -757,7 +757,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "In the modern era, militaries aren't really necessary.",
-    "text_zh": ""
+    "text_zh": "在現代，軍隊其實並不必要。"
   },
   {
     "id": "A03-L8-Q3",
@@ -765,7 +765,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Nations should not maintain a military.",
-    "text_zh": ""
+    "text_zh": "國家不應該維持軍隊。"
   },
   {
     "id": "A04-L1-Q1",
@@ -773,7 +773,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Those who disagree with the government should be removed from the country.",
-    "text_zh": ""
+    "text_zh": "與政府意見不同的人應該被驅逐出境。"
   },
   {
     "id": "A04-L1-Q2",
@@ -781,7 +781,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "The government should monitor all citizens to combat terrorism.",
-    "text_zh": ""
+    "text_zh": "政府應該監控所有公民以打擊恐怖主義。"
   },
   {
     "id": "A04-L1-Q3",
@@ -789,7 +789,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "People should not have protections that could hinder discovering their criminal activity.",
-    "text_zh": ""
+    "text_zh": "人民不應享有可能妨礙發現其犯罪活動的保障。"
   },
   {
     "id": "A04-L2-Q1",
@@ -797,7 +797,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Police need more power and protection.",
-    "text_zh": ""
+    "text_zh": "警察需要更多權力與保護。"
   },
   {
     "id": "A04-L2-Q2",
@@ -805,7 +805,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "It is very important to maintain law and order.",
-    "text_zh": ""
+    "text_zh": "維護法律與秩序非常重要。"
   },
   {
     "id": "A04-L2-Q3",
@@ -813,7 +813,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "A country must be sure to take all measures to enforce its laws.",
-    "text_zh": ""
+    "text_zh": "一個國家必須確實採取一切措施來執行其法律。"
   },
   {
     "id": "A04-L3-Q1",
@@ -821,7 +821,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "If you have nothing to hide, then you have nothing to fear.",
-    "text_zh": ""
+    "text_zh": "如果你沒有什麼好隱瞞的，就沒有什麼好害怕的。"
   },
   {
     "id": "A04-L3-Q2",
@@ -829,7 +829,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "The sacrifice of some civil liberties is necessary to protect us from acts of terrorism.",
-    "text_zh": ""
+    "text_zh": "為了保護我們免受恐怖攻擊，犧牲部分公民自由是必要的。"
   },
   {
     "id": "A04-L3-Q3",
@@ -837,7 +837,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Government surveillance is necessary in the modern world.",
-    "text_zh": ""
+    "text_zh": "在現代世界，政府監控是必要的。"
   },
   {
     "id": "A04-L4-Q1",
@@ -845,7 +845,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "The government should have access to the emails of suspected terrorists.",
-    "text_zh": ""
+    "text_zh": "政府應該可以取得恐怖主義嫌疑人的電子郵件。"
   },
   {
     "id": "A04-L4-Q2",
@@ -853,7 +853,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Some freedom must be given up in order to keep people safe.",
-    "text_zh": ""
+    "text_zh": "為了維護人民的安全，必須放棄一些自由。"
   },
   {
     "id": "A04-L4-Q3",
@@ -861,7 +861,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Any variant of anarchism will never work.",
-    "text_zh": ""
+    "text_zh": "任何形式的無政府主義都絕不可能行得通。"
   },
   {
     "id": "A04-L5-Q1",
@@ -869,7 +869,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Marijuana should be legal.",
-    "text_zh": ""
+    "text_zh": "大麻應該合法化。"
   },
   {
     "id": "A04-L5-Q2",
@@ -877,7 +877,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Those who would give up essential Liberty to purchase a temporary Safety deserve neither.",
-    "text_zh": ""
+    "text_zh": "那些為了換取暫時的安全而願意放棄根本自由的人，既不配擁有自由，也不配擁有安全。"
   },
   {
     "id": "A04-L5-Q3",
@@ -885,7 +885,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "The government has no business looking into most people's personal lives.",
-    "text_zh": ""
+    "text_zh": "政府無權過問大多數人的私生活。"
   },
   {
     "id": "A04-L6-Q1",
@@ -893,7 +893,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "The right to bear arms should not be infringed.",
-    "text_zh": ""
+    "text_zh": "持有和攜帶武器的權利不應受到侵犯。"
   },
   {
     "id": "A04-L6-Q2",
@@ -901,7 +901,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Every person has unalienable rights, including the right to life, liberty and the pursuit of happiness.",
-    "text_zh": ""
+    "text_zh": "每個人都擁有不可剝奪的權利，包括生命權、自由權和追求幸福的權利。"
   },
   {
     "id": "A04-L6-Q3",
@@ -909,7 +909,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "No authority should be left unquestioned.",
-    "text_zh": ""
+    "text_zh": "任何權威都不應不受質疑。"
   },
   {
     "id": "A04-L7-Q1",
@@ -917,7 +917,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Victimless crimes (such as drug use) should not be crimes at all.",
-    "text_zh": ""
+    "text_zh": "無被害人的犯罪（例如吸毒）根本不應被視為犯罪。"
   },
   {
     "id": "A04-L7-Q2",
@@ -925,7 +925,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Taxation is theft.",
-    "text_zh": ""
+    "text_zh": "課稅就是偷竊。"
   },
   {
     "id": "A04-L7-Q3",
@@ -933,7 +933,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Whistleblowers are good for society.",
-    "text_zh": ""
+    "text_zh": "吹哨者對社會是有益的。"
   },
   {
     "id": "A04-L8-Q1",
@@ -941,7 +941,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "The very existence of the state is a threat to our liberty.",
-    "text_zh": ""
+    "text_zh": "國家的存在本身就是對我們自由的威脅。"
   },
   {
     "id": "A04-L8-Q2",
@@ -949,7 +949,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Taxation should be voluntary or abolished.",
-    "text_zh": ""
+    "text_zh": "稅收應該是自願的，或者予以廢除。"
   },
   {
     "id": "A04-L8-Q3",
@@ -957,7 +957,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "People's freedom should have no limits.",
-    "text_zh": ""
+    "text_zh": "人民的自由不應有任何限制。"
   },
   {
     "id": "A05-L1-Q1",
@@ -965,7 +965,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Communism, if implemented correctly, would be a good form of economics.",
-    "text_zh": ""
+    "text_zh": "共產主義若能正確實行，會是一種良好的經濟形式。"
   },
   {
     "id": "A05-L1-Q2",
@@ -973,7 +973,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Absolute equality is good.",
-    "text_zh": ""
+    "text_zh": "絕對的平等是好的。"
   },
   {
     "id": "A05-L1-Q3",
@@ -981,7 +981,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Equality of outcome is important.",
-    "text_zh": ""
+    "text_zh": "結果的平等很重要。"
   },
   {
     "id": "A05-L2-Q1",
@@ -989,7 +989,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Private property should be abolished.",
-    "text_zh": ""
+    "text_zh": "私有財產應該被廢除。"
   },
   {
     "id": "A05-L2-Q2",
@@ -997,7 +997,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Classes should not exist.",
-    "text_zh": ""
+    "text_zh": "階級不應該存在。"
   },
   {
     "id": "A05-L2-Q3",
@@ -1005,7 +1005,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Most, if not all corporations are inherently evil.",
-    "text_zh": ""
+    "text_zh": "大多數企業，即使不是全部，本質上都是邪惡的。"
   },
   {
     "id": "A05-L3-Q1",
@@ -1013,7 +1013,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "I support single-payer, universal healthcare.",
-    "text_zh": ""
+    "text_zh": "我支持單一保險人的全民健康照護。"
   },
   {
     "id": "A05-L3-Q2",
@@ -1021,7 +1021,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Class war is a real and important issue.",
-    "text_zh": ""
+    "text_zh": "階級鬥爭是一個真實而重要的議題。"
   },
   {
     "id": "A05-L3-Q3",
@@ -1029,7 +1029,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "I prefer Collectivism over Individualism.",
-    "text_zh": ""
+    "text_zh": "相較於個人主義，我更偏好集體主義。"
   },
   {
     "id": "A05-L4-Q1",
@@ -1037,7 +1037,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "The wealthy have far more than they need.",
-    "text_zh": ""
+    "text_zh": "富人擁有的遠遠超過他們所需。"
   },
   {
     "id": "A05-L4-Q2",
@@ -1045,7 +1045,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Services like roads should be publicly owned.",
-    "text_zh": ""
+    "text_zh": "道路之類的服務應該由公家擁有。"
   },
   {
     "id": "A05-L4-Q3",
@@ -1053,7 +1053,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "People born to wealthy families have unfair success even when they aren't skilled and don't work hard.",
-    "text_zh": ""
+    "text_zh": "出生於富裕家庭的人，即使沒有才能也不努力工作，仍然能獲得不公平的成功。"
   },
   {
     "id": "A05-L5-Q1",
@@ -1061,7 +1061,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "People should have the right to leave their wealth to their descendents.",
-    "text_zh": ""
+    "text_zh": "人們應該有權將財富留給自己的後代。"
   },
   {
     "id": "A05-L5-Q2",
@@ -1069,7 +1069,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Privitization is needed for economic success.",
-    "text_zh": ""
+    "text_zh": "民營化是經濟成功所必需的。"
   },
   {
     "id": "A05-L5-Q3",
@@ -1077,7 +1077,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Economies without any capitalism will collapse.",
-    "text_zh": ""
+    "text_zh": "完全沒有資本主義的經濟體系將會崩潰。"
   },
   {
     "id": "A05-L6-Q1",
@@ -1085,7 +1085,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "It is better to maintain a balanced budget than to ensure welfare for all citizens.",
-    "text_zh": ""
+    "text_zh": "維持預算平衡比確保全體公民的福利更好。"
   },
   {
     "id": "A05-L6-Q2",
@@ -1093,7 +1093,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Capitalism is better than any existing alternative.",
-    "text_zh": ""
+    "text_zh": "資本主義比任何現存的替代方案都好。"
   },
   {
     "id": "A05-L6-Q3",
@@ -1101,7 +1101,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Economic classes are inevitable.",
-    "text_zh": ""
+    "text_zh": "經濟階級是不可避免的。"
   },
   {
     "id": "A05-L7-Q1",
@@ -1109,7 +1109,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "The freer the market, the freer the people.",
-    "text_zh": ""
+    "text_zh": "市場越自由，人民就越自由。"
   },
   {
     "id": "A05-L7-Q2",
@@ -1117,7 +1117,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "People should have to work for anything they get.",
-    "text_zh": ""
+    "text_zh": "人們應該必須工作才能獲得任何所得。"
   },
   {
     "id": "A05-L7-Q3",
@@ -1125,7 +1125,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Socialism will never has and will never work.",
-    "text_zh": ""
+    "text_zh": "社會主義從未行得通，也永遠行不通。"
   },
   {
     "id": "A05-L8-Q1",
@@ -1133,7 +1133,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "The government should not regulate the economy at all.",
-    "text_zh": ""
+    "text_zh": "政府根本不應該管制經濟。"
   },
   {
     "id": "A05-L8-Q2",
@@ -1141,7 +1141,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Most economic problems we see today are not caused by Capitalism, but by government.",
-    "text_zh": ""
+    "text_zh": "我們今天看到的大多數經濟問題不是資本主義造成的，而是政府造成的。"
   },
   {
     "id": "A05-L8-Q3",
@@ -1149,7 +1149,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Private charities are a better means of helping the poor than public welfare is.",
-    "text_zh": ""
+    "text_zh": "私人慈善機構比公共福利更能幫助窮人。"
   },
   {
     "id": "A06-L1-Q1",
@@ -1157,7 +1157,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Religion should be banned.",
-    "text_zh": ""
+    "text_zh": "宗教應該被禁止。"
   },
   {
     "id": "A06-L1-Q2",
@@ -1165,7 +1165,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Faith is complete nonsense.",
-    "text_zh": ""
+    "text_zh": "信仰完全是胡說八道。"
   },
   {
     "id": "A06-L1-Q3",
@@ -1173,7 +1173,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Religion must decline for society to progress.",
-    "text_zh": ""
+    "text_zh": "宗教必須式微，社會才能進步。"
   },
   {
     "id": "A06-L2-Q1",
@@ -1181,7 +1181,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "I consider myself an Atheist.",
-    "text_zh": ""
+    "text_zh": "我認為自己是無神論者。"
   },
   {
     "id": "A06-L2-Q2",
@@ -1189,7 +1189,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "There is no higher power.",
-    "text_zh": ""
+    "text_zh": "不存在任何更高的力量。"
   },
   {
     "id": "A06-L2-Q3",
@@ -1197,7 +1197,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "The government should not fund any religious organizations in any way.",
-    "text_zh": ""
+    "text_zh": "政府不應以任何方式資助任何宗教組織。"
   },
   {
     "id": "A06-L3-Q1",
@@ -1205,7 +1205,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Creationism is a myth.",
-    "text_zh": ""
+    "text_zh": "創造論是一則神話。"
   },
   {
     "id": "A06-L3-Q2",
@@ -1213,7 +1213,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Huamnity has progressed beyond the need for religion.",
-    "text_zh": ""
+    "text_zh": "人類已經進步到不再需要宗教。"
   },
   {
     "id": "A06-L3-Q3",
@@ -1221,7 +1221,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Most organized religions contradict themselves.",
-    "text_zh": ""
+    "text_zh": "大多數有組織的宗教自相矛盾。"
   },
   {
     "id": "A06-L4-Q1",
@@ -1229,7 +1229,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Religion in government should be eliminated.",
-    "text_zh": ""
+    "text_zh": "政府中的宗教因素應該被消除。"
   },
   {
     "id": "A06-L4-Q2",
@@ -1237,7 +1237,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Laws should not be based on religion.",
-    "text_zh": ""
+    "text_zh": "法律不應以宗教為基礎。"
   },
   {
     "id": "A06-L4-Q3",
@@ -1245,7 +1245,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "There must be a separation between church and state.",
-    "text_zh": ""
+    "text_zh": "政教之間必須分離。"
   },
   {
     "id": "A06-L5-Q1",
@@ -1253,7 +1253,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "I believe there is something after death.",
-    "text_zh": ""
+    "text_zh": "我相信人死後還有某些東西存在。"
   },
   {
     "id": "A06-L5-Q2",
@@ -1261,7 +1261,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Religion is beneficial for society.",
-    "text_zh": ""
+    "text_zh": "宗教對社會有益。"
   },
   {
     "id": "A06-L5-Q3",
@@ -1269,7 +1269,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "People must be allowed to follow a religion.",
-    "text_zh": ""
+    "text_zh": "必須允許人們信奉宗教。"
   },
   {
     "id": "A06-L6-Q1",
@@ -1277,7 +1277,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "I believe in a higher power.",
-    "text_zh": ""
+    "text_zh": "我相信有更高的力量存在。"
   },
   {
     "id": "A06-L6-Q2",
@@ -1285,7 +1285,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Religious organizations often provide better assistance to the poor than the government does.",
-    "text_zh": ""
+    "text_zh": "宗教組織對窮人的協助往往比政府更好。"
   },
   {
     "id": "A06-L6-Q3",
@@ -1293,7 +1293,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Children should be educated in religious values.",
-    "text_zh": ""
+    "text_zh": "兒童應該接受宗教價值觀的教育。"
   },
   {
     "id": "A06-L7-Q1",
@@ -1301,7 +1301,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "My religion is true.",
-    "text_zh": ""
+    "text_zh": "我的宗教是真實的。"
   },
   {
     "id": "A06-L7-Q2",
@@ -1309,7 +1309,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "My religious values should be spread as much as possible.",
-    "text_zh": ""
+    "text_zh": "我的宗教價值觀應該盡可能廣泛傳播。"
   },
   {
     "id": "A06-L7-Q3",
@@ -1317,7 +1317,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Religion is important for society.",
-    "text_zh": ""
+    "text_zh": "宗教對社會很重要。"
   },
   {
     "id": "A06-L8-Q1",
@@ -1325,7 +1325,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Theocracy is a good system of government",
-    "text_zh": ""
+    "text_zh": "神權政治是一種良好的政府制度。"
   },
   {
     "id": "A06-L8-Q2",
@@ -1333,7 +1333,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "The government should support and only recognize one religion",
-    "text_zh": ""
+    "text_zh": "政府應該支持並且只承認一種宗教。"
   },
   {
     "id": "A06-L8-Q3",
@@ -1341,7 +1341,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Most bad things happening in the world are caused by us turning away from religion",
-    "text_zh": ""
+    "text_zh": "世界上發生的大多數壞事，都是因為我們背離了宗教。"
   },
   {
     "id": "A07-L1-Q1",
@@ -1349,7 +1349,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "We should pay reperations for the descendants of slaves.",
-    "text_zh": ""
+    "text_zh": "我們應該向奴隸的後代支付賠償。"
   },
   {
     "id": "A07-L1-Q2",
@@ -1357,7 +1357,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "White guilt is sometimes justified.",
-    "text_zh": ""
+    "text_zh": "白人的罪惡感有時是合理的。"
   },
   {
     "id": "A07-L1-Q3",
@@ -1365,7 +1365,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Tradition just hinders the progress of humanity.",
-    "text_zh": ""
+    "text_zh": "傳統只是阻礙人類的進步。"
   },
   {
     "id": "A07-L2-Q1",
@@ -1373,7 +1373,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Gender is a social construct.",
-    "text_zh": ""
+    "text_zh": "性別是一種社會建構。"
   },
   {
     "id": "A07-L2-Q2",
@@ -1381,7 +1381,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Traditions are of no value on their own.",
-    "text_zh": ""
+    "text_zh": "傳統本身沒有任何價值。"
   },
   {
     "id": "A07-L2-Q3",
@@ -1389,7 +1389,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Affirmative action is mostly beneficial.",
-    "text_zh": ""
+    "text_zh": "平權行動大致上是有益的。"
   },
   {
     "id": "A07-L3-Q1",
@@ -1397,7 +1397,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "I support the LGBTQ+ movement.",
-    "text_zh": ""
+    "text_zh": "我支持LGBTQ+運動。"
   },
   {
     "id": "A07-L3-Q2",
@@ -1405,7 +1405,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Abortion should be legal.",
-    "text_zh": ""
+    "text_zh": "墮胎應該合法。"
   },
   {
     "id": "A07-L3-Q3",
@@ -1413,7 +1413,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Statues of certain people should be taken down.",
-    "text_zh": ""
+    "text_zh": "某些人物的雕像應該被拆除。"
   },
   {
     "id": "A07-L4-Q1",
@@ -1421,7 +1421,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "I support the BLM movement.",
-    "text_zh": ""
+    "text_zh": "我支持「黑人的命也是命」（BLM）運動。"
   },
   {
     "id": "A07-L4-Q2",
@@ -1429,7 +1429,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Environmental regulations are essential.",
-    "text_zh": ""
+    "text_zh": "環境法規是不可或缺的。"
   },
   {
     "id": "A07-L4-Q3",
@@ -1437,7 +1437,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Same sex marriage should be legalized.",
-    "text_zh": ""
+    "text_zh": "同性婚姻應該合法化。"
   },
   {
     "id": "A07-L5-Q1",
@@ -1445,7 +1445,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "To chase progress at all costs is dangerous.",
-    "text_zh": ""
+    "text_zh": "不計代價追求進步是危險的。"
   },
   {
     "id": "A07-L5-Q2",
@@ -1453,7 +1453,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "We must preserve our culture.",
-    "text_zh": ""
+    "text_zh": "我們必須保存自己的文化。"
   },
   {
     "id": "A07-L5-Q3",
@@ -1461,7 +1461,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Traditions are important.",
-    "text_zh": ""
+    "text_zh": "傳統很重要。"
   },
   {
     "id": "A07-L6-Q1",
@@ -1469,7 +1469,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Sex before marriage is immoral.",
-    "text_zh": ""
+    "text_zh": "婚前性行為是不道德的。"
   },
   {
     "id": "A07-L6-Q2",
@@ -1477,7 +1477,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Homosexuality is immoral.",
-    "text_zh": ""
+    "text_zh": "同性戀是不道德的。"
   },
   {
     "id": "A07-L6-Q3",
@@ -1485,7 +1485,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Maintaining family values is essential.",
-    "text_zh": ""
+    "text_zh": "維護家庭價值是不可或缺的。"
   },
   {
     "id": "A07-L7-Q1",
@@ -1493,7 +1493,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Society has become too progressive.",
-    "text_zh": ""
+    "text_zh": "社會變得過於進步了。"
   },
   {
     "id": "A07-L7-Q2",
@@ -1501,7 +1501,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "It is important that we maintain the traditions of our past.",
-    "text_zh": ""
+    "text_zh": "維護我們過去的傳統很重要。"
   },
   {
     "id": "A07-L7-Q3",
@@ -1509,7 +1509,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "The elders in society know the best path for it.",
-    "text_zh": ""
+    "text_zh": "社會中的長者最清楚社會該走的路。"
   },
   {
     "id": "A07-L8-Q1",
@@ -1517,7 +1517,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "The Enlightenment should never have happened.",
-    "text_zh": ""
+    "text_zh": "啟蒙運動根本不該發生。"
   },
   {
     "id": "A07-L8-Q2",
@@ -1525,7 +1525,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Homosexuality should be criminalized.",
-    "text_zh": ""
+    "text_zh": "同性戀應該被定為犯罪。"
   },
   {
     "id": "A07-L8-Q3",
@@ -1533,7 +1533,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Sharia law isn't as bad as people think it is.",
-    "text_zh": ""
+    "text_zh": "伊斯蘭教法並沒有人們想的那麼糟。"
   },
   {
     "id": "A08-L1-Q1",
@@ -1541,7 +1541,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Foreigners should never enter the country.",
-    "text_zh": ""
+    "text_zh": "外國人絕不應該入境我國。"
   },
   {
     "id": "A08-L1-Q2",
@@ -1549,7 +1549,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "We should not allow any refugees.",
-    "text_zh": ""
+    "text_zh": "我們不應該接收任何難民。"
   },
   {
     "id": "A08-L1-Q3",
@@ -1557,7 +1557,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Only our national language(s) should be spoken in our country.",
-    "text_zh": ""
+    "text_zh": "我國境內只應該使用本國的國家語言。"
   },
   {
     "id": "A08-L2-Q1",
@@ -1565,7 +1565,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Only extremely talented immigrants, if that, should be permitted to enter the country.",
-    "text_zh": ""
+    "text_zh": "即使要讓移民入境，也只應該允許極為優秀的人才，甚至連他們也不應該。"
   },
   {
     "id": "A08-L2-Q2",
@@ -1573,7 +1573,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "If we accept migrants at all, it is important that they assimilate into our culture.",
-    "text_zh": ""
+    "text_zh": "如果我們要接受移民，他們融入我們的文化就很重要。"
   },
   {
     "id": "A08-L2-Q3",
@@ -1581,7 +1581,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Immigrants can never really adapt to our way of life.",
-    "text_zh": ""
+    "text_zh": "移民永遠無法真正適應我們的生活方式。"
   },
   {
     "id": "A08-L3-Q1",
@@ -1589,7 +1589,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "In general, immigrants are bad for the country.",
-    "text_zh": ""
+    "text_zh": "整體而言，移民對國家有害。"
   },
   {
     "id": "A08-L3-Q2",
@@ -1597,7 +1597,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "A nation's culture is important to protect.",
-    "text_zh": ""
+    "text_zh": "保護一個國家的文化是重要的。"
   },
   {
     "id": "A08-L3-Q3",
@@ -1605,7 +1605,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Illegal immigrants do not provide a benefit to the hosting country.",
-    "text_zh": ""
+    "text_zh": "非法移民並不會為接收國帶來好處。"
   },
   {
     "id": "A08-L4-Q1",
@@ -1613,7 +1613,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Illegal immigrants should be deported in most or all cases.",
-    "text_zh": ""
+    "text_zh": "在大多數或所有情況下，非法移民都應該被遣返。"
   },
   {
     "id": "A08-L4-Q2",
@@ -1621,7 +1621,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Immigrants should be expected to learn the language of the country.",
-    "text_zh": ""
+    "text_zh": "應該要求移民學習該國的語言。"
   },
   {
     "id": "A08-L4-Q3",
@@ -1629,7 +1629,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Border protection is important.",
-    "text_zh": ""
+    "text_zh": "邊境防護是重要的。"
   },
   {
     "id": "A08-L5-Q1",
@@ -1637,7 +1637,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "We should be taking in more refugees.",
-    "text_zh": ""
+    "text_zh": "我們應該接收更多難民。"
   },
   {
     "id": "A08-L5-Q2",
@@ -1645,7 +1645,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Immigrants are a net positive.",
-    "text_zh": ""
+    "text_zh": "移民帶來的是淨正面效益。"
   },
   {
     "id": "A08-L5-Q3",
@@ -1653,7 +1653,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "I enjoy some foreign cultures.",
-    "text_zh": ""
+    "text_zh": "我喜歡某些外國文化。"
   },
   {
     "id": "A08-L6-Q1",
@@ -1661,7 +1661,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "No cultures are superior to others.",
-    "text_zh": ""
+    "text_zh": "沒有任何文化優於其他文化。"
   },
   {
     "id": "A08-L6-Q2",
@@ -1669,7 +1669,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "We should be more accepting to other cultures.",
-    "text_zh": ""
+    "text_zh": "我們應該更加接納其他文化。"
   },
   {
     "id": "A08-L6-Q3",
@@ -1677,7 +1677,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "All societies are a blend of cultures.",
-    "text_zh": ""
+    "text_zh": "所有社會都是多種文化的融合。"
   },
   {
     "id": "A08-L7-Q1",
@@ -1685,7 +1685,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Everybody should speak at least two languages.",
-    "text_zh": ""
+    "text_zh": "每個人都應該至少會說兩種語言。"
   },
   {
     "id": "A08-L7-Q2",
@@ -1693,7 +1693,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "All humans share a common identity.",
-    "text_zh": ""
+    "text_zh": "全人類擁有共同的身分認同。"
   },
   {
     "id": "A08-L7-Q3",
@@ -1701,7 +1701,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Our culture would be better with other cultures mixed in more.",
-    "text_zh": ""
+    "text_zh": "如果有更多其他文化融入，我們的文化會變得更好。"
   },
   {
     "id": "A08-L8-Q1",
@@ -1709,7 +1709,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Governments should be as concerned about foreign citizens as they are about those within their borders.",
-    "text_zh": ""
+    "text_zh": "政府對外國公民的關切，應該與對境內公民的關切一樣多。"
   },
   {
     "id": "A08-L8-Q2",
@@ -1717,7 +1717,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Anybody who wants to enter the country should be able to.",
-    "text_zh": ""
+    "text_zh": "任何想入境該國的人都應該能夠入境。"
   },
   {
     "id": "A08-L8-Q3",
@@ -1725,7 +1725,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "The benefits of open borders would outweigh the costs.",
-    "text_zh": ""
+    "text_zh": "開放邊界的好處將超過其成本。"
   },
   {
     "id": "A09-L1-Q1",
@@ -1733,7 +1733,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "I prefer a planned economy over a free and open economy.",
-    "text_zh": ""
+    "text_zh": "相較於自由開放的經濟，我偏好計畫經濟。"
   },
   {
     "id": "A09-L1-Q2",
@@ -1741,7 +1741,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Most, if not all businesses must be owned by the government.",
-    "text_zh": ""
+    "text_zh": "大多數（如果不是全部）企業都必須由政府擁有。"
   },
   {
     "id": "A09-L1-Q3",
@@ -1749,7 +1749,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "The state knows best what an economy needs.",
-    "text_zh": ""
+    "text_zh": "國家最清楚經濟需要什麼。"
   },
   {
     "id": "A09-L2-Q1",
@@ -1757,7 +1757,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Economic planning ensures maximum prosperity and growth.",
-    "text_zh": ""
+    "text_zh": "經濟計畫能確保最大的繁榮與成長。"
   },
   {
     "id": "A09-L2-Q2",
@@ -1765,7 +1765,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "High levels of economic regulation is good for my nation.",
-    "text_zh": ""
+    "text_zh": "高度的經濟管制對我的國家有益。"
   },
   {
     "id": "A09-L2-Q3",
@@ -1773,7 +1773,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Taxation for the rich should be very high.",
-    "text_zh": ""
+    "text_zh": "對富人的課稅應該非常高。"
   },
   {
     "id": "A09-L3-Q1",
@@ -1781,7 +1781,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "It is necessary for the government to intervene in the economy to protect consumers.",
-    "text_zh": ""
+    "text_zh": "政府有必要介入經濟以保護消費者。"
   },
   {
     "id": "A09-L3-Q2",
@@ -1789,7 +1789,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "The government must break up monopolies to ensure fairness within the market.",
-    "text_zh": ""
+    "text_zh": "政府必須拆分壟斷企業，以確保市場的公平。"
   },
   {
     "id": "A09-L3-Q3",
@@ -1797,7 +1797,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "The hourly minimum wage should be 15 USD or more.",
-    "text_zh": ""
+    "text_zh": "每小時基本工資應該是 15 美元或更高。"
   },
   {
     "id": "A09-L4-Q1",
@@ -1805,7 +1805,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Without economic regulation, monopolies will dominate the entire market.",
-    "text_zh": ""
+    "text_zh": "若沒有經濟管制，壟斷企業將主宰整個市場。"
   },
   {
     "id": "A09-L4-Q2",
@@ -1813,7 +1813,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "An unregulated economy will never succeed.",
-    "text_zh": ""
+    "text_zh": "不受管制的經濟永遠不會成功。"
   },
   {
     "id": "A09-L4-Q3",
@@ -1821,7 +1821,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Taxation for the rich should be higher than it is now.",
-    "text_zh": ""
+    "text_zh": "對富人的課稅應該比現在更高。"
   },
   {
     "id": "A09-L5-Q1",
@@ -1829,7 +1829,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Excessive government intervention is a threat to the economy.",
-    "text_zh": ""
+    "text_zh": "政府過度干預是對經濟的威脅。"
   },
   {
     "id": "A09-L5-Q2",
@@ -1837,7 +1837,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Income taxes for the middle and lower classes should be lowered.",
-    "text_zh": ""
+    "text_zh": "應該降低中產階級與中低階層的所得稅。"
   },
   {
     "id": "A09-L5-Q3",
@@ -1845,7 +1845,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Planned economies never perform as well as free market economies.",
-    "text_zh": ""
+    "text_zh": "計畫經濟的表現永遠不如自由市場經濟。"
   },
   {
     "id": "A09-L6-Q1",
@@ -1853,7 +1853,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Economic regulation causes more harm than good.",
-    "text_zh": ""
+    "text_zh": "經濟管制弊大於利。"
   },
   {
     "id": "A09-L6-Q2",
@@ -1861,7 +1861,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Currently, taxation is too complex and should be simplified.",
-    "text_zh": ""
+    "text_zh": "目前的稅制過於複雜，應該簡化。"
   },
   {
     "id": "A09-L6-Q3",
@@ -1869,7 +1869,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "UBI is a better means of providing welfare when compared to the current welfare system.",
-    "text_zh": ""
+    "text_zh": "與現行福利制度相比，全民基本收入是更好的福利提供方式。"
   },
   {
     "id": "A09-L7-Q1",
@@ -1877,7 +1877,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Fully privatized healthcare is a better means of providing healthcare than single-payer systems.",
-    "text_zh": ""
+    "text_zh": "與單一保險人制度相比，完全民營化的醫療是更好的醫療提供方式。"
   },
   {
     "id": "A09-L7-Q2",
@@ -1885,7 +1885,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "The government actively works with large corporations to destroy small businesses.",
-    "text_zh": ""
+    "text_zh": "政府積極與大企業合作，以摧毀小型企業。"
   },
   {
     "id": "A09-L7-Q3",
@@ -1893,7 +1893,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "The government should control the market as minimally as possible.",
-    "text_zh": ""
+    "text_zh": "政府應該盡可能減少對市場的控制。"
   },
   {
     "id": "A09-L8-Q1",
@@ -1901,7 +1901,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Government should not regulate the economy at all.",
-    "text_zh": ""
+    "text_zh": "政府根本不應該管制經濟。"
   },
   {
     "id": "A09-L8-Q2",
@@ -1909,7 +1909,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Most, if not all economic crises are caused by government intervention.",
-    "text_zh": ""
+    "text_zh": "大多數（如果不是全部）經濟危機都是由政府干預所造成的。"
   },
   {
     "id": "A09-L8-Q3",
@@ -1917,7 +1917,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Taxation is theft.",
-    "text_zh": ""
+    "text_zh": "課稅就是偷竊。"
   },
   {
     "id": "A10-L1-Q1",
@@ -1925,7 +1925,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "All products should be made in my country.",
-    "text_zh": ""
+    "text_zh": "所有產品都應該在我的國家製造。"
   },
   {
     "id": "A10-L1-Q2",
@@ -1933,7 +1933,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Foreign products should be banned or heavily restricted from entry.",
-    "text_zh": ""
+    "text_zh": "外國產品應該被禁止或嚴格限制進入。"
   },
   {
     "id": "A10-L1-Q3",
@@ -1941,7 +1941,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "I only buy products that are made in my country.",
-    "text_zh": ""
+    "text_zh": "我只購買在我的國家製造的產品。"
   },
   {
     "id": "A10-L2-Q1",
@@ -1949,7 +1949,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "High tariffs are needed to protect local industries.",
-    "text_zh": ""
+    "text_zh": "需要高關稅來保護本地產業。"
   },
   {
     "id": "A10-L2-Q2",
@@ -1957,7 +1957,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "The government must intervene in the foreign exchange market to higher import prices.",
-    "text_zh": ""
+    "text_zh": "政府必須干預外匯市場，以抬高進口價格。"
   },
   {
     "id": "A10-L2-Q3",
@@ -1965,7 +1965,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Without tariffs, my country's economy will likely fail.",
-    "text_zh": ""
+    "text_zh": "沒有關稅，我的國家經濟很可能會失敗。"
   },
   {
     "id": "A10-L3-Q1",
@@ -1973,7 +1973,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Export subsidies should be used for protecting local industries.",
-    "text_zh": ""
+    "text_zh": "應該使用出口補貼來保護本地產業。"
   },
   {
     "id": "A10-L3-Q2",
@@ -1981,7 +1981,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Patents should be protected to prevent other countries from outcompeting my country.",
-    "text_zh": ""
+    "text_zh": "應該保護專利，以防止其他國家在競爭中勝過我的國家。"
   },
   {
     "id": "A10-L3-Q3",
@@ -1989,7 +1989,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Technical and scientific knowledge should be protected from other countries.",
-    "text_zh": ""
+    "text_zh": "技術與科學知識應該受到保護，不被其他國家取得。"
   },
   {
     "id": "A10-L4-Q1",
@@ -1997,7 +1997,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "The government should prioritize my country over all others.",
-    "text_zh": ""
+    "text_zh": "政府應該把我的國家置於所有其他國家之上。"
   },
   {
     "id": "A10-L4-Q2",
@@ -2005,7 +2005,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "The government should encourage local production and consumption.",
-    "text_zh": ""
+    "text_zh": "政府應該鼓勵本地生產與消費。"
   },
   {
     "id": "A10-L4-Q3",
@@ -2013,7 +2013,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Economic globalism caused more negative impacts than positive ones.",
-    "text_zh": ""
+    "text_zh": "經濟全球化造成的負面影響多於正面影響。"
   },
   {
     "id": "A10-L5-Q1",
@@ -2021,7 +2021,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "The world must cooperate together in terms of economics.",
-    "text_zh": ""
+    "text_zh": "世界各國在經濟上必須合作。"
   },
   {
     "id": "A10-L5-Q2",
@@ -2029,7 +2029,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Trade is often beneficial to both parties.",
-    "text_zh": ""
+    "text_zh": "貿易通常對雙方都有利。"
   },
   {
     "id": "A10-L5-Q3",
@@ -2037,7 +2037,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Global economic cooperation will generally lead to positive outcomes.",
-    "text_zh": ""
+    "text_zh": "全球經濟合作整體而言會帶來正面的結果。"
   },
   {
     "id": "A10-L6-Q1",
@@ -2045,7 +2045,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Tariffs should be lowered.",
-    "text_zh": ""
+    "text_zh": "應該降低關稅。"
   },
   {
     "id": "A10-L6-Q2",
@@ -2053,7 +2053,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "The concept of a free market should be extended towards global trade as well.",
-    "text_zh": ""
+    "text_zh": "自由市場的概念也應該擴及全球貿易。"
   },
   {
     "id": "A10-L6-Q3",
@@ -2061,7 +2061,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Restrictions on trade are bad for the economy.",
-    "text_zh": ""
+    "text_zh": "貿易限制對經濟有害。"
   },
   {
     "id": "A10-L7-Q1",
@@ -2069,7 +2069,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Economic globalization is inevitable.",
-    "text_zh": ""
+    "text_zh": "經濟全球化是無可避免的。"
   },
   {
     "id": "A10-L7-Q2",
@@ -2077,7 +2077,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Tariffs should be eliminated.",
-    "text_zh": ""
+    "text_zh": "應該取消關稅。"
   },
   {
     "id": "A10-L7-Q3",
@@ -2085,7 +2085,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Foreign products are as good as local products.",
-    "text_zh": ""
+    "text_zh": "外國產品與本地產品一樣好。"
   },
   {
     "id": "A10-L8-Q1",
@@ -2093,7 +2093,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "We must actively promote foreign products.",
-    "text_zh": ""
+    "text_zh": "我們必須積極推廣外國產品。"
   },
   {
     "id": "A10-L8-Q2",
@@ -2101,7 +2101,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Protectionism is an unnecessary and unrealistic idea.",
-    "text_zh": ""
+    "text_zh": "保護主義是不必要且不切實際的想法。"
   },
   {
     "id": "A10-L8-Q3",
@@ -2109,7 +2109,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Local products are often poor in quality.",
-    "text_zh": ""
+    "text_zh": "本地產品的品質往往很差。"
   },
   {
     "id": "A11-L1-Q1",
@@ -2117,7 +2117,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "If AI could rule more effectively than humans, then AI should rule.",
-    "text_zh": ""
+    "text_zh": "如果人工智慧能比人類更有效地統治，那就應該由人工智慧來統治。"
   },
   {
     "id": "A11-L1-Q2",
@@ -2125,7 +2125,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "Genetic modification is a force for good, even on humans.",
-    "text_zh": ""
+    "text_zh": "基因改造是一股向善的力量，即使用在人類身上也是如此。"
   },
   {
     "id": "A11-L1-Q3",
@@ -2133,7 +2133,7 @@
     "level": 1,
     "pole": "first",
     "text_en": "We should continue developing AI even if that means we are going to be replaced.",
-    "text_zh": ""
+    "text_zh": "即使意味著我們將被取代，我們也應該繼續發展人工智慧。"
   },
   {
     "id": "A11-L2-Q1",
@@ -2141,7 +2141,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "Technological progress and innovation cannot be stopped.",
-    "text_zh": ""
+    "text_zh": "科技進步與創新是無法阻止的。"
   },
   {
     "id": "A11-L2-Q2",
@@ -2149,7 +2149,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "I am a transhumanist.",
-    "text_zh": ""
+    "text_zh": "我是超人類主義者。"
   },
   {
     "id": "A11-L2-Q3",
@@ -2157,7 +2157,7 @@
     "level": 2,
     "pole": "first",
     "text_en": "When people have already suffered for technology to be developed, we should use that technology.",
-    "text_zh": ""
+    "text_zh": "當人們已經為了科技的發展而受過苦，我們就應該使用該項科技。"
   },
   {
     "id": "A11-L3-Q1",
@@ -2165,7 +2165,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "We should put effort into getting a person on Mars in the near future",
-    "text_zh": ""
+    "text_zh": "我們應該致力於在不久的將來讓人類登陸火星。"
   },
   {
     "id": "A11-L3-Q2",
@@ -2173,7 +2173,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Transhumanism isn't as radical as many people think it is.",
-    "text_zh": ""
+    "text_zh": "超人類主義並不像許多人認為的那麼激進。"
   },
   {
     "id": "A11-L3-Q3",
@@ -2181,7 +2181,7 @@
     "level": 3,
     "pole": "first",
     "text_en": "Technological progress is usually good.",
-    "text_zh": ""
+    "text_zh": "科技進步通常是好的。"
   },
   {
     "id": "A11-L4-Q1",
@@ -2189,7 +2189,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "The quality of life is generally going up decade by decade.",
-    "text_zh": ""
+    "text_zh": "生活品質整體上正在逐十年提升。"
   },
   {
     "id": "A11-L4-Q2",
@@ -2197,7 +2197,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "Developing alternative technology is a better means of helping the environment than environmental regulations.",
-    "text_zh": ""
+    "text_zh": "相較於環境法規，發展替代技術是幫助環境的更好方式。"
   },
   {
     "id": "A11-L4-Q3",
@@ -2205,7 +2205,7 @@
     "level": 4,
     "pole": "first",
     "text_en": "A better world will come from automation, science, and technology.",
-    "text_zh": ""
+    "text_zh": "更美好的世界將來自自動化、科學與科技。"
   },
   {
     "id": "A11-L5-Q1",
@@ -2213,7 +2213,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Technology must be slowed down to protect the environment.",
-    "text_zh": ""
+    "text_zh": "為了保護環境，必須減緩科技的發展。"
   },
   {
     "id": "A11-L5-Q2",
@@ -2221,7 +2221,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Regulations on industries must be implemented to protect the environment.",
-    "text_zh": ""
+    "text_zh": "為了保護環境，必須對產業實施管制。"
   },
   {
     "id": "A11-L5-Q3",
@@ -2229,7 +2229,7 @@
     "level": 5,
     "pole": "second",
     "text_en": "Technology is making people lose jobs, which is ultimately harmful for humanity.",
-    "text_zh": ""
+    "text_zh": "科技使人們失去工作，最終對人類有害。"
   },
   {
     "id": "A11-L6-Q1",
@@ -2237,7 +2237,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "I oppose human genetic modification.",
-    "text_zh": ""
+    "text_zh": "我反對人類基因改造。"
   },
   {
     "id": "A11-L6-Q2",
@@ -2245,7 +2245,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "Genetic modification should be used rarely, if ever.",
-    "text_zh": ""
+    "text_zh": "基因改造即使要使用，也應該很少使用。"
   },
   {
     "id": "A11-L6-Q3",
@@ -2253,7 +2253,7 @@
     "level": 6,
     "pole": "second",
     "text_en": "The threat of machines taking over humanity is very real.",
-    "text_zh": ""
+    "text_zh": "機器接管人類的威脅非常真實。"
   },
   {
     "id": "A11-L7-Q1",
@@ -2261,7 +2261,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Society was better many years ago than it is now.",
-    "text_zh": ""
+    "text_zh": "許多年前的社會比現在更好。"
   },
   {
     "id": "A11-L7-Q2",
@@ -2269,7 +2269,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "Modern technology and the modern lifestyle made life meaningless and dull.",
-    "text_zh": ""
+    "text_zh": "現代科技與現代生活方式使生活變得毫無意義且乏味。"
   },
   {
     "id": "A11-L7-Q3",
@@ -2277,7 +2277,7 @@
     "level": 7,
     "pole": "second",
     "text_en": "If we continue human technological progress, humanity is doomed.",
-    "text_zh": ""
+    "text_zh": "如果我們繼續推進人類的科技進步，人類將注定滅亡。"
   },
   {
     "id": "A11-L8-Q1",
@@ -2285,7 +2285,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "Traditional medicines are often more effective than modern medicines.",
-    "text_zh": ""
+    "text_zh": "傳統藥物往往比現代藥物更有效。"
   },
   {
     "id": "A11-L8-Q2",
@@ -2293,7 +2293,7 @@
     "level": 8,
     "pole": "second",
     "text_en": "The Internet should be banned.",
-    "text_zh": ""
+    "text_zh": "網際網路應該被禁止。"
   },
   {
     "id": "A11-L8-Q3",
@@ -2301,6 +2301,6 @@
     "level": 8,
     "pole": "second",
     "text_en": "We must return to a primitive lifestyle.",
-    "text_zh": ""
+    "text_zh": "我們必須回歸原始的生活方式。"
   }
 ]

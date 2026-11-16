@@ -6,20 +6,20 @@
     "first": {
       "id": "federal",
       "name_en": "Federal",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "聯邦",
+      "adj_en": "Federalist",
+      "noun_en": "Federalist",
+      "adj_zh": "聯邦",
+      "noun_zh": "聯邦派"
     },
     "second": {
       "id": "unitary",
       "name_en": "Unitary",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "單一制",
+      "adj_en": "Unitary",
+      "noun_en": "Unitarist",
+      "adj_zh": "單一制",
+      "noun_zh": "單一制派"
     },
     "labels_en": [
       "Confederal",
@@ -30,7 +30,16 @@
       "Centralized",
       "Extremely Centralized"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "邦聯制",
+      "聯盟式",
+      "聯邦制",
+      "中間派",
+      "單一制",
+      "中央集權",
+      "極端中央集權"
+    ],
+    "title_zh": "聯邦 vs 單一"
   },
   {
     "id": "democratic-autocratic",
@@ -39,20 +48,20 @@
     "first": {
       "id": "democratic",
       "name_en": "Democratic",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "民主",
+      "adj_en": "Democratic",
+      "noun_en": "Democrat",
+      "adj_zh": "民主",
+      "noun_zh": "民主派"
     },
     "second": {
       "id": "autocratic",
       "name_en": "Autocratic",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "專制",
+      "adj_en": "Autocratic",
+      "noun_en": "Autocrat",
+      "adj_zh": "專制",
+      "noun_zh": "專制派"
     },
     "labels_en": [
       "Liquid Democracy",
@@ -63,7 +72,16 @@
       "Oligarchy",
       "Autocracy"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "流動民主",
+      "直接民主",
+      "代議民主",
+      "中間派",
+      "兩院制",
+      "寡頭政治",
+      "專制獨裁"
+    ],
+    "title_zh": "民主 vs 專制"
   },
   {
     "id": "internationalist-nationalist",
@@ -72,20 +90,20 @@
     "first": {
       "id": "internationalist",
       "name_en": "Internationalist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "國際主義",
+      "adj_en": "Internationalist",
+      "noun_en": "Internationalist",
+      "adj_zh": "國際主義",
+      "noun_zh": "國際主義者"
     },
     "second": {
       "id": "nationalist",
       "name_en": "Nationalist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "民族主義",
+      "adj_en": "Nationalist",
+      "noun_en": "Nationalist",
+      "adj_zh": "民族主義",
+      "noun_zh": "民族主義者"
     },
     "labels_en": [
       "World Government",
@@ -96,7 +114,16 @@
       "Nationalist",
       "Ultranationalist"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "世界政府",
+      "國際主義",
+      "合作",
+      "不干涉主義",
+      "反干預主義",
+      "民族主義",
+      "極端民族主義"
+    ],
+    "title_zh": "國際主義 vs 民族主義"
   },
   {
     "id": "militarist-pacifist",
@@ -105,20 +132,20 @@
     "first": {
       "id": "militarist",
       "name_en": "Militarist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "軍國主義",
+      "adj_en": "Militarist",
+      "noun_en": "Militarist",
+      "adj_zh": "軍國主義",
+      "noun_zh": "軍國主義者"
     },
     "second": {
       "id": "pacifist",
       "name_en": "Pacifist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "和平主義",
+      "adj_en": "Pacifist",
+      "noun_en": "Pacifist",
+      "adj_zh": "和平主義",
+      "noun_zh": "和平主義者"
     },
     "labels_en": [
       "Expansionist",
@@ -129,7 +156,16 @@
       "Pacifist",
       "Anti-War"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "擴張主義",
+      "軍國主義",
+      "重視軍事",
+      "中立",
+      "非侵略",
+      "和平主義",
+      "反戰"
+    ],
+    "title_zh": "軍國主義 vs 和平主義"
   },
   {
     "id": "security-freedom",
@@ -138,20 +174,20 @@
     "first": {
       "id": "security",
       "name_en": "Security",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "安全",
+      "adj_en": "Securitarian",
+      "noun_en": "Securitarian",
+      "adj_zh": "安全至上",
+      "noun_zh": "安全派"
     },
     "second": {
       "id": "freedom",
       "name_en": "Freedom",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "自由",
+      "adj_en": "Libertarian",
+      "noun_en": "Libertarian",
+      "adj_zh": "自由",
+      "noun_zh": "自由派"
     },
     "labels_en": [
       "Totalitarian",
@@ -162,7 +198,16 @@
       "Libertarian",
       "Anarchist"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "極權主義",
+      "威權主義",
+      "國家主義",
+      "中間派",
+      "自由主義",
+      "自由意志主義",
+      "無政府主義"
+    ],
+    "title_zh": "安全 vs 自由"
   },
   {
     "id": "equality-markets",
@@ -171,20 +216,20 @@
     "first": {
       "id": "equality",
       "name_en": "Equality",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "平等",
+      "adj_en": "Egalitarian",
+      "noun_en": "Egalitarian",
+      "adj_zh": "平等",
+      "noun_zh": "平等派"
     },
     "second": {
       "id": "markets",
       "name_en": "Markets",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "市場",
+      "adj_en": "Free-Market",
+      "noun_en": "Capitalist",
+      "adj_zh": "市場",
+      "noun_zh": "市場派"
     },
     "labels_en": [
       "Communist",
@@ -195,7 +240,16 @@
       "Capitalist",
       "Extreme Capitalist"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "共產主義",
+      "社會主義",
+      "社會民主主義",
+      "混合經濟",
+      "經濟自由主義",
+      "資本主義",
+      "極端資本主義"
+    ],
+    "title_zh": "平等 vs 市場"
   },
   {
     "id": "secular-religious",
@@ -204,20 +258,20 @@
     "first": {
       "id": "secular",
       "name_en": "Secular",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "世俗",
+      "adj_en": "Secular",
+      "noun_en": "Secularist",
+      "adj_zh": "世俗",
+      "noun_zh": "世俗派"
     },
     "second": {
       "id": "religious",
       "name_en": "Religious",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "宗教",
+      "adj_en": "Religious",
+      "noun_en": "Theist",
+      "adj_zh": "宗教",
+      "noun_zh": "宗教派"
     },
     "labels_en": [
       "Antitheist",
@@ -228,7 +282,16 @@
       "Religious",
       "Ultra-religious"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "反有神論",
+      "無神論",
+      "不可知論",
+      "溫和派",
+      "靈性取向",
+      "宗教信仰",
+      "極度虔信"
+    ],
+    "title_zh": "世俗 vs 宗教"
   },
   {
     "id": "progressive-traditional",
@@ -237,20 +300,20 @@
     "first": {
       "id": "progressive",
       "name_en": "Progressive",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "進步",
+      "adj_en": "Progressive",
+      "noun_en": "Progressive",
+      "adj_zh": "進步",
+      "noun_zh": "進步派"
     },
     "second": {
       "id": "traditional",
       "name_en": "Traditional",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "傳統",
+      "adj_en": "Traditionalist",
+      "noun_en": "Traditionalist",
+      "adj_zh": "傳統",
+      "noun_zh": "傳統派"
     },
     "labels_en": [
       "Revolutionary",
@@ -261,7 +324,16 @@
       "Traditionalist",
       "Reactionary"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "革命派",
+      "文化左派",
+      "進步派",
+      "溫和派",
+      "保守派",
+      "傳統主義者",
+      "反動派"
+    ],
+    "title_zh": "進步 vs 傳統"
   },
   {
     "id": "assimilationist-multiculturalist",
@@ -270,20 +342,20 @@
     "first": {
       "id": "assimilationist",
       "name_en": "Assimilationist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "同化主義",
+      "adj_en": "Assimilationist",
+      "noun_en": "Assimilationist",
+      "adj_zh": "同化",
+      "noun_zh": "同化派"
     },
     "second": {
       "id": "multiculturalist",
       "name_en": "Multiculturalist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "多元文化主義",
+      "adj_en": "Multiculturalist",
+      "noun_en": "Multiculturalist",
+      "adj_zh": "多元文化",
+      "noun_zh": "多元文化派"
     },
     "labels_en": [
       "Ethnonationalist",
@@ -294,7 +366,16 @@
       "Multiculturalist",
       "Racially Colorblind"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "族裔民族主義者",
+      "單一文化主義者",
+      "同化主義者",
+      "中間派",
+      "多元並存主義者",
+      "多元文化主義者",
+      "種族色盲主義者"
+    ],
+    "title_zh": "同化主義 vs 多元文化主義"
   },
   {
     "id": "planned-laissezfaire",
@@ -303,20 +384,20 @@
     "first": {
       "id": "planned-economy",
       "name_en": "Planned Economy",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "計畫經濟",
+      "adj_en": "Dirigiste",
+      "noun_en": "Planner",
+      "adj_zh": "計畫經濟",
+      "noun_zh": "計畫派"
     },
     "second": {
       "id": "laissez-faire",
       "name_en": "Laissez-faire",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "自由放任",
+      "adj_en": "Laissez-faire",
+      "noun_en": "Free-Marketeer",
+      "adj_zh": "自由放任",
+      "noun_zh": "放任派"
     },
     "labels_en": [
       "Planned Economy",
@@ -327,7 +408,16 @@
       "Free Market",
       "Laissez-Faire"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "計畫經濟",
+      "干預主義",
+      "管制主義",
+      "平衡",
+      "市場主義",
+      "自由市場",
+      "自由放任"
+    ],
+    "title_zh": "計畫經濟 vs 自由放任"
   },
   {
     "id": "protectionist-globalist",
@@ -336,20 +426,20 @@
     "first": {
       "id": "protectionist",
       "name_en": "Protectionist",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "保護主義",
+      "adj_en": "Protectionist",
+      "noun_en": "Protectionist",
+      "adj_zh": "保護主義",
+      "noun_zh": "保護主義者"
     },
     "second": {
       "id": "globalist",
       "name_en": "Globalist (Free Trade)",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "全球主義（自由貿易）",
+      "adj_en": "Globalist",
+      "noun_en": "Globalist",
+      "adj_zh": "全球化",
+      "noun_zh": "全球主義者"
     },
     "labels_en": [
       "Isolationist",
@@ -360,7 +450,16 @@
       "Globalist",
       "Global Economy"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "孤立主義",
+      "保護主義",
+      "有限貿易",
+      "溫和",
+      "自由貿易",
+      "全球主義",
+      "全球經濟"
+    ],
+    "title_zh": "保護主義 vs 全球主義"
   },
   {
     "id": "acceleration-bioconservative",
@@ -369,20 +468,20 @@
     "first": {
       "id": "technological-acceleration",
       "name_en": "Technological Acceleration",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "科技加速",
+      "adj_en": "Accelerationist",
+      "noun_en": "Accelerationist",
+      "adj_zh": "科技加速",
+      "noun_zh": "加速主義者"
     },
     "second": {
       "id": "bioconservative",
       "name_en": "Bioconservative",
-      "name_zh": "",
-      "adj_en": "",
-      "noun_en": "",
-      "adj_zh": "",
-      "noun_zh": ""
+      "name_zh": "生物保守",
+      "adj_en": "Bioconservative",
+      "noun_en": "Bioconservative",
+      "adj_zh": "生物保守",
+      "noun_zh": "生物保守派"
     },
     "labels_en": [
       "Transhumanist",
@@ -393,6 +492,15 @@
       "Decelerationist",
       "Primitive"
     ],
-    "labels_zh": []
+    "labels_zh": [
+      "超人類主義者",
+      "加速主義者",
+      "科技派",
+      "中立",
+      "生物保守派",
+      "減速主義者",
+      "原始主義者"
+    ],
+    "title_zh": "科技加速 vs 生物保守"
   }
 ]
