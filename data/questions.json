@@ -1,0 +1,2306 @@
+[
+  {
+    "id": "A00-L1-Q1",
+    "axis": "federal-unitary",
+    "level": 1,
+    "pole": "first",
+    "text_en": "There is no need for a national government.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L1-Q2",
+    "axis": "federal-unitary",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Subdivisions of nations should have their own militaries.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L1-Q3",
+    "axis": "federal-unitary",
+    "level": 1,
+    "pole": "first",
+    "text_en": "State laws should have precedence over national laws.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L2-Q1",
+    "axis": "federal-unitary",
+    "level": 2,
+    "pole": "first",
+    "text_en": "State and local laws should have precedence over national laws",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L2-Q2",
+    "axis": "federal-unitary",
+    "level": 2,
+    "pole": "first",
+    "text_en": "The national government can't understand what the people need.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L2-Q3",
+    "axis": "federal-unitary",
+    "level": 2,
+    "pole": "first",
+    "text_en": "People should hold more loyalty to their local state than their country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L3-Q1",
+    "axis": "federal-unitary",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Local governments should have more power than they currently do.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L3-Q2",
+    "axis": "federal-unitary",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Laws should vary from area to area and culture to culture within a country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L3-Q3",
+    "axis": "federal-unitary",
+    "level": 3,
+    "pole": "first",
+    "text_en": "It's a good idea to test a policy in one state rather than implementing it nationwide right away.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L4-Q1",
+    "axis": "federal-unitary",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Local governments can understand their citizens better than the national government could.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L4-Q2",
+    "axis": "federal-unitary",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Local governments address issues that the national government would never touch without them.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L4-Q3",
+    "axis": "federal-unitary",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Local governments give each region good representation of their views.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L5-Q1",
+    "axis": "federal-unitary",
+    "level": 5,
+    "pole": "second",
+    "text_en": "A country cannot function without a national government",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L5-Q2",
+    "axis": "federal-unitary",
+    "level": 5,
+    "pole": "second",
+    "text_en": "The national government protects minorities better than some local governments do.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L5-Q3",
+    "axis": "federal-unitary",
+    "level": 5,
+    "pole": "second",
+    "text_en": "There are many issues that it does not make sense to address at a local level.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L6-Q1",
+    "axis": "federal-unitary",
+    "level": 6,
+    "pole": "second",
+    "text_en": "The national government needs more power.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L6-Q2",
+    "axis": "federal-unitary",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Subdivisions should not be able to exempt from national laws.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L6-Q3",
+    "axis": "federal-unitary",
+    "level": 6,
+    "pole": "second",
+    "text_en": "People should think of themselves as citizens of their nation rather than their state.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L7-Q1",
+    "axis": "federal-unitary",
+    "level": 7,
+    "pole": "second",
+    "text_en": "A group of states without a strong national government is merely an alliance, not a nation.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L7-Q2",
+    "axis": "federal-unitary",
+    "level": 7,
+    "pole": "second",
+    "text_en": "A national government must be strong to adequately protect all its citizens.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L7-Q3",
+    "axis": "federal-unitary",
+    "level": 7,
+    "pole": "second",
+    "text_en": "States cannot function without a strong national government.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L8-Q1",
+    "axis": "federal-unitary",
+    "level": 8,
+    "pole": "second",
+    "text_en": "There is no need for local or state governments.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L8-Q2",
+    "axis": "federal-unitary",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Laws should be completely consistent within all regions of a nation.",
+    "text_zh": ""
+  },
+  {
+    "id": "A00-L8-Q3",
+    "axis": "federal-unitary",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Strong states weaken a nation",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L1-Q1",
+    "axis": "democratic-autocratic",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Direct democracy is the best form of government.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L1-Q2",
+    "axis": "democratic-autocratic",
+    "level": 1,
+    "pole": "first",
+    "text_en": "People should vote issue by issue themselves.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L1-Q3",
+    "axis": "democratic-autocratic",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Representatives rarely represent the nation well.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L2-Q1",
+    "axis": "democratic-autocratic",
+    "level": 2,
+    "pole": "first",
+    "text_en": "It is important that the government follows the majority opinion, even if it is wrong.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L2-Q2",
+    "axis": "democratic-autocratic",
+    "level": 2,
+    "pole": "first",
+    "text_en": "The more people asked, the better chance there is of reaching the best decision.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L2-Q3",
+    "axis": "democratic-autocratic",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Nobody but me can adequately represent my views.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L3-Q1",
+    "axis": "democratic-autocratic",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Elections are an effective way of showing government approval.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L3-Q2",
+    "axis": "democratic-autocratic",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Democracy is the worst form of government, except for all the others we've tried.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L3-Q3",
+    "axis": "democratic-autocratic",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Each person should have one vote, each equal to every other.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L4-Q1",
+    "axis": "democratic-autocratic",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Democracy is more than a decision-making process.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L4-Q2",
+    "axis": "democratic-autocratic",
+    "level": 4,
+    "pole": "first",
+    "text_en": "People should have the power to choose their leaders",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L4-Q3",
+    "axis": "democratic-autocratic",
+    "level": 4,
+    "pole": "first",
+    "text_en": "The government must be by the people for the people.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L5-Q1",
+    "axis": "democratic-autocratic",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Democracy is inefficient and slow.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L5-Q2",
+    "axis": "democratic-autocratic",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Popular opinion is not always right",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L5-Q3",
+    "axis": "democratic-autocratic",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Autocracy is the best way to rule a nation.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L6-Q1",
+    "axis": "democratic-autocratic",
+    "level": 6,
+    "pole": "second",
+    "text_en": "A hierarchical state is best.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L6-Q2",
+    "axis": "democratic-autocratic",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Society could not function without leaders and followers.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L6-Q3",
+    "axis": "democratic-autocratic",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Democracy makes it too easy for a majority to further itself at the expense of minorities.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L7-Q1",
+    "axis": "democratic-autocratic",
+    "level": 7,
+    "pole": "second",
+    "text_en": "The general populace makes poor decisions.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L7-Q2",
+    "axis": "democratic-autocratic",
+    "level": 7,
+    "pole": "second",
+    "text_en": "An absolute monarchy is more preferable than a liberal democracy.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L7-Q3",
+    "axis": "democratic-autocratic",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Public opinion swings too much with emotional events to be useful for policy making.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L8-Q1",
+    "axis": "democratic-autocratic",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Elections are a waste of resources.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L8-Q2",
+    "axis": "democratic-autocratic",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Catering to popular opinion is detrimental to a nation.",
+    "text_zh": ""
+  },
+  {
+    "id": "A01-L8-Q3",
+    "axis": "democratic-autocratic",
+    "level": 8,
+    "pole": "second",
+    "text_en": "A nation must obey its leadership without question.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L1-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "A united world government would be beneficial to mankind.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L1-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "We are first and foremost citizens of Earth.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L1-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "In order for humanity to survive, we must get past having separate nations.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L2-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "The United Nations needs more power.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L2-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "The United Nations should have a military to enforce its resolutions.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L2-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Having independent nations with the risk of global conflict creates a large threat to humanity as a whole.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L3-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "I support regional unions, such as the European Union.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L3-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Governments should be accountable to the international community.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L3-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Nations fighting among each other gets in the way of progress.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L4-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "International trade is generally beneficial.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L4-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Alliances are important for protecting a nation",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L4-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Nations should cooperate whenever it benefits them both",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L5-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "It is important to maintain our national sovereignty.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L5-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "An ideal nation must mostly stay neutral during foreign affairs.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L5-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Intervention has caused more harm than good.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L6-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "International aid is a waste of money most of the time.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L6-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Alliances can pose a threat to a nation's sovereignty.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L6-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "National cultures are important to protect.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L7-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "My nation should stay out of international affairs.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L7-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "The United Nations should be abolished.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L7-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Nobody in other countries has our best interests in mind.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L8-Q1",
+    "axis": "internationalist-nationalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "My nation is better than all other nations.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L8-Q2",
+    "axis": "internationalist-nationalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "There should not be international law.",
+    "text_zh": ""
+  },
+  {
+    "id": "A02-L8-Q3",
+    "axis": "internationalist-nationalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Any deals other countries want must be bad for us.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L1-Q1",
+    "axis": "militarist-pacifist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "War is needed to make an economy thrive.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L1-Q2",
+    "axis": "militarist-pacifist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "A constant state of war benefits a country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L1-Q3",
+    "axis": "militarist-pacifist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Only those who serve in the military should be allowed to have influence on who is in power.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L2-Q1",
+    "axis": "militarist-pacifist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "There should be compulsory military service.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L2-Q2",
+    "axis": "militarist-pacifist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Countries that do not serve our interests should be toppled.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L2-Q3",
+    "axis": "militarist-pacifist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Only those who served in the military should be able to gain power in government.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L3-Q1",
+    "axis": "militarist-pacifist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Military action by our nation is often necessary to protect it.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L3-Q2",
+    "axis": "militarist-pacifist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Countries that violate human rights should be toppled",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L3-Q3",
+    "axis": "militarist-pacifist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "A military option should always be considered.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L4-Q1",
+    "axis": "militarist-pacifist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "A government must maintain a strong military to defend itself.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L4-Q2",
+    "axis": "militarist-pacifist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "A nation usually needs a military in order to survive.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L4-Q3",
+    "axis": "militarist-pacifist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "We should respect those who have served in our military.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L5-Q1",
+    "axis": "militarist-pacifist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "It is more important to retain peaceful relations than to further our strength.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L5-Q2",
+    "axis": "militarist-pacifist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Diplomatic options should always be tried before war is even considered.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L5-Q3",
+    "axis": "militarist-pacifist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Peace is preferable to war whenever possible.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L6-Q1",
+    "axis": "militarist-pacifist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Humanity has passed the point in which war is needed for resources.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L6-Q2",
+    "axis": "militarist-pacifist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Lasting peace leads to prosperity.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L6-Q3",
+    "axis": "militarist-pacifist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "My country spends too much money on the military.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L7-Q1",
+    "axis": "militarist-pacifist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Military spending is a waste of money.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L7-Q2",
+    "axis": "militarist-pacifist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "We have no right to militarily intervene in other nations.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L7-Q3",
+    "axis": "militarist-pacifist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Countries fall apart with constant war.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L8-Q1",
+    "axis": "militarist-pacifist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "War is never justified.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L8-Q2",
+    "axis": "militarist-pacifist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "In the modern era, militaries aren't really necessary.",
+    "text_zh": ""
+  },
+  {
+    "id": "A03-L8-Q3",
+    "axis": "militarist-pacifist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Nations should not maintain a military.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L1-Q1",
+    "axis": "security-freedom",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Those who disagree with the government should be removed from the country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L1-Q2",
+    "axis": "security-freedom",
+    "level": 1,
+    "pole": "first",
+    "text_en": "The government should monitor all citizens to combat terrorism.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L1-Q3",
+    "axis": "security-freedom",
+    "level": 1,
+    "pole": "first",
+    "text_en": "People should not have protections that could hinder discovering their criminal activity.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L2-Q1",
+    "axis": "security-freedom",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Police need more power and protection.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L2-Q2",
+    "axis": "security-freedom",
+    "level": 2,
+    "pole": "first",
+    "text_en": "It is very important to maintain law and order.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L2-Q3",
+    "axis": "security-freedom",
+    "level": 2,
+    "pole": "first",
+    "text_en": "A country must be sure to take all measures to enforce its laws.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L3-Q1",
+    "axis": "security-freedom",
+    "level": 3,
+    "pole": "first",
+    "text_en": "If you have nothing to hide, then you have nothing to fear.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L3-Q2",
+    "axis": "security-freedom",
+    "level": 3,
+    "pole": "first",
+    "text_en": "The sacrifice of some civil liberties is necessary to protect us from acts of terrorism.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L3-Q3",
+    "axis": "security-freedom",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Government surveillance is necessary in the modern world.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L4-Q1",
+    "axis": "security-freedom",
+    "level": 4,
+    "pole": "first",
+    "text_en": "The government should have access to the emails of suspected terrorists.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L4-Q2",
+    "axis": "security-freedom",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Some freedom must be given up in order to keep people safe.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L4-Q3",
+    "axis": "security-freedom",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Any variant of anarchism will never work.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L5-Q1",
+    "axis": "security-freedom",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Marijuana should be legal.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L5-Q2",
+    "axis": "security-freedom",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Those who would give up essential Liberty to purchase a temporary Safety deserve neither.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L5-Q3",
+    "axis": "security-freedom",
+    "level": 5,
+    "pole": "second",
+    "text_en": "The government has no business looking into most people's personal lives.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L6-Q1",
+    "axis": "security-freedom",
+    "level": 6,
+    "pole": "second",
+    "text_en": "The right to bear arms should not be infringed.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L6-Q2",
+    "axis": "security-freedom",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Every person has unalienable rights, including the right to life, liberty and the pursuit of happiness.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L6-Q3",
+    "axis": "security-freedom",
+    "level": 6,
+    "pole": "second",
+    "text_en": "No authority should be left unquestioned.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L7-Q1",
+    "axis": "security-freedom",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Victimless crimes (such as drug use) should not be crimes at all.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L7-Q2",
+    "axis": "security-freedom",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Taxation is theft.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L7-Q3",
+    "axis": "security-freedom",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Whistleblowers are good for society.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L8-Q1",
+    "axis": "security-freedom",
+    "level": 8,
+    "pole": "second",
+    "text_en": "The very existence of the state is a threat to our liberty.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L8-Q2",
+    "axis": "security-freedom",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Taxation should be voluntary or abolished.",
+    "text_zh": ""
+  },
+  {
+    "id": "A04-L8-Q3",
+    "axis": "security-freedom",
+    "level": 8,
+    "pole": "second",
+    "text_en": "People's freedom should have no limits.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L1-Q1",
+    "axis": "equality-markets",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Communism, if implemented correctly, would be a good form of economics.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L1-Q2",
+    "axis": "equality-markets",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Absolute equality is good.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L1-Q3",
+    "axis": "equality-markets",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Equality of outcome is important.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L2-Q1",
+    "axis": "equality-markets",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Private property should be abolished.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L2-Q2",
+    "axis": "equality-markets",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Classes should not exist.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L2-Q3",
+    "axis": "equality-markets",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Most, if not all corporations are inherently evil.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L3-Q1",
+    "axis": "equality-markets",
+    "level": 3,
+    "pole": "first",
+    "text_en": "I support single-payer, universal healthcare.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L3-Q2",
+    "axis": "equality-markets",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Class war is a real and important issue.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L3-Q3",
+    "axis": "equality-markets",
+    "level": 3,
+    "pole": "first",
+    "text_en": "I prefer Collectivism over Individualism.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L4-Q1",
+    "axis": "equality-markets",
+    "level": 4,
+    "pole": "first",
+    "text_en": "The wealthy have far more than they need.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L4-Q2",
+    "axis": "equality-markets",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Services like roads should be publicly owned.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L4-Q3",
+    "axis": "equality-markets",
+    "level": 4,
+    "pole": "first",
+    "text_en": "People born to wealthy families have unfair success even when they aren't skilled and don't work hard.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L5-Q1",
+    "axis": "equality-markets",
+    "level": 5,
+    "pole": "second",
+    "text_en": "People should have the right to leave their wealth to their descendents.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L5-Q2",
+    "axis": "equality-markets",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Privitization is needed for economic success.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L5-Q3",
+    "axis": "equality-markets",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Economies without any capitalism will collapse.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L6-Q1",
+    "axis": "equality-markets",
+    "level": 6,
+    "pole": "second",
+    "text_en": "It is better to maintain a balanced budget than to ensure welfare for all citizens.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L6-Q2",
+    "axis": "equality-markets",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Capitalism is better than any existing alternative.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L6-Q3",
+    "axis": "equality-markets",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Economic classes are inevitable.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L7-Q1",
+    "axis": "equality-markets",
+    "level": 7,
+    "pole": "second",
+    "text_en": "The freer the market, the freer the people.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L7-Q2",
+    "axis": "equality-markets",
+    "level": 7,
+    "pole": "second",
+    "text_en": "People should have to work for anything they get.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L7-Q3",
+    "axis": "equality-markets",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Socialism will never has and will never work.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L8-Q1",
+    "axis": "equality-markets",
+    "level": 8,
+    "pole": "second",
+    "text_en": "The government should not regulate the economy at all.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L8-Q2",
+    "axis": "equality-markets",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Most economic problems we see today are not caused by Capitalism, but by government.",
+    "text_zh": ""
+  },
+  {
+    "id": "A05-L8-Q3",
+    "axis": "equality-markets",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Private charities are a better means of helping the poor than public welfare is.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L1-Q1",
+    "axis": "secular-religious",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Religion should be banned.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L1-Q2",
+    "axis": "secular-religious",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Faith is complete nonsense.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L1-Q3",
+    "axis": "secular-religious",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Religion must decline for society to progress.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L2-Q1",
+    "axis": "secular-religious",
+    "level": 2,
+    "pole": "first",
+    "text_en": "I consider myself an Atheist.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L2-Q2",
+    "axis": "secular-religious",
+    "level": 2,
+    "pole": "first",
+    "text_en": "There is no higher power.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L2-Q3",
+    "axis": "secular-religious",
+    "level": 2,
+    "pole": "first",
+    "text_en": "The government should not fund any religious organizations in any way.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L3-Q1",
+    "axis": "secular-religious",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Creationism is a myth.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L3-Q2",
+    "axis": "secular-religious",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Huamnity has progressed beyond the need for religion.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L3-Q3",
+    "axis": "secular-religious",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Most organized religions contradict themselves.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L4-Q1",
+    "axis": "secular-religious",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Religion in government should be eliminated.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L4-Q2",
+    "axis": "secular-religious",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Laws should not be based on religion.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L4-Q3",
+    "axis": "secular-religious",
+    "level": 4,
+    "pole": "first",
+    "text_en": "There must be a separation between church and state.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L5-Q1",
+    "axis": "secular-religious",
+    "level": 5,
+    "pole": "second",
+    "text_en": "I believe there is something after death.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L5-Q2",
+    "axis": "secular-religious",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Religion is beneficial for society.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L5-Q3",
+    "axis": "secular-religious",
+    "level": 5,
+    "pole": "second",
+    "text_en": "People must be allowed to follow a religion.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L6-Q1",
+    "axis": "secular-religious",
+    "level": 6,
+    "pole": "second",
+    "text_en": "I believe in a higher power.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L6-Q2",
+    "axis": "secular-religious",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Religious organizations often provide better assistance to the poor than the government does.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L6-Q3",
+    "axis": "secular-religious",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Children should be educated in religious values.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L7-Q1",
+    "axis": "secular-religious",
+    "level": 7,
+    "pole": "second",
+    "text_en": "My religion is true.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L7-Q2",
+    "axis": "secular-religious",
+    "level": 7,
+    "pole": "second",
+    "text_en": "My religious values should be spread as much as possible.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L7-Q3",
+    "axis": "secular-religious",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Religion is important for society.",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L8-Q1",
+    "axis": "secular-religious",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Theocracy is a good system of government",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L8-Q2",
+    "axis": "secular-religious",
+    "level": 8,
+    "pole": "second",
+    "text_en": "The government should support and only recognize one religion",
+    "text_zh": ""
+  },
+  {
+    "id": "A06-L8-Q3",
+    "axis": "secular-religious",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Most bad things happening in the world are caused by us turning away from religion",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L1-Q1",
+    "axis": "progressive-traditional",
+    "level": 1,
+    "pole": "first",
+    "text_en": "We should pay reperations for the descendants of slaves.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L1-Q2",
+    "axis": "progressive-traditional",
+    "level": 1,
+    "pole": "first",
+    "text_en": "White guilt is sometimes justified.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L1-Q3",
+    "axis": "progressive-traditional",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Tradition just hinders the progress of humanity.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L2-Q1",
+    "axis": "progressive-traditional",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Gender is a social construct.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L2-Q2",
+    "axis": "progressive-traditional",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Traditions are of no value on their own.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L2-Q3",
+    "axis": "progressive-traditional",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Affirmative action is mostly beneficial.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L3-Q1",
+    "axis": "progressive-traditional",
+    "level": 3,
+    "pole": "first",
+    "text_en": "I support the LGBTQ+ movement.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L3-Q2",
+    "axis": "progressive-traditional",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Abortion should be legal.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L3-Q3",
+    "axis": "progressive-traditional",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Statues of certain people should be taken down.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L4-Q1",
+    "axis": "progressive-traditional",
+    "level": 4,
+    "pole": "first",
+    "text_en": "I support the BLM movement.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L4-Q2",
+    "axis": "progressive-traditional",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Environmental regulations are essential.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L4-Q3",
+    "axis": "progressive-traditional",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Same sex marriage should be legalized.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L5-Q1",
+    "axis": "progressive-traditional",
+    "level": 5,
+    "pole": "second",
+    "text_en": "To chase progress at all costs is dangerous.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L5-Q2",
+    "axis": "progressive-traditional",
+    "level": 5,
+    "pole": "second",
+    "text_en": "We must preserve our culture.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L5-Q3",
+    "axis": "progressive-traditional",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Traditions are important.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L6-Q1",
+    "axis": "progressive-traditional",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Sex before marriage is immoral.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L6-Q2",
+    "axis": "progressive-traditional",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Homosexuality is immoral.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L6-Q3",
+    "axis": "progressive-traditional",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Maintaining family values is essential.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L7-Q1",
+    "axis": "progressive-traditional",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Society has become too progressive.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L7-Q2",
+    "axis": "progressive-traditional",
+    "level": 7,
+    "pole": "second",
+    "text_en": "It is important that we maintain the traditions of our past.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L7-Q3",
+    "axis": "progressive-traditional",
+    "level": 7,
+    "pole": "second",
+    "text_en": "The elders in society know the best path for it.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L8-Q1",
+    "axis": "progressive-traditional",
+    "level": 8,
+    "pole": "second",
+    "text_en": "The Enlightenment should never have happened.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L8-Q2",
+    "axis": "progressive-traditional",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Homosexuality should be criminalized.",
+    "text_zh": ""
+  },
+  {
+    "id": "A07-L8-Q3",
+    "axis": "progressive-traditional",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Sharia law isn't as bad as people think it is.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L1-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Foreigners should never enter the country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L1-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "We should not allow any refugees.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L1-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Only our national language(s) should be spoken in our country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L2-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Only extremely talented immigrants, if that, should be permitted to enter the country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L2-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "If we accept migrants at all, it is important that they assimilate into our culture.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L2-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Immigrants can never really adapt to our way of life.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L3-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "In general, immigrants are bad for the country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L3-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "A nation's culture is important to protect.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L3-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Illegal immigrants do not provide a benefit to the hosting country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L4-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Illegal immigrants should be deported in most or all cases.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L4-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Immigrants should be expected to learn the language of the country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L4-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Border protection is important.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L5-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "We should be taking in more refugees.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L5-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Immigrants are a net positive.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L5-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "I enjoy some foreign cultures.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L6-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "No cultures are superior to others.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L6-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "We should be more accepting to other cultures.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L6-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "All societies are a blend of cultures.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L7-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Everybody should speak at least two languages.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L7-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "All humans share a common identity.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L7-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Our culture would be better with other cultures mixed in more.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L8-Q1",
+    "axis": "assimilationist-multiculturalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Governments should be as concerned about foreign citizens as they are about those within their borders.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L8-Q2",
+    "axis": "assimilationist-multiculturalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Anybody who wants to enter the country should be able to.",
+    "text_zh": ""
+  },
+  {
+    "id": "A08-L8-Q3",
+    "axis": "assimilationist-multiculturalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "The benefits of open borders would outweigh the costs.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L1-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 1,
+    "pole": "first",
+    "text_en": "I prefer a planned economy over a free and open economy.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L1-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Most, if not all businesses must be owned by the government.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L1-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 1,
+    "pole": "first",
+    "text_en": "The state knows best what an economy needs.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L2-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Economic planning ensures maximum prosperity and growth.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L2-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 2,
+    "pole": "first",
+    "text_en": "High levels of economic regulation is good for my nation.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L2-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Taxation for the rich should be very high.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L3-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 3,
+    "pole": "first",
+    "text_en": "It is necessary for the government to intervene in the economy to protect consumers.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L3-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 3,
+    "pole": "first",
+    "text_en": "The government must break up monopolies to ensure fairness within the market.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L3-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 3,
+    "pole": "first",
+    "text_en": "The hourly minimum wage should be 15 USD or more.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L4-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Without economic regulation, monopolies will dominate the entire market.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L4-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 4,
+    "pole": "first",
+    "text_en": "An unregulated economy will never succeed.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L4-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Taxation for the rich should be higher than it is now.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L5-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Excessive government intervention is a threat to the economy.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L5-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Income taxes for the middle and lower classes should be lowered.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L5-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Planned economies never perform as well as free market economies.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L6-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Economic regulation causes more harm than good.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L6-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Currently, taxation is too complex and should be simplified.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L6-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 6,
+    "pole": "second",
+    "text_en": "UBI is a better means of providing welfare when compared to the current welfare system.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L7-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Fully privatized healthcare is a better means of providing healthcare than single-payer systems.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L7-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 7,
+    "pole": "second",
+    "text_en": "The government actively works with large corporations to destroy small businesses.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L7-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 7,
+    "pole": "second",
+    "text_en": "The government should control the market as minimally as possible.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L8-Q1",
+    "axis": "planned-laissezfaire",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Government should not regulate the economy at all.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L8-Q2",
+    "axis": "planned-laissezfaire",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Most, if not all economic crises are caused by government intervention.",
+    "text_zh": ""
+  },
+  {
+    "id": "A09-L8-Q3",
+    "axis": "planned-laissezfaire",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Taxation is theft.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L1-Q1",
+    "axis": "protectionist-globalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "All products should be made in my country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L1-Q2",
+    "axis": "protectionist-globalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Foreign products should be banned or heavily restricted from entry.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L1-Q3",
+    "axis": "protectionist-globalist",
+    "level": 1,
+    "pole": "first",
+    "text_en": "I only buy products that are made in my country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L2-Q1",
+    "axis": "protectionist-globalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "High tariffs are needed to protect local industries.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L2-Q2",
+    "axis": "protectionist-globalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "The government must intervene in the foreign exchange market to higher import prices.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L2-Q3",
+    "axis": "protectionist-globalist",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Without tariffs, my country's economy will likely fail.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L3-Q1",
+    "axis": "protectionist-globalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Export subsidies should be used for protecting local industries.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L3-Q2",
+    "axis": "protectionist-globalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Patents should be protected to prevent other countries from outcompeting my country.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L3-Q3",
+    "axis": "protectionist-globalist",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Technical and scientific knowledge should be protected from other countries.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L4-Q1",
+    "axis": "protectionist-globalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "The government should prioritize my country over all others.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L4-Q2",
+    "axis": "protectionist-globalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "The government should encourage local production and consumption.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L4-Q3",
+    "axis": "protectionist-globalist",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Economic globalism caused more negative impacts than positive ones.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L5-Q1",
+    "axis": "protectionist-globalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "The world must cooperate together in terms of economics.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L5-Q2",
+    "axis": "protectionist-globalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Trade is often beneficial to both parties.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L5-Q3",
+    "axis": "protectionist-globalist",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Global economic cooperation will generally lead to positive outcomes.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L6-Q1",
+    "axis": "protectionist-globalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Tariffs should be lowered.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L6-Q2",
+    "axis": "protectionist-globalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "The concept of a free market should be extended towards global trade as well.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L6-Q3",
+    "axis": "protectionist-globalist",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Restrictions on trade are bad for the economy.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L7-Q1",
+    "axis": "protectionist-globalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Economic globalization is inevitable.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L7-Q2",
+    "axis": "protectionist-globalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Tariffs should be eliminated.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L7-Q3",
+    "axis": "protectionist-globalist",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Foreign products are as good as local products.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L8-Q1",
+    "axis": "protectionist-globalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "We must actively promote foreign products.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L8-Q2",
+    "axis": "protectionist-globalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Protectionism is an unnecessary and unrealistic idea.",
+    "text_zh": ""
+  },
+  {
+    "id": "A10-L8-Q3",
+    "axis": "protectionist-globalist",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Local products are often poor in quality.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L1-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 1,
+    "pole": "first",
+    "text_en": "If AI could rule more effectively than humans, then AI should rule.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L1-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 1,
+    "pole": "first",
+    "text_en": "Genetic modification is a force for good, even on humans.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L1-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 1,
+    "pole": "first",
+    "text_en": "We should continue developing AI even if that means we are going to be replaced.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L2-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 2,
+    "pole": "first",
+    "text_en": "Technological progress and innovation cannot be stopped.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L2-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 2,
+    "pole": "first",
+    "text_en": "I am a transhumanist.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L2-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 2,
+    "pole": "first",
+    "text_en": "When people have already suffered for technology to be developed, we should use that technology.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L3-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 3,
+    "pole": "first",
+    "text_en": "We should put effort into getting a person on Mars in the near future",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L3-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Transhumanism isn't as radical as many people think it is.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L3-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 3,
+    "pole": "first",
+    "text_en": "Technological progress is usually good.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L4-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 4,
+    "pole": "first",
+    "text_en": "The quality of life is generally going up decade by decade.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L4-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 4,
+    "pole": "first",
+    "text_en": "Developing alternative technology is a better means of helping the environment than environmental regulations.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L4-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 4,
+    "pole": "first",
+    "text_en": "A better world will come from automation, science, and technology.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L5-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Technology must be slowed down to protect the environment.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L5-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Regulations on industries must be implemented to protect the environment.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L5-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 5,
+    "pole": "second",
+    "text_en": "Technology is making people lose jobs, which is ultimately harmful for humanity.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L6-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 6,
+    "pole": "second",
+    "text_en": "I oppose human genetic modification.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L6-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 6,
+    "pole": "second",
+    "text_en": "Genetic modification should be used rarely, if ever.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L6-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 6,
+    "pole": "second",
+    "text_en": "The threat of machines taking over humanity is very real.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L7-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Society was better many years ago than it is now.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L7-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 7,
+    "pole": "second",
+    "text_en": "Modern technology and the modern lifestyle made life meaningless and dull.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L7-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 7,
+    "pole": "second",
+    "text_en": "If we continue human technological progress, humanity is doomed.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L8-Q1",
+    "axis": "acceleration-bioconservative",
+    "level": 8,
+    "pole": "second",
+    "text_en": "Traditional medicines are often more effective than modern medicines.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L8-Q2",
+    "axis": "acceleration-bioconservative",
+    "level": 8,
+    "pole": "second",
+    "text_en": "The Internet should be banned.",
+    "text_zh": ""
+  },
+  {
+    "id": "A11-L8-Q3",
+    "axis": "acceleration-bioconservative",
+    "level": 8,
+    "pole": "second",
+    "text_en": "We must return to a primitive lifestyle.",
+    "text_zh": ""
+  }
+]

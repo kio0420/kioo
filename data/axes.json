@@ -1,0 +1,398 @@
+[
+  {
+    "id": "federal-unitary",
+    "index": 0,
+    "category": "government",
+    "first": {
+      "id": "federal",
+      "name_en": "Federal",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "unitary",
+      "name_en": "Unitary",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Confederal",
+      "Federational",
+      "Federal",
+      "Centrist",
+      "Unitary",
+      "Centralized",
+      "Extremely Centralized"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "democratic-autocratic",
+    "index": 1,
+    "category": "government",
+    "first": {
+      "id": "democratic",
+      "name_en": "Democratic",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "autocratic",
+      "name_en": "Autocratic",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Liquid Democracy",
+      "Direct Democracy",
+      "Representative Democracy",
+      "Centrist",
+      "Bicemeral",
+      "Oligarchy",
+      "Autocracy"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "internationalist-nationalist",
+    "index": 2,
+    "category": "foreign",
+    "first": {
+      "id": "internationalist",
+      "name_en": "Internationalist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "nationalist",
+      "name_en": "Nationalist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "World Government",
+      "Internationalism",
+      "Cooperation",
+      "Non-Interventionist",
+      "Anti-Interventionist",
+      "Nationalist",
+      "Ultranationalist"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "militarist-pacifist",
+    "index": 3,
+    "category": "foreign",
+    "first": {
+      "id": "militarist",
+      "name_en": "Militarist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "pacifist",
+      "name_en": "Pacifist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Expansionist",
+      "Militarist",
+      "Military-Focused",
+      "Neutral",
+      "Non-Aggressive",
+      "Pacifist",
+      "Anti-War"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "security-freedom",
+    "index": 4,
+    "category": "government",
+    "first": {
+      "id": "security",
+      "name_en": "Security",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "freedom",
+      "name_en": "Freedom",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Totalitarian",
+      "Authoritarian",
+      "Statist",
+      "Centrist",
+      "Liberal",
+      "Libertarian",
+      "Anarchist"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "equality-markets",
+    "index": 5,
+    "category": "economy",
+    "first": {
+      "id": "equality",
+      "name_en": "Equality",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "markets",
+      "name_en": "Markets",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Communist",
+      "Socialist",
+      "Social Democratic",
+      "Mixed Economic",
+      "Economic Liberal",
+      "Capitalist",
+      "Extreme Capitalist"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "secular-religious",
+    "index": 6,
+    "category": "society",
+    "first": {
+      "id": "secular",
+      "name_en": "Secular",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "religious",
+      "name_en": "Religious",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Antitheist",
+      "Atheist",
+      "Agnostic",
+      "Moderate",
+      "Spiritual",
+      "Religious",
+      "Ultra-religious"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "progressive-traditional",
+    "index": 7,
+    "category": "society",
+    "first": {
+      "id": "progressive",
+      "name_en": "Progressive",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "traditional",
+      "name_en": "Traditional",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Revolutionary",
+      "Culturally Left",
+      "Progressive",
+      "Moderate",
+      "Conservative",
+      "Traditionalist",
+      "Reactionary"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "assimilationist-multiculturalist",
+    "index": 8,
+    "category": "society",
+    "first": {
+      "id": "assimilationist",
+      "name_en": "Assimilationist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "multiculturalist",
+      "name_en": "Multiculturalist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Ethnonationalist",
+      "Monoculturalist",
+      "Assimilationist",
+      "Centrist",
+      "Polyculturalist",
+      "Multiculturalist",
+      "Racially Colorblind"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "planned-laissezfaire",
+    "index": 9,
+    "category": "economy",
+    "first": {
+      "id": "planned-economy",
+      "name_en": "Planned Economy",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "laissez-faire",
+      "name_en": "Laissez-faire",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Planned Economy",
+      "Interventionism",
+      "Regulationism",
+      "Balanced",
+      "Markets",
+      "Free Market",
+      "Laissez-Faire"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "protectionist-globalist",
+    "index": 10,
+    "category": "economy",
+    "first": {
+      "id": "protectionist",
+      "name_en": "Protectionist",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "globalist",
+      "name_en": "Globalist (Free Trade)",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Isolationist",
+      "Protectionist",
+      "Limited Trade",
+      "Moderate",
+      "Free Trade",
+      "Globalist",
+      "Global Economy"
+    ],
+    "labels_zh": []
+  },
+  {
+    "id": "acceleration-bioconservative",
+    "index": 11,
+    "category": "society",
+    "first": {
+      "id": "technological-acceleration",
+      "name_en": "Technological Acceleration",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "second": {
+      "id": "bioconservative",
+      "name_en": "Bioconservative",
+      "name_zh": "",
+      "adj_en": "",
+      "noun_en": "",
+      "adj_zh": "",
+      "noun_zh": ""
+    },
+    "labels_en": [
+      "Transhumanist",
+      "Accelerationist",
+      "Technological",
+      "Neutral",
+      "Bioconservative",
+      "Decelerationist",
+      "Primitive"
+    ],
+    "labels_zh": []
+  }
+]
