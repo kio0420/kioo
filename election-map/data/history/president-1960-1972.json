@@ -1,0 +1,1315 @@
+{
+ "1960": {
+  "national": {
+   "D": {
+    "name": "John F. Kennedy",
+    "ev": 303,
+    "pct": 49.7
+   },
+   "R": {
+    "name": "Richard Nixon",
+    "ev": 219,
+    "pct": 49.6
+   }
+  },
+  "states": {
+   "AK": {
+    "winner": "R",
+    "dPct": 49.1,
+    "rPct": 50.9,
+    "ev": 3
+   },
+   "AL": {
+    "winner": "O",
+    "dPct": 36.2,
+    "rPct": 27.0,
+    "ev": 11,
+    "other": {
+     "name": "Unpledged Electors",
+     "pct": 36.8
+    },
+    "note": "Voters in Alabama voted for electors individually, with 5 pledged to Kennedy (D) and 6 unpledged; we count D_votes and T_votes based on the highest vote-getting elector in each category, as Wikipedia does."
+   },
+   "AR": {
+    "winner": "D",
+    "dPct": 50.2,
+    "rPct": 43.1,
+    "ev": 8
+   },
+   "AZ": {
+    "winner": "R",
+    "dPct": 44.4,
+    "rPct": 55.5,
+    "ev": 4
+   },
+   "CA": {
+    "winner": "R",
+    "dPct": 49.6,
+    "rPct": 50.1,
+    "ev": 32
+   },
+   "CO": {
+    "winner": "R",
+    "dPct": 44.9,
+    "rPct": 54.6,
+    "ev": 6
+   },
+   "CT": {
+    "winner": "D",
+    "dPct": 53.7,
+    "rPct": 46.3,
+    "ev": 8
+   },
+   "DE": {
+    "winner": "D",
+    "dPct": 50.6,
+    "rPct": 49.0,
+    "ev": 3
+   },
+   "FL": {
+    "winner": "R",
+    "dPct": 48.5,
+    "rPct": 51.5,
+    "ev": 10
+   },
+   "GA": {
+    "winner": "D",
+    "dPct": 62.5,
+    "rPct": 37.4,
+    "ev": 12
+   },
+   "HI": {
+    "winner": "D",
+    "dPct": 50.0,
+    "rPct": 50.0,
+    "ev": 3
+   },
+   "IA": {
+    "winner": "R",
+    "dPct": 43.2,
+    "rPct": 56.7,
+    "ev": 10
+   },
+   "ID": {
+    "winner": "R",
+    "dPct": 46.2,
+    "rPct": 53.8,
+    "ev": 4
+   },
+   "IL": {
+    "winner": "D",
+    "dPct": 50.0,
+    "rPct": 49.8,
+    "ev": 27
+   },
+   "IN": {
+    "winner": "R",
+    "dPct": 44.6,
+    "rPct": 55.0,
+    "ev": 13
+   },
+   "KS": {
+    "winner": "R",
+    "dPct": 39.1,
+    "rPct": 60.4,
+    "ev": 8
+   },
+   "KY": {
+    "winner": "R",
+    "dPct": 46.4,
+    "rPct": 53.6,
+    "ev": 10
+   },
+   "LA": {
+    "winner": "D",
+    "dPct": 50.4,
+    "rPct": 28.6,
+    "ev": 10
+   },
+   "MA": {
+    "winner": "D",
+    "dPct": 60.2,
+    "rPct": 39.6,
+    "ev": 16
+   },
+   "MD": {
+    "winner": "D",
+    "dPct": 53.6,
+    "rPct": 46.4,
+    "ev": 9
+   },
+   "ME": {
+    "winner": "R",
+    "dPct": 43.0,
+    "rPct": 57.0,
+    "ev": 5
+   },
+   "MI": {
+    "winner": "D",
+    "dPct": 50.9,
+    "rPct": 48.8,
+    "ev": 20
+   },
+   "MN": {
+    "winner": "D",
+    "dPct": 50.6,
+    "rPct": 49.2,
+    "ev": 11
+   },
+   "MO": {
+    "winner": "D",
+    "dPct": 50.3,
+    "rPct": 49.7,
+    "ev": 13
+   },
+   "MS": {
+    "winner": "O",
+    "dPct": 36.3,
+    "rPct": 24.7,
+    "ev": 8,
+    "other": {
+     "name": "Unpledged Electors",
+     "pct": 39.0
+    }
+   },
+   "MT": {
+    "winner": "R",
+    "dPct": 48.6,
+    "rPct": 51.1,
+    "ev": 4
+   },
+   "NC": {
+    "winner": "D",
+    "dPct": 52.1,
+    "rPct": 47.9,
+    "ev": 14
+   },
+   "ND": {
+    "winner": "R",
+    "dPct": 44.5,
+    "rPct": 55.4,
+    "ev": 4
+   },
+   "NE": {
+    "winner": "R",
+    "dPct": 37.9,
+    "rPct": 62.1,
+    "ev": 6
+   },
+   "NH": {
+    "winner": "R",
+    "dPct": 46.6,
+    "rPct": 53.4,
+    "ev": 4
+   },
+   "NJ": {
+    "winner": "D",
+    "dPct": 50.0,
+    "rPct": 49.2,
+    "ev": 16
+   },
+   "NM": {
+    "winner": "D",
+    "dPct": 50.2,
+    "rPct": 49.4,
+    "ev": 4
+   },
+   "NV": {
+    "winner": "D",
+    "dPct": 51.2,
+    "rPct": 48.8,
+    "ev": 3
+   },
+   "NY": {
+    "winner": "D",
+    "dPct": 52.5,
+    "rPct": 47.3,
+    "ev": 45
+   },
+   "OH": {
+    "winner": "R",
+    "dPct": 46.7,
+    "rPct": 53.3,
+    "ev": 25
+   },
+   "OK": {
+    "winner": "R",
+    "dPct": 41.0,
+    "rPct": 59.0,
+    "ev": 8
+   },
+   "OR": {
+    "winner": "R",
+    "dPct": 47.3,
+    "rPct": 52.6,
+    "ev": 6
+   },
+   "PA": {
+    "winner": "D",
+    "dPct": 51.1,
+    "rPct": 48.7,
+    "ev": 32
+   },
+   "RI": {
+    "winner": "D",
+    "dPct": 63.6,
+    "rPct": 36.4,
+    "ev": 4
+   },
+   "SC": {
+    "winner": "D",
+    "dPct": 51.2,
+    "rPct": 48.8,
+    "ev": 8
+   },
+   "SD": {
+    "winner": "R",
+    "dPct": 41.8,
+    "rPct": 58.2,
+    "ev": 4
+   },
+   "TN": {
+    "winner": "R",
+    "dPct": 45.8,
+    "rPct": 52.9,
+    "ev": 11
+   },
+   "TX": {
+    "winner": "D",
+    "dPct": 50.5,
+    "rPct": 48.5,
+    "ev": 24
+   },
+   "UT": {
+    "winner": "R",
+    "dPct": 45.2,
+    "rPct": 54.8,
+    "ev": 4
+   },
+   "VA": {
+    "winner": "R",
+    "dPct": 47.0,
+    "rPct": 52.4,
+    "ev": 12
+   },
+   "VT": {
+    "winner": "R",
+    "dPct": 41.3,
+    "rPct": 58.6,
+    "ev": 3
+   },
+   "WA": {
+    "winner": "R",
+    "dPct": 48.3,
+    "rPct": 50.7,
+    "ev": 9
+   },
+   "WI": {
+    "winner": "R",
+    "dPct": 48.0,
+    "rPct": 51.8,
+    "ev": 12
+   },
+   "WV": {
+    "winner": "D",
+    "dPct": 52.7,
+    "rPct": 47.3,
+    "ev": 8
+   },
+   "WY": {
+    "winner": "R",
+    "dPct": 45.0,
+    "rPct": 55.0,
+    "ev": 3
+   }
+  }
+ },
+ "1964": {
+  "national": {
+   "D": {
+    "name": "Lyndon B. Johnson",
+    "ev": 486,
+    "pct": 61.1
+   },
+   "R": {
+    "name": "Barry Goldwater",
+    "ev": 52,
+    "pct": 38.5
+   }
+  },
+  "states": {
+   "AK": {
+    "winner": "D",
+    "dPct": 65.9,
+    "rPct": 34.1,
+    "ev": 3
+   },
+   "AL": {
+    "winner": "R",
+    "dPct": 30.5,
+    "rPct": 69.5,
+    "ev": 10,
+    "note": "Source lists the 210,732 votes both as D_votes and as \"Unpledged Electors\" (third_party_results); dPct here is that unpledged Democratic slate, not a Johnson-pledged slate."
+   },
+   "AR": {
+    "winner": "D",
+    "dPct": 56.1,
+    "rPct": 43.4,
+    "ev": 6
+   },
+   "AZ": {
+    "winner": "R",
+    "dPct": 49.5,
+    "rPct": 50.4,
+    "ev": 5
+   },
+   "CA": {
+    "winner": "D",
+    "dPct": 59.1,
+    "rPct": 40.8,
+    "ev": 40
+   },
+   "CO": {
+    "winner": "D",
+    "dPct": 61.3,
+    "rPct": 38.2,
+    "ev": 6
+   },
+   "CT": {
+    "winner": "D",
+    "dPct": 67.8,
+    "rPct": 32.1,
+    "ev": 8
+   },
+   "DC": {
+    "winner": "D",
+    "dPct": 85.5,
+    "rPct": 14.5,
+    "ev": 3
+   },
+   "DE": {
+    "winner": "D",
+    "dPct": 60.9,
+    "rPct": 38.8,
+    "ev": 3
+   },
+   "FL": {
+    "winner": "D",
+    "dPct": 51.1,
+    "rPct": 48.9,
+    "ev": 14
+   },
+   "GA": {
+    "winner": "R",
+    "dPct": 45.9,
+    "rPct": 54.1,
+    "ev": 12
+   },
+   "HI": {
+    "winner": "D",
+    "dPct": 78.8,
+    "rPct": 21.2,
+    "ev": 4
+   },
+   "IA": {
+    "winner": "D",
+    "dPct": 61.9,
+    "rPct": 37.9,
+    "ev": 9
+   },
+   "ID": {
+    "winner": "D",
+    "dPct": 50.9,
+    "rPct": 49.1,
+    "ev": 4
+   },
+   "IL": {
+    "winner": "D",
+    "dPct": 59.5,
+    "rPct": 40.5,
+    "ev": 26
+   },
+   "IN": {
+    "winner": "D",
+    "dPct": 56.0,
+    "rPct": 43.6,
+    "ev": 13
+   },
+   "KS": {
+    "winner": "D",
+    "dPct": 54.1,
+    "rPct": 45.1,
+    "ev": 7
+   },
+   "KY": {
+    "winner": "D",
+    "dPct": 64.0,
+    "rPct": 35.7,
+    "ev": 9
+   },
+   "LA": {
+    "winner": "R",
+    "dPct": 43.2,
+    "rPct": 56.8,
+    "ev": 10
+   },
+   "MA": {
+    "winner": "D",
+    "dPct": 76.2,
+    "rPct": 23.4,
+    "ev": 14
+   },
+   "MD": {
+    "winner": "D",
+    "dPct": 65.5,
+    "rPct": 34.5,
+    "ev": 10
+   },
+   "ME": {
+    "winner": "D",
+    "dPct": 68.8,
+    "rPct": 31.1,
+    "ev": 4
+   },
+   "MI": {
+    "winner": "D",
+    "dPct": 66.7,
+    "rPct": 33.1,
+    "ev": 21
+   },
+   "MN": {
+    "winner": "D",
+    "dPct": 63.8,
+    "rPct": 36.0,
+    "ev": 10
+   },
+   "MO": {
+    "winner": "D",
+    "dPct": 64.0,
+    "rPct": 36.0,
+    "ev": 12
+   },
+   "MS": {
+    "winner": "R",
+    "dPct": 12.9,
+    "rPct": 87.1,
+    "ev": 7
+   },
+   "MT": {
+    "winner": "D",
+    "dPct": 58.9,
+    "rPct": 40.6,
+    "ev": 4
+   },
+   "NC": {
+    "winner": "D",
+    "dPct": 56.2,
+    "rPct": 43.8,
+    "ev": 13
+   },
+   "ND": {
+    "winner": "D",
+    "dPct": 58.0,
+    "rPct": 41.9,
+    "ev": 4
+   },
+   "NE": {
+    "winner": "D",
+    "dPct": 52.6,
+    "rPct": 47.4,
+    "ev": 5
+   },
+   "NH": {
+    "winner": "D",
+    "dPct": 63.9,
+    "rPct": 36.1,
+    "ev": 4
+   },
+   "NJ": {
+    "winner": "D",
+    "dPct": 65.6,
+    "rPct": 33.9,
+    "ev": 17
+   },
+   "NM": {
+    "winner": "D",
+    "dPct": 59.2,
+    "rPct": 40.2,
+    "ev": 4
+   },
+   "NV": {
+    "winner": "D",
+    "dPct": 58.6,
+    "rPct": 41.4,
+    "ev": 3
+   },
+   "NY": {
+    "winner": "D",
+    "dPct": 68.6,
+    "rPct": 31.3,
+    "ev": 43
+   },
+   "OH": {
+    "winner": "D",
+    "dPct": 62.9,
+    "rPct": 37.1,
+    "ev": 26
+   },
+   "OK": {
+    "winner": "D",
+    "dPct": 55.7,
+    "rPct": 44.3,
+    "ev": 8
+   },
+   "OR": {
+    "winner": "D",
+    "dPct": 63.7,
+    "rPct": 36.0,
+    "ev": 6
+   },
+   "PA": {
+    "winner": "D",
+    "dPct": 64.9,
+    "rPct": 34.7,
+    "ev": 29
+   },
+   "RI": {
+    "winner": "D",
+    "dPct": 80.9,
+    "rPct": 19.1,
+    "ev": 4
+   },
+   "SC": {
+    "winner": "R",
+    "dPct": 41.1,
+    "rPct": 58.9,
+    "ev": 8
+   },
+   "SD": {
+    "winner": "D",
+    "dPct": 55.6,
+    "rPct": 44.4,
+    "ev": 4
+   },
+   "TN": {
+    "winner": "D",
+    "dPct": 55.5,
+    "rPct": 44.5,
+    "ev": 11
+   },
+   "TX": {
+    "winner": "D",
+    "dPct": 63.3,
+    "rPct": 36.5,
+    "ev": 25
+   },
+   "UT": {
+    "winner": "D",
+    "dPct": 54.9,
+    "rPct": 45.1,
+    "ev": 4
+   },
+   "VA": {
+    "winner": "D",
+    "dPct": 53.5,
+    "rPct": 46.2,
+    "ev": 12
+   },
+   "VT": {
+    "winner": "D",
+    "dPct": 66.3,
+    "rPct": 33.7,
+    "ev": 3
+   },
+   "WA": {
+    "winner": "D",
+    "dPct": 62.0,
+    "rPct": 37.4,
+    "ev": 9
+   },
+   "WI": {
+    "winner": "D",
+    "dPct": 62.1,
+    "rPct": 37.7,
+    "ev": 12
+   },
+   "WV": {
+    "winner": "D",
+    "dPct": 67.9,
+    "rPct": 32.1,
+    "ev": 7
+   },
+   "WY": {
+    "winner": "D",
+    "dPct": 56.6,
+    "rPct": 43.4,
+    "ev": 3
+   }
+  }
+ },
+ "1968": {
+  "national": {
+   "D": {
+    "name": "Hubert Humphrey",
+    "ev": 191,
+    "pct": 42.7
+   },
+   "R": {
+    "name": "Richard Nixon",
+    "ev": 301,
+    "pct": 43.4
+   }
+  },
+  "states": {
+   "AK": {
+    "winner": "R",
+    "dPct": 42.6,
+    "rPct": 45.3,
+    "ev": 3
+   },
+   "AL": {
+    "winner": "O",
+    "dPct": 18.7,
+    "rPct": 14.0,
+    "ev": 10,
+    "other": {
+     "name": "George Wallace",
+     "pct": 65.9
+    }
+   },
+   "AR": {
+    "winner": "O",
+    "dPct": 30.3,
+    "rPct": 31.0,
+    "ev": 6,
+    "other": {
+     "name": "George Wallace",
+     "pct": 38.7
+    }
+   },
+   "AZ": {
+    "winner": "R",
+    "dPct": 35.0,
+    "rPct": 54.8,
+    "ev": 5
+   },
+   "CA": {
+    "winner": "R",
+    "dPct": 44.7,
+    "rPct": 47.8,
+    "ev": 40
+   },
+   "CO": {
+    "winner": "R",
+    "dPct": 41.3,
+    "rPct": 50.5,
+    "ev": 6
+   },
+   "CT": {
+    "winner": "D",
+    "dPct": 49.5,
+    "rPct": 44.3,
+    "ev": 8
+   },
+   "DC": {
+    "winner": "D",
+    "dPct": 81.8,
+    "rPct": 18.2,
+    "ev": 3
+   },
+   "DE": {
+    "winner": "R",
+    "dPct": 41.6,
+    "rPct": 45.1,
+    "ev": 3
+   },
+   "FL": {
+    "winner": "R",
+    "dPct": 30.9,
+    "rPct": 40.5,
+    "ev": 14
+   },
+   "GA": {
+    "winner": "O",
+    "dPct": 26.7,
+    "rPct": 30.4,
+    "ev": 12,
+    "other": {
+     "name": "George Wallace",
+     "pct": 42.8
+    }
+   },
+   "HI": {
+    "winner": "D",
+    "dPct": 59.8,
+    "rPct": 38.7,
+    "ev": 4
+   },
+   "IA": {
+    "winner": "R",
+    "dPct": 40.8,
+    "rPct": 53.0,
+    "ev": 9
+   },
+   "ID": {
+    "winner": "R",
+    "dPct": 30.7,
+    "rPct": 56.8,
+    "ev": 4
+   },
+   "IL": {
+    "winner": "R",
+    "dPct": 44.2,
+    "rPct": 47.1,
+    "ev": 26
+   },
+   "IN": {
+    "winner": "R",
+    "dPct": 38.0,
+    "rPct": 50.3,
+    "ev": 13
+   },
+   "KS": {
+    "winner": "R",
+    "dPct": 34.7,
+    "rPct": 54.8,
+    "ev": 7
+   },
+   "KY": {
+    "winner": "R",
+    "dPct": 37.6,
+    "rPct": 43.8,
+    "ev": 9
+   },
+   "LA": {
+    "winner": "O",
+    "dPct": 28.2,
+    "rPct": 23.5,
+    "ev": 10,
+    "other": {
+     "name": "George Wallace",
+     "pct": 48.3
+    }
+   },
+   "MA": {
+    "winner": "D",
+    "dPct": 63.0,
+    "rPct": 32.9,
+    "ev": 14
+   },
+   "MD": {
+    "winner": "D",
+    "dPct": 43.6,
+    "rPct": 41.9,
+    "ev": 10
+   },
+   "ME": {
+    "winner": "D",
+    "dPct": 55.3,
+    "rPct": 43.1,
+    "ev": 4
+   },
+   "MI": {
+    "winner": "D",
+    "dPct": 48.2,
+    "rPct": 41.5,
+    "ev": 21
+   },
+   "MN": {
+    "winner": "D",
+    "dPct": 54.0,
+    "rPct": 41.5,
+    "ev": 10
+   },
+   "MO": {
+    "winner": "R",
+    "dPct": 43.7,
+    "rPct": 44.9,
+    "ev": 12
+   },
+   "MS": {
+    "winner": "O",
+    "dPct": 23.0,
+    "rPct": 13.5,
+    "ev": 7,
+    "other": {
+     "name": "George Wallace",
+     "pct": 63.5
+    }
+   },
+   "MT": {
+    "winner": "R",
+    "dPct": 41.6,
+    "rPct": 50.6,
+    "ev": 4
+   },
+   "NC": {
+    "winner": "R",
+    "dPct": 29.2,
+    "rPct": 39.5,
+    "ev": 13
+   },
+   "ND": {
+    "winner": "R",
+    "dPct": 38.2,
+    "rPct": 55.9,
+    "ev": 4
+   },
+   "NE": {
+    "winner": "R",
+    "dPct": 31.8,
+    "rPct": 59.8,
+    "ev": 5
+   },
+   "NH": {
+    "winner": "R",
+    "dPct": 43.9,
+    "rPct": 52.1,
+    "ev": 4
+   },
+   "NJ": {
+    "winner": "R",
+    "dPct": 44.0,
+    "rPct": 46.1,
+    "ev": 17
+   },
+   "NM": {
+    "winner": "R",
+    "dPct": 39.7,
+    "rPct": 51.8,
+    "ev": 4
+   },
+   "NV": {
+    "winner": "R",
+    "dPct": 39.3,
+    "rPct": 47.5,
+    "ev": 3
+   },
+   "NY": {
+    "winner": "D",
+    "dPct": 49.8,
+    "rPct": 44.3,
+    "ev": 43
+   },
+   "OH": {
+    "winner": "R",
+    "dPct": 42.9,
+    "rPct": 45.2,
+    "ev": 26
+   },
+   "OK": {
+    "winner": "R",
+    "dPct": 32.0,
+    "rPct": 47.7,
+    "ev": 8
+   },
+   "OR": {
+    "winner": "R",
+    "dPct": 43.8,
+    "rPct": 49.8,
+    "ev": 6
+   },
+   "PA": {
+    "winner": "D",
+    "dPct": 47.6,
+    "rPct": 44.0,
+    "ev": 29
+   },
+   "RI": {
+    "winner": "D",
+    "dPct": 64.0,
+    "rPct": 31.8,
+    "ev": 4
+   },
+   "SC": {
+    "winner": "R",
+    "dPct": 29.6,
+    "rPct": 38.1,
+    "ev": 8
+   },
+   "SD": {
+    "winner": "R",
+    "dPct": 42.0,
+    "rPct": 53.3,
+    "ev": 4
+   },
+   "TN": {
+    "winner": "R",
+    "dPct": 28.1,
+    "rPct": 37.8,
+    "ev": 11
+   },
+   "TX": {
+    "winner": "D",
+    "dPct": 41.1,
+    "rPct": 39.9,
+    "ev": 25
+   },
+   "UT": {
+    "winner": "R",
+    "dPct": 37.1,
+    "rPct": 56.5,
+    "ev": 4
+   },
+   "VA": {
+    "winner": "R",
+    "dPct": 32.5,
+    "rPct": 43.4,
+    "ev": 12
+   },
+   "VT": {
+    "winner": "R",
+    "dPct": 43.5,
+    "rPct": 52.8,
+    "ev": 3
+   },
+   "WA": {
+    "winner": "D",
+    "dPct": 47.2,
+    "rPct": 45.1,
+    "ev": 9
+   },
+   "WI": {
+    "winner": "R",
+    "dPct": 44.3,
+    "rPct": 47.9,
+    "ev": 12
+   },
+   "WV": {
+    "winner": "D",
+    "dPct": 49.6,
+    "rPct": 40.8,
+    "ev": 7
+   },
+   "WY": {
+    "winner": "R",
+    "dPct": 35.5,
+    "rPct": 55.8,
+    "ev": 3
+   }
+  }
+ },
+ "1972": {
+  "national": {
+   "D": {
+    "name": "George McGovern",
+    "ev": 17,
+    "pct": 37.5
+   },
+   "R": {
+    "name": "Richard Nixon",
+    "ev": 520,
+    "pct": 60.7
+   }
+  },
+  "states": {
+   "AK": {
+    "winner": "R",
+    "dPct": 34.6,
+    "rPct": 58.1,
+    "ev": 3
+   },
+   "AL": {
+    "winner": "R",
+    "dPct": 25.5,
+    "rPct": 72.4,
+    "ev": 9
+   },
+   "AR": {
+    "winner": "R",
+    "dPct": 30.7,
+    "rPct": 68.8,
+    "ev": 6
+   },
+   "AZ": {
+    "winner": "R",
+    "dPct": 30.4,
+    "rPct": 61.6,
+    "ev": 6
+   },
+   "CA": {
+    "winner": "R",
+    "dPct": 41.5,
+    "rPct": 55.0,
+    "ev": 45
+   },
+   "CO": {
+    "winner": "R",
+    "dPct": 34.6,
+    "rPct": 62.6,
+    "ev": 7
+   },
+   "CT": {
+    "winner": "R",
+    "dPct": 40.1,
+    "rPct": 58.6,
+    "ev": 8
+   },
+   "DC": {
+    "winner": "D",
+    "dPct": 78.1,
+    "rPct": 21.6,
+    "ev": 3
+   },
+   "DE": {
+    "winner": "R",
+    "dPct": 39.2,
+    "rPct": 59.6,
+    "ev": 3
+   },
+   "FL": {
+    "winner": "R",
+    "dPct": 27.8,
+    "rPct": 71.9,
+    "ev": 17
+   },
+   "GA": {
+    "winner": "R",
+    "dPct": 24.6,
+    "rPct": 75.0,
+    "ev": 12
+   },
+   "HI": {
+    "winner": "R",
+    "dPct": 37.5,
+    "rPct": 62.5,
+    "ev": 4
+   },
+   "IA": {
+    "winner": "R",
+    "dPct": 40.5,
+    "rPct": 57.6,
+    "ev": 8
+   },
+   "ID": {
+    "winner": "R",
+    "dPct": 26.0,
+    "rPct": 64.2,
+    "ev": 4
+   },
+   "IL": {
+    "winner": "R",
+    "dPct": 40.5,
+    "rPct": 59.0,
+    "ev": 26
+   },
+   "IN": {
+    "winner": "R",
+    "dPct": 33.3,
+    "rPct": 66.1,
+    "ev": 13
+   },
+   "KS": {
+    "winner": "R",
+    "dPct": 29.5,
+    "rPct": 67.7,
+    "ev": 7
+   },
+   "KY": {
+    "winner": "R",
+    "dPct": 34.8,
+    "rPct": 63.4,
+    "ev": 9
+   },
+   "LA": {
+    "winner": "R",
+    "dPct": 28.4,
+    "rPct": 65.3,
+    "ev": 10
+   },
+   "MA": {
+    "winner": "D",
+    "dPct": 54.2,
+    "rPct": 45.2,
+    "ev": 14
+   },
+   "MD": {
+    "winner": "R",
+    "dPct": 37.4,
+    "rPct": 61.3,
+    "ev": 10
+   },
+   "ME": {
+    "winner": "R",
+    "dPct": 38.5,
+    "rPct": 61.5,
+    "ev": 4
+   },
+   "MI": {
+    "winner": "R",
+    "dPct": 41.8,
+    "rPct": 56.2,
+    "ev": 21
+   },
+   "MN": {
+    "winner": "R",
+    "dPct": 46.1,
+    "rPct": 51.6,
+    "ev": 10
+   },
+   "MO": {
+    "winner": "R",
+    "dPct": 37.7,
+    "rPct": 62.3,
+    "ev": 12
+   },
+   "MS": {
+    "winner": "R",
+    "dPct": 19.6,
+    "rPct": 78.2,
+    "ev": 7
+   },
+   "MT": {
+    "winner": "R",
+    "dPct": 37.8,
+    "rPct": 57.9,
+    "ev": 4
+   },
+   "NC": {
+    "winner": "R",
+    "dPct": 28.9,
+    "rPct": 69.5,
+    "ev": 13
+   },
+   "ND": {
+    "winner": "R",
+    "dPct": 35.8,
+    "rPct": 62.1,
+    "ev": 3
+   },
+   "NE": {
+    "winner": "R",
+    "dPct": 29.5,
+    "rPct": 70.5,
+    "ev": 5
+   },
+   "NH": {
+    "winner": "R",
+    "dPct": 34.9,
+    "rPct": 64.0,
+    "ev": 4
+   },
+   "NJ": {
+    "winner": "R",
+    "dPct": 36.8,
+    "rPct": 61.6,
+    "ev": 17
+   },
+   "NM": {
+    "winner": "R",
+    "dPct": 36.6,
+    "rPct": 61.0,
+    "ev": 4
+   },
+   "NV": {
+    "winner": "R",
+    "dPct": 36.3,
+    "rPct": 63.7,
+    "ev": 3
+   },
+   "NY": {
+    "winner": "R",
+    "dPct": 41.2,
+    "rPct": 58.5,
+    "ev": 41
+   },
+   "OH": {
+    "winner": "R",
+    "dPct": 38.1,
+    "rPct": 59.6,
+    "ev": 25
+   },
+   "OK": {
+    "winner": "R",
+    "dPct": 24.0,
+    "rPct": 73.7,
+    "ev": 8
+   },
+   "OR": {
+    "winner": "R",
+    "dPct": 42.3,
+    "rPct": 52.4,
+    "ev": 6
+   },
+   "PA": {
+    "winner": "R",
+    "dPct": 39.1,
+    "rPct": 59.1,
+    "ev": 27
+   },
+   "RI": {
+    "winner": "R",
+    "dPct": 46.8,
+    "rPct": 53.0,
+    "ev": 4
+   },
+   "SC": {
+    "winner": "R",
+    "dPct": 27.9,
+    "rPct": 70.6,
+    "ev": 8
+   },
+   "SD": {
+    "winner": "R",
+    "dPct": 45.5,
+    "rPct": 54.2,
+    "ev": 4
+   },
+   "TN": {
+    "winner": "R",
+    "dPct": 29.7,
+    "rPct": 67.7,
+    "ev": 10
+   },
+   "TX": {
+    "winner": "R",
+    "dPct": 33.2,
+    "rPct": 66.2,
+    "ev": 26
+   },
+   "UT": {
+    "winner": "R",
+    "dPct": 26.4,
+    "rPct": 67.6,
+    "ev": 4
+   },
+   "VA": {
+    "winner": "R",
+    "dPct": 30.1,
+    "rPct": 67.8,
+    "ev": 12
+   },
+   "VT": {
+    "winner": "R",
+    "dPct": 36.5,
+    "rPct": 62.7,
+    "ev": 3
+   },
+   "WA": {
+    "winner": "R",
+    "dPct": 38.6,
+    "rPct": 56.9,
+    "ev": 9
+   },
+   "WI": {
+    "winner": "R",
+    "dPct": 43.7,
+    "rPct": 53.4,
+    "ev": 11
+   },
+   "WV": {
+    "winner": "R",
+    "dPct": 36.4,
+    "rPct": 63.6,
+    "ev": 6
+   },
+   "WY": {
+    "winner": "R",
+    "dPct": 30.5,
+    "rPct": 69.0,
+    "ev": 3
+   }
+  }
+ },
+ "source": "eigentaylor/margin-matters docs/presidential_margins.csv (state vote counts compiled from Wikipedia, https://raw.githubusercontent.com/eigentaylor/margin-matters/main/docs/presidential_margins.csv); state electoral votes from the same file, cross-checked against https://raw.githubusercontent.com/eigentaylor/margin-matters/main/election_data/electoral_college.csv; pct = candidate votes / total_votes in that file; ME and NE from their statewide (-AL) rows, 1972 ME EV includes the two district electors. National EV are official totals (incl. faithless/unpledged electors) supplied by the requester."
+}
