@@ -5,6 +5,7 @@ import {
 import {
   axes, CATEGORIES, figName, figureDisclaimer, figures, ideoDesc, ideoName, ideologies, poleName,
 } from '../data';
+import { mascotSvg } from '../art';
 import { h } from '../dom';
 import { getLang, pick, t } from '../i18n';
 import { mountPage } from '../layout';
@@ -18,7 +19,8 @@ function axisRow(a: Axis, s: number, defining: boolean): HTMLElement {
   const n1 = poleName(a.first), n2 = poleName(a.second);
   const lbl = getLabel(a, s, lang);
   const seg = (cls: string, w: number) =>
-    h('span', { class: `seg ${cls}`, style: `width:${w}%` }, w >= 14 ? `${w}%` : '');
+    h('span', { class: `seg ${cls}`, style: `width:${w}%` },
+      w >= 14 ? h('span', { class: 'seg-label' }, `${w}%`) : null);
   return h('li', { class: 'axis-row' + (defining ? ' defining' : '') },
     h('div', { class: 'axis-ends' },
       h('span', { class: 'end e1' }, h('b', null, n1), ` ${p1}%`),
@@ -60,7 +62,8 @@ export function render(): void {
       const wrap = h('div', { class: 'wrap' });
       main.append(wrap);
       if (!res) {
-        wrap.append(h('div', { class: 'notice', role: 'alert' }, t('resultError')),
+        wrap.append(h('div', { class: 'error-state' }, mascotSvg('', 'mascot mascot-sm'),
+          h('div', { class: 'notice', role: 'alert' }, t('resultError'))),
           h('p', null, h('a', { class: 'btn btn-primary', href: 'index.html' }, t('backHome'))));
         return;
       }
@@ -70,8 +73,11 @@ export function render(): void {
       const defSet = new Set(dv.map((v) => v.axis.id));
 
       wrap.append(h('section', { class: 'result-hero' },
-        h('p', { class: 'eyebrow' }, t('typeLabel')),
-        h('h1', { class: 'type-name', id: 'type-name' }, typeName(scores, axes, lang)),
+        h('div', { class: 'hero-row' },
+          mascotSvg('', 'mascot mascot-sm'),
+          h('div', { class: 'bubble' },
+            h('p', { class: 'eyebrow' }, t('typeLabel')),
+            h('h1', { class: 'type-name', id: 'type-name' }, typeName(scores, axes, lang)))),
         h('p', { class: 'sentence', id: 'sentence' }, resultSentence(scores, axes, lang).text)));
 
       if (res.mode !== 'full') {

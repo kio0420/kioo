@@ -1,7 +1,8 @@
 import type { Mode } from '../../engine';
 import { axes, CATEGORIES, poleName } from '../data';
+import { mascotSvg } from '../art';
 import { h } from '../dom';
-import { t } from '../i18n';
+import { getLang, t } from '../i18n';
 import { mountPage } from '../layout';
 import { loadProgress } from '../storage';
 
@@ -19,8 +20,10 @@ export function render(): void {
       const wrap = h('div', { class: 'wrap' });
       main.append(wrap);
       wrap.append(h('section', { class: 'hero' },
-        h('h1', null, t('heroTitle')),
-        h('p', { class: 'lead' }, t('heroLead'))));
+        h('div', { class: 'hero-text' },
+          h('h1', null, t('heroTitle')),
+          h('p', { class: 'lead' }, t('heroLead'))),
+        mascotSvg(getLang() === 'zh' ? '羅盤小夥伴吉祥物' : 'Compass buddy mascot', 'mascot mascot-hero')));
 
       const resumes = MODES.map((m) => ({ m, p: loadProgress(m.mode) }))
         .filter((x) => x.p && Object.keys(x.p.answers).length > 0);

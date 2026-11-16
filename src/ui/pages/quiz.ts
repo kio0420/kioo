@@ -2,6 +2,7 @@ import {
   ANSWER_OPTIONS, buildQuiz, encodeResult, randomSeed, scoreAxesFor, type Mode, type Quiz,
 } from '../../engine';
 import { axes, qText, questions } from '../data';
+import { mascotSvg } from '../art';
 import { h, clear } from '../dom';
 import { getLang, t } from '../i18n';
 import { mountPage } from '../layout';
@@ -72,7 +73,7 @@ export function render(): void {
       h('h2', { class: 'statement', id: 'stmt', tabindex: '-1' }, qText(q)),
       h('div', { class: 'answers', role: 'group', 'aria-labelledby': 'stmt' },
         ANSWER_OPTIONS.map((o, i) => h('button', {
-          type: 'button', class: 'answer' + (cur === o.value ? ' selected' : ''),
+          type: 'button', class: 'answer lvl-' + Math.round(Math.abs(o.value) * 2) + (cur === o.value ? ' selected' : ''),
           'aria-pressed': cur === o.value ? 'true' : 'false',
           'data-value': String(o.value),
           onclick: () => answer(o.value),
@@ -101,7 +102,8 @@ export function render(): void {
       const wrap = h('div', { class: 'wrap narrow' });
       main.append(wrap);
       if (!mode) {
-        wrap.append(h('p', { class: 'notice' }, t('badMode')),
+        wrap.append(h('div', { class: 'error-state' }, mascotSvg('', 'mascot mascot-sm'),
+          h('p', { class: 'notice' }, t('badMode'))),
           h('p', null, h('a', { class: 'btn', href: 'index.html' }, t('backHome'))));
         return;
       }
