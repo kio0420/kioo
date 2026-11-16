@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>星語塔羅</title>
+  <script>
+    // 在樣式載入前套用主題，避免閃爍
+    try {
+      var t = JSON.parse(localStorage.getItem("tarot.theme"));
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+  <div class="deco-nebula" aria-hidden="true"></div>
+  <header class="site-header">
+    <h1 class="logo">✦ 星語塔羅</h1>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-view="reading" role="tab">塔羅占卜</button>
+      <button class="tab" data-view="library" role="tab">牌義圖鑑</button>
+      <button class="tab" data-view="quiz" role="tab">學習測驗</button>
+      <button class="tab" data-view="journal" role="tab">我的紀錄</button>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切換深色／淺色主題"></button>
+  </header>
+
+  <main>
+    <!-- 占卜 -->
+    <section id="view-reading" class="view active">
+      <div class="deco-hero" aria-hidden="true"></div>
+      <div class="panel daily">
+        <div id="daily-card" class="daily-card" role="button" tabindex="0" aria-label="翻開今日的牌"></div>
+        <div class="daily-info">
+          <h2>每日一牌</h2>
+          <p id="daily-date" class="date"></p>
+          <div id="daily-text"><p class="muted">點擊牌面，翻開今天給你的提醒。</p></div>
+        </div>
+      </div>
+
+      <div class="panel setup">
+        <h2>選擇牌陣</h2>
+        <div id="spread-list" class="spread-list"></div>
+        <p id="spread-desc" class="muted"></p>
+
+        <label class="field">
+          <span>你的問題（可留白）</span>
+          <input id="question" type="text" maxlength="100" placeholder="例如：這份工作適合我嗎？">
+        </label>
+
+        <div class="options">
+          <label class="field inline">
+            <span>問題類型</span>
+            <select id="topic">
+              <option value="general">綜合</option>
+              <option value="love">感情</option>
+              <option value="career">事業</option>
+            </select>
+          </label>
+          <label class="check"><input id="allow-reversed" type="checkbox" checked> 包含逆位</label>
+        </div>
+
+        <div class="actions">
+          <button id="btn-draw" class="btn primary">洗牌並抽牌</button>
+          <button id="btn-reveal" class="btn" hidden>全部翻開</button>
+        </div>
+      </div>
+
+      <div id="board" class="board" aria-live="polite"></div>
+      <p id="board-hint" class="muted center" hidden>點擊牌面即可翻牌</p>
+      <div id="result" class="result"></div>
+    </section>
+
+    <!-- 牌義圖鑑 -->
+    <section id="view-library" class="view">
+      <div class="panel">
+        <h2>牌義圖鑑</h2>
+        <div class="filters">
+          <input id="search" type="search" placeholder="搜尋牌名或關鍵字">
+          <div id="suit-filter" class="chips">
+            <button class="chip active" data-suit="all">全部</button>
+            <button class="chip" data-suit="major">大阿爾克那</button>
+            <button class="chip" data-suit="wands">權杖</button>
+            <button class="chip" data-suit="cups">聖杯</button>
+            <button class="chip" data-suit="swords">寶劍</button>
+            <button class="chip" data-suit="pentacles">錢幣</button>
+          </div>
+        </div>
+        <div id="library-grid" class="library-grid"></div>
+      </div>
+    </section>
+
+    <!-- 學習測驗（js/quiz.js 會渲染這個容器） -->
+    <section id="view-quiz" class="view">
+      <div id="quiz-root"></div>
+    </section>
+
+    <!-- 我的紀錄 -->
+    <section id="view-journal" class="view">
+      <div class="panel">
+        <div class="journal-head">
+          <h2>我的紀錄</h2>
+          <div class="actions">
+            <button id="btn-export" class="btn small">匯出 JSON</button>
+            <label class="btn small">匯入 JSON<input id="import-file" type="file" accept="application/json,.json" hidden></label>
+          </div>
+        </div>
+        <p id="storage-warning" class="warning" hidden>你的瀏覽器目前無法長期儲存資料（例如無痕模式），紀錄會在關閉頁面後消失，請記得匯出備份。</p>
+        <div id="journal-list" class="journal-list"></div>
+      </div>
+      <div id="journal-detail"></div>
+    </section>
+  </main>
+
+  <dialog id="card-dialog" class="card-dialog">
+    <button class="close" aria-label="關閉">×</button>
+    <div id="dialog-body"></div>
+  </dialog>
+
+  <div class="deco-divider" aria-hidden="true"></div>
+  <footer class="site-footer">塔羅僅供參考與自我探索，重要決定請以自身判斷為主。</footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/data/major.js"></script>
+  <script src="js/data/minor-wands-cups.js"></script>
+  <script src="js/data/minor-swords-pentacles.js"></script>
+  <script src="js/spreads.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
