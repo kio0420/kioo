@@ -1,0 +1,33 @@
+NOTICE
+
+This project includes data derived from third-party work.
+
+Source
+  12axes, from politicaltests.github.io, commit 5a508de.
+  12axes is based on 9axes, which is based on 8values.
+  12axes is released under the MIT License.
+
+Upstream copyright line (quoted verbatim):
+  Copyright (c) 2020 8values (SapplyValues)
+
+The full upstream MIT notice is reproduced at the end of the LICENSE file.
+
+Derived files
+  data/questions.json    - statement wording and level structure derived from 12axes questions.js.
+                           Levels were re-indexed (see scripts/extract-12axes.mjs); no axis was
+                           reversed relative to the upstream source.
+  data/ideologies.json   - ideology names, Wikipedia links, descriptions and four-axis positions
+                           derived from 12axes ideologies.js.
+  data/axes.json         - the seven-step labels per axis (labels_en) derived from the
+                           aArray..lArray definitions in 12axes results.html. Axis and pole names
+                           follow the canonical ordering defined in docs/data-contract.md.
+
+Modifications
+  - The upstream "dipl" (diplomatic) coordinate is remapped to the internationalist-nationalist
+    axis. In the upstream site it is compared against the Globalism/Protectionism axis; this
+    project treats it as the Internationalist/Nationalist axis instead. Values are not transformed.
+  - Upstream pole names and axis labels were normalised to the canonical naming in this project.
+  - Chinese (zh) translations of names, labels, descriptions and questions are original work
+    by the kioo project contributors and are not part of the upstream data.
+  - Only the data files listed above are derived; the upstream code, styling and images are
+    not included.

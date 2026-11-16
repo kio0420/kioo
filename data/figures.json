@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "method": "Editorial estimates by the project team: each value places the figure's documented writings, speeches, laws and policy record on the 12-axis scale (% toward the first pole), and is left null where no clear position exists.",
+  "disclaimer": "本資料為編輯群依公開文獻、演說、法案與政策紀錄所做的主觀估計，並非當事人自評分數，僅供示意與教育用途，可能有誤。人物立場會隨時間改變，本表以其任內或主要活躍時期的立場為準。 / These are editorial estimates based on public records, not self-reported scores. They are for illustration only and may be wrong. Positions change over time; values reflect each figure's period in office or main period of activity.",
+  "figures": [
+    {
+      "id": "fdr",
+      "name_en": "Franklin D. Roosevelt",
+      "name_zh": "富蘭克林·D·羅斯福",
+      "country": "美國",
+      "lean": "left",
+      "coords": {
+        "federal-unitary": 35,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 85,
+        "militarist-pacifist": 65,
+        "security-freedom": 55,
+        "equality-markets": 75,
+        "secular-religious": null,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 70,
+        "protectionist-globalist": 35,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "New Deal; Social Security Act (1935), Wagner Act (1935); 1944 Second Bill of Rights",
+        "planned-laissezfaire": "National Industrial Recovery Act (1933), Tennessee Valley Authority (1933); 1944 State of the Union",
+        "internationalist-nationalist": "Atlantic Charter (1941); Lend-Lease Act (1941); championed founding of the United Nations",
+        "militarist-pacifist": "'Arsenal of Democracy' fireside chat (Dec 1940); wartime mobilisation 1941-45",
+        "security-freedom": "Four Freedoms speech (1941) vs. Executive Order 9066 (1942) interning Japanese Americans",
+        "protectionist-globalist": "Reciprocal Trade Agreements Act (1934) lowered tariffs; Bretton Woods planning",
+        "federal-unitary": "New Deal expanded federal power over states; 1937 court-packing proposal"
+      }
+    },
+    {
+      "id": "sanders",
+      "name_en": "Bernie Sanders",
+      "name_zh": "伯尼·桑德斯",
+      "country": "美國",
+      "lean": "left",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 65,
+        "militarist-pacifist": 25,
+        "security-freedom": 30,
+        "equality-markets": 92,
+        "secular-religious": null,
+        "progressive-traditional": 90,
+        "assimilationist-multiculturalist": 30,
+        "planned-laissezfaire": 75,
+        "protectionist-globalist": 70,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Medicare for All Act (sponsor); Raise the Wage Act ($15 minimum wage)",
+        "planned-laissezfaire": "Medicare for All Act; co-sponsored Green New Deal resolution (2019)",
+        "protectionist-globalist": "Voted against NAFTA (1993), PNTR with China (2000); opposed TPP",
+        "internationalist-nationalist": "Voted against 2002 Iraq AUMF; co-founder of Progressive International council (2020)",
+        "militarist-pacifist": "Voted against Iraq War authorisation (2002); led Yemen war-powers resolution (2019)",
+        "security-freedom": "Voted against USA PATRIOT Act (2001); opposed NSA bulk collection",
+        "progressive-traditional": "Voted against DOMA (1996); co-sponsor of Equality Act",
+        "assimilationist-multiculturalist": "Voted for 2013 Senate comprehensive immigration reform bill (S.744)"
+      }
+    },
+    {
+      "id": "palme",
+      "name_en": "Olof Palme",
+      "name_zh": "奧洛夫·帕爾梅",
+      "country": "瑞典",
+      "lean": "left",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": 80,
+        "internationalist-nationalist": 80,
+        "militarist-pacifist": 20,
+        "security-freedom": null,
+        "equality-markets": 85,
+        "secular-religious": null,
+        "progressive-traditional": 85,
+        "assimilationist-multiculturalist": 30,
+        "planned-laissezfaire": 70,
+        "protectionist-globalist": null,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Swedish welfare state expansion 1969-76; Meidner wage-earner funds law (1983)",
+        "planned-laissezfaire": "Wage-earner funds law (1983) under his second government",
+        "internationalist-nationalist": "Criticised US Vietnam War (1968, 1972); chaired Palme Commission 'Common Security' (1982)",
+        "militarist-pacifist": "Palme Commission report 'Common Security' (1982) on disarmament",
+        "progressive-traditional": "1974 Swedish abortion law passed under his government; gender equality reforms",
+        "assimilationist-multiculturalist": "1975 Swedish immigrant policy (equality, partnership, freedom of choice) under his government",
+        "democratic-autocratic": "Co-Determination Act (MBL, 1976) extending industrial democracy"
+      }
+    },
+    {
+      "id": "rawls",
+      "name_en": "John Rawls",
+      "name_zh": "約翰·羅爾斯",
+      "country": "美國",
+      "lean": "left",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": 85,
+        "internationalist-nationalist": 65,
+        "militarist-pacifist": 30,
+        "security-freedom": 20,
+        "equality-markets": 70,
+        "secular-religious": 75,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 40,
+        "protectionist-globalist": null,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "A Theory of Justice (1971): difference principle permits only inequalities benefiting the worst-off",
+        "democratic-autocratic": "Political Liberalism (1993); Justice as Fairness: A Restatement (2001)",
+        "secular-religious": "Political Liberalism (1993): public reason and overlapping consensus",
+        "internationalist-nationalist": "The Law of Peoples (1999): decent peoples, duty of assistance, no world state",
+        "militarist-pacifist": "'Fifty Years After Hiroshima' (1995) condemned the atomic bombing; Law of Peoples on just war",
+        "security-freedom": "A Theory of Justice (1971): first principle gives priority to equal basic liberties",
+        "planned-laissezfaire": "Restatement (2001) favours property-owning democracy with markets over welfare-state capitalism"
+      }
+    },
+    {
+      "id": "ardern",
+      "name_en": "Jacinda Ardern",
+      "name_zh": "傑辛達·阿爾登",
+      "country": "紐西蘭",
+      "lean": "left",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 70,
+        "militarist-pacifist": null,
+        "security-freedom": 60,
+        "equality-markets": 70,
+        "secular-religious": null,
+        "progressive-traditional": 85,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 60,
+        "protectionist-globalist": 25,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Child Poverty Reduction Act (2018); 2019 'Wellbeing Budget'",
+        "security-freedom": "Arms (Prohibited Firearms) Amendment Act (2019); COVID-19 alert-level lockdowns (2020)",
+        "internationalist-nationalist": "Christchurch Call (2019); Climate Change Response (Zero Carbon) Amendment Act (2019)",
+        "progressive-traditional": "Abortion Legislation Act (2020); Conversion Practices Prohibition Legislation Act (2022)",
+        "protectionist-globalist": "Concluded NZ-UK FTA (2022) and NZ-EU FTA (2022); CPTPP member",
+        "planned-laissezfaire": "KiwiBuild state-led housing programme (2018); Zero Carbon Act (2019)"
+      }
+    },
+    {
+      "id": "merkel",
+      "name_en": "Angela Merkel",
+      "name_zh": "安格拉·梅克爾",
+      "country": "德國",
+      "lean": "center",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 80,
+        "militarist-pacifist": 35,
+        "security-freedom": null,
+        "equality-markets": 55,
+        "secular-religious": null,
+        "progressive-traditional": 55,
+        "assimilationist-multiculturalist": 55,
+        "planned-laissezfaire": 50,
+        "protectionist-globalist": 30,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Statutory minimum wage (Mindestlohngesetz, 2015) in her grand coalition",
+        "planned-laissezfaire": "2011 nuclear phase-out and Energiewende; also kept Agenda 2010 reforms",
+        "internationalist-nationalist": "Euro-crisis rescue packages (2010-12); 2015 refugee decision 'Wir schaffen das'",
+        "militarist-pacifist": "Germany abstained on UNSC Resolution 1973 (Libya, 2011); stayed out of Iraq War",
+        "assimilationist-multiculturalist": "Potsdam speech (2010) 'Multikulti ist gescheitert'; 2015 refugee admission",
+        "protectionist-globalist": "Backed TTIP and EU-Mercosur/CETA trade deals",
+        "progressive-traditional": "Allowed 2017 free Bundestag vote on same-sex marriage ('Ehe für alle')"
+      }
+    },
+    {
+      "id": "macron",
+      "name_en": "Emmanuel Macron",
+      "name_zh": "艾曼紐·馬克宏",
+      "country": "法國",
+      "lean": "center",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 85,
+        "militarist-pacifist": 60,
+        "security-freedom": 65,
+        "equality-markets": 40,
+        "secular-religious": 80,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": 70,
+        "planned-laissezfaire": 55,
+        "protectionist-globalist": 45,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Replaced wealth tax ISF with IFI (2017); 2017 labour ordinances; 2023 pension age rise to 64",
+        "planned-laissezfaire": "France 2030 investment plan (2021); also 2017 labour-law liberalisation",
+        "internationalist-nationalist": "Sorbonne speech (2017) on European sovereignty; Paris Agreement champion",
+        "militarist-pacifist": "Military Programming Law 2024-2030 (EUR 413bn); Sahel/Barkhane operations",
+        "security-freedom": "SILT anti-terror law (2017); 'Sécurité globale' law (2021)",
+        "protectionist-globalist": "Backed CETA ratification yet pushed EU carbon border mechanism and 'European preference'",
+        "secular-religious": "Loi confortant le respect des principes de la République (2021), laïcité enforcement",
+        "assimilationist-multiculturalist": "2021 'separatism' law; 2023 immigration law with integration requirements"
+      }
+    },
+    {
+      "id": "blair",
+      "name_en": "Tony Blair",
+      "name_zh": "東尼·布萊爾",
+      "country": "英國",
+      "lean": "center",
+      "coords": {
+        "federal-unitary": 60,
+        "democratic-autocratic": 70,
+        "internationalist-nationalist": 85,
+        "militarist-pacifist": 75,
+        "security-freedom": 70,
+        "equality-markets": 55,
+        "secular-religious": null,
+        "progressive-traditional": 75,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 35,
+        "protectionist-globalist": 25,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "National Minimum Wage Act (1998); Sure Start; tax credits",
+        "planned-laissezfaire": "Rewrote Labour Clause IV (1995); expanded PFI public-private finance",
+        "internationalist-nationalist": "Chicago speech 'Doctrine of the International Community' (1999)",
+        "militarist-pacifist": "Kosovo (1999), Sierra Leone (2000), Iraq War (2003)",
+        "security-freedom": "Terrorism Act 2006; ID Cards Act 2006; failed 90-day detention proposal (2005)",
+        "democratic-autocratic": "Human Rights Act (1998); Scotland Act and Government of Wales Act (1998); House of Lords Act (1999)",
+        "federal-unitary": "Devolution to Scotland, Wales and Northern Ireland (1998)",
+        "progressive-traditional": "Civil Partnership Act (2004); Gender Recognition Act (2004)",
+        "protectionist-globalist": "Pro-globalisation stance; Third Way (1998 Fabian pamphlet)"
+      }
+    },
+    {
+      "id": "degaulle",
+      "name_en": "Charles de Gaulle",
+      "name_zh": "夏爾·戴高樂",
+      "country": "法國",
+      "lean": "center",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": 45,
+        "internationalist-nationalist": 25,
+        "militarist-pacifist": 65,
+        "security-freedom": null,
+        "equality-markets": 60,
+        "secular-religious": null,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 70,
+        "protectionist-globalist": 60,
+        "acceleration-bioconservative": 65
+      },
+      "sources": {
+        "democratic-autocratic": "1958 Fifth Republic constitution with strong presidency; 1962 referendum on direct presidential election",
+        "internationalist-nationalist": "Vetoed UK entry to EEC (1963); left NATO integrated command (1966); 'Europe of fatherlands'",
+        "militarist-pacifist": "Launched force de frappe nuclear deterrent (first test 1960)",
+        "planned-laissezfaire": "Established Commissariat général du Plan (1946); indicative planning under his presidency",
+        "equality-markets": "1945 ordonnances created Sécurité sociale under his provisional government",
+        "protectionist-globalist": "Defended Common Agricultural Policy; 1965 'empty chair' crisis",
+        "acceleration-bioconservative": "CNES space agency (1961); Concorde agreement (1962); civil nuclear programme"
+      }
+    },
+    {
+      "id": "lky",
+      "name_en": "Lee Kuan Yew",
+      "name_zh": "李光耀",
+      "country": "新加坡",
+      "lean": "center",
+      "coords": {
+        "federal-unitary": null,
+        "democratic-autocratic": 25,
+        "internationalist-nationalist": null,
+        "militarist-pacifist": 65,
+        "security-freedom": 80,
+        "equality-markets": 45,
+        "secular-religious": null,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": 55,
+        "planned-laissezfaire": 50,
+        "protectionist-globalist": 20,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "democratic-autocratic": "Zakaria interview 'Culture Is Destiny', Foreign Affairs (1994); Asian values; ISA detentions",
+        "security-freedom": "Internal Security Act; Misuse of Drugs Act mandatory death penalty (1975)",
+        "equality-markets": "Public housing via HDB (1960) and CPF savings scheme vs. low taxes and no welfare entitlement",
+        "planned-laissezfaire": "State-led development: EDB, Temasek Holdings (1974), government-linked companies",
+        "protectionist-globalist": "From Third World to First (2000): open economy attracting multinationals",
+        "assimilationist-multiculturalist": "English as working language; Speak Mandarin Campaign (1979); Ethnic Integration Policy (1989)",
+        "militarist-pacifist": "Introduced National Service (1967); 'poison shrimp' defence doctrine"
+      }
+    },
+    {
+      "id": "thatcher",
+      "name_en": "Margaret Thatcher",
+      "name_zh": "瑪格麗特·柴契爾",
+      "country": "英國",
+      "lean": "right",
+      "coords": {
+        "federal-unitary": 25,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 40,
+        "militarist-pacifist": 70,
+        "security-freedom": 60,
+        "equality-markets": 20,
+        "secular-religious": null,
+        "progressive-traditional": 30,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 15,
+        "protectionist-globalist": 30,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Housing Act 1980 (Right to Buy); cut top income tax 83% to 60% (1979 Budget)",
+        "planned-laissezfaire": "Privatised British Telecom (1984) and British Gas (1986)",
+        "internationalist-nationalist": "Bruges Speech (1988) against European federalism; also signed Single European Act (1986)",
+        "militarist-pacifist": "Falklands War (1982); bought Trident II (1982)",
+        "security-freedom": "Broadcasting ban on IRA spokesmen (1988); Prevention of Terrorism Act renewals",
+        "progressive-traditional": "Section 28, Local Government Act (1988)",
+        "protectionist-globalist": "Abolished exchange controls (1979); championed Single Market",
+        "federal-unitary": "Abolished Greater London Council (Local Government Act 1985); poll tax (1989)"
+      }
+    },
+    {
+      "id": "reagan",
+      "name_en": "Ronald Reagan",
+      "name_zh": "隆納·雷根",
+      "country": "美國",
+      "lean": "right",
+      "coords": {
+        "federal-unitary": 70,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": null,
+        "militarist-pacifist": 85,
+        "security-freedom": 60,
+        "equality-markets": 20,
+        "secular-religious": 35,
+        "progressive-traditional": 30,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 15,
+        "protectionist-globalist": 50,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "equality-markets": "Economic Recovery Tax Act (1981); Tax Reform Act (1986) cut top rate to 28%",
+        "planned-laissezfaire": "Executive Order 12291 (1981) requiring cost-benefit review of regulations; deregulation drive",
+        "militarist-pacifist": "1980s defence build-up; SDI speech (1983); 'peace through strength'",
+        "security-freedom": "Anti-Drug Abuse Act (1986); escalated 'war on drugs'",
+        "secular-religious": "'Evil Empire' speech to National Association of Evangelicals (1983)",
+        "progressive-traditional": "'Abortion and the Conscience of the Nation' (1983); opposed ERA",
+        "protectionist-globalist": "Voluntary export restraints on Japanese cars (1981); Harley-Davidson tariff (1983); also backed NAFTA idea",
+        "federal-unitary": "'New Federalism' in 1982 State of the Union address"
+      }
+    },
+    {
+      "id": "hayek",
+      "name_en": "Friedrich Hayek",
+      "name_zh": "弗里德里希·海耶克",
+      "country": "奧地利／英國",
+      "lean": "right",
+      "coords": {
+        "federal-unitary": 85,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 70,
+        "militarist-pacifist": null,
+        "security-freedom": 15,
+        "equality-markets": 12,
+        "secular-religious": null,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 5,
+        "protectionist-globalist": 10,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "federal-unitary": "'The Economic Conditions of Interstate Federalism' (1939)",
+        "internationalist-nationalist": "'The Economic Conditions of Interstate Federalism' (1939) advocated an interstate federation",
+        "security-freedom": "The Constitution of Liberty (1960): coercion-minimising rule of law",
+        "equality-markets": "The Road to Serfdom (1944); Law, Legislation and Liberty (1973-79) rejects 'social justice'",
+        "planned-laissezfaire": "The Road to Serfdom (1944); 'The Use of Knowledge in Society' (1945)",
+        "protectionist-globalist": "'The Economic Conditions of Interstate Federalism' (1939) argued for free movement of goods and capital"
+      }
+    },
+    {
+      "id": "ronpaul",
+      "name_en": "Ron Paul",
+      "name_zh": "朗·保羅",
+      "country": "美國",
+      "lean": "right",
+      "coords": {
+        "federal-unitary": 90,
+        "democratic-autocratic": null,
+        "internationalist-nationalist": 20,
+        "militarist-pacifist": 10,
+        "security-freedom": 8,
+        "equality-markets": 8,
+        "secular-religious": null,
+        "progressive-traditional": null,
+        "assimilationist-multiculturalist": null,
+        "planned-laissezfaire": 3,
+        "protectionist-globalist": null,
+        "acceleration-bioconservative": null
+      },
+      "sources": {
+        "federal-unitary": "The Revolution: A Manifesto (2008); advocated abolishing federal departments",
+        "militarist-pacifist": "Voted against 2002 Iraq AUMF; A Foreign Policy of Freedom (2007)",
+        "security-freedom": "Voted against USA PATRIOT Act (2001); opposed TSA and warrantless wiretaps",
+        "equality-markets": "End the Fed (2009); proposed abolishing the income tax and IRS",
+        "planned-laissezfaire": "End the Fed (2009); 2012 campaign plan to cut $1 trillion in first year",
+        "internationalist-nationalist": "American Sovereignty Restoration Act (H.R. 1146) to withdraw from UN"
+      }
+    }
+  ]
+}
