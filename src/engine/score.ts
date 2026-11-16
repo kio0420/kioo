@@ -4,7 +4,10 @@ export function answerValue(v: unknown): v is number {
   return typeof v === 'number' && Number.isFinite(v) && v >= -2 && v <= 2 && (v * 2) % 1 === 0;
 }
 
-/** First-pole % per axis (unrounded). Unanswered items are ignored; n=0 -> 50. */
+/**
+ * First-pole % per axis, rounded to 0.1 (the precision stored in result URLs, so a decoded
+ * result reproduces labels, type, sentence and matches exactly). Unanswered items are ignored; n=0 -> 50.
+ */
 export function scoreAxes(
   items: readonly Question[],
   answers: Answers,
@@ -24,7 +27,7 @@ export function scoreAxes(
   for (const id of ids) {
     const c = n[id] ?? 0;
     const s = c === 0 ? 50 : 50 + (50 * (sum[id] ?? 0)) / (2 * c);
-    out[id] = Math.min(100, Math.max(0, s));
+    out[id] = Math.round(Math.min(100, Math.max(0, s)) * 10) / 10;
   }
   return out;
 }

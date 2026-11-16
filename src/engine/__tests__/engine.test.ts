@@ -173,3 +173,30 @@ describe('encode', () => {
     expect(decodeResult('m=full&r=' + 'zz'.repeat(12))).toBeNull();
   });
 });
+
+describe('round trip with ties (regression)', () => {
+  it('decoded scores reproduce type, sentence and matches exactly', async () => {
+    const { buildQuiz, scoreAxesFor, encodeResult, decodeResult, typeName, resultSentence, matchIdeologies, matchFigures, mulberry32 } = await import('../index');
+    const questions = (await import('../../../data/questions.json')).default as any[];
+    const axes = (await import('../../../data/axes.json')).default as any[];
+    const ideologies = (await import('../../../data/ideologies.json')).default as any[];
+    const figures = ((await import('../../../data/figures.json')).default as any).figures;
+    const vals = [2, 1, 0.5, 0, -0.5, -1, -2];
+    for (const mode of ['full', 'quick', 'mini'] as const) {
+      for (let seed = 1; seed <= 150; seed++) {
+        const quiz = buildQuiz(questions, mode, { seed });
+        const r = mulberry32(seed * 7 + 3);
+        const answers: Record<string, number> = {};
+        for (const q of quiz.items) answers[q.id] = vals[Math.floor(r() * 7)];
+        const s1 = scoreAxesFor(quiz.items, answers, axes);
+        const d = decodeResult(encodeResult({ scores: s1, mode }))!;
+        const sig = (s: any) => JSON.stringify([
+          typeName(s, axes, 'zh'), resultSentence(s, axes, 'zh').text,
+          matchIdeologies(s, ideologies).map((m: any) => m.ideology.id),
+          matchFigures(s, figures).map((m: any) => m.figure.id),
+        ]);
+        expect(sig(d.scores)).toBe(sig(s1));
+      }
+    }
+  });
+});
